@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace HospitalManagementSystem.Controllers
 {
     public class HomeController : Controller
@@ -19,6 +20,8 @@ namespace HospitalManagementSystem.Controllers
 
             return View();
         }
+        
+
 
         public ActionResult Contact()
         {
