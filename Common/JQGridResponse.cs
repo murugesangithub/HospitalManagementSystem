@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-//using System.Linq.Dynamic;
+using System.Linq.Dynamic;
 
 namespace HospitalManagementSystem.JqGrid
 {
@@ -66,7 +66,7 @@ namespace HospitalManagementSystem.JqGrid
 
                 if (jQGridSort.sidx != null)
                 {
-                   //s filterlist = objlistFilter.OrderBy(jQGridSort.sidx + " " + jQGridSort.sord).ToList().Skip(startRow).Take(pagerSize).ToList();
+                    filterlist = objlistFilter.OrderBy(jQGridSort.sidx + " " + jQGridSort.sord).ToList().Skip(startRow).Take(pagerSize).ToList();
                 }
                 else
                 {

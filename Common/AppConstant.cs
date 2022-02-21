@@ -4,6 +4,7 @@
     {
         public const string Asc = "asc";
         public const string Desc = "desc";
+        public const string UserDetail = "UserDetail"; 
 
         public const string USERNOTFOUND = "User Not Found";
         public const string DATAFORMAT = "{0:yyyy-MM-dd}";
