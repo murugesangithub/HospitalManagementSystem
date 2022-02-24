@@ -136,6 +136,8 @@
     <Compile Include="Common\JQGridResponse.cs" />
     <Compile Include="Common\JQGridSorting.cs" />
     <Compile Include="Common\PredicateBuilder.cs" />
+    <Compile Include="Controllers\Account\AccountController.cs" />
+    <Compile Include="Controllers\Employee\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filter\AllowedFileExtensionAttribute.cs" />
     <Compile Include="Filter\Authorization.cs" />
@@ -144,6 +146,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\AdminLTE.min.css" />
@@ -156,6 +159,7 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\ionicons.min.css" />
     <Content Include="Content\jquery-jvectormap.css" />
+    <Content Include="Content\ui.jqgrid-bootstrap.css" />
     <Content Include="Content\_all-skins.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -172,8 +176,13 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Common\Common.js" />
     <Content Include="Scripts\dashboard2.js" />
     <Content Include="Scripts\demo.js" />
+    <Content Include="Scripts\Employee\EmployeeDetail.js" />
+    <Content Include="Scripts\JQGrid\grid.locale-en.js" />
+    <Content Include="Scripts\JQGrid\jquery.jqGrid.js" />
+    <Content Include="Scripts\Resize\ResizeSensor.js" />
     <Content Include="Scripts\fastclick.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -189,6 +198,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Waitme\waitMe.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -209,6 +219,8 @@
     <Content Include="Views\Shared\_RightVerticalMenu.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Home\Indexbak2.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
