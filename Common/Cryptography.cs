@@ -10,7 +10,7 @@ namespace HospitalManagementSystem.Common
 {
     public static class Cryptography
     {
-         static string EncryptionKey = ConfigurationManager.AppSettings["EncryptoinKey"].ToString();
+         static string EncryptionKey = ConfigurationManager.AppSettings["EncryptionKey"].ToString();
         static readonly char[] padding = { '=' };
 
        public static string EncryptStringToBytes_Aes(string plainText)

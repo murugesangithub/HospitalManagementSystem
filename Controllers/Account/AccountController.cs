@@ -1,4 +1,5 @@
 ﻿using HospitalManagementSystem.Common;
+using HospitalManagementSystem.DataAccess.Repository;
 using HospitalManagementSystem.Filter;
 using HospitalManagementSystem.ViewModel;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 
 
-namespace VRMStackApp.Controllers.Account
+namespace HospitalManagementSystem.Controllers.Account
 {
     //[Authorization]
     [ExceptionFilter]
@@ -35,32 +36,32 @@ namespace VRMStackApp.Controllers.Account
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
+
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
-            //var accountRepository = new AccountRepository();
-            //var result = accountRepository.LogOn(model.Email, model.Password);
-            //if (result != null)
-            //{
-            //    HttpContext.Session[AppConstant.UserDetail] = result;
-            //    return Redirect("Home/Index");
+            var accountRepository = new AccountRepository();
+            var result = accountRepository.LogOn(model.Email, model.Password);
+            if (result != null)
+            {
+                HttpContext.Session[AppConstant.UserDetail] = result;
+                return Redirect("Home/Index");
 
 
-            //}
-            //else
-            //{
-            //    ModelState.AddModelError("", "Invalid Email and Password.");
-            //    return View(model);
-            //}
-            return View(model);
+            }
+            else
+            {
+                ModelState.AddModelError("", "Invalid Email and Password.");
+                return View(model);
+            }
 
         }
 
 
-        [HttpPost]
+     
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
             HttpContext.Session[AppConstant.UserDetail] = null;

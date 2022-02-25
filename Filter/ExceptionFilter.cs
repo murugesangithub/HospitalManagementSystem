@@ -1,9 +1,10 @@
-﻿using System;
+﻿using HospitalManagementSystem.DataAccess.Repository;
+using HospitalManagementSystem.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
 
 namespace HospitalManagementSystem.Filter
 {
@@ -15,22 +16,22 @@ namespace HospitalManagementSystem.Filter
             Exception ex = filterContext.Exception;
             filterContext.ExceptionHandled = true;
 
-            //var reportRepository = new ReportRepository();
+            var loggingRepository = new LoggingRepository();
 
-            //var errorLogViewModel = new ErrorLogViewModel()
-            //{
-            //    Subject = filterContext.Exception.Message,
-            //    Description = filterContext.Exception.StackTrace,
-            //    IPAddress = GetIp()
+            var errorLogViewModel = new ErrorLogViewModel()
+            {
+                Subject = filterContext.Exception.Message,
+                Description = filterContext.Exception.StackTrace,
+                IPAddress = GetIp()
 
-            //};
-            //reportRepository.ErrorLogInsertion(errorLogViewModel);
-            //var model = new HandleErrorInfo(filterContext.Exception, "Home", "Error");
+            };
+            loggingRepository.ErrorLogInsertion(errorLogViewModel);
+            var model = new HandleErrorInfo(filterContext.Exception, "Home", "Error");
 
             filterContext.Result = new ViewResult()
             {
                 ViewName = "Error",
-              //  ViewData = new ViewDataDictionary(model)
+                ViewData = new ViewDataDictionary(model)
             };
         }
         public string GetIp()

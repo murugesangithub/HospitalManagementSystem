@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HospitalManagementSystem.Common;
+using HospitalManagementSystem.ViewModel;
+using System;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -17,25 +19,25 @@ namespace HospitalManagementSystem.Filter
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
             bool authorize = false;
-            //var session = httpContext.Session[AppConstant.UserDetail];
+            var session = httpContext.Session[AppConstant.UserDetail];
 
-            //if (session != null)
-            //{
+            if (session != null)
+            {
 
-            //    var userDetail = (RegisterViewModel)session;
-            //    var authorizedRoles = Roles.Split(',');
-            //    if (Array.IndexOf(authorizedRoles, userDetail.RoleDesc) > -1)
-            //    {
-            //        authorize = true;
+                var userDetail = (RegisterViewModel)session;
+                var authorizedRoles = Roles.Split(',');
+                if (Array.IndexOf(authorizedRoles, userDetail.RoleDesc) > -1)
+                {
+                    authorize = true;
 
-            //    }
-            //    else
-            //    {
-            //        authorize = false;
-            //    }
+                }
+                else
+                {
+                    authorize = false;
+                }
 
-            //}
-           
+            }
+
 
             return authorize;
         }
@@ -43,12 +45,12 @@ namespace HospitalManagementSystem.Filter
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
             var action = "Unauthorized";
-            
-            //if (filterContext.HttpContext.Session[AppConstant.UserDetail] == null)
-            //{
-            //    action = "Login";
-            //}
-          
+
+            if (filterContext.HttpContext.Session[AppConstant.UserDetail] == null)
+            {
+                action = "Login";
+            }
+
             filterContext.Result = new RedirectToRouteResult(
              new RouteValueDictionary
              {

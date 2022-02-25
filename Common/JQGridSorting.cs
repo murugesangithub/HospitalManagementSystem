@@ -7,7 +7,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace VRMStackApp.Common
+namespace HospitalManagementSystem.Common
 {
     public class JQGridSorting
     {

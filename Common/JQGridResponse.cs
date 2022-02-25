@@ -78,7 +78,7 @@ namespace HospitalManagementSystem.JqGrid
                     total = totalPages,
                     page = pagerIndex,
                     records = recordsCount,
-                    //rows = filterlist,
+                    rows = filterlist,
                 };
                 return result;
             }

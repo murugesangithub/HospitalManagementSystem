@@ -1,24 +1,64 @@
-﻿body {
+﻿/*body {
     padding-top: 50px;
     padding-bottom: 20px;
-}
+}*/
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
+/*.body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
+}*/
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
-.dl-horizontal dt {
+/*.dl-horizontal dt {
     white-space: normal;
-}
+}*/
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
+/*input,
 select,
 textarea {
     max-width: 280px;
+}*/
+
+.rounded-circle {
+    border-radius: 50% !important
 }
+
+
+.btn-gradgreen {
+    background-image: linear-gradient(to right, #6ae35b 0%, #45B649 51%, #DCE35B 100%)
+}
+
+.btn-gradblue {
+    background-image: linear-gradient(to right, #2980b9 0%, #2c3e50 51%, #2980b9 100%);
+}
+
+.btn-gradyellow {
+    background-image: linear-gradient(to right, #FF5F6D 0%, #FFC371 51%, #FF5F6D 100%);
+}
+
+.btn-gradgray {
+    background-image: linear-gradient(to right, #8e8181 0%, #b2b0b0 51%, #706e6e 100%)
+}
+
+
+.btn-gradgreen, .btn-gradblue, .btn-gradyellow, .btn-gradgray {
+    padding: 10px 15px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 5px;
+    display: block;
+    border: none;
+}
+
+    .btn-gradgreen:hover, .btn-gradblue:hover, .btn-gradyellow:hover, .btn-gradgray:hover {
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+    }

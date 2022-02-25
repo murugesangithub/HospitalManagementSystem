@@ -4,12 +4,13 @@
     {
         public const string Asc = "asc";
         public const string Desc = "desc";
-        public const string UserDetail = "UserDetail"; 
 
         public const string USERNOTFOUND = "User Not Found";
         public const string DATAFORMAT = "{0:yyyy-MM-dd}";
 
-      
+        public const string UserDetail = "UserDetail";
+        public const string Inward = "Inward";
+        public const string Outward = "Outward";
         //Roles
         public const string Admin = "Admin";
         public const string Employee = "Admin,Employee";
