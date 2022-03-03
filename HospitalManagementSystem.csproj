@@ -146,6 +146,7 @@
     <Compile Include="Common\PredicateBuilder.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
     <Compile Include="Controllers\Appointment\AppointmentController.cs" />
+    <Compile Include="Controllers\Doctor\DoctorController.cs" />
     <Compile Include="Controllers\Employee\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Patient\PatientsController.cs" />
@@ -185,6 +186,7 @@
     <Compile Include="Repository\BaseRepository.cs" />
     <Compile Include="Repository\ReportRepository.cs" />
     <Compile Include="ViewModel\AppointmentViewModel.cs" />
+    <Compile Include="ViewModel\DoctorViewModel.cs" />
     <Compile Include="ViewModel\ErrorLogViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\PatientViewModel.cs" />
@@ -202,7 +204,6 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\ionicons.min.css" />
     <Content Include="Content\jquery-jvectormap.css" />
-    <Content Include="Content\Style\StyleSheet.css" />
     <Content Include="Content\ui.jqgrid-bootstrap.css" />
     <Content Include="Content\_all-skins.min.css" />
     <Content Include="Entity\HMS.Context.tt">
@@ -295,6 +296,7 @@
     <Content Include="Views\Patients\Add.cshtml" />
     <Content Include="Views\Appointment\Index.cshtml" />
     <Content Include="Views\Appointment\Add.cshtml" />
+    <Content Include="Views\Doctor\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

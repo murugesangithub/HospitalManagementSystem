@@ -23,6 +23,24 @@ textarea {
     max-width: 280px;
 }*/
 
+
+.form-control {
+    border-radius: 6px;
+}
+
+.col-sm-3 {
+    width: 25%;
+}
+
+/*.form-control:hover {
+    border-color: yellowgreen;
+}*/
+
+.important {
+    color: red;
+}
+
+
 .rounded-circle {
     border-radius: 50% !important
 }
