@@ -2,7 +2,9 @@
 @using HospitalManagementSystem.Common;
 @{
     ViewBag.Title = "Add";
+
 }
+
 
 <section class="content-header">
     <h1>
@@ -73,13 +75,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.RoleList, new { @class = "col-sm-3 control-label" })
-                            <div class="col-sm-9">
-                                @Html.DropDownListFor(m => m.Role, Model.RoleList, "Select", new { @class = "form-control" })
-                                @Html.ValidationMessageFor(m => m.Role, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
+
                         <div class="form-group">
                             @Html.LabelFor(m => m.ImageFileUpload, new { @class = "col-sm-3 control-label" })
                             <div class="col-sm-9">
@@ -89,9 +85,9 @@
                     </div>
 
                     @*<div class="box-footer">
-                <button type="button" class="btn btn-default">Cancel</button>
-                <button type="submit" class="btn btn-info pull-right">Sign in</button>
-            </div>*@
+                            <button type="button" class="btn btn-default">Cancel</button>
+                            <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                        </div>*@
 
 
                     <div class="box-footer">

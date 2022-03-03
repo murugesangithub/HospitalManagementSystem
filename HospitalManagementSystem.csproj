@@ -122,6 +122,12 @@
       <Private>True</Private>
       <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>packages\xunit.abstractions.2.0.3\lib\net35\xunit.abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.core, Version=2.4.1.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>packages\xunit.extensibility.core.2.4.1\lib\net452\xunit.core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
@@ -139,8 +145,10 @@
     <Compile Include="Common\JQGridSorting.cs" />
     <Compile Include="Common\PredicateBuilder.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
+    <Compile Include="Controllers\Appointment\AppointmentController.cs" />
     <Compile Include="Controllers\Employee\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Patient\PatientsController.cs" />
     <Compile Include="Controllers\User\UserController.cs" />
     <Compile Include="Entity\ErrorLog.cs">
       <DependentUpon>HMS.tt</DependentUpon>
@@ -176,8 +184,10 @@
     <Compile Include="Repository\AccountRepository.cs" />
     <Compile Include="Repository\BaseRepository.cs" />
     <Compile Include="Repository\ReportRepository.cs" />
+    <Compile Include="ViewModel\AppointmentViewModel.cs" />
     <Compile Include="ViewModel\ErrorLogViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\PatientViewModel.cs" />
     <Compile Include="ViewModel\ResetPasswordViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -192,6 +202,7 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\ionicons.min.css" />
     <Content Include="Content\jquery-jvectormap.css" />
+    <Content Include="Content\Style\StyleSheet.css" />
     <Content Include="Content\ui.jqgrid-bootstrap.css" />
     <Content Include="Content\_all-skins.min.css" />
     <Content Include="Entity\HMS.Context.tt">
@@ -280,6 +291,10 @@
     <Content Include="Views\Account\Unauthorized.cshtml" />
     <Content Include="Views\User\ResetPassword.cshtml" />
     <Content Include="Views\User\UpdateUserDetail.cshtml" />
+    <Content Include="Views\Patients\Index.cshtml" />
+    <Content Include="Views\Patients\Add.cshtml" />
+    <Content Include="Views\Appointment\Index.cshtml" />
+    <Content Include="Views\Appointment\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

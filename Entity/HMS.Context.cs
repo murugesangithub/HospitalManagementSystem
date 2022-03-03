@@ -10,6 +10,7 @@
 namespace HospitalManagementSystem.Entity
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
@@ -28,5 +29,7 @@ namespace HospitalManagementSystem.Entity
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<UserDetail> UserDetails { get; set; }
         public virtual DbSet<ErrorLog> ErrorLogs { get; set; }
+        public IEnumerable<object> PatientDetail { get; internal set; }
+        public IEnumerable<object> PatientDetails { get; internal set; }
     }
 }
