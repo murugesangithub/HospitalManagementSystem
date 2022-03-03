@@ -50,25 +50,23 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                 @Html.LabelFor(m => m.Age, new { @class = "col-sm-3 control-label" })
-                                  
+                                 @Html.LabelFor(m => m.Age, new { @class = "col-sm-3 control-label" })                                 
                                     <div class="col-sm-9">
                                         @Html.TextBoxFor(m => m.Age, new { placeholder = "Age", @class = "form-control" })
                                         @Html.ValidationMessageFor(m => m.Age, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
+
                                 <div class="form-group">
-                                     @Html.LabelFor(m => m.Password, new { @class = "col-sm-3 control-label" })
-                                    
+                                     @Html.LabelFor(m => m.Password, new { @class = "col-sm-3 control-label" })                                 
                                     <div class="col-sm-9">
                                         @Html.PasswordFor(m => m.Password, new { placeholder = "Password", @class = "form-control" })
                                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-
                                     </div>
                                 </div>
+
                                 <div class="form-group">
-                                  @Html.LabelFor(m => m.MaritalStatus, new { @class = "col-sm-3 control-label" })
-                                  
+                                  @Html.LabelFor(m => m.MaritalStatus, new { @class = "col-sm-3 control-label" })                                 
                                     <div class="col-sm-9">
                                         @Html.DropDownListFor(m => m.MaritalStatus, new List<SelectListItem>
                                    { new SelectListItem{Text="Married", Value="M"},
@@ -78,9 +76,9 @@
                                         @Html.ValidationMessageFor(m => m.MaritalStatus, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.Email, new { @class = "col-sm-3 control-label" })
-
                                     <div class="col-md-9">
                                         @Html.TextBoxFor(m => m.Email, new { placeholder = "Email", @class = "form-control" })
                                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
@@ -88,8 +86,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    @Html.LabelFor(m => m.Gender, new { @class = "col-sm-3 control-label" })
-                                   
+                                    @Html.LabelFor(m => m.Gender, new { @class = "col-sm-3 control-label" })                                  
                                     <div class="col-md-9">
                                         @Html.DropDownListFor(m => m.Gender, new List<SelectListItem>
                                    { new SelectListItem{Text="Male", Value="M"},
@@ -101,8 +98,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                 @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-sm-3 control-label" })
-                                    
+                                 @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-sm-3 control-label" }                                    
                                     <div class="col-md-9">
                                         @Html.TextBoxFor(m => m.PhoneNumber, new { placeholder = "PhoneNumber", @class = "form-control" })
                                         @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
@@ -116,10 +112,10 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-md-6">
                                 <div class="form-group">
-                               @Html.LabelFor(m => m.LastName, new { @class = "col-sm-3 control-label" })
-                                
+                               @Html.LabelFor(m => m.LastName, new { @class = "col-sm-3 control-label" })                                
                                     <div class="col-sm-9">
                                         @Html.TextBoxFor(m => m.LastName, new { placeholder = "LastName", @class = "form-control" })
                                         @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
@@ -136,8 +132,7 @@
 
 
                                 <div class="form-group">
-                               @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-sm-3 control-label" })
-                                   
+                               @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-sm-3 control-label" })                                  
                                     <div class="col-sm-9">
                                         @Html.TextBoxFor(m => m.ConfirmPassword, new { placeholder = "ConfirmPassword", @class = "form-control" })
                                         @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
@@ -154,12 +149,10 @@
 
 
                                 <div class="form-group">
-                                       @Html.LabelFor(m => m.Address, new { @class = "col-sm-3 control-label" })
-                                  
+                                       @Html.LabelFor(m => m.Address, new { @class = "col-sm-3 control-label" })                                  
                                     <div class="col-sm-9">
                                         @Html.TextBoxFor(m => m.Address, new { placeholder = "StreetAddress", @class = "form-control" })<br />
                                         <div class="row">
-
                                             <div class="col-sm-6">
                                                 @Html.TextBoxFor(m => m.Address, new { placeholder = "city", @class = "form-control" })<br />
                                                 @Html.TextBoxFor(m => m.Address, new { placeholder = "ZIP/Postal Code", @class = "form-control" })
@@ -168,7 +161,6 @@
                                                 @Html.TextBoxFor(m => m.Address, new { placeholder = "State/Province", @class = "form-control" })<br />
                                                 @Html.DropDownListFor(m => m.Country, Model.CoutryList, "Country", new { @class = "form-control" })<br />
                                             </div>
-
                                         </div>
                                         @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
                                     </div>
