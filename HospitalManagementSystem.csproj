@@ -223,6 +223,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\avatar.png" />
     <Content Include="Images\default_profile.jpg" />
+    <Content Include="Images\icons8-done-24.png" />
     <Content Include="Scripts\adminlte.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
