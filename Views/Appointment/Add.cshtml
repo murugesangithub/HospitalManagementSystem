@@ -37,18 +37,18 @@
 
                         <div class="row">
                             <div class="col-md-6">
+                                
                                 <div class="form-group">
-                                    @Html.LabelFor(m => m.PatientId, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                    @Html.LabelFor(m => m.FirstName, new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
-                                        @Html.TextBoxFor(m => m.PatientId, new { placeholder = "Patient Id", @class = "form-control" })
-                                        @Html.ValidationMessageFor(m => m.PatientId, "", new { @class = "text-danger" })
+                                        @Html.TextBoxFor(m => m.FirstName, new { placeholder = "FirstName", @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
 
-
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.Gender, new { @class = "col-sm-3 control-label" })
-                                 <div class="col-md-9">
+                                    <div class="col-md-9">
                                         @Html.DropDownListFor(m => m.Gender, new List<SelectListItem>
                                    { new SelectListItem{Text="Male", Value="M"},
                                      new SelectListItem{Text="Female", Value="F"},
@@ -78,17 +78,18 @@
                             <div class="col-md-6">
 
                                 <div class="form-group">
-                                    @Html.LabelFor(m => m.PatientName, new { @class = "col-sm-3 control-label" })
-                                    <div class="col-sm-9">
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                @Html.TextBoxFor(m => m.PatientName, new { placeholder = "Firstname", @class = "form-control" })
-                                            </div>
-                                            <div class="col-sm-6">
-                                                @Html.TextBoxFor(m => m.PatientName, new { placeholder = "LastName", @class = "form-control" })
-                                            </div>
-                                        </div>
-                                        @Html.ValidationMessageFor(m => m.PatientName, "", new { @class = "text-danger" })
+                                    @Html.LabelFor(m => m.LastName, new { @class = "col-sm-3 control-label" })
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(m => m.LastName, new { placeholder = "LastName", @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                              
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Age, new { @class = "col-sm-3 control-label" })
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(m => m.Age, new { placeholder = "Age", @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.Age, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
 
@@ -115,6 +116,8 @@
                         </div><br />
                         <div class="row">
                             <div class="col-md-6">
+
+                              
 
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.ConsultingDoctor, htmlAttributes: new { @class = "col-sm-3 control-label" })

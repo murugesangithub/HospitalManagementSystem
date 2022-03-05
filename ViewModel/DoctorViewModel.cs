@@ -29,11 +29,11 @@ namespace HospitalManagementSystem.ViewModel
         public string UserName { get; set; }
 
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
-        [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
+        /* [Required]
+         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+         [DataType(DataType.Password)]
+         [Display(Name = "Password")]
+        public string Password { get; set; }*/
 
         [Required]
         [Display(Name = "Mobile No")]
@@ -50,23 +50,23 @@ namespace HospitalManagementSystem.ViewModel
         [Required]
         [Display(Name = "Specialist in")]
         public List<System.Web.Mvc.SelectListItem> RoleList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
-        public int Role { get; set; }
+        public string Role { get; set; }
 
         [Required]
         [Display(Name = "Gender")]
         public List<System.Web.Mvc.SelectListItem> GenderList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
-        public int Gender { get; set; }
+        public string Gender { get; set; }
 
 
         [Required]
         [Display(Name = "State")]
         public List<System.Web.Mvc.SelectListItem> StateList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
-        public int State { get; set; }
+        public string State { get; set; }
 
         [Required]
         [Display(Name = "City")]
         public List<System.Web.Mvc.SelectListItem> CityList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
-        public int City { get; set; }
+        public string City { get; set; }
 
     }
 }

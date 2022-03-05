@@ -68,28 +68,22 @@ input.input-validation-error,
 textarea.input-validation-error,
 select.input-validation-error {
     border: 1px solid #b94a48;
-    background: url("https://png.pngitem.com/pimgs/s/144-1441954_right-and-wrong-symbols-clipart-png-download-clear.png") no-repeat 97% 50%;
+    /* background: url("https://png.pngitem.com/pimgs/s/144-1441954_right-and-wrong-symbols-clipart-png-download-clear.png") no-repeat 97% 50%;
     background-size: 13px;
-     content: "\f2b7";
+     content: "\f2b7";*/
 }
-
-
-
 input.input-validation-error:focus {
     border: 1px solid #b94a48;
     box-shadow: 0 0 0 0.2rem rgb(220 53 69 / 25%);
 }
-
 .form-control {
     border-radius: 4px;
 }
-
 input.valid, select.valid, textarea.valid {
-    background: url("https://img.icons8.com/color/344/checkmark--v1.png") no-repeat 97% 50%;
-    background-size: 20px;
+    /* background: url("https://img.icons8.com/color/344/checkmark--v1.png") no-repeat 97% 50%;
+    background-size: 20px;  */
     border: 1px solid Green;
 }
-
     input.valid:focus, select.valid:focus, textarea.valid:focus {
         box-shadow: 0 0 0 0.2rem rgb(0,128,0,0.4);
         border: 1px solid Green;

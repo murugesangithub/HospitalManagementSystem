@@ -13,21 +13,34 @@ namespace HospitalManagementSystem.ViewModel
     {
 
         [Required]
-        [Display(Name = "First Name")]     
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
-      [Display(Name = "Last Name ")]
+        [Display(Name = "Last Name ")]
         public string LastName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Age")]
+        [RegularExpression(@"^\S[0-9]{0,3}$", ErrorMessage = "Age must be a number")]
         public string Age { get; set; }
 
         [Required]
         //[Display(Name = "Address")]
         public string Address { get; set; }
+
+        [Required]
+        //[Display(Name = "Address")]
+        public string City{ get; set; }
+
+        [Required]
+        //[Display(Name = "Address")]
+        public string State { get; set; }
+
+        [Required]
+        //[Display(Name = "Address")]
+        public string PostalCode{ get; set; }
 
         [Required]
         [Display(Name = "Marital Status")]
@@ -42,21 +55,22 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
+        [Required]       
         [Display(Name = "PhoneNumber")]
+        [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "Phone number only in 10 digits")]
         public string PhoneNumber { get; set; }
 
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
-        [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
+        /*[Required]
+         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+         [DataType(DataType.Password)]
+         [Display(Name = "Password")]
+         public string Password { get; set; }
 
-        [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        public string ConfirmPassword { get; set; }
+         [DataType(DataType.Password)]
+         [Display(Name = "Confirm password")]
+         [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+         public string ConfirmPassword { get; set; }*/
 
         [Required]
         [Display(Name = "Gender ")]
@@ -79,7 +93,7 @@ namespace HospitalManagementSystem.ViewModel
         public string ProfileImage { get; set; } = string.Empty;
 
         public bool IsActive { get; set; }
-      
+
         public object PatientDetailId { get; internal set; }
     }
 
