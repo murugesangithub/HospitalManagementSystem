@@ -68,9 +68,7 @@ input.input-validation-error,
 textarea.input-validation-error,
 select.input-validation-error {
     border: 1px solid #b94a48;
-    /* background: url("https://png.pngitem.com/pimgs/s/144-1441954_right-and-wrong-symbols-clipart-png-download-clear.png") no-repeat 97% 50%;
-    background-size: 13px;
-     content: "\f2b7";*/
+  
 }
 input.input-validation-error:focus {
     border: 1px solid #b94a48;
@@ -79,9 +77,7 @@ input.input-validation-error:focus {
 .form-control {
     border-radius: 4px;
 }
-input.valid, select.valid, textarea.valid {
-    /* background: url("https://img.icons8.com/color/344/checkmark--v1.png") no-repeat 97% 50%;
-    background-size: 20px;  */
+input.valid, select.valid, textarea.valid { 
     border: 1px solid Green;
 }
     input.valid:focus, select.valid:focus, textarea.valid:focus {
