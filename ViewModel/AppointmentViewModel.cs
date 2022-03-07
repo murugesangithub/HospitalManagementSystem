@@ -14,7 +14,7 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Patient Id ")]
         public string PatientId { get; set; }*/
 
-        [Required(ErrorMessage = "PatientName is required")]
+        [Required(ErrorMessage = "LastName is required")]
         [Display(Name = "First Name")]
         [DataType(DataType.Text)]
         public string FirstName { get; set; }
