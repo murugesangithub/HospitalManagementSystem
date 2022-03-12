@@ -28,5 +28,12 @@ namespace HospitalManagementSystem.Entity
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<UserDetail> UserDetails { get; set; }
         public virtual DbSet<ErrorLog> ErrorLogs { get; set; }
+        public virtual DbSet<Master_Department> Master_Department { get; set; }
+        public virtual DbSet<Master_TimeSlot> Master_TimeSlot { get; set; }
+        public virtual DbSet<Master_Country> Master_Country { get; set; }
+        public virtual DbSet<Master_MaritalStatus> Master_MaritalStatus { get; set; }
+        public virtual DbSet<Master_Gender> Master_Gender { get; set; }
+        public virtual DbSet<AppointmentDetail> AppointmentDetails { get; set; }
+        public virtual DbSet<PatientDetail> PatientDetails { get; set; }
     }
 }

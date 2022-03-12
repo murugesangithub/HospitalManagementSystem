@@ -1,6 +1,5 @@
 ﻿
 $(document).ready(function () {
-
     var grid = "#jqEmployeeDetailGrid";
     var gridpager = "#jqEmployeeDetailGridPager";
 

@@ -21,6 +21,10 @@ namespace HospitalManagementSystem.ViewModel
         public string LastName { get; set; }
 
         [Required]
+        [Display(Name = "Guardian Name ")]
+        public string GuardianName { get; set; }
+
+        [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Age")]
         [RegularExpression(@"^\S[0-9]{0,3}$", ErrorMessage = "Age must be a number")]
@@ -31,26 +35,21 @@ namespace HospitalManagementSystem.ViewModel
         public string Address { get; set; }
 
         [Required]
-        //[Display(Name = "Address")]
         public string City{ get; set; }
 
         [Required]
-        //[Display(Name = "Address")]
         public string State { get; set; }
 
         [Required]
-        //[Display(Name = "Address")]
+        [RegularExpression(@"^\S[0-9]{0,6}$", ErrorMessage = "PostalCode must be a number")]
         public string PostalCode{ get; set; }
 
-        [Required]
-        [Display(Name = "Marital Status")]
-        public string MaritalStatus { get; set; }
 
         [Required]
         [Display(Name = "Problem")]
         public string Problem { get; set; }
 
-        [Required]
+      
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -72,20 +71,26 @@ namespace HospitalManagementSystem.ViewModel
          [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
          public string ConfirmPassword { get; set; }*/
 
-        [Required]
-        [Display(Name = "Gender ")]
-        public string Gender { get; set; }
+        [Required(ErrorMessage = "Select your Gender")]
+        public List<System.Web.Mvc.SelectListItem> GenderList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
+        public int Gender { get; set; }
+        public string GenderDescription { get; set; }
 
-
-        [Required]
+        [Required ]
         [Display(Name = "Date of Birth ")]
         [DataType(DataType.Date)]
         public string DateofBirth { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Select your MaritalStatus")]
+        public List<System.Web.Mvc.SelectListItem> MaritalStatusList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
+        public int MaritalStatus { get; set; }
+        public string MaritalStatusDescription { get; set; }
+
+        [Required(ErrorMessage = "Select your Country")]
         [Display(Name = "Country")]
-        public List<System.Web.Mvc.SelectListItem> CoutryList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
+        public List<System.Web.Mvc.SelectListItem> CountryList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int Country { get; set; }
+        public string CountryDesc { get; set; }
 
         [Display(Name = "Profile Image")]
         [AllowedFileExtension(".jpg", ".png", ".gif", ".jpeg", ".jfif")]
@@ -94,7 +99,9 @@ namespace HospitalManagementSystem.ViewModel
 
         public bool IsActive { get; set; }
 
-        public object PatientDetailId { get; internal set; }
+
+        public int PatientDetailId { get; set; }
+        public string EncryptPatientDetailId { get; set; }
     }
 
 }

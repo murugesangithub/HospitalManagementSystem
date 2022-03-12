@@ -14,7 +14,7 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Patient Id ")]
         public string PatientId { get; set; }*/
 
-        [Required(ErrorMessage = "LastName is required")]
+        [Required(ErrorMessage = "FirstName is required")]
         [Display(Name = "First Name")]
         [DataType(DataType.Text)]
         public string FirstName { get; set; }
@@ -23,6 +23,12 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Last Name")]
         [DataType(DataType.Text)]
         public string LastName { get; set; }
+
+        [Required(ErrorMessage = "Select your Gender")]
+        public List<System.Web.Mvc.SelectListItem> GenderList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
+        public int Gender { get; set; }
+        public string GenderDescription { get; set; }
+
 
         [Required]
         [DataType(DataType.Text)]
@@ -34,7 +40,7 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Address")]
         public string Address { get; set; }
 
-        [Required]
+        
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -44,9 +50,7 @@ namespace HospitalManagementSystem.ViewModel
         [RegularExpression(@"^[0-9]{10}$",ErrorMessage ="Phone number only in 10 digits")]
         public string PhoneNumber { get; set; }
 
-        [Required]
-        [Display(Name = "Gender ")]
-        public string Gender { get; set; }
+       
 
         [Required]
         [Display(Name = "Date of Birth")]
@@ -73,23 +77,23 @@ namespace HospitalManagementSystem.ViewModel
         [DataType(DataType.Text)]
         public string Problem { get; set; }
 
-        [Required]
+        /*[Required]
         [Display(Name = "Token Number ")]
         [DataType(DataType.Text)]
-        public string TokenNumber { get; set; }
+        public string TokenNumber { get; set; }*/
 
-        [Required(ErrorMessage = "Select your Time Slot")]
-        // [Display(Name = "Time Slot")]
-        //[DataType(DataType.Text)]
+        [Required(ErrorMessage = "Select your Time Slot")]       
         public List<System.Web.Mvc.SelectListItem> TimeSlotList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int TimeSlot { get; set; }
+        public string TimeSlotDesc { get; set; }
 
         [Required(ErrorMessage = "Select your Department")]
-        // [Display(Name = "Department")]
-        //[DataType(DataType.Text)]
         public List<System.Web.Mvc.SelectListItem> DepartmentList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int Department { get; set; }
+        public string DepartmentDesc { get; set; }
 
+        public int TokenNumber { get; set; }
+        public string EncryptTokenNumber { get; set; }
         public bool IsActive { get; set; }
     }
 }

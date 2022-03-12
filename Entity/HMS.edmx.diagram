@@ -5,9 +5,18 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="39af4973c666443d9692ad8da27e271c" Name="Diagram1">
+    
         <EntityTypeShape EntityType="HMSModel.Role" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HMSModel.UserDetail" Width="1.5" PointX="3.375" PointY="0.75" />
-        <EntityTypeShape EntityType="HMSModel.ErrorLog" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HMSModel.UserDetail" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HMSModel.ErrorLog" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HMSModel.Master_Department" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HMSModel.Master_TimeSlot" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HMSModel.Master_Country" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HMSModel.Master_MaritalStatus" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HMSModel.Master_Gender" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HMSModel.AppointmentDetail" Width="1.5" PointX="4.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HMSModel.PatientDetail" Width="1.5" PointX="0.75" PointY="7.75" />
+      
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

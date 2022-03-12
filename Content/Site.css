@@ -84,6 +84,9 @@ input.valid, select.valid, textarea.valid {
         box-shadow: 0 0 0 0.2rem rgb(0,128,0,0.4);
         border: 1px solid Green;
     }
+.col-md-5 {
+    width: 31.9999966666667%;
+}
 .col-md-1 {
     width: 12.33333333%;
 }

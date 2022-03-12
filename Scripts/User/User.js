@@ -38,7 +38,7 @@ $(document).ready(function () {
                     return img;
                 }
             },
-            { label: 'FirstName', name: 'FirstName', width: 200, },
+            { label: 'FirstName', name: 'FirstName', width: 200,},
             { label: 'LastName', name: 'LastName', width: 200, },
             { label: 'Email', name: 'Email', width: 200, },
             { label: 'RoleDesc', name: 'RoleDesc', width: 200, search: false, },
