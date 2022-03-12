@@ -1,4 +1,7 @@
-﻿using HospitalManagementSystem.ViewModel;
+﻿using HospitalManagementSystem.Common;
+using HospitalManagementSystem.DataAccess.Repository;
+using HospitalManagementSystem.JqGrid;
+using HospitalManagementSystem.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,102 +12,164 @@ namespace HospitalManagementSystem.Controllers.Doctor
 {
     public class DoctorController : Controller
     {
-        public List<SelectListItem> StateList { get; private set; }
 
+        public ActionResult Index()
+        {
+
+            return View();
+        }
+        public List<SelectListItem> StateList { get; private set; }
+        public List<SelectListItem> CityList { get; private set; }
+        public List<SelectListItem> SpecialistList { get; private set; }
+        public List<SelectListItem> GenderList { get; private set; }
         // GET: Doctor
         public ActionResult Add()
         {
+
+
+
             var viewmodel = new DoctorViewModel();
 
             viewmodel.GenderList = GetGenderList();
-            viewmodel.RoleList = GetRoleList();
             viewmodel.StateList = GetStateList();
             viewmodel.CityList = GetCityList();
-
+            viewmodel.SpecialistList = GetSpecialistList();
 
             return View(viewmodel);
 
         }
 
 
+
+
+        public ActionResult AddDoctor(DoctorViewModel model)
+        {
+            var doctorRepository = new DoctorRepository();
+            if (model.DoctorDetailId == default(int))
+            {
+
+                doctorRepository.DoctorDetailInsertion(model);
+                TempData[AppConstant.Response] = AppConstant.Success;
+                return RedirectToAction("Add");
+            }
+            else
+            {
+                doctorRepository.DoctorDetailUpdation(model);
+                TempData[AppConstant.Response] = AppConstant.Success;
+                return RedirectToAction("Index");
+
+            }
+        }
+
+
+
         private List<SelectListItem> GetGenderList()
         {
-            var genderList = new List<SelectListItem>()
+            var genderSelectList = new List<SelectListItem>();
+
+            var mastergenderRepository = new MasterGenderRepository();
+            var genderList = mastergenderRepository.GetGenderList();
+
+            foreach (var item in genderList)
             {
-                new SelectListItem(){ Text="Male", Value="M"},
-                new SelectListItem(){ Text="FeMale", Value="F"},
-                new SelectListItem(){ Text="Others", Value="O"},
+                genderSelectList.Add(new SelectListItem() { Text = item.Description, Value = item.GenderId.ToString() });
+            }
 
-            };
-            return genderList;
+
+            return genderSelectList;
         }
-
-
-        private List<SelectListItem> GetRoleList()
-        {
-            var RoleList = new List<SelectListItem>()
-            {
-                new SelectListItem(){ Text="Please Select a Specialist:", Value="Speicalist"},
-                new SelectListItem(){ Text="Anaesthesia", Value="Ana"},
-                new SelectListItem(){ Text="Andrology", Value="Andro"},
-                new SelectListItem(){ Text="Ayurvedic", Value="Ayur"},
-                new SelectListItem(){ Text="Cardiologist", Value="Card"},
-                new SelectListItem(){ Text="Densit", Value="Den"},
-                new SelectListItem(){ Text="Dermatologist", Value="Derma"},
-                new SelectListItem(){ Text="Dietician", Value="Diet"},
-                new SelectListItem(){ Text="Endocrinologist", Value="Endo"},
-                new SelectListItem(){ Text="ENT", Value="E"},
-                new SelectListItem(){ Text="Medicine", Value="Medi"},
-                new SelectListItem(){ Text="Nephrologist", Value="Nep"},
-                new SelectListItem(){ Text="Homoeopathy", Value="Hemo"},
-                new SelectListItem(){ Text="Neurologist", Value="Neuro"},
-
-            };
-            return RoleList;
-        }
-
-
 
         private List<SelectListItem> GetStateList()
         {
-            var StateList = new List<SelectListItem>()
-            {
-                new SelectListItem(){ Text="Please Select a State:", Value="State"},
-                new SelectListItem(){ Text="Arunachal Pradesh", Value="Aruna"},
-                new SelectListItem(){ Text="Assam", Value="A"},
-                new SelectListItem(){ Text="Bihar", Value="Bi"},
-                new SelectListItem(){ Text="Delhi", Value="Del"},
-                new SelectListItem(){ Text="Goa", Value="G"},
-                new SelectListItem(){ Text="Gujarat", Value="Guj"},
-                new SelectListItem(){ Text="Haryana", Value="Har"},
-                new SelectListItem(){ Text="Himachal Pradesh", Value="Him"},
-                new SelectListItem(){ Text="Jammu and Kashmir", Value="Jam"},
-                new SelectListItem(){ Text="Jharkhand", Value="Jar"},
-                new SelectListItem(){ Text="Karnataka", Value="Karna"},
-                new SelectListItem(){ Text="Kerala", Value="Ker"},
-                new SelectListItem(){ Text="Maharashtra", Value="Mahara"},
+            var stateSelectList = new List<SelectListItem>();
 
-            };
-            return StateList;
+            var masterStateRepository = new MasterStateRepository();
+            var stateList = masterStateRepository.GetStatelist();
+
+            foreach (var item in stateList)
+            {
+                stateSelectList.Add(new SelectListItem() { Text = item.Description, Value = item.StateId.ToString() });
+            }
+
+
+            return stateSelectList;
         }
+
 
 
 
         private List<SelectListItem> GetCityList()
         {
-            var CityList = new List<SelectListItem>()
+            var citySelectList = new List<SelectListItem>();
+
+            var mastercityRepository = new MasterCityRepository();
+            var cityList = mastercityRepository.GetCitylist();
+
+            foreach (var item in cityList)
             {
-                new SelectListItem(){ Text="Please Select a City:", Value="State"},
-                new SelectListItem(){ Text="Karad", Value="Kar"},
-                new SelectListItem(){ Text="Mumbai", Value="Mum"},
-                new SelectListItem(){ Text="Nagpur", Value="Nag"},
-                new SelectListItem(){ Text="Nashik", Value="Nas"},
-                new SelectListItem(){ Text="Navi Mumbai", Value="Navi"},
-                new SelectListItem(){ Text="Pune", Value="Pun"},
-                new SelectListItem(){ Text="Thane", Value="Tha"},
-               
-            };
-            return CityList;
+                citySelectList.Add(new SelectListItem() { Text = item.Description, Value = item.CityId.ToString() });
+            }
+
+
+            return citySelectList;
+        }
+
+
+        private List<SelectListItem> GetSpecialistList()
+        {
+            var specialistSelectList = new List<SelectListItem>();
+
+            var masterspecialistRepository = new MasterSpecialistRepository();
+            var specialistList = masterspecialistRepository.GetSpecialistlist();
+
+            foreach (var item in specialistList)
+            {
+                specialistSelectList.Add(new SelectListItem() { Text = item.Description, Value = item.SpecialistId.ToString() });
+            }
+
+
+            return specialistSelectList;
+        }
+
+
+
+
+        public ActionResult GetDoctorList(JQGridSort jQGridSort)
+        {
+            var doctorRepository = new DoctorRepository();
+            var result = doctorRepository.GetDoctorList(jQGridSort);
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+
+        public ActionResult Delete(int doctorDetailId)
+        {
+            var doctorRepository = new DoctorRepository();
+            doctorRepository.doctorDeletion(doctorDetailId);
+            return Json(new AjaxResponse() { IsSuccess = true });
+        }
+
+
+
+        //update
+        public ActionResult UpdateDoctorDetail(string id = null)
+        {
+            int doctorDetailId = default(int);
+
+            if (!string.IsNullOrEmpty(id))
+            {
+                int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out doctorDetailId);
+            }
+
+            var doctorRepository = new DoctorRepository();
+            var model = doctorRepository.GetDoctorDetailById(doctorDetailId);
+            model.GenderList = GetGenderList();
+            model.StateList = GetStateList();
+            model.CityList = GetCityList();
+            model.SpecialistList = GetSpecialistList();
+
+            return View(model);
         }
 
     }

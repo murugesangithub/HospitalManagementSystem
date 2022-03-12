@@ -35,5 +35,9 @@ namespace HospitalManagementSystem.Entity
         public virtual DbSet<Master_Gender> Master_Gender { get; set; }
         public virtual DbSet<AppointmentDetail> AppointmentDetails { get; set; }
         public virtual DbSet<PatientDetail> PatientDetails { get; set; }
+        public virtual DbSet<DoctorDetail> DoctorDetails { get; set; }
+        public virtual DbSet<Master_City> Master_City { get; set; }
+        public virtual DbSet<Master_Specialist> Master_Specialist { get; set; }
+        public virtual DbSet<Master_State> Master_State { get; set; }
     }
 }

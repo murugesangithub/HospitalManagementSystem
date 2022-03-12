@@ -25,6 +25,22 @@
           <Property Name="Problem" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="DoctorDetail">
+          <Key>
+            <PropertyRef Name="DoctorDetailId" />
+          </Key>
+          <Property Name="DoctorDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="int" Nullable="false" />
+          <Property Name="Specialist" Type="int" Nullable="false" />
+          <Property Name="State" Type="int" Nullable="false" />
+          <Property Name="City" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="ErrorLog">
           <Key>
             <PropertyRef Name="ErrorLogId" />
@@ -33,6 +49,14 @@
           <Property Name="Subject" Type="varchar(max)" Nullable="false" />
           <Property Name="Description" Type="varchar(max)" Nullable="false" />
           <Property Name="IPAddress" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_City">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Master_Country">
           <Key>
@@ -55,7 +79,7 @@
             <PropertyRef Name="GenderId" />
           </Key>
           <Property Name="GenderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Description" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Master_MaritalStatus">
@@ -64,6 +88,22 @@
           </Key>
           <Property Name="MaritalStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_Specialist">
+          <Key>
+            <PropertyRef Name="SpecialistId" />
+          </Key>
+          <Property Name="SpecialistId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_State">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Master_TimeSlot">
@@ -119,11 +159,15 @@
         </EntityType>
         <EntityContainer Name="HMSModelStoreContainer">
           <EntitySet Name="AppointmentDetail" EntityType="Self.AppointmentDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DoctorDetail" EntityType="Self.DoctorDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master_City" EntityType="Self.Master_City" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_Country" EntityType="Self.Master_Country" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_Department" EntityType="Self.Master_Department" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_Gender" EntityType="Self.Master_Gender" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_MaritalStatus" EntityType="Self.Master_MaritalStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master_Specialist" EntityType="Self.Master_Specialist" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master_State" EntityType="Self.Master_State" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_TimeSlot" EntityType="Self.Master_TimeSlot" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PatientDetail" EntityType="Self.PatientDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
@@ -152,6 +196,10 @@
           <EntitySet Name="Master_Gender" EntityType="HMSModel.Master_Gender" />
           <EntitySet Name="AppointmentDetails" EntityType="HMSModel.AppointmentDetail" />
           <EntitySet Name="PatientDetails" EntityType="HMSModel.PatientDetail" />
+          <EntitySet Name="DoctorDetails" EntityType="HMSModel.DoctorDetail" />
+          <EntitySet Name="Master_City" EntityType="HMSModel.Master_City" />
+          <EntitySet Name="Master_Specialist" EntityType="HMSModel.Master_Specialist" />
+          <EntitySet Name="Master_State" EntityType="HMSModel.Master_State" />
         </EntityContainer>
         <EntityType Name="UserDetail">
           <Key>
@@ -212,7 +260,7 @@
             <PropertyRef Name="GenderId" />
           </Key>
           <Property Name="GenderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="AppointmentDetail">
@@ -255,6 +303,46 @@
           <Property Name="PostalCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="State" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Country" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DoctorDetail">
+          <Key>
+            <PropertyRef Name="DoctorDetailId" />
+          </Key>
+          <Property Name="DoctorDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="Int32" Nullable="false" />
+          <Property Name="Specialist" Type="Int32" Nullable="false" />
+          <Property Name="State" Type="Int32" Nullable="false" />
+          <Property Name="City" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_City">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_Specialist">
+          <Key>
+            <PropertyRef Name="SpecialistId" />
+          </Key>
+          <Property Name="SpecialistId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_State">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
       </Schema>
@@ -382,6 +470,50 @@
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="PatientDetailId" ColumnName="PatientDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DoctorDetails">
+            <EntityTypeMapping TypeName="HMSModel.DoctorDetail">
+              <MappingFragment StoreEntitySet="DoctorDetail">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Specialist" ColumnName="Specialist" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="DoctorDetailId" ColumnName="DoctorDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_City">
+            <EntityTypeMapping TypeName="HMSModel.Master_City">
+              <MappingFragment StoreEntitySet="Master_City">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Specialist">
+            <EntityTypeMapping TypeName="HMSModel.Master_Specialist">
+              <MappingFragment StoreEntitySet="Master_Specialist">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SpecialistId" ColumnName="SpecialistId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_State">
+            <EntityTypeMapping TypeName="HMSModel.Master_State">
+              <MappingFragment StoreEntitySet="Master_State">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

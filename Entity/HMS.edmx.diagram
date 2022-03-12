@@ -16,6 +16,10 @@
         <EntityTypeShape EntityType="HMSModel.Master_Gender" Width="1.5" PointX="6.75" PointY="3.75" />
         <EntityTypeShape EntityType="HMSModel.AppointmentDetail" Width="1.5" PointX="4.75" PointY="6.75" />
         <EntityTypeShape EntityType="HMSModel.PatientDetail" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="HMSModel.DoctorDetail" Width="1.5" PointX="7.375" PointY="6.75" />
+        <EntityTypeShape EntityType="HMSModel.Master_City" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="HMSModel.Master_Specialist" Width="1.5" PointX="9.375" PointY="3.75" />
+        <EntityTypeShape EntityType="HMSModel.Master_State" Width="1.5" PointX="9.375" PointY="6.75" />
       
       </Diagram>
     </edmx:Diagrams>

@@ -5,6 +5,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using HospitalManagementSystem;
+using System.Web.Mvc;
+
+
 namespace HospitalManagementSystem.ViewModel
 {
     public class DoctorViewModel
@@ -19,14 +22,14 @@ namespace HospitalManagementSystem.ViewModel
         public string LastName { get; set; }
 
 
-        [Required]
+        // [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
-        [Display(Name = "UserName")]
-        public string UserName { get; set; }
+        //[Required]
+        //[Display(Name = "UserName")]
+        //public string UserName { get; set; }
 
 
         /* [Required]
@@ -39,9 +42,9 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Mobile No")]
         public string MobileNo { get; set; }
 
-        [Required]
-        [Display(Name = "Code")]
-        public string Code { get; set; }
+        //[Required]
+        //[Display(Name = "Code")]
+        //public string Code { get; set; }
 
         [Required]
         [Display(Name = "Address")]
@@ -49,24 +52,31 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required]
         [Display(Name = "Specialist in")]
-        public List<System.Web.Mvc.SelectListItem> RoleList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
-        public string Role { get; set; }
+        public List<System.Web.Mvc.SelectListItem> SpecialistList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
+        public int Specialist { get; set; }
+        public string SpecialistDesc { get; set; }
 
         [Required]
         [Display(Name = "Gender")]
         public List<System.Web.Mvc.SelectListItem> GenderList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
-        public string Gender { get; set; }
+        public int Gender { get; set; }
+        public string GenderDesc { get; set; }
 
 
         [Required]
         [Display(Name = "State")]
         public List<System.Web.Mvc.SelectListItem> StateList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
-        public string State { get; set; }
+        public int State { get; set; }
+        public string StateDesc { get; set; }
 
         [Required]
         [Display(Name = "City")]
         public List<System.Web.Mvc.SelectListItem> CityList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
-        public string City { get; set; }
+        public int City { get; set; }
+        public string CityDesc { get; set; }
 
+        public int DoctorDetailId { get; internal set; }
+        public string EncryptDoctorDetailId { get; set; }
+        public bool IsActive { get; set; }
     }
 }
