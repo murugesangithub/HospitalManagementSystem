@@ -49,10 +49,72 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Problem")]
         public string Problem { get; set; }
 
-      
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "Height")]
+        public string Height { get; set; }
+
+        [Required ]
+        [Display(Name = "Diabetes or Blood sugar Problem ")]
+        public string Diabetes { get; set; }
+
+        [Required]
+        [Display(Name = "Previous History of Cancer ")]
+        public string Cancer { get; set; }
+
+        [Required]
+        [Display(Name = " Do you Smoke")]
+        public string Doyousmoke{ get; set; }
+
+        [Required]
+        [Display(Name = " Do you Drink Alchocol")]
+        public string Doyoudrinkalchocol { get; set; }
+
+        [Required]
+        [Display(Name = "Thyroid problems")]
+        public string ThyroidProblems { get; set; }
+       
+         [Required]
+        [Display(Name = "Heart problems")]
+        public string HeartProblems { get; set; }
+
+        [Required]
+        [Display(Name = "Lung problems")]
+        public string LungProblems { get; set; }
+
+        [Required]
+        [Display(Name = "Blood Pressure problems")]
+        public string BloodPressureProblems { get; set; }
+
+        [Required]
+        [Display(Name = "Kidney or Liver problems")]
+        public string KidneyorLiverProblems { get; set; }
+
+        [Required]
+        [Display(Name = "Weight")]
+        public string Weight { get; set; }
+      
+        [Required]
+        [Display(Name = "Do you have any medical " +
+            "conditions not mentined above")]
+        public string MedicalConditions { get; set; }
+
+        [Required]
+        [Display(Name = "Do you have any allergies to food, drugs, etc?")]
+        public string Allergy { get; set; }
+
+        [Required]
+        [Display(Name = "If yes, when was your last dose?")]
+        public string Lastdose { get; set; }
+
+        [Display(Name = "Attach Medical Documents")]
+        [AllowedFileExtension(".jpg", ".png", ".gif", ".jpeg", ".jfif")]
+        public HttpPostedFileBase AttachFile { get; set; }
+        public string AttachFileImage { get; set; } = string.Empty;
 
         [Required]       
         [Display(Name = "PhoneNumber")]

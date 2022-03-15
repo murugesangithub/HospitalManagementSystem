@@ -17,7 +17,19 @@ namespace HospitalManagementSystem.Controllers
         {
             return View();
         }
+        public ActionResult PatientInquiry()
+        {
+            var ViewModel = new PatientViewModel();
 
+            ViewModel.MaritalStatusList = GetMaritalStatusList();
+
+            ViewModel.CountryList = GetCountryList();
+
+            ViewModel.GenderList = GetGenderList();
+
+            return View(ViewModel);
+           
+        }
         public List<SelectListItem> MaritalStatusList { get; private set; }
         public List<SelectListItem> CountryList { get; private set; }
         public List<SelectListItem> GenderList { get; private set; }
