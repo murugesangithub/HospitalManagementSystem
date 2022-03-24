@@ -1,0 +1,263 @@
+﻿
+@model HospitalManagementSystem.ViewModel.PatientAdmissionViewModel
+@using HospitalManagementSystem.Common;
+@{
+    ViewBag.Title = "PatientAdmit";
+}
+
+<section class="content-header">
+    <h1>Patient Admission Management</h1>
+    <ol class="breadcrumb">
+        <li><a href="/Home/Index"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Admission</a></li>
+
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h1 class="box-title">Hospital Admission Form</h1>
+
+                </div>
+                @using (Html.BeginForm("PatientAdmitForm", "PatientAdmission", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+
+
+                    @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+
+                                    @Html.LabelFor(m => m.DoctorName, new { @class = "col-sm-3 control-label " })
+
+                                    <div class="col-sm-9">
+                                        @Html.TextBoxFor(m => m.DoctorName, new { placeholder = "DoctorName", @class = "form-control " })
+
+                                        @Html.ValidationMessageFor(m => m.DoctorName, "", new { @class = "text-danger " })
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.AdmissionDate, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                    <div class="col-md-9">
+                                        @Html.EditorFor(model => model.AdmissionDate, new { placeholder = "Date of Birth", htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.AdmissionDate, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+
+                                    @Html.LabelFor(m => m.PlannedProcedure, new { @class = "col-sm-3 control-label " })
+
+                                    <div class="col-sm-9">
+                                        @Html.TextBoxFor(m => m.PlannedProcedure, new { @class = "form-control " })
+
+                                        @Html.ValidationMessageFor(m => m.PlannedProcedure, "", new { @class = "text-danger " })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+
+                                    @Html.LabelFor(m => m.ItemNumber, new { @class = "col-sm-3 control-label " })
+
+                                    <div class="col-sm-9">
+                                        @Html.TextBoxFor(m => m.ItemNumber, new { @class = "form-control " })
+
+                                        @Html.ValidationMessageFor(m => m.ItemNumber, "", new { @class = "text-danger " })
+                                    </div>
+                                </div>
+
+                                <div class="box-header with-border">
+                                    <h1 class="box-title">Patient Information</h1>
+
+                                </div>
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-md-13">
+                                            <div class="form-group">
+                                                @Html.LabelFor(m => m.PatientName, new { @class = "col-sm-3 control-label " })
+
+                                                <div class="col-sm-9">
+                                                    @Html.TextBoxFor(m => m.PatientName, new { placeholder = "PatientName", @class = "form-control " })
+
+                                                    @Html.ValidationMessageFor(m => m.PatientName, "", new { @class = "text-danger " })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.DateofBirth, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                                <div class="col-md-9">
+                                                    @Html.EditorFor(model => model.DateofBirth, new { placeholder = "Date of Birth", htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.DateofBirth, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(m => m.GuardianName, new { @class = "col-sm-3 control-label" })
+                                                <div class="col-sm-9">
+                                                    @Html.TextBoxFor(m => m.GuardianName, new { placeholder = "GuardianName", @class = "form-control" })
+                                                    @Html.ValidationMessageFor(m => m.GuardianName, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(m => m.Gender, new { @class = "col-sm-3 control-label " })
+
+                                                <div class="col-md-9 ">
+
+                                                    @Html.RadioButtonFor(model => model.Gender, "Male")
+                                                    Male
+                                                    @Html.RadioButtonFor(model => model.Gender, "Female")
+                                                    Female
+                                                    @Html.RadioButtonFor(model => model.Gender, "Other")
+                                                    Other
+                                                    @Html.ValidationMessageFor(m => m.Gender, "", new { @class = "text-danger " })
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(m => m.MaritalStatus, new { @class = "col-sm-3 control-label " })
+
+                                                <div class="col-md-9 ">
+
+                                                    @Html.RadioButtonFor(model => model.MaritalStatus, "Married")
+                                                    Married
+                                                    @Html.RadioButtonFor(model => model.MaritalStatus, "UnMarried")
+                                                    UnMarried
+                                                    @Html.RadioButtonFor(model => model.MaritalStatus, "Divorced")
+                                                    Divorced
+                                                    @Html.RadioButtonFor(model => model.MaritalStatus, "Widowed")
+                                                    Widowed
+                                                    @Html.RadioButtonFor(model => model.MaritalStatus, "Separated")
+                                                    Separated
+                                                    @Html.RadioButtonFor(model => model.MaritalStatus, "Other")
+                                                    Other
+                                                    @Html.ValidationMessageFor(m => m.MaritalStatus, "", new { @class = "text-danger " })
+
+                                                </div>
+
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(m => m.Patient, new { @class = "col-sm-3 control-label " })
+
+                                                <div class="col-md-6 ">
+
+                                                    @Html.RadioButtonFor(model => model.Patient, "Yes")
+                                                    Yes
+                                                    @Html.RadioButtonFor(model => model.Patient, "No")
+                                                    No
+                                                    @Html.ValidationMessageFor(m => m.Patient, "", new { @class = "text-danger " })
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(m => m.Contact, new { @class = "col-sm-3 control-label " })
+
+                                                <div class="col-md-9 ">
+
+                                                    @Html.RadioButtonFor(model => model.Contact, "Phone")
+                                                    Phone
+                                                    @Html.RadioButtonFor(model => model.Contact, "Email")
+                                                    Email
+                                                    @Html.RadioButtonFor(model => model.Contact, "Post")
+                                                    Post
+                                                    @Html.RadioButtonFor(model => model.Contact, "SMS")
+                                                    SMS
+                                                    @Html.RadioButtonFor(model => model.Contact, "Other")
+                                                    Other
+
+                                                    @Html.ValidationMessageFor(m => m.Contact, "", new { @class = "text-danger " })
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-sm-3 control-label" })
+                                                <div class="col-md-9">
+                                                    @Html.TextBoxFor(m => m.PhoneNumber, new { placeholder = "PhoneNumber", @class = "form-control" })
+                                                    @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(m => m.Email, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                                <div class="col-md-9">
+                                                    @Html.TextBoxFor(m => m.Email, new { placeholder = "Email", @class = "form-control" })
+                                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(m => m.Address, new { @class = "col-sm-3 control-label" })
+                                                <div class="col-sm-9">
+                                                    @Html.TextBoxFor(m => m.Address, new { placeholder = "StreetAddress", @class = "form-control" })
+                                                    @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })<br />
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            @Html.TextBoxFor(m => m.City, new { placeholder = "city", @class = "form-control" })
+                                                            @Html.ValidationMessageFor(m => m.City, "", new { @class = "text-danger" })<br />
+
+                                                            @Html.TextBoxFor(m => m.PostalCode, new { placeholder = "ZIP/Postal Code", @class = "form-control" })
+                                                            @Html.ValidationMessageFor(m => m.PostalCode, "", new { @class = "text-danger" })
+
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            @Html.TextBoxFor(m => m.State, new { placeholder = "State/Province", @class = "form-control" })
+                                                            @Html.ValidationMessageFor(m => m.State, "", new { @class = "text-danger" })<br />
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="box-footer">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">  <button class="btn btn-gradgreen" type="submit"><i class="fa fa-plus-square"></i> SAVE </button></div>
+                            <div class="col-md-3">  <button class="btn btn-gradgray" type="reset"><i class="fa fa-refresh"></i> Reset</button></div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+

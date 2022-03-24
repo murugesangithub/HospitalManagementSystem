@@ -87,7 +87,7 @@
             <PropertyRef Name="GenderId" />
           </Key>
           <Property Name="GenderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Description" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Master_MaritalStatus">
@@ -134,6 +134,30 @@
           <Property Name="Price" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ExpiredDate" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Stock" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatientAdmitForm">
+          <Key>
+            <PropertyRef Name="PatientAdmissionId" />
+          </Key>
+          <Property Name="PatientAdmissionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DoctorName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="AdmissionDate" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PlannedProcedure" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ItemNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PatientName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="DateofBirth" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="GuardianName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="MaritalStatus" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Patient" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="State" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Contact" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="PatientDetail">
@@ -193,6 +217,7 @@
           <EntitySet Name="Master_State" EntityType="Self.Master_State" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_TimeSlot" EntityType="Self.Master_TimeSlot" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MedicineDetail" EntityType="Self.MedicineDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PatientAdmitForm" EntityType="Self.PatientAdmitForm" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PatientDetail" EntityType="Self.PatientDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserDetail" EntityType="Self.UserDetail" Schema="dbo" store:Type="Tables" />
@@ -226,6 +251,7 @@
           <EntitySet Name="Master_State" EntityType="HMSModel.Master_State" />
           <EntitySet Name="Master_Category" EntityType="HMSModel.Master_Category" />
           <EntitySet Name="MedicineDetails" EntityType="HMSModel.MedicineDetail" />
+          <EntitySet Name="PatientAdmitForms" EntityType="HMSModel.PatientAdmitForm" />
         </EntityContainer>
         <EntityType Name="UserDetail">
           <Key>
@@ -286,7 +312,7 @@
             <PropertyRef Name="GenderId" />
           </Key>
           <Property Name="GenderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="AppointmentDetail">
@@ -391,6 +417,30 @@
           <Property Name="Price" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ExpiredDate" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Stock" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatientAdmitForm">
+          <Key>
+            <PropertyRef Name="PatientAdmissionId" />
+          </Key>
+          <Property Name="PatientAdmissionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DoctorName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AdmissionDate" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PlannedProcedure" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ItemNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PatientName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DateofBirth" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="GuardianName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MaritalStatus" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Patient" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Contact" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
       </Schema>
@@ -586,6 +636,31 @@
                 <ScalarProperty Name="Category" ColumnName="Category" />
                 <ScalarProperty Name="MedicineName" ColumnName="MedicineName" />
                 <ScalarProperty Name="MedicineId" ColumnName="MedicineId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientAdmitForms">
+            <EntityTypeMapping TypeName="HMSModel.PatientAdmitForm">
+              <MappingFragment StoreEntitySet="PatientAdmitForm">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Patient" ColumnName="Patient" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="GuardianName" ColumnName="GuardianName" />
+                <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+                <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+                <ScalarProperty Name="ItemNumber" ColumnName="ItemNumber" />
+                <ScalarProperty Name="PlannedProcedure" ColumnName="PlannedProcedure" />
+                <ScalarProperty Name="AdmissionDate" ColumnName="AdmissionDate" />
+                <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+                <ScalarProperty Name="PatientAdmissionId" ColumnName="PatientAdmissionId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
