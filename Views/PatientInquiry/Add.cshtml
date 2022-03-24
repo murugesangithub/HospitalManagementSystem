@@ -1,8 +1,8 @@
-﻿@model HospitalManagementSystem.ViewModel.PatientViewModel
+﻿@model HospitalManagementSystem.ViewModel.PatientInquiryViewModel
 @using HospitalManagementSystem.Common;
 
 @{
-    ViewBag.Title = "PatientInquiryForm";
+    ViewBag.Title = "Add";
 }
 
 <section class="content-header">
@@ -26,22 +26,17 @@
                     <h3 class="box-title">Patient Inquiry Registration</h3>
                 </div>
 
-                @using (Html.BeginForm("PatientInquiry", "Patients", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                @using (Html.BeginForm("Add", "PatientInquiry", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
                 {
                     @Html.AntiForgeryToken()
 
                     @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
 
             <div class="box-body">
-
-
-
                 <div class="form-group">
                     @Html.LabelFor(m => m.FirstName, new { @class = "col-sm-3 control-label " })
-
                     <div class="col-sm-6">
                         @Html.TextBoxFor(m => m.FirstName, new { placeholder = "FirstName", @class = "form-control " })
-
                         @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger " })
                     </div>
                 </div>
@@ -316,9 +311,9 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(m => m.AttachFile, new { @class = "col-sm-3 control-label" })
+                    @Html.LabelFor(m => m.ProfileImage, new { @class = "col-sm-3 control-label" })
                     <div class="col-sm-6">
-                        @Html.TextBoxFor(m => m.AttachFile, new { @class = "form-control", @type = "file", @name = "Files", @accept = "image/*" })
+                        @Html.TextBoxFor(m => m.ProfileImage, new { @class = "form-control", @type = "file", @name = "Files", @accept = "image/*" })
                     </div>
                 </div>
 

@@ -13,16 +13,16 @@ namespace HospitalManagementSystem.Controllers
     public class AppointmentController : Controller
     {
 
-      
+
 
         // GET: Appointment
         public ActionResult Index()
         {
             return View();
         }
-        public List<SelectListItem> DepartmentList { get;  set; }
-        public List<SelectListItem> TimeSlotList { get;  set; }
-        public List<SelectListItem> GenderList { get;  set; }
+        public List<SelectListItem> DepartmentList { get; set; }
+        public List<SelectListItem> TimeSlotList { get; set; }
+        public List<SelectListItem> GenderList { get; set; }
 
         public ActionResult Add()
         {
@@ -49,7 +49,7 @@ namespace HospitalManagementSystem.Controllers
             else
             {
 
-               appointmentRepository.AppointmentDetailUpdation(model);
+                appointmentRepository.AppointmentDetailUpdation(model);
                 TempData[AppConstant.Response] = AppConstant.Success;
                 return RedirectToAction("Index");
             }
@@ -77,7 +77,7 @@ namespace HospitalManagementSystem.Controllers
 
             foreach (var item in departmentList)
             {
-                departmentSelectList.Add(new SelectListItem() { Text = item.Description,Value=item.DepartmentId.ToString() }) ;
+                departmentSelectList.Add(new SelectListItem() { Text = item.Description, Value = item.DepartmentId.ToString() });
             }
             return departmentSelectList;
         }
@@ -107,7 +107,7 @@ namespace HospitalManagementSystem.Controllers
         public ActionResult Delete(int tokenNumber)
         {
             var appointmentRepository = new AppointmentRepository();
-           appointmentRepository.AppointmentDeletion(tokenNumber);
+            appointmentRepository.AppointmentDeletion(tokenNumber);
             return Json(new AjaxResponse() { IsSuccess = true });
         }
 
@@ -115,21 +115,19 @@ namespace HospitalManagementSystem.Controllers
         {
             int tokenNumber = default(int);
 
-           if (!string.IsNullOrEmpty(id))
+            if (!string.IsNullOrEmpty(id))
             {
                 int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out tokenNumber);
             }
             var model = new AppointmentViewModel();
             var appointmentRepository = new AppointmentRepository();
-          
-                model = appointmentRepository.GetAppointmentByAppointmentDetailId(tokenNumber);
+            model = appointmentRepository.GetAppointmentByAppointmentDetailId(tokenNumber);
+            model.DepartmentList = GetDepartmentList();
+            model.TimeSlotList = GetTimeSlotList();
+            model.GenderList = GetGenderList();
 
-                model.DepartmentList = GetDepartmentList();
-                model.TimeSlotList = GetTimeSlotList();
-                model.GenderList = GetGenderList();
+            return View(model);
 
-                return View(model);
-            
         }
     }
 }

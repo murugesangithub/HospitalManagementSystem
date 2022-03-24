@@ -146,10 +146,14 @@
     <Compile Include="Common\PredicateBuilder.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
     <Compile Include="Controllers\Appointment\AppointmentController.cs" />
+    <Compile Include="Controllers\Billing\BillingController.cs" />
     <Compile Include="Controllers\Doctor\DoctorController.cs" />
     <Compile Include="Controllers\Employee\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Medicine\MedicineController.cs" />
+    <Compile Include="Controllers\PatientInquiry\PatientInquiryController.cs" />
     <Compile Include="Controllers\Patient\PatientsController.cs" />
+    <Compile Include="Controllers\Purchase\PurchaseMedicineController.cs" />
     <Compile Include="Controllers\User\UserController.cs" />
     <Compile Include="Entity\AppointmentDetail.cs">
       <DependentUpon>HMS.tt</DependentUpon>
@@ -175,6 +179,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HMS.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entity\Master_Category.cs">
+      <DependentUpon>HMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\Master_City.cs">
       <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
@@ -199,6 +206,9 @@
     <Compile Include="Entity\Master_TimeSlot.cs">
       <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\MedicineDetail.cs">
+      <DependentUpon>HMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\PatientDetail.cs">
       <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
@@ -215,6 +225,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\MedicineRepostitory.cs" />
+    <Compile Include="Repository\MasterCategoryRepository.cs" />
     <Compile Include="Repository\MasterSpecialistRepostitory.cs" />
     <Compile Include="Repository\MasterStateRepostitory.cs" />
     <Compile Include="Repository\MasterCityRepostitory.cs" />
@@ -229,10 +241,14 @@
     <Compile Include="Repository\AccountRepostitory.cs" />
     <Compile Include="Repository\BaseRepository.cs" />
     <Compile Include="Repository\ReportRepository.cs" />
+    <Compile Include="ViewModel\BillingViewModel.cs" />
+    <Compile Include="ViewModel\PatientInquiryViewModel.cs" />
+    <Compile Include="ViewModel\PurchaseMedicineViewModel.cs" />
     <Compile Include="ViewModel\AppointmentViewModel.cs" />
     <Compile Include="ViewModel\DoctorViewModel.cs" />
     <Compile Include="ViewModel\ErrorLogViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\MedicineViewModel.cs" />
     <Compile Include="ViewModel\PatientViewModel.cs" />
     <Compile Include="ViewModel\ResetPasswordViewModel.cs" />
   </ItemGroup>
@@ -294,6 +310,7 @@
     <Content Include="Scripts\Employee\EmployeeDetail.js" />
     <Content Include="Scripts\JQGrid\grid.locale-en.js" />
     <Content Include="Scripts\JQGrid\jquery.jqGrid.js" />
+    <Content Include="Scripts\Medicine\Medicine.js" />
     <Content Include="Scripts\Notification\bootstrap-notify.js" />
     <Content Include="Scripts\Patient\Patient.js" />
     <Content Include="Scripts\Resize\ResizeSensor.js" />
@@ -350,7 +367,12 @@
     <Content Include="Views\Appointment\UpdateAppointmentDetail.cshtml" />
     <Content Include="Views\Doctor\Index.cshtml" />
     <Content Include="Views\Doctor\UpdateDoctorDetail.cshtml" />
-    <Content Include="Views\Patients\PatientInquiry.cshtml" />
+    <Content Include="Views\PatientInquiry\Add.cshtml" />
+    <Content Include="Views\Medicine\Add.cshtml" />
+    <Content Include="Views\PurchaseMedicine\Purchase.cshtml" />
+    <Content Include="Views\Billing\Add.cshtml" />
+    <Content Include="Views\Medicine\Index.cshtml" />
+    <Content Include="Views\Medicine\UpdateMedicineDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

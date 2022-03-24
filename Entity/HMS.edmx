@@ -50,6 +50,14 @@
           <Property Name="Description" Type="varchar(max)" Nullable="false" />
           <Property Name="IPAddress" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="Master_Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="Master_City">
           <Key>
             <PropertyRef Name="CityId" />
@@ -79,7 +87,7 @@
             <PropertyRef Name="GenderId" />
           </Key>
           <Property Name="GenderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Description" Type="nchar" MaxLength="50" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Master_MaritalStatus">
@@ -112,6 +120,20 @@
           </Key>
           <Property Name="TimeSlotId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MedicineDetail">
+          <Key>
+            <PropertyRef Name="MedicineId" />
+          </Key>
+          <Property Name="MedicineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MedicineName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Category" Type="int" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PurchaseDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ExpiredDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Stock" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="PatientDetail">
@@ -161,6 +183,7 @@
           <EntitySet Name="AppointmentDetail" EntityType="Self.AppointmentDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DoctorDetail" EntityType="Self.DoctorDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master_Category" EntityType="Self.Master_Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_City" EntityType="Self.Master_City" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_Country" EntityType="Self.Master_Country" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_Department" EntityType="Self.Master_Department" Schema="dbo" store:Type="Tables" />
@@ -169,6 +192,7 @@
           <EntitySet Name="Master_Specialist" EntityType="Self.Master_Specialist" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_State" EntityType="Self.Master_State" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_TimeSlot" EntityType="Self.Master_TimeSlot" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MedicineDetail" EntityType="Self.MedicineDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PatientDetail" EntityType="Self.PatientDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserDetail" EntityType="Self.UserDetail" Schema="dbo" store:Type="Tables" />
@@ -200,6 +224,8 @@
           <EntitySet Name="Master_City" EntityType="HMSModel.Master_City" />
           <EntitySet Name="Master_Specialist" EntityType="HMSModel.Master_Specialist" />
           <EntitySet Name="Master_State" EntityType="HMSModel.Master_State" />
+          <EntitySet Name="Master_Category" EntityType="HMSModel.Master_Category" />
+          <EntitySet Name="MedicineDetails" EntityType="HMSModel.MedicineDetail" />
         </EntityContainer>
         <EntityType Name="UserDetail">
           <Key>
@@ -260,7 +286,7 @@
             <PropertyRef Name="GenderId" />
           </Key>
           <Property Name="GenderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="AppointmentDetail">
@@ -343,6 +369,28 @@
           </Key>
           <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MedicineDetail">
+          <Key>
+            <PropertyRef Name="MedicineId" />
+          </Key>
+          <Property Name="MedicineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MedicineName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="Int32" Nullable="false" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PurchaseDate" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ExpiredDate" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Stock" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
       </Schema>
@@ -514,6 +562,30 @@
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="StateId" ColumnName="StateId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Category">
+            <EntityTypeMapping TypeName="HMSModel.Master_Category">
+              <MappingFragment StoreEntitySet="Master_Category">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MedicineDetails">
+            <EntityTypeMapping TypeName="HMSModel.MedicineDetail">
+              <MappingFragment StoreEntitySet="MedicineDetail">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+                <ScalarProperty Name="ExpiredDate" ColumnName="ExpiredDate" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="MedicineName" ColumnName="MedicineName" />
+                <ScalarProperty Name="MedicineId" ColumnName="MedicineId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

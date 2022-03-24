@@ -39,5 +39,7 @@ namespace HospitalManagementSystem.Entity
         public virtual DbSet<Master_City> Master_City { get; set; }
         public virtual DbSet<Master_Specialist> Master_Specialist { get; set; }
         public virtual DbSet<Master_State> Master_State { get; set; }
+        public virtual DbSet<Master_Category> Master_Category { get; set; }
+        public virtual DbSet<MedicineDetail> MedicineDetails { get; set; }
     }
 }

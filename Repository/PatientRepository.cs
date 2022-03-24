@@ -10,14 +10,9 @@ namespace HospitalManagementSystem.DataAccess.Repository
 {
     public class PatientRepository : BaseRepository
     {
-
         //insert
-
-
-
         public void PatientDetailInsertion(PatientViewModel patientViewModel)
         {
-
             PatientDetail patientDetail = new PatientDetail()
             {
                 PatientDetailId = patientViewModel.PatientDetailId,
@@ -32,33 +27,23 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 State = patientViewModel.State,
                 PostalCode = patientViewModel.PostalCode,
                 Country = patientViewModel.Country,
-                MaritalStatus = patientViewModel.MaritalStatus,
+                MaritalStatus= patientViewModel.MaritalStatus,
                 Problem = patientViewModel.Problem,
                 DateofBirth = patientViewModel.DateofBirth,
-                Gender=patientViewModel.Gender,
-
+              Gender=patientViewModel.Gender,
                 IsActive = true,
-
-
             };
-
             dbcontext.PatientDetails.Add(patientDetail);
             dbcontext.SaveChanges();
-
-
-
         }
 
+       
         //update
-
         public void PatientDetailUpdation(PatientViewModel patientViewModel)
         {
             var isPatientDetailExist = dbcontext.PatientDetails.Where(x => x.IsActive && x.PatientDetailId == patientViewModel.PatientDetailId).FirstOrDefault();
             if (isPatientDetailExist != null)
-            {
-
-
-               
+            {    
                 isPatientDetailExist.FirstName = patientViewModel.FirstName;
                 isPatientDetailExist.LastName = patientViewModel.LastName;
                 isPatientDetailExist.GuardianName = patientViewModel.GuardianName;
@@ -75,14 +60,9 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 isPatientDetailExist.DateofBirth = patientViewModel.DateofBirth;
                 isPatientDetailExist.Gender = patientViewModel.Gender;
                 isPatientDetailExist.IsActive = true;
-
-
-                
-
                 dbcontext.Entry(isPatientDetailExist);
                 dbcontext.SaveChanges();
             }
-
 
         }
 

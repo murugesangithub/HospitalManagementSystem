@@ -1,0 +1,162 @@
+﻿@model HospitalManagementSystem.ViewModel.PurchaseMedicineViewModel
+@using HospitalManagementSystem.Common;
+
+@{
+    ViewBag.Title = "Purchase";
+}
+<section class="content-header">
+    <h1>
+        Purchase Management
+        <small>Registration</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/Home/Index"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Registration</a></li>
+        @*<li class="active">General Elements</li>*@
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Medicine Registration</h3>
+                </div>
+
+                @using (Html.BeginForm("Purchase", "PurchaseMedicine", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+
+                    <div class="box-body">
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.SupplierName, new { @class = "col-sm-3 control-label" })
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(m => m.SupplierName, new { placeholder = "SupplierName", @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.SupplierName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Code, new { @class = "col-sm-3 control-label" })
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(m => m.Code, new { placeholder = "Enter Purchase No", @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Code, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                            <div class="col-md-6">
+                                @Html.EditorFor(model => model.Date, new { placeholder = "Select Purchase Date", htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Category, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                            <div class="col-md-6">
+                                @Html.DropDownListFor(m => m.Category, Model.CategoryList, "Select Catogory", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Category, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Medicine, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                            <div class="col-md-6">
+                                @Html.DropDownListFor(m => m.Medicine, Model.MedicineList, "Select Medicine", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Medicine, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Quantity, new { @class = "col-sm-3 control-label" })
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(m => m.Quantity, new { placeholder = "Enter Quantity", @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Quantity, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                            <div class="col-md-6">
+                                @Html.TextAreaFor(m => m.Notes, new { placeholder = "Enter Notes", @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Discount, new { @class = "col-sm-3 control-label" })
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(m => m.Discount, new { placeholder = "", @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Discount, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.GrandTotal, new { @class = "col-sm-3 control-label" })
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(m => m.GrandTotal, new { placeholder = "", @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.GrandTotal, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Payment, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                            <div class="col-md-6">
+                                @Html.DropDownListFor(m => m.Payment, Model.PaymentList, "Select Payment", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Payment, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        @*<div class="form-group">
+                                @Html.LabelFor(m => m.Status, new { @class = "col-sm-3 control-label" })
+                                <div class="col-md-6">
+                                    @Html.TextBoxFor(m => m.Status, new { placeholder = "", @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Status, "", new { @class = "text-danger" })
+                                </div>
+                            </div>*@
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Status, new { @class = "col-sm-3 control-label" })
+                            <div class="col-sm-6">
+                                @Html.DropDownListFor(m => m.Status, new List<SelectListItem>
+                           { new SelectListItem{Text="Paid", Value="M"},
+                             new SelectListItem { Text = "Unpaid", Value = "U" },
+                             new SelectListItem { Text = "Partial", Value = "W" }},
+                             "", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Status, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box-footer">
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-4">  <button class="btn btn-gradgreen" type="submit"><i class="fa fa-plus-square"></i> SAVE </button></div>
+                            <div class="col-md-2">  <button class="btn btn-gradgray pull-right" type="reset"><i class="fa fa-refresh"></i> Reset</button></div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+

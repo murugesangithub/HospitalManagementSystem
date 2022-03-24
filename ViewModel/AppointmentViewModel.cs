@@ -10,9 +10,7 @@ namespace HospitalManagementSystem.ViewModel
 {
     public class AppointmentViewModel
     {
-        /*[Required(ErrorMessage = "Patient Id is required")]
-        [Display(Name = "Patient Id ")]
-        public string PatientId { get; set; }*/
+        
 
         [Required(ErrorMessage = "FirstName is required")]
         [Display(Name = "First Name")]

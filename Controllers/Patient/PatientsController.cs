@@ -17,19 +17,8 @@ namespace HospitalManagementSystem.Controllers
         {
             return View();
         }
-        public ActionResult PatientInquiry()
-        {
-            var ViewModel = new PatientViewModel();
-
-            ViewModel.MaritalStatusList = GetMaritalStatusList();
-
-            ViewModel.CountryList = GetCountryList();
-
-            ViewModel.GenderList = GetGenderList();
-
-            return View(ViewModel);
-           
-        }
+       
+       
         public List<SelectListItem> MaritalStatusList { get; private set; }
         public List<SelectListItem> CountryList { get; private set; }
         public List<SelectListItem> GenderList { get; private set; }
@@ -65,8 +54,8 @@ namespace HospitalManagementSystem.Controllers
             }
 
             return View();
-        }
 
+        }
 
         private List<SelectListItem> GetGenderList()
         {
@@ -130,10 +119,10 @@ namespace HospitalManagementSystem.Controllers
             {
                 int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out patientDetailId);
             }
-
+            var model = new PatientViewModel();
             var patientRepository = new PatientRepository();
 
-            var model = patientRepository.GetPatientByPatientDetailId(patientDetailId) ?? new PatientViewModel();
+             model = patientRepository.GetPatientByPatientDetailId(patientDetailId);
 
             model.MaritalStatusList = GetMaritalStatusList();
 
