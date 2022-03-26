@@ -4,7 +4,8 @@ $(document).ready(function () {
     var grid = "#jqUserGrid";
     var gridpager = "#jqUserGridPager";
 
-    var bodyElem = $('.content-wrapper');
+    var bodyElem = $('body');
+   
     new ResizeSensor(bodyElem, function () {
         var bodyElemWidth = Math.round($('.content-wrapper').width());
         var newGridWidth = bodyElemWidth - 25;
@@ -42,7 +43,14 @@ $(document).ready(function () {
             { label: 'LastName', name: 'LastName', width: 200, },
             { label: 'Email', name: 'Email', width: 200, },
             { label: 'RoleDesc', name: 'RoleDesc', width: 200, search: false, },
+            //{
+            //    label: '', name: '', width: 50, search: false, sortable: false, align: 'center',
+            //    formatter: function (cellvalue, options, rowObject) {
 
+            //        return '<a href=\"#\" onclick=\"ShowUserDetailPopup(\'' + rowObject.UserDetailId + '\',\'' + rowObject.EncryptUserDetailId + '\');\"><i class="fa fa-eye"></i></a>';
+            //    }
+
+            //},
         ],
         rownumbers: true,
         viewrecords: true,
@@ -128,6 +136,20 @@ $(document).ready(function () {
             }
         });
 
+    $(grid).jqGrid('navButtonAdd', gridpager,
+        {
+            caption: "", buttonicon: "glyphicon glyphicon glyphicon-zoom-in", title: "View Details",
+            onClickButton: function () {
+                var selRowId = $(grid).jqGrid('getGridParam', 'selrow');
+                if (selRowId == null) {
+                    $.jgrid.info_dialog('Warning', 'Please, select row', '', { styleUI: 'Bootstrap' });
+                } else {
+                    var rowData = $(grid).jqGrid("getRowData", selRowId);
+                    ShowUserDetailPopup(rowData.UserDetailId, rowData.EncryptUserDetailId);
+                }
+            }
+        });
+
     $(grid).jqGrid('filterToolbar', {
         stringResult: true,
         searchOnEnter: false,
@@ -153,5 +175,16 @@ $(document).ready(function () {
     //    });
 
     //});
+
+   
 });
 
+function ShowUserDetailPopup(UserDetailId, EncryptUserDetailId) {
+
+    $('#UserDetailModalPopup').modal();
+}
+
+$('#btnUserDetailModalPopupClose').click(function () {
+    $('#UserDetailModalPopup').empty();
+  
+});

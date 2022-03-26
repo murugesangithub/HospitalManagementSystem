@@ -5,14 +5,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Dr. Selvam Clinic</title>
     @*@Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")*@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Content/ionicons.min.css" rel="stylesheet" />
     <link href="~/Content/jquery-jvectormap.css" rel="stylesheet" />
-    <link href="~/Content/AdminLTE.min.css" rel="stylesheet" />
+    <link href="~/Content/AdminLTE.css" rel="stylesheet" />
     <link href="~/Content/_all-skins.min.css" rel="stylesheet" />
     <link href="~/Content/ui.jqgrid-bootstrap.css" rel="stylesheet" />
     <link href="~/Content/animate.min.css" rel="stylesheet" />
@@ -29,9 +29,9 @@
             <!-- Logo -->
             <a href="index2.html" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>A</b>LT</span>
+                <span class="logo-mini"></span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Admin</b>LTE</span>
+                <span class="logo-lg">Dr. Selvam Clinic</span>
             </a>
 
             <!-- Header Navbar: style can be found in header.less -->
@@ -67,6 +67,7 @@
         @{ Html.RenderPartial("_RightVerticalMenu"); }
 
     </div>
+    <script src="~/Scripts/Resize/ResizeSensor.js"></script>
     <script src="~/Scripts/Notification/bootstrap-notify.js"></script>
 
     <!-- ./wrapper -->
@@ -85,7 +86,7 @@
     <script src="~/Scripts/JQGrid/grid.locale-en.js"></script>
     <script src="~/Scripts/JQGrid/jquery.jqGrid.js"></script>
     <script src="~/Scripts/Common/Common.js"></script>
-    <script src="~/Scripts/Resize/ResizeSensor.js"></script>
+
 
     <script src="~/Scripts/Waitme/waitMe.js"></script>
 

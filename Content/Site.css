@@ -97,3 +97,33 @@ input.valid, select.valid, textarea.valid {
     background: #eee;
     padding: 10px;
     width: auto;
+}
+.bg-info {
+    background-color: #17a2b8 !important;
+}
+    .bg-info, .bg-info > a {
+        color: #fff !important;
+    }
+
+
+
+.bg-success {
+    background-color: #28a745 !important;
+}
+    .bg-success, .bg-success > a {
+        color: #fff !important;
+    }
+
+.bg-warning {
+    background-color: #ffc107 !important;
+}
+    .bg-warning, .bg-warning > a {
+        color: #fff !important;
+    }
+
+.bg-danger {
+    background-color: #dc3545 !important;
+}
+    .bg-danger, .bg-danger > a {
+        color: #fff !important;
+    }
