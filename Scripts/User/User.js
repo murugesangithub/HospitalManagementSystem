@@ -25,20 +25,20 @@ $(document).ready(function () {
 
             { label: 'UserDetailId', name: 'UserDetailId', key: true, width: 100, hidden: true, },
             { label: 'EncryptUserDetailId', name: 'EncryptUserDetailId', width: 100, hidden: true, },
-            {
-                label: 'Profile',
-                name: 'ProfileImage',
-                width: 50,
-                search: false,
-                align: 'center',
-                formatter: function (cellvalue, options, rowObject) {
-                    var img = "<img src=" + relativepath +"Images/default_profile.jpg alt='Profile Image' class='rounded-circle' width='36' >"
-                    if (cellvalue.length > 0) {
-                        img = "<img src='" + cellvalue + "' alt='Profile Image' class='rounded-circle' width='36' />";
-                    }
-                    return img;
-                }
-            },
+            //{
+            //    label: 'Profile',
+            //    name: 'ProfileImage',
+            //    width: 50,
+            //    search: false,
+            //    align: 'center',
+            //    formatter: function (cellvalue, options, rowObject) {
+            //        var img = "<img src=" + relativepath +"Images/default_profile.jpg alt='Profile Image' class='rounded-circle' width='36' >"
+            //        if (cellvalue.length > 0) {
+            //            img = "<img src='" + cellvalue + "' alt='Profile Image' class='rounded-circle' width='36' />";
+            //        }
+            //        return img;
+            //    }
+            //},
             { label: 'FirstName', name: 'FirstName', width: 200,},
             { label: 'LastName', name: 'LastName', width: 200, },
             { label: 'Email', name: 'Email', width: 200, },
@@ -182,6 +182,30 @@ $(document).ready(function () {
 function ShowUserDetailPopup(UserDetailId, EncryptUserDetailId) {
 
     $('#UserDetailModalPopup').modal();
+            $.ajax({
+                url: relativepath + '/User/GetUserDetail?id=' + EncryptUserDetailId,
+            type: "GET",
+                success: function (res) {
+                    console.log(res);
+                    var title = res.FirstName + " " + res.LastName ; 
+                    $('#ProfileTitle').text(title);
+                    $('#ProfileImage').attr('src', res.ProfileImage);
+                    $('#FirstName').val(res.FirstName);
+                    $('#LastName').val(res.LastName);
+                    $('#Email').val(res.Email);
+                    $('#Role').val(res.RoleDesc);
+
+                    if (res.ProfileImage == "") {
+                        $('#ProfileImage').attr('src', relativepath + "Images/default_profile.jpg");
+                    }
+                 
+              //  alert(result);
+            },
+            error: function (err) {
+                Notify_Validation(err.statusText);
+            }
+        });
+
 }
 
 $('#btnUserDetailModalPopupClose').click(function () {

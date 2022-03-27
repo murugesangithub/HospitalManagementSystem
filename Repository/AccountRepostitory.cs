@@ -52,7 +52,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 //Password = s.Password,
                 Role = s.Role,
                 RoleDesc = dbcontext.Roles.Where(x => x.RoleId == s.Role).Select(b => b.Description).FirstOrDefault(),
-                ProfileImage = s.ProfileImage ?? string.Empty,
+                //ProfileImage = s.ProfileImage ?? string.Empty,
                 IsActive = s.IsActive,
 
             }).ToList();
@@ -178,6 +178,27 @@ namespace HospitalManagementSystem.DataAccess.Repository
 
         }
 
-       
+
+        public RegisterViewModel GetUserDetail(int userDetailId)
+        {
+            var result = dbcontext.UserDetails.Where(x => x.IsActive && x.UserDetailId == userDetailId).Select(s => new RegisterViewModel()
+            {
+                UserDetailId = s.UserDetailId,
+                FirstName = s.FirstName,
+                LastName = s.LastName,
+                Email = s.Email,
+                //Password = s.Password,
+                Role = s.Role,
+                RoleDesc = dbcontext.Roles.Where(x => x.RoleId == s.Role).Select(b => b.Description).FirstOrDefault(),
+                ProfileImage = s.ProfileImage ?? string.Empty,
+                IsActive = s.IsActive,
+
+            }).FirstOrDefault();
+            //result.ForEach(x => x.EncryptUserDetailId = Cryptography.EncryptStringToBytes_Aes(x.UserDetailId.ToString()));
+            return result;
+        }
+
+
+
     }
 }

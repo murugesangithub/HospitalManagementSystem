@@ -166,5 +166,18 @@ namespace HospitalManagementSystem.Controllers.User
             return result;
         }
 
+        public ActionResult GetUserDetail(string id)
+        {
+            int userDetailId = default(int);
+            if (!string.IsNullOrEmpty(id))
+            {
+                int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out userDetailId);
+            }
+            var accountRepository = new AccountRepository();
+            var result = accountRepository.GetUserDetail(userDetailId);
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
