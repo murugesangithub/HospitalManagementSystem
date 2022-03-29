@@ -10,7 +10,7 @@
     </h1>
     <ol class="breadcrumb">
         <li><a href="/Home/Index"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Registration</a></li>
+        <li><a href="/Doctor/Add">Doctor Registration</a></li>
         @*<li class="active">General Elements</li>*@
     </ol>
 </section>
@@ -28,7 +28,7 @@
 
                 @using (Html.BeginForm("AddDoctor", "Doctor", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
                 {
-                   
+
                     @Html.AntiForgeryToken()
                     @Html.HiddenFor(m => m.DoctorDetailId, new { @class = "form-control" })
                     @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
@@ -38,34 +38,34 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    @Html.LabelFor(m => m.FirstName, new { @class = "col-sm-3 control-label" })
+                                    @Html.LabelFor(m => m.FirstName, new { @maxlength = "20", placeholder = "Doctor Name", @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
-                              
+
                                     </div>
                                 </div>
 
-                               
+
 
                                 <div class="form-group">
-                                    @Html.LabelFor(m => m.MobileNo, new { @class = "col-sm-3 control-label" })
+                                    @Html.LabelFor(m => m.MobileNo, new { @maxlength = "10", placeholder = "Mobile number", @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.TextBoxFor(m => m.MobileNo, new { @class = "form-control" })
-                                  
+
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    @Html.LabelFor(m => m.Address, new { @class = "col-sm-3 control-label" })
+                                    @Html.LabelFor(m => m.Address, new { @maxlength = "100", placeholder = "Address", @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
-                                    
+
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.SpecialistList, new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.DropDownListFor(m => m.Specialist, Model.SpecialistList, "Select", new { @class = "form-control" })
-                                    
+
                                     </div>
 
                                 </div>
@@ -74,7 +74,7 @@
                                     @Html.LabelFor(m => m.StateList, new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.DropDownListFor(m => m.State, Model.StateList, "Select", new { @class = "form-control" })
-                                      
+
                                     </div>
 
                                 </div>
@@ -83,30 +83,30 @@
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.LastName, new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
-                                        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
-                                  
+                                        @Html.TextBoxFor(m => m.LastName, new { @maxlength = "20", placeholder = "Last Name", @class = "form-control" })
+
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.Email, new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
-                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                                     
+                                        @Html.TextBoxFor(m => m.Email, new { @maxlength = "30", placeholder = "Email", @class = "form-control" })
+
                                     </div>
                                 </div>
 
                                 @*<div class="form-group">
-                                    @Html.LabelFor(m => m.Code, new { @class = "col-sm-3 control-label" })
-                                    <div class="col-md-9">
-                                        @Html.TextBoxFor(m => m.Code, new { @class = "form-control" })
-                                      
-                                    </div>
-                                </div>*@
+                            @Html.LabelFor(m => m.Code, new { @class = "col-sm-3 control-label" })
+                            <div class="col-md-9">
+                                @Html.TextBoxFor(m => m.Code, new { @class = "form-control" })
+
+                            </div>
+                        </div>*@
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.GenderList, new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.DropDownListFor(m => m.Gender, Model.GenderList, "Select", new { @class = "form-control" })
-                                   
+
                                     </div>
 
                                 </div>
@@ -114,13 +114,14 @@
                                     @Html.LabelFor(m => m.CityList, new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.DropDownListFor(m => m.City, Model.CityList, "Select", new { @class = "form-control" })
-                                    
+
                                     </div>
 
                                 </div>
                             </div>
 
                         </div>
+
 
 
                         <div class="box-footer">

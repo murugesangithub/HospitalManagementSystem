@@ -24,7 +24,7 @@ namespace HospitalManagementSystem.ViewModel
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "Fist Name")]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]

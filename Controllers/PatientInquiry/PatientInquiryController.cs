@@ -1,4 +1,6 @@
-﻿using HospitalManagementSystem.DataAccess.Repository;
+﻿using HospitalManagementSystem.Common;
+using HospitalManagementSystem.DataAccess.Repository;
+using HospitalManagementSystem.JqGrid;
 using HospitalManagementSystem.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -28,7 +30,73 @@ namespace HospitalManagementSystem.Controllers
             return View(ViewModel);
 
         }
+        //public ActionResult AddPatientInquiry(PatientInquiryViewModel model)
+        //{
 
+        //    var patientInquiryRepository = new PatientInquiryRepository();
+        //    if (model.PatientInquiryId == default(int))
+        //    {
+        //        patientInquiryRepository.PatientInquiryDetailInsertion(model);
+        //        TempData[AppConstant.Response] = AppConstant.Success;
+        //        return RedirectToAction("Add");
+        //    }
+        //    else
+        //    {
+        //        patientInquiryRepository.PatientInquiryDetailUpdation(model);
+        //        TempData[AppConstant.Response] = AppConstant.Success;
+        //        return RedirectToAction("Index");
+        //    }
+
+        //    return View();
+
+        //}
+
+
+        //public ActionResult UpdatePatientInquiryDetail(string id = null)
+        //{
+        //    int patientId = default(int);
+
+        //    if (!string.IsNullOrEmpty(id))
+        //    {
+        //        int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out patientId);
+        //    }
+        //    var model = new PatientInquiryViewModel();
+        //    var patientInquiryRepository = new PatientInquiryRepository();
+        //    model = patientInquiryRepository.GetPatientInquiryByPatientInquiryDetailId(patientId);
+        //    model.CountryList = GetCountryList();
+
+        //    model.GenderList = GetGenderList();
+
+        //    return View(model);
+
+        //}
+        //public ActionResult GetPatientInquiryList(JQGridSort jQGridSort)
+        //{
+        //    var patientInquiryRepository = new PatientInquiryRepository();
+        //    var result = patientInquiryRepository.GetPatientInquiryList(jQGridSort);
+
+        //    return Json(result, JsonRequestBehavior.AllowGet);
+        //}
+
+
+        //public ActionResult UpdatePatientInquiry(string id = null)
+        //{
+        //    int patientId = default(int);
+
+        //    if (!string.IsNullOrEmpty(id))
+        //    {
+        //        int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out patientId);
+        //    }
+        //    var model = new PatientInquiryViewModel();
+        //    var patientInquiryRepository = new PatientInquiryRepository();
+        //    model = patientInquiryRepository.GetPatientInquiryByPatientInquiryDetailId(patientId);
+        //    model.CountryList = GetCountryList();
+
+        //    model.GenderList = GetGenderList();
+
+        //    return View(model);
+
+        //}
         private List<SelectListItem> GetGenderList()
         {
             var genderSelectList = new List<SelectListItem>();
@@ -53,6 +121,7 @@ namespace HospitalManagementSystem.Controllers
             }
             return countrySelectList;
         }
+
 
     }
 }

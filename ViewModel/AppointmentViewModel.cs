@@ -10,14 +10,13 @@ namespace HospitalManagementSystem.ViewModel
 {
     public class AppointmentViewModel
     {
-        
 
-        [Required(ErrorMessage = "FirstName is required")]
+        [Required(ErrorMessage = "First Name is required")]
         [Display(Name = "First Name")]
         [DataType(DataType.Text)]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "LastName is required")]
+        [Required(ErrorMessage = "Last Name is required")]
         [Display(Name = "Last Name")]
         [DataType(DataType.Text)]
         public string LastName { get; set; }
@@ -38,17 +37,17 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Address")]
         public string Address { get; set; }
 
-        
+
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
         [Required]
         [Display(Name = "Phone Number")]
-        [RegularExpression(@"^[0-9]{10}$",ErrorMessage ="Phone number only in 10 digits")]
+        [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "Phone number only in 10 digits")]
         public string PhoneNumber { get; set; }
 
-       
+
 
         [Required]
         [Display(Name = "Date of Birth")]
@@ -56,7 +55,7 @@ namespace HospitalManagementSystem.ViewModel
         public string DateofBirth { get; set; }
 
         [Required]
-        [Display(Name = "Date of Appointment ")]
+        [Display(Name = "Appointment Date ")]
         [DataType(DataType.Date)]
         public string DateofAppointment { get; set; }
 
@@ -66,7 +65,7 @@ namespace HospitalManagementSystem.ViewModel
         public string ConsultingDoctor { get; set; }
 
         [Required]
-        [Display(Name = "Time of Appointment ")]
+        [Display(Name = "Appointment Time ")]
         [DataType(DataType.Text)]
         public string TimeofAppointment { get; set; }
 
@@ -80,7 +79,7 @@ namespace HospitalManagementSystem.ViewModel
         [DataType(DataType.Text)]
         public string TokenNumber { get; set; }*/
 
-        [Required(ErrorMessage = "Select your Time Slot")]       
+        [Required(ErrorMessage = "Select your Time Slot")]
         public List<System.Web.Mvc.SelectListItem> TimeSlotList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int TimeSlot { get; set; }
         public string TimeSlotDesc { get; set; }

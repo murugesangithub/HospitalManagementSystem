@@ -18,10 +18,7 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Doctor Name")]
         public string DoctorName { get; set; }
 
-        [Required]
-        [RegularExpression(@"^[0-9]*$")]
-        [Display(Name = "Patient Id")]
-        public string PatientId { get; set; }
+
 
         [Required(ErrorMessage = "Select your Department")]
         public List<System.Web.Mvc.SelectListItem> DepartmentList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
@@ -46,7 +43,7 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Service Name ")]
         public List<System.Web.Mvc.SelectListItem> ServiceList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int Service { get; set; }
-        public string ServiceName{ get; set; }
+        public string ServiceDesc { get; set; }
 
         [Required]
         [Display(Name = "Cost of Treatment")]
@@ -57,10 +54,10 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Discount (%)")]
         public string Discount { get; set; }
 
-            [Required]
-            //[RegularExpression(@"^[0-9]*$", ErrorMessage = "Must be a number")]
-            [Display(Name = "Card/CheckNo")]
-            public string CheckNo { get; set; }
+        [Required]
+        //[RegularExpression(@"^[0-9]*$", ErrorMessage = "Must be a number")]
+        [Display(Name = "Card/CheckNo")]
+        public string CheckNo { get; set; }
 
         [Required]
         [RegularExpression(@"^[0-9]*$", ErrorMessage = " Must be a number")]
@@ -73,13 +70,15 @@ namespace HospitalManagementSystem.ViewModel
         public int Payment { get; set; }
         public string PaymentMethod { get; set; }
 
-        [Required]
-        [Display(Name = "Payment Status")]
-        public string PaymentStatus { get; set; }
 
+        [Required(ErrorMessage = "Select your PaymentMethod")]
+        [Display(Name = "Payment Method ")]
+        public List<System.Web.Mvc.SelectListItem> PaymentStatusList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
+        public int PaymentStatus { get; set; }
+        public string PaymentStatusMethod { get; set; }
 
-        public int PatientDetailId { get; set; }
-        public string EncryptPatientDetailId { get; set; }
+        public int PatientId { get; set; }
+        public string EncryptPatientId { get; set; }
         public bool IsActive { get; set; }
     }
 }

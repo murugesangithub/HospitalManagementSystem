@@ -15,7 +15,7 @@ namespace HospitalManagementSystem.ViewModel
         public string SupplierName { get; set; }
 
         [Required]
-        [RegularExpression(@"^[0-9]*$")]
+        [RegularExpression(@"^[0-9]*$", ErrorMessage = " Must be a number")]
         [Display(Name = "Code ")]
         public string Code { get; set; }
 
@@ -56,14 +56,19 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Notes ")]
         public string Notes { get; set; }
 
-        [Required(ErrorMessage = "Select your PaymentMethod")]
+        [Required(ErrorMessage = "Select your Payment Method")]
+        [Display(Name = "Payment Type ")]
         public List<System.Web.Mvc.SelectListItem> PaymentList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int Payment { get; set; }
         public string PaymentMethod { get; set; }
 
-        [Required]
-        [Display(Name = "Status")]
-        public string Status { get; set; }
+        [Required(ErrorMessage = "Select your Payment Status")]
+        [Display(Name = "Payment Status Method ")]
+        public List<System.Web.Mvc.SelectListItem> PaymentStatusList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
+        public int PaymentStatus { get; set; }
+        public string PaymentStatusMethod { get; set; }
+
+
         public bool IsActive { get; set; }
     }
 }

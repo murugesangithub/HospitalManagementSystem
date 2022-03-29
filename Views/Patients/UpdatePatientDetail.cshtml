@@ -11,8 +11,8 @@
         <small>Update Patient Detail</small>
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Registration</a></li>
+        <li><a href="/Home/Index"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="/Patients/Add">Patient Registration</a></li>
         <li class="active">General Elements</li>
     </ol>
 </section>
@@ -33,7 +33,6 @@
                     @Html.ValidationSummary("", new { @class = "text-danger" })
 
 
-
                     <div class="box-body">
 
                         <div class="row">
@@ -43,8 +42,7 @@
                                     @Html.LabelFor(m => m.FirstName, new { @class = "col-sm-3 control-label " })
 
                                     <div class="col-sm-9">
-                                        @Html.TextBoxFor(m => m.FirstName, new { placeholder = "FirstName", @class = "form-control " })
-
+                                        @Html.TextBoxFor(m => m.FirstName, new { placeholder = "First Name", @maxlength = "20", @class = "form-control " })
 
                                     </div>
                                 </div>
@@ -52,23 +50,16 @@
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.Gender, htmlAttributes: new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
-                                        @Html.DropDownListFor(m => m.Gender, Model.GenderList, "Select", new { @class = "form-control" })
+                                        @Html.DropDownListFor(m => m.Gender, Model.GenderList, "Select Your Gender", new { @class = "form-control" })
 
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    @Html.LabelFor(m => m.Email, new { @class = "col-sm-3 control-label" })
-                                    <div class="col-md-9">
-                                        @Html.TextBoxFor(m => m.Email, new { placeholder = "Email", @class = "form-control" })
-
-                                    </div>
-                                </div>
 
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.Age, new { @class = "col-sm-3 control-label" })
                                     <div class="col-sm-9">
-                                        @Html.TextBoxFor(m => m.Age, new { placeholder = "Age", @class = "form-control" })
+                                        @Html.TextBoxFor(m => m.Age, new { placeholder = "Age", @maxlength = "3", @class = "form-control" })
 
                                     </div>
                                 </div>
@@ -76,7 +67,15 @@
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.MaritalStatus, htmlAttributes: new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
-                                        @Html.DropDownListFor(m => m.MaritalStatus, Model.MaritalStatusList, "Select", new { @class = "form-control" })
+                                        @Html.DropDownListFor(m => m.MaritalStatus, Model.MaritalStatusList, "Select Your MaritalStatus", new { @class = "form-control" })
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Email, new { @class = "col-sm-3 control-label" })
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(m => m.Email, new { placeholder = "Email", @maxlength = "50", @class = "form-control" })
 
                                     </div>
                                 </div>
@@ -84,68 +83,70 @@
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
-                                        @Html.TextBoxFor(m => m.PhoneNumber, new { placeholder = "PhoneNumber", @class = "form-control" })
+                                        @Html.TextBoxFor(m => m.PhoneNumber, new { placeholder = "Phone Number", @maxlength = "10", @class = "form-control" })
+
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-md-6"
-                            <div class="form-group">
-                            @Html.LabelFor(m => m.LastName, new { @class = "col-sm-3 control-label" })
-                            <div class="col-sm-9">
-                            @Html.TextBoxFor(m => m.LastName, new { placeholder = "LastName", @class = "form-control" })
-                            </div>
-                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.LastName, new { @class = "col-sm-3 control-label" })
+                                    <div class="col-sm-9">
+                                        @Html.TextBoxFor(m => m.LastName, new { placeholder = "Last Name", @maxlength = "20", @class = "form-control" })
 
-                            <div class="form-group">
-                            @Html.LabelFor(m => m.GuardianName, new { @class = "col-sm-3 control-label" })
-                            <div class="col-sm-9">
-                            @Html.TextBoxFor(m => m.GuardianName, new { placeholder = "GuardianName", @class = "form-control" })
-                            </div>
-                            </div>
+                                    </div>
+                                </div>
 
-                            <div class="form-group">
-                            @Html.LabelFor(model => model.DateofBirth, htmlAttributes: new { @class = "col-sm-3 control-label" })
-                            <div class="col-md-9">
-                            @Html.EditorFor(model => model.DateofBirth, new { placeholder = "Date of Birth", htmlAttributes = new { @class = "form-control" } })
-                            </div>
-                            </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.GuardianName, new { @class = "col-sm-3 control-label" })
+                                    <div class="col-sm-9">
+                                        @Html.TextBoxFor(m => m.GuardianName, new { placeholder = "Guardian Name", @maxlength = "20", @class = "form-control" })
 
-                            <div class="form-group">
-                            @Html.LabelFor(m => m.Problem, new { @class = "col-sm-3 control-label" })
-                            <div class="col-sm-9">
-                            @Html.TextBoxFor(m => m.Problem, new { placeholder = "Injury/Condition", @class = "form-control" })
+                                    </div>
+                                </div>
 
-                            </div>
-                            </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.DateofBirth, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                    <div class="col-md-9">
+                                        @Html.EditorFor(model => model.DateofBirth, new { placeholder = "Date of Birth", @maxlength = "20", htmlAttributes = new { @class = "form-control" } })
 
-                            <div class="form-group">
-                            @Html.LabelFor(m => m.Address, new { @class = "col-sm-3 control-label" })
-                            <div class="col-sm-9">
-                            @Html.TextBoxFor(m => m.Address, new { placeholder = "StreetAddress", @class = "form-control" })<br />
+                                    </div>
+                                </div>
 
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Problem, new { @class = "col-sm-3 control-label" })
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(m => m.Problem, new { placeholder = "Injury/Condition", @maxlength = "50", @class = "form-control" })
 
-                            <div class="row">
-                            <div class="col-sm-6">
-                            @Html.TextBoxFor(m => m.City, new { placeholder = "city", @class = "form-control" })<br />
+                                    </div>
+                                </div>
 
-                            @Html.TextBoxFor(m => m.PostalCode, new { placeholder = "ZIP/Postal Code", @class = "form-control" })<br />
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Address, new { @class = "col-sm-3 control-label" })
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(m => m.Address, new { placeholder = "Street Address", @maxlength = "100", @class = "form-control" })
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                @Html.TextBoxFor(m => m.City, new { placeholder = "city", @maxlength = "20", @class = "form-control" })
+                                                <br />
+                                                @Html.TextBoxFor(m => m.PostalCode, new { placeholder = "ZIP/Postal Code", @maxlength = "10", @class = "form-control" })
 
-                            </div>
-                            <div class="col-sm-6">
-                            @Html.TextBoxFor(m => m.State, new { placeholder = "State/Province", @class = "form-control" })<br />
+                                            </div>
+                                            <div class="col-md-6">
+                                                @Html.TextBoxFor(m => m.State, new { placeholder = "State/Province", @maxlength = "20", @class = "form-control" })
+                                                <br />
+                                                @Html.DropDownListFor(m => m.Country, Model.CountryList, "Select your Country", new { @class = "form-control" })
 
-                            @Html.DropDownListFor(m => m.Country, Model.CountryList, "Select your Country", new { @class = "form-control" })
-
-                            </div>
-                            </div>
-                            </div>
-                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
                     </div>
-
 
 
                     <div class="box-footer">

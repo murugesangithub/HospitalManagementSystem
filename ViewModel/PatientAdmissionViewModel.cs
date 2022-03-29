@@ -12,7 +12,7 @@ namespace HospitalManagementSystem.ViewModel
     {
 
 
-        [Required(ErrorMessage = "DoctorName is required")]
+        [Required(ErrorMessage = "Doctor Name is required")]
         [Display(Name = "Doctor Name")]
         [DataType(DataType.Text)]
         public string DoctorName { get; set; }
@@ -32,7 +32,7 @@ namespace HospitalManagementSystem.ViewModel
         [DataType(DataType.Text)]
         public string ItemNumber { get; set; }
 
-        [Required(ErrorMessage = "PatientName is required")]
+        [Required(ErrorMessage = "Patient Name is required")]
         [Display(Name = "Patient Name")]
         [DataType(DataType.Text)]
         public string PatientName { get; set; }
@@ -94,63 +94,6 @@ namespace HospitalManagementSystem.ViewModel
         public bool IsActive { get; set; }
         public string EncryptPatientAdmissionId { get; set; }
 
-
-
-        /*[Required(ErrorMessage = "Patient Id is required")]
-        [Display(Name = "Patient Id ")]
-        public string PatientId { get; set; }*/
-
-        //[Required(ErrorMessage = "Select your Gender")]
-        //public List<System.Web.Mvc.SelectListItem> GenderList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
-        //public int Gender { get; set; }
-        //public string GenderDescription { get; set; }
-
-
-
-
-        //[Required]
-        //[DataType(DataType.Text)]
-        //[Display(Name = "Age")]
-        //[RegularExpression(@"^\S[0-9]{0,3}$", ErrorMessage = "Age must be a number")]
-        //public string Age { get; set; }
-
-        //[Required]
-        //[Display(Name = "Address")]
-        //public string Address { get; set; }
-
-
-
-
-        //[Required]
-        //[Display(Name = "Date of Appointment ")]
-        //[DataType(DataType.Date)]
-        //public string DateofAppointment { get; set; }
-
-
-
-
-
-        //[Required]
-        //[Display(Name = "Problem ")]
-        //[DataType(DataType.Text)]
-        //public string Problem { get; set; }
-
-        /*[Required]
-        [Display(Name = "Token Number ")]
-        [DataType(DataType.Text)]
-        public string TokenNumber { get; set; }*/
-
-        //[Required(ErrorMessage = "Select your Time Slot")]       
-        //public List<System.Web.Mvc.SelectListItem> TimeSlotList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
-        //public int TimeSlot { get; set; }
-        //public string TimeSlotDesc { get; set; }
-
-
-        //public int Department { get; set; }
-        //public string DepartmentDesc { get; set; }
-
-        //public int TokenNumber { get; set; }
-        //public string EncryptTokenNumber { get; set; }
 
     }
 }

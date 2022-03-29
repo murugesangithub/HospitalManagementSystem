@@ -14,19 +14,19 @@ namespace HospitalManagementSystem.ViewModel
     public class PatientInquiryViewModel
     {
 
-       [Required]
+        [Required]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
-      [Required]
+        [Required]
         [Display(Name = "Last Name ")]
         public string LastName { get; set; }
 
-      [Required]
+        [Required]
         [Display(Name = "Guardian Name ")]
         public string GuardianName { get; set; }
 
-      [Required]
+        [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Age")]
         [RegularExpression(@"^\S[0-9]{0,3}$", ErrorMessage = "Age must be a number")]
@@ -37,14 +37,14 @@ namespace HospitalManagementSystem.ViewModel
         public string Address { get; set; }
 
         [Required]
-        public string City{ get; set; }
+        public string City { get; set; }
 
         [Required]
         public string State { get; set; }
 
         [Required]
         [RegularExpression(@"^\S[0-9]{0,6}$", ErrorMessage = "PostalCode must be a number")]
-        public string PostalCode{ get; set; }
+        public string PostalCode { get; set; }
 
 
         [Required]
@@ -60,7 +60,7 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Height")]
         public string Height { get; set; }
 
-        [Required ]
+        [Required]
         [Display(Name = "Diabetes or Blood sugar Problem ")]
         public string Diabetes { get; set; }
 
@@ -70,7 +70,7 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required]
         [Display(Name = " Do you Smoke")]
-        public string Doyousmoke{ get; set; }
+        public string Doyousmoke { get; set; }
 
         [Required]
         [Display(Name = " Do you Drink Alchocol")]
@@ -79,8 +79,8 @@ namespace HospitalManagementSystem.ViewModel
         [Required]
         [Display(Name = "Thyroid problems")]
         public string ThyroidProblems { get; set; }
-       
-         [Required]
+
+        [Required]
         [Display(Name = "Heart problems")]
         public string HeartProblems { get; set; }
 
@@ -99,7 +99,7 @@ namespace HospitalManagementSystem.ViewModel
         [Required]
         [Display(Name = "Weight")]
         public string Weight { get; set; }
-      
+
         [Required]
         [Display(Name = "Do you have any medical " +
             "conditions not mentined above")]
@@ -118,51 +118,29 @@ namespace HospitalManagementSystem.ViewModel
         public HttpPostedFileBase AttachFile { get; set; }
         public string AttachFileImage { get; set; } = string.Empty;
 
-        [Required]       
-        [Display(Name = "PhoneNumber")]
-        [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "Phone number only in 10 digits")]
+        [Required]
+        [Display(Name = "Phone Number")]       
         public string PhoneNumber { get; set; }
 
-
-        /*[Required]
-         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
-         [DataType(DataType.Password)]
-         [Display(Name = "Password")]
-         public string Password { get; set; }
-
-         [DataType(DataType.Password)]
-         [Display(Name = "Confirm password")]
-         [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-         public string ConfirmPassword { get; set; }*/
-
         [Required(ErrorMessage = "Select your Gender")]
-       public List<System.Web.Mvc.SelectListItem> GenderList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
-       public int Gender { get; set; }
-      public string GenderDescription { get; set; }
+        public List<System.Web.Mvc.SelectListItem> GenderList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
+        public int Gender { get; set; }
+        public string GenderDescription { get; set; }
 
-        [Required ]
+        [Required]
         [Display(Name = "Date of Birth ")]
         [DataType(DataType.Date)]
         public string DateofBirth { get; set; }
-
-        
 
         [Required(ErrorMessage = "Select your Country")]
         [Display(Name = "Country")]
         public List<System.Web.Mvc.SelectListItem> CountryList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int Country { get; set; }
         public string CountryDesc { get; set; }
-
-        [Display(Name = "Attach file")]
-        [AllowedFileExtension(".jpg", ".png", ".gif", ".jpeg", ".jfif")]
-        public HttpPostedFileBase ImageFileUpload { get; set; }
-        public string ProfileImage { get; set; } = string.Empty;
-
+       
+        public int PatientInquiryId { get; set; }
+        public string EncryptPatientInquiryId { get; set; }
         public bool IsActive { get; set; }
-
-
-        public int PatientDetailId { get; set; }
-        public string EncryptPatientDetailId { get; set; }
     }
 
 }

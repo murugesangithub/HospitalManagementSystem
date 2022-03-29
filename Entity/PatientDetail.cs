@@ -28,8 +28,8 @@ namespace HospitalManagementSystem.Entity
         public string Address { get; set; }
         public string City { get; set; }
         public string PostalCode { get; set; }
-        public string State { get; set; }
         public int Country { get; set; }
+        public string State { get; set; }
         public bool IsActive { get; set; }
     }
 }

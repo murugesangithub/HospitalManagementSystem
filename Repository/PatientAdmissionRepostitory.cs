@@ -24,7 +24,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 GuardianName = patientAdmissionViewModel.GuardianName,
                 Email = patientAdmissionViewModel.Email,
                 Address = patientAdmissionViewModel.Address,
-                PhoneNumber = patientAdmissionViewModel.PhoneNumber,
+                PhoneNumber = (int)Convert.ToInt64(patientAdmissionViewModel.PhoneNumber),
                 City = patientAdmissionViewModel.City,
                 State = patientAdmissionViewModel.State,
                 PostalCode = patientAdmissionViewModel.PostalCode,
@@ -36,10 +36,6 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 PatientName = patientAdmissionViewModel.PatientName,
                 Patient = patientAdmissionViewModel.Patient,
                 IsActive = true,
-
-
-
-
             };
 
             dbcontext.PatientAdmitForms.Add(patientAdmitForm);
@@ -77,7 +73,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 DateofBirth = s.DateofBirth,
                 Contact = s.Contact,
                 Email = s.Email,
-                PhoneNumber = s.PhoneNumber,
+                PhoneNumber = s.PhoneNumber.ToString(),
                 Address = s.Address,
                 City = s.City,
                 PostalCode = s.PostalCode,
@@ -112,81 +108,6 @@ namespace HospitalManagementSystem.DataAccess.Repository
 
 
 
-        //update
-
-        //public void PatientAdmitFormUpdation(PatientAdmissionViewModel patientAdmissionViewModel)
-        //{
-        //    var isPatientAdmitFormExist = dbcontext.PatientAdmitForms.Where(x => x.IsActive && x.PatientAdmissionId == patientAdmissionViewModel.PatientAdmissionId).FirstOrDefault();
-        //    if (isPatientAdmitFormExist != null)
-        //    {
-
-
-
-        //        isPatientAdmitFormExist.DoctorName = patientAdmissionViewModel.DoctorName;
-        //        isPatientAdmitFormExist.AdmissionDate = patientAdmissionViewModel.AdmissionDate;
-        //        isPatientAdmitFormExist.GuardianName = patientAdmissionViewModel.GuardianName;
-        //        isPatientAdmitFormExist.Email = patientAdmissionViewModel.Email;
-        //        isPatientAdmitFormExist.Address = patientAdmissionViewModel.Address;
-        //        isPatientAdmitFormExist.Patient = patientAdmissionViewModel.Patient;
-        //        isPatientAdmitFormExist.Contact = patientAdmissionViewModel.Contact;
-        //        isPatientAdmitFormExist.PhoneNumber = patientAdmissionViewModel.PhoneNumber;
-        //        isPatientAdmitFormExist.City = patientAdmissionViewModel.City;
-        //        isPatientAdmitFormExist.State = patientAdmissionViewModel.State;
-        //        isPatientAdmitFormExist.PostalCode = patientAdmissionViewModel.PostalCode;
-        //        isPatientAdmitFormExist.PlannedProcedure = patientAdmissionViewModel.PlannedProcedure;
-        //        isPatientAdmitFormExist.MaritalStatus = patientAdmissionViewModel.MaritalStatus;
-        //        isPatientAdmitFormExist.ItemNumber = patientAdmissionViewModel.ItemNumber;
-        //        isPatientAdmitFormExist.DateofBirth = patientAdmissionViewModel.DateofBirth;
-        //        isPatientAdmitFormExist.Gender = patientAdmissionViewModel.Gender;
-        //        isPatientAdmitFormExist.PatientName = patientAdmissionViewModel.PatientName;
-        //        isPatientAdmitFormExist.IsActive = true;
-
-
-
-
-        //        dbcontext.Entry(isPatientAdmitFormExist);
-        //        dbcontext.SaveChanges();
-        //    }
-
-
-        //}
-
-
-
-
-        //public PatientAdmissionViewModel GetPatientsByPatientAdmissionId(int patientAdmissionId)
-        //{
-        //    var result = dbcontext.PatientAdmitForms.Where(x => x.IsActive && x.PatientAdmissionId == patientAdmissionId).Select(s => new PatientAdmissionViewModel()
-        //    {
-        //        PatientAdmissionId = s.PatientAdmissionId,
-        //        DoctorName = s.DoctorName,
-        //        AdmissionDate = s.AdmissionDate,
-
-        //        PlannedProcedure = s.PlannedProcedure,
-
-        //        MaritalStatus = s.MaritalStatus,
-        //        ItemNumber = s.ItemNumber,
-        //        GuardianName = s.GuardianName,
-        //        DateofBirth = s.DateofBirth,
-        //        Contact = s.Contact,
-        //        Email = s.Email,
-        //        PhoneNumber = s.PhoneNumber,
-        //        Address = s.Address,
-        //        City = s.City,
-        //        PostalCode = s.PostalCode,
-        //        State = s.State,
-        //        PatientName = s.PatientName,
-        //        Gender = s.Gender,
-        //        Patient = s.Patient,
-        //        IsActive = s.IsActive,
-
-        //    }).FirstOrDefault();
-
-
-        //    return result;
-        //}
-
-
 
 
 
@@ -208,7 +129,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 isPatientAdmitFormExist.Address = patientAdmissionViewModel.Address;
                 isPatientAdmitFormExist.Patient = patientAdmissionViewModel.Patient;
                 isPatientAdmitFormExist.Contact = patientAdmissionViewModel.Contact;
-                isPatientAdmitFormExist.PhoneNumber = patientAdmissionViewModel.PhoneNumber;
+                isPatientAdmitFormExist.PhoneNumber = (int)Convert.ToInt64(patientAdmissionViewModel.PhoneNumber);
                 isPatientAdmitFormExist.City = patientAdmissionViewModel.City;
                 isPatientAdmitFormExist.State = patientAdmissionViewModel.State;
                 isPatientAdmitFormExist.PostalCode = patientAdmissionViewModel.PostalCode;
@@ -249,7 +170,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 DateofBirth = s.DateofBirth,
                 Contact = s.Contact,
                 Email = s.Email,
-                PhoneNumber = s.PhoneNumber,
+                PhoneNumber = s.PhoneNumber.ToString(),
                 Address = s.Address,
                 City = s.City,
                 PostalCode = s.PostalCode,

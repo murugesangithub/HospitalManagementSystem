@@ -13,19 +13,19 @@ namespace HospitalManagementSystem.ViewModel
     public class PatientViewModel
     {
 
-       [Required]
+        [Required]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
-      [Required]
+        [Required]
         [Display(Name = "Last Name ")]
         public string LastName { get; set; }
 
-      [Required]
+        [Required]
         [Display(Name = "Guardian Name ")]
         public string GuardianName { get; set; }
 
-      [Required]
+        [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Age")]
         [RegularExpression(@"^\S[0-9]{0,3}$", ErrorMessage = "Age must be a number")]
@@ -36,14 +36,14 @@ namespace HospitalManagementSystem.ViewModel
         public string Address { get; set; }
 
         [Required]
-        public string City{ get; set; }
+        public string City { get; set; }
 
         [Required]
         public string State { get; set; }
 
         [Required]
         [RegularExpression(@"^\S[0-9]{0,6}$", ErrorMessage = "PostalCode must be a number")]
-        public string PostalCode{ get; set; }
+        public string PostalCode { get; set; }
 
 
         [Required]
@@ -55,18 +55,18 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]       
-        [Display(Name = "PhoneNumber")]
+        [Required]
+        [Display(Name = "Phone Number")]
         [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "Phone number only in 10 digits")]
         public string PhoneNumber { get; set; }
 
 
         [Required(ErrorMessage = "Select your Gender")]
-       public List<System.Web.Mvc.SelectListItem> GenderList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
-       public int Gender { get; set; }
-      public string GenderDescription { get; set; }
+        public List<System.Web.Mvc.SelectListItem> GenderList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
+        public int Gender { get; set; }
+        public string GenderDescription { get; set; }
 
-        [Required ]
+        [Required]
         [Display(Name = "Date of Birth ")]
         [DataType(DataType.Date)]
         public string DateofBirth { get; set; }

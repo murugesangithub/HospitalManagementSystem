@@ -23,7 +23,7 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required]
         [Display(Name = "Price")]
-        public string Price{ get; set; }
+        public string Price { get; set; }
 
         [Required]
         [Display(Name = "Purchase Date ")]
@@ -51,7 +51,8 @@ namespace HospitalManagementSystem.ViewModel
         public bool IsActive { get; set; }
 
 
-      
+
+
 
     }
 

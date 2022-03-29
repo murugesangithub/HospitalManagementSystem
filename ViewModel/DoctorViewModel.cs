@@ -13,12 +13,13 @@ namespace HospitalManagementSystem.ViewModel
     public class DoctorViewModel
     {
 
+
         [Required]
-        [Display(Name = "FirstName")]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
-        [Display(Name = "LastName")]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
 
@@ -27,24 +28,12 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        //[Required]
-        //[Display(Name = "UserName")]
-        //public string UserName { get; set; }
-
-
-        /* [Required]
-         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
-         [DataType(DataType.Password)]
-         [Display(Name = "Password")]
-        public string Password { get; set; }*/
-
         [Required]
+        [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "Phone number only in 10 digits")]
         [Display(Name = "Mobile No")]
         public string MobileNo { get; set; }
 
-        //[Required]
-        //[Display(Name = "Code")]
-        //public string Code { get; set; }
+
 
         [Required]
         [Display(Name = "Address")]
