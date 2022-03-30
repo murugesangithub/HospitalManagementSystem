@@ -225,40 +225,40 @@
           <Property Name="State" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
-        <EntityType Name="PatientInquiryFormDetail">
+        <EntityType Name="PatientInquiryDetailForm">
           <Key>
-            <PropertyRef Name="PatientInquiryId" />
+            <PropertyRef Name="PatientId" />
           </Key>
-          <Property Name="PatientInquiryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PatientId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="LastName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Gender" Type="int" Nullable="false" />
+          <Property Name="DateofBirth" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="Age" Type="int" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Gender" Type="int" Nullable="false" />
           <Property Name="PhoneNumber" Type="int" Nullable="false" />
-          <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="City" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="State" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="PostalCode" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="Height" Type="nvarchar" MaxLength="3" Nullable="false" />
-          <Property Name="weight" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Height" Type="int" Nullable="false" />
+          <Property Name="Weight" Type="int" Nullable="false" />
           <Property Name="GuardianName" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="DateofBirth" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="Problem" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="PostalCode" Type="int" Nullable="false" />
+          <Property Name="State" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Country" Type="int" Nullable="false" />
-          <Property Name="Diabetes" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="Cancer" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="Doyousmoke" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="Doyoudrinkalchocol" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="ThyroidProblems" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="HeartProblems" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="LungProblems" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="BloodPressureProblems" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="KidneyorLiverProblems" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="MedicalConditions" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="Lastdose" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="AttachFileImage" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Allergy" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Diabetes" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ThyroidProblems" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="LungProblems" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="HeartProblems" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="BloodProblems" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Kidney" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Cancer" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Smoke" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Alchocol" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MedicalConditions" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Allergy" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="LastDose" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MedicalDocuments" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="PurchaseDetail">
@@ -320,7 +320,7 @@
           <EntitySet Name="MedicineDetail" EntityType="Self.MedicineDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PatientAdmitForm" EntityType="Self.PatientAdmitForm" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PatientDetail" EntityType="Self.PatientDetail" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PatientInquiryFormDetail" EntityType="Self.PatientInquiryFormDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PatientInquiryDetailForm" EntityType="Self.PatientInquiryDetailForm" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PurchaseDetail" EntityType="Self.PurchaseDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserDetail" EntityType="Self.UserDetail" Schema="dbo" store:Type="Tables" />
@@ -358,9 +358,9 @@
           <EntitySet Name="MedicineDetails" EntityType="HMSModel.MedicineDetail" />
           <EntitySet Name="PatientAdmitForms" EntityType="HMSModel.PatientAdmitForm" />
           <EntitySet Name="PatientDetails" EntityType="HMSModel.PatientDetail" />
-          <EntitySet Name="PatientInquiryFormDetails" EntityType="HMSModel.PatientInquiryFormDetail" />
           <EntitySet Name="PurchaseDetails" EntityType="HMSModel.PurchaseDetail" />
           <EntitySet Name="Master_Department" EntityType="HMSModel.Master_Department" />
+          <EntitySet Name="PatientInquiryDetailForms" EntityType="HMSModel.PatientInquiryDetailForm" />
         </EntityContainer>
         <EntityType Name="UserDetail">
           <Key>
@@ -587,42 +587,6 @@
           <Property Name="State" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityType Name="PatientInquiryFormDetail">
-          <Key>
-            <PropertyRef Name="PatientInquiryId" />
-          </Key>
-          <Property Name="PatientInquiryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="LastName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Age" Type="Int32" Nullable="false" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Gender" Type="Int32" Nullable="false" />
-          <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
-          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="City" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="State" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="PostalCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="Height" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
-          <Property Name="weight" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
-          <Property Name="GuardianName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="DateofBirth" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="Problem" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Country" Type="Int32" Nullable="false" />
-          <Property Name="Diabetes" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="Cancer" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="Doyousmoke" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="Doyoudrinkalchocol" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="ThyroidProblems" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="HeartProblems" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="LungProblems" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="BloodPressureProblems" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="KidneyorLiverProblems" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="MedicalConditions" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Lastdose" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="AttachFileImage" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Allergy" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
         <EntityType Name="PurchaseDetail">
           <Key>
             <PropertyRef Name="PurchaseMedicineId" />
@@ -647,6 +611,42 @@
           </Key>
           <Property Name="DepartmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatientInquiryDetailForm">
+          <Key>
+            <PropertyRef Name="PatientId" />
+          </Key>
+          <Property Name="PatientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="Int32" Nullable="false" />
+          <Property Name="DateofBirth" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
+          <Property Name="Height" Type="Int32" Nullable="false" />
+          <Property Name="Weight" Type="Int32" Nullable="false" />
+          <Property Name="GuardianName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Problem" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="Int32" Nullable="false" />
+          <Property Name="State" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="Int32" Nullable="false" />
+          <Property Name="Diabetes" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ThyroidProblems" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LungProblems" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="HeartProblems" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BloodProblems" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Kidney" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Cancer" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Smoke" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Alchocol" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MedicalConditions" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Allergy" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LastDose" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MedicalDocuments" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
       </Schema>
@@ -908,43 +908,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PatientInquiryFormDetails">
-            <EntityTypeMapping TypeName="HMSModel.PatientInquiryFormDetail">
-              <MappingFragment StoreEntitySet="PatientInquiryFormDetail">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Allergy" ColumnName="Allergy" />
-                <ScalarProperty Name="AttachFileImage" ColumnName="AttachFileImage" />
-                <ScalarProperty Name="Lastdose" ColumnName="Lastdose" />
-                <ScalarProperty Name="MedicalConditions" ColumnName="MedicalConditions" />
-                <ScalarProperty Name="KidneyorLiverProblems" ColumnName="KidneyorLiverProblems" />
-                <ScalarProperty Name="BloodPressureProblems" ColumnName="BloodPressureProblems" />
-                <ScalarProperty Name="LungProblems" ColumnName="LungProblems" />
-                <ScalarProperty Name="HeartProblems" ColumnName="HeartProblems" />
-                <ScalarProperty Name="ThyroidProblems" ColumnName="ThyroidProblems" />
-                <ScalarProperty Name="Doyoudrinkalchocol" ColumnName="Doyoudrinkalchocol" />
-                <ScalarProperty Name="Doyousmoke" ColumnName="Doyousmoke" />
-                <ScalarProperty Name="Cancer" ColumnName="Cancer" />
-                <ScalarProperty Name="Diabetes" ColumnName="Diabetes" />
-                <ScalarProperty Name="Country" ColumnName="Country" />
-                <ScalarProperty Name="Problem" ColumnName="Problem" />
-                <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
-                <ScalarProperty Name="GuardianName" ColumnName="GuardianName" />
-                <ScalarProperty Name="weight" ColumnName="weight" />
-                <ScalarProperty Name="Height" ColumnName="Height" />
-                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-                <ScalarProperty Name="State" ColumnName="State" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="PatientInquiryId" ColumnName="PatientInquiryId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="PurchaseDetails">
             <EntityTypeMapping TypeName="HMSModel.PurchaseDetail">
               <MappingFragment StoreEntitySet="PurchaseDetail">
@@ -970,6 +933,43 @@
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientInquiryDetailForms">
+            <EntityTypeMapping TypeName="HMSModel.PatientInquiryDetailForm">
+              <MappingFragment StoreEntitySet="PatientInquiryDetailForm">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="MedicalDocuments" ColumnName="MedicalDocuments" />
+                <ScalarProperty Name="LastDose" ColumnName="LastDose" />
+                <ScalarProperty Name="Allergy" ColumnName="Allergy" />
+                <ScalarProperty Name="MedicalConditions" ColumnName="MedicalConditions" />
+                <ScalarProperty Name="Alchocol" ColumnName="Alchocol" />
+                <ScalarProperty Name="Smoke" ColumnName="Smoke" />
+                <ScalarProperty Name="Cancer" ColumnName="Cancer" />
+                <ScalarProperty Name="Kidney" ColumnName="Kidney" />
+                <ScalarProperty Name="BloodProblems" ColumnName="BloodProblems" />
+                <ScalarProperty Name="HeartProblems" ColumnName="HeartProblems" />
+                <ScalarProperty Name="LungProblems" ColumnName="LungProblems" />
+                <ScalarProperty Name="ThyroidProblems" ColumnName="ThyroidProblems" />
+                <ScalarProperty Name="Diabetes" ColumnName="Diabetes" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Problem" ColumnName="Problem" />
+                <ScalarProperty Name="GuardianName" ColumnName="GuardianName" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

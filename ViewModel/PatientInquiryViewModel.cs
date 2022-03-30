@@ -138,8 +138,8 @@ namespace HospitalManagementSystem.ViewModel
         public int Country { get; set; }
         public string CountryDesc { get; set; }
        
-        public int PatientInquiryId { get; set; }
-        public string EncryptPatientInquiryId { get; set; }
+        public int PatientId { get; set; }
+        public string EncryptPatientId { get; set; }
         public bool IsActive { get; set; }
     }
 

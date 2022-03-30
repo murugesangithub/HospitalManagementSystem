@@ -30,73 +30,77 @@ namespace HospitalManagementSystem.Controllers
             return View(ViewModel);
 
         }
-        //public ActionResult AddPatientInquiry(PatientInquiryViewModel model)
-        //{
+        public ActionResult AddPatientInquiry(PatientInquiryViewModel model)
+        {
 
-        //    var patientInquiryRepository = new PatientInquiryRepository();
-        //    if (model.PatientInquiryId == default(int))
-        //    {
-        //        patientInquiryRepository.PatientInquiryDetailInsertion(model);
-        //        TempData[AppConstant.Response] = AppConstant.Success;
-        //        return RedirectToAction("Add");
-        //    }
-        //    else
-        //    {
-        //        patientInquiryRepository.PatientInquiryDetailUpdation(model);
-        //        TempData[AppConstant.Response] = AppConstant.Success;
-        //        return RedirectToAction("Index");
-        //    }
+            var patientInquiryRepository = new PatientInquiryRepository();
+            if (model.PatientId == default(int))
+            {
+                patientInquiryRepository.PatientInquiryDetailInsertion(model);
+                TempData[AppConstant.Response] = AppConstant.Success;
+                return RedirectToAction("Add");
+            }
+            else
+            {
 
-        //    return View();
+                patientInquiryRepository.PatientInquiryDetailUpdation(model);
+                TempData[AppConstant.Response] = AppConstant.Success;
+                return RedirectToAction("Index");
+            }
 
-        //}
+            return View();
+        }
+        public ActionResult UpdatePatientInquiryDetail(string id = null)
+        {
+            int patientId = default(int);
 
+            if (!string.IsNullOrEmpty(id))
+            {
+                int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out patientId);
+            }
+            var model = new PatientInquiryViewModel();
+            var patientInquiryRepository = new PatientInquiryRepository();
+            model = patientInquiryRepository.GetPatientInquiryByPatientInquiryDetailId(patientId);
+            model.CountryList = GetCountryList();
 
-        //public ActionResult UpdatePatientInquiryDetail(string id = null)
-        //{
-        //    int patientId = default(int);
+            model.GenderList = GetGenderList();
 
-        //    if (!string.IsNullOrEmpty(id))
-        //    {
-        //        int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out patientId);
-        //    }
-        //    var model = new PatientInquiryViewModel();
-        //    var patientInquiryRepository = new PatientInquiryRepository();
-        //    model = patientInquiryRepository.GetPatientInquiryByPatientInquiryDetailId(patientId);
-        //    model.CountryList = GetCountryList();
+            return View(model);
 
-        //    model.GenderList = GetGenderList();
+        }
+        public ActionResult GetPatientInquiryList(JQGridSort jQGridSort)
+        {
+            var patientInquiryRepository = new PatientInquiryRepository();
+            var result = patientInquiryRepository.GetPatientInquiryList(jQGridSort);
 
-        //    return View(model);
-
-        //}
-        //public ActionResult GetPatientInquiryList(JQGridSort jQGridSort)
-        //{
-        //    var patientInquiryRepository = new PatientInquiryRepository();
-        //    var result = patientInquiryRepository.GetPatientInquiryList(jQGridSort);
-
-        //    return Json(result, JsonRequestBehavior.AllowGet);
-        //}
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
 
 
-        //public ActionResult UpdatePatientInquiry(string id = null)
-        //{
-        //    int patientId = default(int);
+        public ActionResult UpdatePatientInquiry(string id = null)
+        {
+            int patientId = default(int);
 
-        //    if (!string.IsNullOrEmpty(id))
-        //    {
-        //        int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out patientId);
-        //    }
-        //    var model = new PatientInquiryViewModel();
-        //    var patientInquiryRepository = new PatientInquiryRepository();
-        //    model = patientInquiryRepository.GetPatientInquiryByPatientInquiryDetailId(patientId);
-        //    model.CountryList = GetCountryList();
+            if (!string.IsNullOrEmpty(id))
+            {
+                int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out patientId);
+            }
+            var model = new PatientInquiryViewModel();
+            var patientInquiryRepository = new PatientInquiryRepository();
+            model = patientInquiryRepository.GetPatientInquiryByPatientInquiryDetailId(patientId);
+            model.CountryList = GetCountryList();
 
-        //    model.GenderList = GetGenderList();
+            model.GenderList = GetGenderList();
 
-        //    return View(model);
+            return View(model);
 
-        //}
+        }
+        public ActionResult Delete(int patientId)
+        {
+            var patientInquiryRepository = new PatientInquiryRepository();
+            patientInquiryRepository.PatientInquiryDeletion(patientId);
+            return Json(new AjaxResponse() { IsSuccess = true });
+        }
         private List<SelectListItem> GetGenderList()
         {
             var genderSelectList = new List<SelectListItem>();

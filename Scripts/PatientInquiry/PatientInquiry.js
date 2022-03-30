@@ -22,8 +22,8 @@ $(document).ready(function () {
         jsonReader: jsonreader,
         colModel: [
 
-            { label: 'PatientInquiryId', name: 'PatientInquiryId', key: true, width: 100, hidden: true, },
-            { label: 'EncryptPatientInquiryId', name: 'EncryptPatientInquiryId', hidden: true, },
+            { label: 'PatienId', name: 'PatientId', key: true, width: 100, hidden: true, },
+            { label: 'EncryptPatientId', name: 'EncryptPatientId', hidden: true, },
             { label: 'First Name', name: 'FirstName', width: 200, },
             { label: 'Last Name', name: 'LastName', width: 200, },
             { label: 'Gender', name: 'Gender', width: 200, hidden: true, },
@@ -77,10 +77,10 @@ $(document).ready(function () {
             recreateFrom: true,
 
             delData: {
-                patientInquiryId: function () {
+                patientId: function () {
                     var selRowId = $(grid).jqGrid('getGridParam', 'selrow');
                     var rowDatas = $(grid).jqGrid("getRowData", selRowId);
-                    return rowDatas.PatientInquiryId;
+                    return rowDatas.PatientId;
                 }
             }
         },
@@ -105,7 +105,7 @@ $(document).ready(function () {
                     $.jgrid.info_dialog('Warning', 'Please, select row', '', { styleUI: 'Bootstrap' });
                 } else {
                     var rowData = $(grid).jqGrid("getRowData", selRowId);
-                    window.location = relativepath + "PatientInquiry/UpdatePatientInquiry?id=" + rowData.EncryptPatientInquiryId;
+                    window.location = relativepath + "PatientInquiry/UpdatePatientInquiryDetail?id=" + rowData.EncryptPatientId;
                 }
             }
         });

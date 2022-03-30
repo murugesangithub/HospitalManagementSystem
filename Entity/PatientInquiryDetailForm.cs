@@ -12,38 +12,38 @@ namespace HospitalManagementSystem.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class PatientInquiryFormDetail
+    public partial class PatientInquiryDetailForm
     {
-        public int PatientInquiryId { get; set; }
+        public int PatientId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public int Gender { get; set; }
+        public string DateofBirth { get; set; }
         public int Age { get; set; }
         public string Email { get; set; }
-        public int Gender { get; set; }
         public int PhoneNumber { get; set; }
+        public int Height { get; set; }
+        public int Weight { get; set; }
+        public string GuardianName { get; set; }
+        public string Problem { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
+        public int PostalCode { get; set; }
         public string State { get; set; }
-        public string PostalCode { get; set; }
-        public string Height { get; set; }
-        public string weight { get; set; }
-        public string GuardianName { get; set; }
-        public string DateofBirth { get; set; }
-        public string Problem { get; set; }
         public int Country { get; set; }
         public string Diabetes { get; set; }
-        public string Cancer { get; set; }
-        public string Doyousmoke { get; set; }
-        public string Doyoudrinkalchocol { get; set; }
         public string ThyroidProblems { get; set; }
-        public string HeartProblems { get; set; }
         public string LungProblems { get; set; }
-        public string BloodPressureProblems { get; set; }
-        public string KidneyorLiverProblems { get; set; }
+        public string HeartProblems { get; set; }
+        public string BloodProblems { get; set; }
+        public string Kidney { get; set; }
+        public string Cancer { get; set; }
+        public string Smoke { get; set; }
+        public string Alchocol { get; set; }
         public string MedicalConditions { get; set; }
-        public string Lastdose { get; set; }
-        public string AttachFileImage { get; set; }
         public string Allergy { get; set; }
+        public string LastDose { get; set; }
+        public string MedicalDocuments { get; set; }
         public bool IsActive { get; set; }
     }
 }

@@ -1,7 +1,4 @@
 ﻿
-@{
-    ViewBag.Title = "UpdatePatientInquiryDetail";
-}
 
 @model HospitalManagementSystem.ViewModel.PatientInquiryViewModel
 @using HospitalManagementSystem.Common;
@@ -33,7 +30,7 @@
                 {
                     @Html.AntiForgeryToken()
 
-                    @Html.HiddenFor(m => m.PatientInquiryId, new { @class = "form-control" })
+                    @Html.HiddenFor(m => m.PatientId, new { @class = "form-control" })
 
                     <div class="box-body">
                         <div class="form-group">

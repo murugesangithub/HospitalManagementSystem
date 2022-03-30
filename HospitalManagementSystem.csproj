@@ -228,7 +228,7 @@
     <Compile Include="Entity\PatientDetail.cs">
       <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\PatientInquiryFormDetail.cs">
+    <Compile Include="Entity\PatientInquiryDetailForm.cs">
       <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\PurchaseDetail.cs">
@@ -247,13 +247,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\PatientInquiryRepostitory.cs" />
+    <Compile Include="Repository\PatientInquiryRepository.cs" />
     <Compile Include="Repository\BillingRepostitory.cs" />
     <Compile Include="Repository\MasterServiceRepository.cs" />
     <Compile Include="Repository\MasterPaymentStatusRepository.cs" />
     <Compile Include="Repository\MasterPaymentRepository.cs" />
-    <Compile Include="Repository\PatientAdmissionRepostitory.cs" />
-    <Compile Include="Repository\MedicineRepostitory.cs" />
+    <Compile Include="Repository\PatientAdmissionRepository.cs" />
+    <Compile Include="Repository\MedicineRepository.cs" />
     <Compile Include="Repository\MasterCategoryRepository.cs" />
     <Compile Include="Repository\MasterSpecialistRepostitory.cs" />
     <Compile Include="Repository\MasterStateRepostitory.cs" />
@@ -314,7 +314,6 @@
     <Content Include="Images\avatar.png" />
     <Content Include="Images\default_profile.jpg" />
     <Content Include="Scripts\adminlte.min.js" />
-    <Content Include="Scripts\PatientInquiry\PatientInquiry.js" />
     <Content Include="Scripts\Billing\Billing.js" />
     <Content Include="Scripts\Appointment\Appointment.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -345,6 +344,7 @@
     <Content Include="Scripts\Medicine\Medicine.js" />
     <Content Include="Scripts\Notification\bootstrap-notify.js" />
     <Content Include="Scripts\PatientAdmit\PatientAdmit.js" />
+    <Content Include="Scripts\PatientInquiry\PatientInquiry.js" />
     <Content Include="Scripts\Patient\Patient.js" />
     <Content Include="Scripts\Resize\ResizeSensor.js" />
     <Content Include="Scripts\fastclick.js" />

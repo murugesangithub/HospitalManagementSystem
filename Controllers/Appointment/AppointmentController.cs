@@ -38,7 +38,6 @@ namespace HospitalManagementSystem.Controllers
         }
         public ActionResult AddAppointment(AppointmentViewModel model)
         {
-
             var appointmentRepository = new AppointmentRepository();
             if (model.TokenNumber == default(int))
             {
@@ -48,12 +47,10 @@ namespace HospitalManagementSystem.Controllers
             }
             else
             {
-
                 appointmentRepository.AppointmentDetailUpdation(model);
                 TempData[AppConstant.Response] = AppConstant.Success;
                 return RedirectToAction("Index");
             }
-
             return View();
         }
         private List<SelectListItem> GetGenderList()
