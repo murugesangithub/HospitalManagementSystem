@@ -29,6 +29,7 @@
         <EntityTypeShape EntityType="HMSModel.PurchaseDetail" Width="1.5" PointX="10.75" PointY="12.75" />
         <EntityTypeShape EntityType="HMSModel.Master_Department" Width="1.5" PointX="13.375" PointY="12.75" />
         <EntityTypeShape EntityType="HMSModel.PatientInquiryDetailForm" Width="1.5" PointX="14.375" PointY="0.75" />
+        <EntityTypeShape EntityType="HMSModel.Master_Medicine" Width="1.5" PointX="0.75" PointY="14.75" />
       
       </Diagram>
     </edmx:Diagrams>

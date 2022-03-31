@@ -68,7 +68,8 @@ namespace HospitalManagementSystem.ViewModel
         public int PaymentStatus { get; set; }
         public string PaymentStatusMethod { get; set; }
 
-
+        public int PurchaseMedicineId { get; set; }
+        public string EncryptPurchaseMedicineId { get; set; }
         public bool IsActive { get; set; }
     }
 }

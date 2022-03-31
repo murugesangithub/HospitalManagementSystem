@@ -201,6 +201,9 @@
     <Compile Include="Entity\Master_MaritalStatus.cs">
       <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\Master_Medicine.cs">
+      <DependentUpon>HMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\Master_Payment.cs">
       <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
@@ -247,6 +250,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\MasterMedicineRepository.cs" />
+    <Compile Include="Repository\PurchaseMedicineRepository.cs" />
     <Compile Include="Repository\PatientInquiryRepository.cs" />
     <Compile Include="Repository\BillingRepostitory.cs" />
     <Compile Include="Repository\MasterServiceRepository.cs" />
@@ -346,6 +351,7 @@
     <Content Include="Scripts\PatientAdmit\PatientAdmit.js" />
     <Content Include="Scripts\PatientInquiry\PatientInquiry.js" />
     <Content Include="Scripts\Patient\Patient.js" />
+    <Content Include="Scripts\Purchase\PurchaseMedicine.js" />
     <Content Include="Scripts\Resize\ResizeSensor.js" />
     <Content Include="Scripts\fastclick.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -414,6 +420,7 @@
     <Content Include="Views\PatientInquiry\Index.cshtml" />
     <Content Include="Views\PatientInquiry\UpdatePatientInquiryDetail.cshtml" />
     <Content Include="Views\PurchaseMedicine\Index.cshtml" />
+    <Content Include="Views\PurchaseMedicine\UpdatePurchaseMedicine.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
