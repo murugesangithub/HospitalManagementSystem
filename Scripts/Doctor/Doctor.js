@@ -24,22 +24,22 @@ $(document).ready(function () {
 
             { label: 'DoctorDetailId', name: 'DoctorDetailId', key: true, width: 200, hidden: true, },
             { label: 'EncryptDoctorDetailId', name: 'EncryptDoctorDetailId', key: true, width: 200, hidden: true, },
-            { label: 'FirstName', name: 'FirstName', width: 200, },
-            { label: 'LastName', name: 'LastName', width: 200, },
+            { label: 'First Name', name: 'FirstName', width: 200, },
+            { label: 'Last Name', name: 'LastName', width: 200, },
 
             { label: 'Email', name: 'Email', width: 200, },
 
             { label: 'Address', name: 'Address', width: 200, },
 
-            { label: 'MobileNo', name: 'MobileNo', width: 200, },
+            { label: 'Mobile No', name: 'MobileNo', width: 200, },
             { label: 'Gender', name: 'Gender', width: 200, hidden: true, },
-            { label: 'GenderDesc', name: 'GenderDesc', width: 200, },
+            { label: 'Gender', name: 'GenderDesc', width: 200, },
             { label: 'State', name: 'State', width: 200, hidden: true, },
-            { label: 'StateDesc', name: 'StateDesc', width: 200, },
+            { label: 'State', name: 'StateDesc', width: 200, },
             { label: 'City', name: 'City', width: 200, hidden: true, },
-            { label: 'CityDesc', name: 'CityDesc', width: 200, },
+            { label: 'City', name: 'CityDesc', width: 200, },
             { label: 'Specialist', name: 'Specialist', width: 200, hidden: true, },
-            { label: 'SpecialistDesc', name: 'SpecialistDesc', width: 200, },
+            { label: 'Specialist', name: 'SpecialistDesc', width: 200, },
 
 
         ],

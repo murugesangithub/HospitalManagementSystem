@@ -24,26 +24,26 @@ $(document).ready(function () {
 
             { label: 'PatientAdmissionId', name: 'PatientAdmissionId', key: true, width: 200, hidden: true, },
             { label: 'EncryptPatientAdmissionId', name: 'EncryptPatientAdmissionId', hidden: true, },
-            { label: 'DoctorName', name: 'DoctorName', width: 200, },
-            { label: 'AdmissionDate', name: 'AdmissionDate', width: 200, },
-            { label: 'PlannedProcedure', name: 'PlannedProcedure', width: 200, },
+            { label: 'Doctor Name', name: 'DoctorName', width: 200, },
+            { label: 'Admission Date', name: 'AdmissionDate', width: 200, },
+            { label: 'Planned Procedure', name: 'PlannedProcedure', width: 200, },
 
             { label: 'Email', name: 'Email', width: 200, },
 
             { label: 'Address', name: 'Address', width: 200, },
 
-            { label: 'ItemNumber', name: 'ItemNumber', width: 200, },
+            { label: 'Item Number', name: 'ItemNumber', width: 200, },
             { label: 'Gender', name: 'Gender', width: 200, },
-            { label: 'PatientName', name: 'PatientName', width: 200, },
+            { label: 'Patient Name', name: 'PatientName', width: 200, },
             { label: 'State', name: 'State', width: 200, },
-            { label: 'DateofBirth', name: 'DateofBirth', width: 200, },
+            { label: 'DOB', name: 'DateofBirth', width: 200, },
             { label: 'City', name: 'City', width: 200, },
-            { label: 'GuardianName', name: 'GuardianName', width: 200, },
-            { label: 'MaritalStatus', name: 'MaritalStatus', width: 200, },
+            { label: 'Guardian Name', name: 'GuardianName', width: 200, },
+            { label: 'Marital Status', name: 'MaritalStatus', width: 200, },
             { label: 'Patient', name: 'Patient', width: 200, },
-            { label: 'PhoneNumber', name: 'PhoneNumber', width: 200, },
+            { label: 'Phone Number', name: 'PhoneNumber', width: 200, },
             { label: 'Contact', name: 'Contact', width: 200, },
-            { label: 'PostalCode', name: 'PostalCode', width: 200, },
+            { label: 'Postal Code', name: 'PostalCode', width: 200, },
 
 
 

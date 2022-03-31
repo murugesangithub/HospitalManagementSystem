@@ -53,6 +53,7 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Grand Total ")]
         public string GrandTotal { get; set; }
 
+        [Required]
         [Display(Name = "Notes ")]
         public string Notes { get; set; }
 
@@ -67,9 +68,9 @@ namespace HospitalManagementSystem.ViewModel
         public List<System.Web.Mvc.SelectListItem> PaymentStatusList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int PaymentStatus { get; set; }
         public string PaymentStatusMethod { get; set; }
+        public int MedicineId { get; set; }
 
-        public int PurchaseMedicineId { get; set; }
-        public string EncryptPurchaseMedicineId { get; set; }
+        public string EncryptMedicineId { get; set; }
         public bool IsActive { get; set; }
     }
 }

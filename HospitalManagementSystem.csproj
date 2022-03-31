@@ -234,7 +234,7 @@
     <Compile Include="Entity\PatientInquiryDetailForm.cs">
       <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\PurchaseDetail.cs">
+    <Compile Include="Entity\PurchaseMedicineDetail.cs">
       <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\Role.cs">

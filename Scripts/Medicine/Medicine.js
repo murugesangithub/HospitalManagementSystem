@@ -24,13 +24,13 @@ $(document).ready(function () {
 
             { label: 'MedicineId', name: 'MedicineId', key: true, width: 100, hidden: true, },
             { label: 'EncryptMedicineId', name: 'EncryptMedicineId', hidden: true, },           
-            { label: 'MedicineName', name: 'MedicineName', width: 200, },         
+            { label: 'Medicine Name', name: 'MedicineName', width: 200, },         
             { label: 'Category', name: 'Category', width: 200, hidden: true, },
-            { label: 'CategoryDesc', name: 'CategoryDesc', width: 200, },
-            { label: 'CompanyName', name: 'CompanyName', width: 200, },     
-            { label: 'PurchaseDate', name: 'PurchaseDate', width: 200, },
+            { label: 'Category ', name: 'CategoryDesc', width: 200, },
+            { label: 'Company Name', name: 'CompanyName', width: 200, },     
+            { label: 'Purchase Date', name: 'PurchaseDate', width: 200, },
             { label: 'Price', name: 'Price', width: 200, },
-            { label: 'ExpiredDate', name: 'ExpiredDate', width: 200, },
+            { label: 'Expired Date', name: 'ExpiredDate', width: 200, },
             { label: 'Stock', name: 'Stock', width: 200, },
 
         ],
