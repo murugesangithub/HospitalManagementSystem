@@ -159,8 +159,8 @@ function ShowPatientDetailPopup(PatientDetailId, EncryptPatientDetailId) {
             $('#FirstName').val(res.FirstName);
             $('#LastName').val(res.LastName);
             $('#Email').val(res.Email);
-            $('#Gender').val(res.GenderDesc);
-            $('#MaritalStatus').val(res.MaritalStatusDesc);
+            $('#Gender').val(res.GenderDescription);
+            $('#MaritalStatus').val(res.MaritalStatusDescription);
             $('#Age').val(res.Age);
             $('#GuardianName').val(res.GuardianName);
             $('#DateofBirth').val(res.DateofBirth);

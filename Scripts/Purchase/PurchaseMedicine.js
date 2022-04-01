@@ -149,8 +149,8 @@ function ShowPurchaseMedicineDetailPopup(MedicineId, EncryptMedicineId) {
             $('#Date').val(res.Date);
             $('#Category').val(res.CategoryDesc);
             $('#Medicine').val(res.MedicineDesc);
-            $('#Quantity').val(res.QuantityDesc);
-            $('# Notes').val(res.Notes);
+            $('#Quantity').val(res.Quantity);
+            $('#Notes').val(res.Notes);
             $('#Discount').val(res.Discount);
             $('#GrandTotal').val(res.GrandTotal);
             $('#Payment').val(res.PaymentMethod);

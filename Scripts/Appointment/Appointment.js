@@ -31,7 +31,7 @@ $(document).ready(function () {
             { label: 'Gender', name: 'Gender', width: 200,hidden:true, },
             { label: 'Gender ', name: 'GenderDescription', width: 200, },
             { label: 'Age', name: 'Age', width: 200, },        
-            { label: 'DoB', name: 'DateofBirth', width: 200, },
+            { label: 'DOB', name: 'DateofBirth', width: 200, },
             { label: 'Problem', name: 'Problem', width: 200, },
             { label: 'Email', name: 'Email', width: 200, },
             { label: 'Phone Number', name: 'PhoneNumber', width: 200, },
@@ -145,7 +145,7 @@ function ShowAppointmentDetailPopup(TokenNumber, EncryptTokenNumber)
             $('#FirstName').val(res.FirstName);
             $('#LastName').val(res.LastName);
             $('#Email').val(res.Email);
-            $('#Gender').val(res.GenderDesc);
+            $('#Gender').val(res.GenderDescription);
             $('#Age').val(res.Age);
             $('#DateofAppointment').val(res.DateofAppointment);
             $('#DateofBirth').val(res.DateofBirth);
