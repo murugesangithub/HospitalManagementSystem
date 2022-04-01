@@ -51,10 +51,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
             }
 
         }
-
-
         //select
-
         public JQGridResponse<MedicineViewModel> GetMedicineList(JQGridSort jQGridSort)
         {
             IQueryable<MedicineViewModel> list = GetMedicineListQuery();
@@ -83,7 +80,6 @@ namespace HospitalManagementSystem.DataAccess.Repository
 
             return result.AsQueryable();
         }
-
         public MedicineViewModel GetMedicineByMedicineDetailId(int medicineId)
         {
             var result = dbcontext.MedicineDetails.Where(x => x.IsActive && x.MedicineId == medicineId).Select(s => new MedicineViewModel()
@@ -98,14 +94,9 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 ExpiredDate = s.ExpiredDate,
                 Stock = s.Stock,
                 IsActive = s.IsActive,
-
-
             }).FirstOrDefault();
-
-
             return result;
         }
-
         //delete
         public void MedicineDeletion(int medicineId)
         {
@@ -117,10 +108,9 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 dbcontext.SaveChanges();
             }
         }
-
-        public MedicineViewModel GetMedicineDetail(int MedicineId)
+        public MedicineViewModel GetMedicineDetail(int medicineId)
         {
-            var result = dbcontext.MedicineDetails.Where(x => x.IsActive).Select(s => new MedicineViewModel()
+            var result = dbcontext.MedicineDetails.Where(x => x.IsActive && x.MedicineId == medicineId).Select(s => new MedicineViewModel()
             {
                 MedicineId = s.MedicineId,
                 MedicineName = s.MedicineName,

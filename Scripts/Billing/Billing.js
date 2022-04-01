@@ -112,7 +112,7 @@ $(document).ready(function () {
     });
 });
 
-function ShowBillingDetailPopup(patientId, EncryptPatientId) {
+function ShowBillingDetailPopup(PatientId, EncryptPatientId) {
 
     $('#BillingDetailModalPopup').modal();
     $.ajax({
@@ -122,7 +122,7 @@ function ShowBillingDetailPopup(patientId, EncryptPatientId) {
             console.log(res);
             var title = res.PatientName;
             $('#ProfileTitle').text(title);
-            $('#ProfileImage').attr('src', res.ProfileImage);
+       /*     $('#ProfileImage').attr('src', res.ProfileImage);*/
             $('#PatientName').val(res.PatientName);
             $('#Department').val(res.DepartmentDesc);
             $('#DoctorName').val(res.DoctorName);
@@ -136,9 +136,9 @@ function ShowBillingDetailPopup(patientId, EncryptPatientId) {
             $('#CheckNo').val(res.CheckNo);
             $('#PaymentStatus').val(res.PaymentStatusMethod);
 
-            if (res.ProfileImage == "") {
-                $('#ProfileImage').attr('src', relativepath + "Images/default_profile.jpg");
-            }
+            //if (res.ProfileImage == "") {
+            //    $('#ProfileImage').attr('src', relativepath + "Images/default_profile.jpg");
+            //}
 
             //  alert(result);
         },

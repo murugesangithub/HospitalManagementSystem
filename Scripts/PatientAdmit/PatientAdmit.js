@@ -153,9 +153,9 @@ function ShowPatientAdmissionPopup(PatientAdmissionId, EncryptPatientAdmissionId
             $('#State').val(res.State);
 
 
-            if (res.ProfileImage == "") {
-                $('#ProfileImage').attr('src', relativepath + "Images/default_profile.jpg");
-            }
+            //if (res.ProfileImage == "") {
+            //    $('#ProfileImage').attr('src', relativepath + "Images/default_profile.jpg");
+            //}
 
             //  alert(result);
         },

@@ -54,7 +54,7 @@ $(document).ready(function () {
             recreateFrom: true,
 
             delData: {
-                patientDetailId: function () {
+                medicineId: function () {
                     var selRowId = $(grid).jqGrid('getGridParam', 'selrow');
                     var rowData = $(grid).jqGrid("getRowData", selRowId);
                     return rowData.MedicineId;
@@ -120,7 +120,7 @@ function ShowMedicineDetailPopup(MedicineId, EncryptMedicineId) {
             console.log(res);
             var title = res.MedicineName;
             $('#ProfileTitle').text(title);
-            $('#ProfileImage').attr('src', res.ProfileImage);
+           /* $('#ProfileImage').attr('src', res.ProfileImage);*/
             $('#MedicineName').val(res.MedicineName);
             $('#Category').val(res.CategoryDesc);
             $('#CompanyName').val(res.CompanyName);
@@ -129,9 +129,9 @@ function ShowMedicineDetailPopup(MedicineId, EncryptMedicineId) {
             $('#ExpiredDate').val(res.ExpiredDate);
             $('#Stock').val(res.Stock);
 
-            if (res.ProfileImage == "") {
-                $('#ProfileImage').attr('src', relativepath + "Images/default_profile.jpg");
-            }
+            //if (res.ProfileImage == "") {
+            //    $('#ProfileImage').attr('src', relativepath + "Images/default_profile.jpg");
+            //}
 
             //  alert(result);
         },
