@@ -121,7 +121,7 @@ function ShowMedicineDetailPopup(MedicineId, EncryptMedicineId) {
             var title = res.MedicineName;
             $('#ProfileTitle').text(title);
             $('#ProfileImage').attr('src', res.ProfileImage);
-            $('#MedicineName').val(res.MedicineDesc);
+            $('#MedicineName').val(res.MedicineName);
             $('#Category').val(res.CategoryDesc);
             $('#CompanyName').val(res.CompanyName);
             $('#PurchaseDate').val(res.PurchaseDate);
