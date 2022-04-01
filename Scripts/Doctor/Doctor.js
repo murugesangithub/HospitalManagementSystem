@@ -32,14 +32,14 @@ $(document).ready(function () {
 
             { label: 'Address', name: 'Address', width: 200, },
 
-            { label: 'Mobile No', name: 'MobileNo', width: 200, },
-            { label: 'Gender', name: 'Gender', width: 200, hidden: true, },
-            { label: 'Gender', name: 'GenderDesc', width: 200, },
-            { label: 'State', name: 'State', width: 200, hidden: true, },
-            { label: 'State', name: 'StateDesc', width: 200, },
-            { label: 'City', name: 'City', width: 200, hidden: true, },
-            { label: 'City', name: 'CityDesc', width: 200, },
-            { label: 'Specialist', name: 'Specialist', width: 200, hidden: true, },
+            //{ label: 'Mobile No', name: 'MobileNo', width: 200, },
+            //{ label: 'Gender', name: 'Gender', width: 200, hidden: true, },
+            //{ label: 'Gender', name: 'GenderDesc', width: 200, },
+            //{ label: 'State', name: 'State', width: 200, hidden: true, },
+            //{ label: 'State', name: 'StateDesc', width: 200, },
+            //{ label: 'City', name: 'City', width: 200, hidden: true, },
+            //{ label: 'City', name: 'CityDesc', width: 200, },
+            //{ label: 'Specialist', name: 'Specialist', width: 200, hidden: true, },
             { label: 'Specialist', name: 'SpecialistDesc', width: 200, },
 
 

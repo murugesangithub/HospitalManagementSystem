@@ -125,7 +125,18 @@ namespace HospitalManagementSystem.Controllers
             }
             return countrySelectList;
         }
+        public ActionResult GetPatientInquiryDetail(string id)
+        {
+            int patientId = default(int);
+            if (!string.IsNullOrEmpty(id))
+            {
+                int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out patientId);
+            }
+            var patientInquiryRepository = new PatientInquiryRepository();
+            var result = patientInquiryRepository.GetPatientInquiryDetail(patientId);
 
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
 
     }
 }

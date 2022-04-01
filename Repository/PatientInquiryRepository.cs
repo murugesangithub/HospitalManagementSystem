@@ -199,9 +199,46 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 dbcontext.Entry(patientInquirydetail);
                 dbcontext.SaveChanges();
             }
-
-
         }
-
+        public PatientInquiryViewModel GetPatientInquiryDetail(int patientId)
+        {
+            var result = dbcontext.PatientInquiryDetailForms.Where(x => x.IsActive && x.PatientId == patientId).Select(s => new PatientInquiryViewModel()
+            {
+                PatientId = s.PatientId,
+                FirstName = s.FirstName,
+                LastName = s.LastName,
+                GuardianName = s.GuardianName,
+                DateofBirth = s.DateofBirth,
+                Age = s.Age.ToString(),
+                PhoneNumber = s.PhoneNumber.ToString(),
+                Address = s.Address,
+                CountryDesc = dbcontext.Master_Country.Where(x => x.CountryId == s.Country).Select(b => b.Description).FirstOrDefault(),
+                Country = s.Country,
+                GenderDescription = dbcontext.Master_Gender.Where(x => x.GenderId == s.Gender).Select(b => b.Description).FirstOrDefault(),
+                Gender = s.Gender,
+                City = s.City,
+                State = s.State,
+                PostalCode = s.PostalCode.ToString(),
+                Problem = s.Problem,
+                Email = s.Email,
+                Weight = s.Weight.ToString(),
+                Height = s.Height.ToString(),
+                Diabetes = s.Diabetes,
+                Cancer = s.Cancer,
+                Doyousmoke = s.Smoke,
+                Doyoudrinkalchocol = s.Alchocol,
+                ThyroidProblems = s.ThyroidProblems,
+                HeartProblems = s.HeartProblems,
+                LungProblems = s.LungProblems,
+                BloodPressureProblems = s.BloodProblems,
+                KidneyorLiverProblems = s.Kidney,
+                MedicalConditions = s.MedicalConditions,
+                Allergy = s.Allergy,
+                Lastdose = s.LastDose,
+                AttachFileImage = s.MedicalDocuments,
+                IsActive = s.IsActive,
+            }).FirstOrDefault();
+            return result;
+        }
     }
 }

@@ -25,29 +25,19 @@ namespace HospitalManagementSystem.Controllers.Doctor
         // GET: Doctor
         public ActionResult Add()
         {
-
-
-
             var viewmodel = new DoctorViewModel();
 
             viewmodel.GenderList = GetGenderList();
             viewmodel.StateList = GetStateList();
             viewmodel.CityList = GetCityList();
             viewmodel.SpecialistList = GetSpecialistList();
-
-            return View(viewmodel);
-
+            return View(viewmodel)
         }
-
-
-
-
         public ActionResult AddDoctor(DoctorViewModel model)
         {
             var doctorRepository = new DoctorRepository();
             if (model.DoctorDetailId == default(int))
             {
-
                 doctorRepository.DoctorDetailInsertion(model);
                 TempData[AppConstant.Response] = AppConstant.Success;
                 return RedirectToAction("Add");
@@ -60,9 +50,6 @@ namespace HospitalManagementSystem.Controllers.Doctor
 
             }
         }
-
-
-
         private List<SelectListItem> GetGenderList()
         {
             var genderSelectList = new List<SelectListItem>();
@@ -74,8 +61,6 @@ namespace HospitalManagementSystem.Controllers.Doctor
             {
                 genderSelectList.Add(new SelectListItem() { Text = item.Description, Value = item.GenderId.ToString() });
             }
-
-
             return genderSelectList;
         }
 
@@ -91,12 +76,8 @@ namespace HospitalManagementSystem.Controllers.Doctor
                 stateSelectList.Add(new SelectListItem() { Text = item.Description, Value = item.StateId.ToString() });
             }
 
-
             return stateSelectList;
         }
-
-
-
 
         private List<SelectListItem> GetCityList()
         {
@@ -110,10 +91,8 @@ namespace HospitalManagementSystem.Controllers.Doctor
                 citySelectList.Add(new SelectListItem() { Text = item.Description, Value = item.CityId.ToString() });
             }
 
-
             return citySelectList;
         }
-
 
         private List<SelectListItem> GetSpecialistList()
         {
@@ -127,13 +106,8 @@ namespace HospitalManagementSystem.Controllers.Doctor
                 specialistSelectList.Add(new SelectListItem() { Text = item.Description, Value = item.SpecialistId.ToString() });
             }
 
-
             return specialistSelectList;
         }
-
-
-
-
         public ActionResult GetDoctorList(JQGridSort jQGridSort)
         {
             var doctorRepository = new DoctorRepository();
@@ -142,16 +116,12 @@ namespace HospitalManagementSystem.Controllers.Doctor
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
-
         public ActionResult Delete(int doctorDetailId)
         {
             var doctorRepository = new DoctorRepository();
             doctorRepository.doctorDeletion(doctorDetailId);
             return Json(new AjaxResponse() { IsSuccess = true });
         }
-
-
-
         //update
         public ActionResult UpdateDoctorDetail(string id = null)
         {
@@ -171,11 +141,7 @@ namespace HospitalManagementSystem.Controllers.Doctor
 
             return View(model);
         }
-
-
-
         //icon
-
         public ActionResult GetDoctorDetail(string id)
         {
             int doctorDetailId = default(int);

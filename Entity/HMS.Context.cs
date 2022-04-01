@@ -43,11 +43,11 @@ namespace HospitalManagementSystem.Entity
         public virtual DbSet<Master_PaymentStatus> Master_PaymentStatus { get; set; }
         public virtual DbSet<Master_Service> Master_Service { get; set; }
         public virtual DbSet<MedicineDetail> MedicineDetails { get; set; }
-        public virtual DbSet<PatientAdmitForm> PatientAdmitForms { get; set; }
         public virtual DbSet<PatientDetail> PatientDetails { get; set; }
         public virtual DbSet<Master_Department> Master_Department { get; set; }
         public virtual DbSet<PatientInquiryDetailForm> PatientInquiryDetailForms { get; set; }
         public virtual DbSet<Master_Medicine> Master_Medicine { get; set; }
         public virtual DbSet<PurchaseMedicineDetail> PurchaseMedicineDetails { get; set; }
+        public virtual DbSet<PatientAdmitForm> PatientAdmitForms { get; set; }
     }
 }

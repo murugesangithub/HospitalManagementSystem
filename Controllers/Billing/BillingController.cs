@@ -133,5 +133,18 @@ namespace HospitalManagementSystem.Controllers
             return View(model);
 
         }
+        public ActionResult GetBillingDetail(string id)
+        {
+            int patientId = default(int);
+            if (!string.IsNullOrEmpty(id))
+            {
+                int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out patientId);
+            }
+            var billingRepository = new BillingRepository();
+            var result = billingRepository.GetBillingDetail(patientId);
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

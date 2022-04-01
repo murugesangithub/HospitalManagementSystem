@@ -66,28 +66,6 @@ namespace HospitalManagementSystem.Controllers
 
 
 
-        //update
-
-
-        //public ActionResult UpdatePatientAdmitForm(string id = null)
-        //{
-        //    int patientAdmissionId = default(int);
-
-        //    if (!string.IsNullOrEmpty(id))
-        //    {
-        //        int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out patientAdmissionId);
-        //    }
-
-        //    var patientAdmissionRepository = new PatientAdmissionRepository();
-        //    var model = patientAdmissionRepository.GetPatientsByPatientAdmissionId(patientAdmissionId);
-
-
-        //    return View(model);
-        //}
-
-
-
-
         public ActionResult UpdatePatientAdmission(string id = null)
         {
             int patientAdmissionId = default(int);
@@ -103,6 +81,17 @@ namespace HospitalManagementSystem.Controllers
 
             return View(model);
         }
+        public ActionResult GetPatientAdmissionDetail(string id)
+        {
+            int patientAdmissionId = default(int);
+            if (!string.IsNullOrEmpty(id))
+            {
+                int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out patientAdmissionId);
+            }
+            var patientAdmissionRepository = new PatientAdmissionRepository();
+            var result = patientAdmissionRepository.GetPatientAdmissionDetail(patientAdmissionId);
 
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
     }
 }

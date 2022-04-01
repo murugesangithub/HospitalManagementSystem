@@ -94,7 +94,7 @@
                         <div class="form-group">
                             @Html.LabelFor(m => m.Discount, new { @class = "col-sm-3 control-label" })
                             <div class="col-md-6">
-                                @Html.TextBoxFor(m => m.Discount, new { placeholder = "", @maxlength = "3", @class = "form-control" })
+                                @Html.TextBoxFor(m => m.Discount, new { placeholder = "Discount", @maxlength = "3", @class = "form-control" })
                                 @Html.ValidationMessageFor(m => m.Discount, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                         <div class="form-group">
                             @Html.LabelFor(m => m.GrandTotal, new { @class = "col-sm-3 control-label" })
                             <div class="col-md-6">
-                                @Html.TextBoxFor(m => m.GrandTotal, new { placeholder = "", @maxlength = "10", @class = "form-control" })
+                                @Html.TextBoxFor(m => m.GrandTotal, new { placeholder = "GrandTotal", @maxlength = "10", @class = "form-control" })
                                 @Html.ValidationMessageFor(m => m.GrandTotal, "", new { @class = "text-danger" })
                             </div>
                         </div>

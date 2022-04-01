@@ -24,7 +24,7 @@ namespace HospitalManagementSystem.Entity
         public string GuardianName { get; set; }
         public string Gender { get; set; }
         public string MaritalStatus { get; set; }
-        public string Patient { get; set; }
+        public string PatientBelow18 { get; set; }
         public int PhoneNumber { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }

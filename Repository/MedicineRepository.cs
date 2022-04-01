@@ -116,10 +116,26 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 dbcontext.Entry(medicinedetail);
                 dbcontext.SaveChanges();
             }
-
-
         }
 
+        public MedicineViewModel GetMedicineDetail(int MedicineId)
+        {
+            var result = dbcontext.MedicineDetails.Where(x => x.IsActive).Select(s => new MedicineViewModel()
+            {
+                MedicineId = s.MedicineId,
+                MedicineName = s.MedicineName,
+                CategoryDesc = dbcontext.Master_Category.Where(x => x.CategoryId == s.Category).Select(b => b.Description).FirstOrDefault(),
+                Category = s.Category,
+                CompanyName = s.CompanyName,
+                PurchaseDate = s.PurchaseDate,
+                Price = s.Price,
+                ExpiredDate = s.ExpiredDate,
+                Stock = s.Stock,
+                IsActive = s.IsActive,
 
+            }).FirstOrDefault();
+
+            return result;
+        }
     }
 }

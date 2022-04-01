@@ -34,7 +34,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 DateofBirth = patientAdmissionViewModel.DateofBirth,
                 Gender = patientAdmissionViewModel.Gender,
                 PatientName = patientAdmissionViewModel.PatientName,
-                Patient = patientAdmissionViewModel.Patient,
+                PatientBelow18 = patientAdmissionViewModel.Patient,
                 IsActive = true,
             };
 
@@ -80,7 +80,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 State = s.State,
                 PatientName = s.PatientName,
                 Gender = s.Gender,
-                Patient = s.Patient,
+                Patient = s.PatientBelow18,
                 IsActive = s.IsActive,
 
             }).ToList();
@@ -106,28 +106,18 @@ namespace HospitalManagementSystem.DataAccess.Repository
 
         }
 
-
-
-
-
-
-
-
-
         public void PatientAdmissionUpdation(PatientAdmissionViewModel patientAdmissionViewModel)
         {
             var isPatientAdmitFormExist = dbcontext.PatientAdmitForms.Where(x => x.IsActive && x.PatientAdmissionId == patientAdmissionViewModel.PatientAdmissionId).FirstOrDefault();
             if (isPatientAdmitFormExist != null)
             {
 
-
-
                 isPatientAdmitFormExist.DoctorName = patientAdmissionViewModel.DoctorName;
                 isPatientAdmitFormExist.AdmissionDate = patientAdmissionViewModel.AdmissionDate;
                 isPatientAdmitFormExist.GuardianName = patientAdmissionViewModel.GuardianName;
                 isPatientAdmitFormExist.Email = patientAdmissionViewModel.Email;
                 isPatientAdmitFormExist.Address = patientAdmissionViewModel.Address;
-                isPatientAdmitFormExist.Patient = patientAdmissionViewModel.Patient;
+                isPatientAdmitFormExist.PatientBelow18 = patientAdmissionViewModel.Patient;
                 isPatientAdmitFormExist.Contact = patientAdmissionViewModel.Contact;
                 isPatientAdmitFormExist.PhoneNumber = (int)Convert.ToInt64(patientAdmissionViewModel.PhoneNumber);
                 isPatientAdmitFormExist.City = patientAdmissionViewModel.City;
@@ -141,18 +131,11 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 isPatientAdmitFormExist.PatientName = patientAdmissionViewModel.PatientName;
                 isPatientAdmitFormExist.IsActive = true;
 
-
-
-
                 dbcontext.Entry(isPatientAdmitFormExist);
                 dbcontext.SaveChanges();
             }
 
-
         }
-
-
-
 
         public PatientAdmissionViewModel GetPatientAdmitedByPatientAdmissionId(int patientAdmissionId)
         {
@@ -177,12 +160,40 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 State = s.State,
                 PatientName = s.PatientName,
                 Gender = s.Gender,
-                Patient = s.Patient,
+                Patient = s.PatientBelow18,
                 IsActive = s.IsActive,
 
             }).FirstOrDefault();
 
 
+            return result;
+        }
+        public PatientAdmissionViewModel GetPatientAdmissionDetail(int patientAdmissionId)
+        {
+            var result = dbcontext.PatientAdmitForms.Where(x => x.IsActive && x.PatientAdmissionId == patientAdmissionId).Select(s => new PatientAdmissionViewModel()
+            {
+                PatientAdmissionId = s.PatientAdmissionId,
+                DoctorName = s.DoctorName,
+                AdmissionDate = s.AdmissionDate,
+                PlannedProcedure = s.PlannedProcedure,
+                MaritalStatus = s.MaritalStatus,
+                ItemNumber = s.ItemNumber,
+                GuardianName = s.GuardianName,
+                DateofBirth = s.DateofBirth,
+                Contact = s.Contact,
+                Email = s.Email,
+                PhoneNumber = s.PhoneNumber.ToString(),
+                Address = s.Address,
+                City = s.City,
+                PostalCode = s.PostalCode,
+                State = s.State,
+                PatientName = s.PatientName,
+                Gender = s.Gender,
+                Patient = s.PatientBelow18,
+                IsActive = s.IsActive,
+
+            }).FirstOrDefault();
+            //result.ForEach(x => x.EncryptUserDetailId = Cryptography.EncryptStringToBytes_Aes(x.UserDetailId.ToString()));
             return result;
         }
 

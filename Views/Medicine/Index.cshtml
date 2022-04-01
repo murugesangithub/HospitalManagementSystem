@@ -2,6 +2,17 @@
 @{
     ViewBag.Title = "Index";
 }
+<style>
+
+    .border-right {
+        border-right: 1px solid #dee2e6 !important;
+    }
+
+    .form-control[disabled], .form-control[readonly], fieldset[disabled] {
+        background-color: #fff;
+    }
+</style>
+
 <div class="panel">
 
     <div class="panel panel-info">
@@ -15,3 +26,60 @@
 </div>
 <script src="~/Scripts/Medicine/Medicine.js"></script>
 
+<section class="content">
+    <div class="modal fade" id="MedicineDetailModalPopup">
+        <div class="modal-dialog box box-info" style="width:80%;">
+            <div class="modal-content ">
+                <div class="box-header with-border">
+                    <h3 class="box-title" id="ProfileTitle"></h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 border-right">
+                                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                                    <img class="rounded-circle mt-5 image" id="ProfileImage" style="max-width:220px" src="">
+                                </div>
+                            </div>
+                            <div class="col-md-5 border-right">
+                                <div class="p-3 py-5  form-group">
+
+                                    @*<div class="row md-2 form-group">
+                                            <div class="col-md-6"><label class="labels">First Name</label><input type="text" id="FirstName" class="form-control" readonly></div>
+                                            <div class="col-md-6"><label class="labels">Last Name</label><input type="text" id="LastName" class="form-control" readonly></div>
+                                        </div>*@
+                                    <div class="row md-3 form-group">
+                                        <div class="col-md-12 form-group"><label class="labels">Medicine Name</label><input type="text" id="MedicineName" class="form-control" readonly></div>
+                                        <div class="col-md-12 form-group"><label class="labels">Category</label><input type="text" id="Category" class="form-control" readonly></div>
+                                        <div class="col-md-12 form-group"><label class="labels">Company Name</label><input type="text" id="CompanyName" class="form-control" readonly></div>
+                                        <div class="col-md-12 form-group"><label class="labels">Price</label><input type="text" id="Price" class="form-control" readonly></div>
+
+
+                                    </div>
+                                    @*<div class="row md-3 form-group">
+
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 py-5">
+                                    <div class="col-md-12 form-group"><label class="labels">Purchase Date</label><input type="text" id="PurchaseDate" class="form-control" readonly></div> <br>
+                                    <div class="col-md-12 form-group"><label class="labels">Expired Date</label><input type="text" id="ExpiredDate" class="form-control" readonly></div>
+                                    <div class="col-md-12 form-group"><label class="labels">Stock</label><input type="text" id="Stock" class="form-control" readonly></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</section>

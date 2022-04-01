@@ -4,7 +4,7 @@ $(document).ready(function () {
     var grid = "#jqMedicineGrid";
     var gridpager = "#jqMedicineGridPager";
 
-    var bodyElem = $('.content-wrapper');
+    var bodyElem = $('body');
     new ResizeSensor(bodyElem, function () {
         var bodyElemWidth = Math.round($('.content-wrapper').width());
         var newGridWidth = bodyElemWidth - 25;
@@ -23,15 +23,15 @@ $(document).ready(function () {
         colModel: [
 
             { label: 'MedicineId', name: 'MedicineId', key: true, width: 100, hidden: true, },
-            { label: 'EncryptMedicineId', name: 'EncryptMedicineId', hidden: true, },           
-            { label: 'Medicine Name', name: 'MedicineName', width: 200, },         
+            { label: 'EncryptMedicineId', name: 'EncryptMedicineId', hidden: true, },
+            { label: 'Medicine Name', name: 'MedicineName', width: 200, },
             { label: 'Category', name: 'Category', width: 200, hidden: true, },
             { label: 'Category ', name: 'CategoryDesc', width: 200, },
-            { label: 'Company Name', name: 'CompanyName', width: 200, },     
+            /*  { label: 'Company Name', name: 'CompanyName', width: 200, },     */
             { label: 'Purchase Date', name: 'PurchaseDate', width: 200, },
             { label: 'Price', name: 'Price', width: 200, },
-            { label: 'Expired Date', name: 'ExpiredDate', width: 200, },
-            { label: 'Stock', name: 'Stock', width: 200, },
+            /*     { label: 'Expired Date', name: 'ExpiredDate', width: 200, },*/
+            //{ label: 'Stock', name: 'Stock', width: 200, },
 
         ],
         rownumbers: true,
@@ -87,7 +87,19 @@ $(document).ready(function () {
             }
         });
 
-  
+    $(grid).jqGrid('navButtonAdd', gridpager,
+        {
+            caption: "", buttonicon: "glyphicon glyphicon glyphicon-zoom-in", title: "View Details",
+            onClickButton: function () {
+                var selRowId = $(grid).jqGrid('getGridParam', 'selrow');
+                if (selRowId == null) {
+                    $.jgrid.info_dialog('Warning', 'Please, select row', '', { styleUI: 'Bootstrap' });
+                } else {
+                    var rowData = $(grid).jqGrid("getRowData", selRowId);
+                    ShowMedicineDetailPopup(rowData.MedicineId, rowData.EncryptMedicineId);
+                }
+            }
+        });
 
     $(grid).jqGrid('filterToolbar', {
         stringResult: true,
@@ -97,4 +109,40 @@ $(document).ready(function () {
             modifySearchingFilter.call(this, ' ');
         }
     });
+});
+function ShowMedicineDetailPopup(MedicineId, EncryptMedicineId) {
+
+    $('#MedicineDetailModalPopup').modal();
+    $.ajax({
+        url: relativepath + '/Medicine/GetMedicineDetail?id=' + EncryptMedicineId,
+        type: "GET",
+        success: function (res) {
+            console.log(res);
+            var title = res.MedicineName;
+            $('#ProfileTitle').text(title);
+            $('#ProfileImage').attr('src', res.ProfileImage);
+            $('#MedicineName').val(res.MedicineDesc);
+            $('#Category').val(res.CategoryDesc);
+            $('#CompanyName').val(res.CompanyName);
+            $('#PurchaseDate').val(res.PurchaseDate);
+            $('#Price').val(res.Price);
+            $('#ExpiredDate').val(res.ExpiredDate);
+            $('#Stock').val(res.Stock);
+
+            if (res.ProfileImage == "") {
+                $('#ProfileImage').attr('src', relativepath + "Images/default_profile.jpg");
+            }
+
+            //  alert(result);
+        },
+        error: function (err) {
+            Notify_Validation(err.statusText);
+        }
+    });
+
+}
+
+$('#btnMedicineDetailModalPopupClose').click(function () {
+    $('#MedicineDetailModalPopup').empty();
+
 });

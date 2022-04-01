@@ -13,8 +13,6 @@ namespace HospitalManagementSystem.Controllers
     public class AppointmentController : Controller
     {
 
-
-
         // GET: Appointment
         public ActionResult Index()
         {
@@ -126,13 +124,7 @@ namespace HospitalManagementSystem.Controllers
             return View(model);
 
         }
-
-
-
-
         //icon
-
-
         public ActionResult GetAppointmentDetail(string id)
         {
             int TokenNumber = default(int);

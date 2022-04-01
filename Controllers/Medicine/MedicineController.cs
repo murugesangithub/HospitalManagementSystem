@@ -96,5 +96,18 @@ namespace HospitalManagementSystem.Controllers
             return View(model);
 
         }
+        public ActionResult GetMedicineDetail(string id)
+        {
+            int medicineId = default(int);
+            if (!string.IsNullOrEmpty(id))
+            {
+                int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out medicineId);
+            }
+            var medicineRepository = new MedicineRepository();
+            var result = medicineRepository.GetMedicineDetail(medicineId);
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
