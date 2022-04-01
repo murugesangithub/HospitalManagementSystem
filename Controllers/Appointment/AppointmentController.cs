@@ -126,5 +126,24 @@ namespace HospitalManagementSystem.Controllers
             return View(model);
 
         }
+
+
+
+
+        //icon
+
+
+        public ActionResult GetAppointmentDetail(string id)
+        {
+            int TokenNumber = default(int);
+            if (!string.IsNullOrEmpty(id))
+            {
+                int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out TokenNumber);
+            }
+            var appointmentRepository = new AppointmentRepository();
+            var result = appointmentRepository.GetAppointmentDetail(TokenNumber);
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
     }
 }

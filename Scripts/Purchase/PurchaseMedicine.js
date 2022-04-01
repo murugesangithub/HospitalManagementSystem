@@ -4,7 +4,7 @@ $(document).ready(function () {
     var grid = "#jqPurchaseMedicineGrid";
     var gridpager = "#jqPurchaseMedicineGridPager";
 
-    var bodyElem = $('.content-wrapper');
+    var bodyElem = $('body');
     new ResizeSensor(bodyElem, function () {
         var bodyElemWidth = Math.round($('.content-wrapper').width());
         var newGridWidth = bodyElemWidth - 25;
@@ -100,6 +100,23 @@ $(document).ready(function () {
 
 
 
+    //icon
+
+    $(grid).jqGrid('navButtonAdd', gridpager,
+        {
+            caption: "", buttonicon: "glyphicon glyphicon glyphicon-zoom-in", title: "PurchaseMedicine Details",
+            onClickButton: function () {
+                var selRowId = $(grid).jqGrid('getGridParam', 'selrow');
+                if (selRowId == null) {
+                    $.jgrid.info_dialog('Warning', 'Please, select row', '', { styleUI: 'Bootstrap' });
+                } else {
+                    var rowData = $(grid).jqGrid("getRowData", selRowId);
+                    ShowPurchaseMedicineDetailPopup(rowData.MedicineId, rowData.EncryptMedicineId);
+                }
+            }
+        });
+
+
     $(grid).jqGrid('filterToolbar', {
         stringResult: true,
         searchOnEnter: false,
@@ -110,5 +127,49 @@ $(document).ready(function () {
 
     });
 
+
+});
+
+
+//icon
+
+function ShowPurchaseMedicineDetailPopup(MedicineId, EncryptMedicineId) {
+
+    $('#PurchaseMedicineDetailModalPopup').modal();
+    $.ajax({
+        url: relativepath + '/PurchaseMedicine/GetPurchaseMedicineDetail?id=' + EncryptMedicineId,
+        type: "GET",
+        success: function (res) {
+            console.log(res);
+            var title = res.SupplierName;
+            $('#ProfileTitle').text(title);
+            
+            $('#SupplierName').val(res.SupplierName);
+            $('#Code').val(res.Code);
+            $('#Date').val(res.Date);
+            $('#Category').val(res.CategoryDesc);
+            $('#Medicine').val(res.MedicineDesc);
+            $('#Quantity').val(res.QuantityDesc);
+            $('# Notes').val(res.Notes);
+            $('#Discount').val(res.Discount);
+            $('#GrandTotal').val(res.GrandTotal);
+            $('#Payment').val(res.PaymentMethod);
+            $('#PaymentStatus').val(res.PaymentStatusMethod);
+            
+            //if (res.ProfileImage == "") {
+            //    $('#ProfileImage').attr('src', relativepath + "Images/default_profile.jpg");
+            //}
+           
+            //  alert(result);
+        },
+        error: function (err) {
+            Notify_Validation(err.statusText);
+        }
+    });
+
+}
+
+$('#btnPurchaseMedicineDetailModalPopupClose').click(function () {
+    $('#PurchaseMedicineDetailModalPopup').empty();
 
 });

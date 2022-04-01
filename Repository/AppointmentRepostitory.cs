@@ -158,5 +158,38 @@ namespace HospitalManagementSystem.DataAccess.Repository
 
 
         }
+
+
+        //icon
+
+
+        public AppointmentViewModel GetAppointmentDetail(int tokenNumber)
+        {
+            var result = dbcontext.AppointmentDetails.Where(x => x.IsActive && x.TokenNumber == tokenNumber).Select(s => new AppointmentViewModel()
+            {
+                TokenNumber = s.TokenNumber,
+                FirstName = s.FirstName,
+                LastName = s.LastName,
+                GenderDescription = dbcontext.Master_Gender.Where(x => x.GenderId == s.Gender).Select(b => b.Description).FirstOrDefault(),
+                Gender = s.Gender,
+                Age = s.Age.ToString(),
+                DateofAppointment = s.DateofAppointment,
+                DateofBirth = s.DateofBirth,
+                Problem = s.Problem,
+                Email = s.Email,
+                PhoneNumber = s.PhoneNumber,
+                Address = s.Address,
+                ConsultingDoctor = s.ConsultingDoctor,
+                TimeSlotDesc = dbcontext.Master_TimeSlot.Where(x => x.TimeSlotId == s.TimeSlot).Select(b => b.Description).FirstOrDefault(),
+                TimeSlot = s.TimeSlot,
+                DepartmentDesc = dbcontext.Master_Department.Where(x => x.DepartmentId == s.Department).Select(b => b.Description).FirstOrDefault(),
+                Department = s.Department,
+
+                IsActive = s.IsActive,
+
+            }).FirstOrDefault();
+            //result.ForEach(x => x.EncryptUserDetailId = Cryptography.EncryptStringToBytes_Aes(x.UserDetailId.ToString()));
+            return result;
+        }
     }
 }

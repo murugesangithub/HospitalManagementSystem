@@ -4,7 +4,8 @@ $(document).ready(function () {
     var grid = "#jqPatientGrid";
     var gridpager = "#jqPatientGridPager";
 
-    var bodyElem = $('.content-wrapper');
+    var bodyElem = $('body');
+
     new ResizeSensor(bodyElem, function () {
         var bodyElemWidth = Math.round($('.content-wrapper').width());
         var newGridWidth = bodyElemWidth - 25;
@@ -54,6 +55,10 @@ $(document).ready(function () {
         pager: gridpager,
         caption: "Patient List"
     });
+
+    //delete
+
+
     $(grid).jqGrid('navGrid', gridpager, { edit: false, add: false, del: true, refresh: true, search: false },
 
         {},
@@ -77,6 +82,8 @@ $(document).ready(function () {
         {}
     );
 
+    //Add
+
     $(grid).jqGrid('navButtonAdd', gridpager,
         {
             caption: "", buttonicon: "glyphicon glyphicon-plus", title: "Add new row",
@@ -85,6 +92,9 @@ $(document).ready(function () {
             },
 
         });
+
+    //update
+
     $(grid).jqGrid('navButtonAdd', gridpager,
         {
             caption: "", buttonicon: "glyphicon glyphicon-edit", title: "Edit selected row",
@@ -99,6 +109,24 @@ $(document).ready(function () {
             }
         });
 
+
+
+
+    //icon
+
+    $(grid).jqGrid('navButtonAdd', gridpager,
+        {
+            caption: "", buttonicon: "glyphicon glyphicon glyphicon-zoom-in", title: "Patient Details",
+            onClickButton: function () {
+                var selRowId = $(grid).jqGrid('getGridParam', 'selrow');
+                if (selRowId == null) {
+                    $.jgrid.info_dialog('Warning', 'Please, select row', '', { styleUI: 'Bootstrap' });
+                } else {
+                    var rowData = $(grid).jqGrid("getRowData", selRowId);
+                    ShowPatientDetailPopup(rowData.PatientDetailId, rowData.EncryptPatientDetailId);
+                }
+            }
+        });
   
 
     $(grid).jqGrid('filterToolbar', {
@@ -109,4 +137,54 @@ $(document).ready(function () {
             modifySearchingFilter.call(this, ' ');
         }
     });
+});
+
+
+
+
+//icon
+
+
+function ShowPatientDetailPopup(PatientDetailId, EncryptPatientDetailId) {
+
+    $('#PatientDetailModalPopup').modal();
+    $.ajax({
+        url: relativepath + '/Patients/GetPatientDetail?id=' + EncryptPatientDetailId,
+        type: "GET",
+        success: function (res) {
+            console.log(res);
+            var title = res.FirstName + " " + res.LastName;
+            $('#ProfileTitle').text(title);
+            //$('#ProfileImage').attr('src', res.ProfileImage);
+            $('#FirstName').val(res.FirstName);
+            $('#LastName').val(res.LastName);
+            $('#Email').val(res.Email);
+            $('#Gender').val(res.GenderDesc);
+            $('#MaritalStatus').val(res.MaritalStatusDesc);
+            $('#Age').val(res.Age);
+            $('#GuardianName').val(res.GuardianName);
+            $('#DateofBirth').val(res.DateofBirth);
+            $('#Problem').val(res.FirstName);
+            $('#PhoneNumber').val(res.PhoneNumber);
+            $('#Address').val(res.Address);
+            $('#City').val(res.City);
+            $('#PostalCode').val(res.PostalCode);
+            $('#State').val(res.State);
+            $('#Country').val(res.CountryDesc);
+            //if (res.ProfileImage == "") {
+            //    $('#ProfileImage').attr('src', relativepath + "Images/default_profile.jpg");
+            //}
+            
+            //  alert(result);
+        },
+        error: function (err) {
+            Notify_Validation(err.statusText);
+        }
+    });
+
+}
+
+$('#btnPatientDetailModalPopupClose').click(function () {
+    $('#PatientDetailModalPopup').empty();
+
 });

@@ -134,8 +134,29 @@ namespace HospitalManagementSystem.Controllers
             }
             return paymentSelectList;
         }
-        //insert
 
-       
+
+
+        //icon
+
+
+        public ActionResult GetPurchaseMedicineDetail(string id)
+        {
+            int medicineId = default(int);
+            if (!string.IsNullOrEmpty(id))
+            {
+                int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out medicineId);
+            }
+            var purchasemedicineRepository = new PurchaseMedicineRepository();
+            var result = purchasemedicineRepository.GetPurchaseMedicineDetail(medicineId);
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+
+
+        
+
+
     }
 }

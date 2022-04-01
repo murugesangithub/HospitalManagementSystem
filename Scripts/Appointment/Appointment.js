@@ -4,7 +4,8 @@ $(document).ready(function () {
     var grid = "#jqAppointmentGrid";
     var gridpager = "#jqAppointmentGridPager";
 
-    var bodyElem = $('.content-wrapper');
+    var bodyElem = $('body');
+
     new ResizeSensor(bodyElem, function () {
         var bodyElemWidth = Math.round($('.content-wrapper').width());
         var newGridWidth = bodyElemWidth - 25;
@@ -95,7 +96,26 @@ $(document).ready(function () {
             }
         });
 
-   
+
+    //icon
+
+    $(grid).jqGrid('navButtonAdd', gridpager,
+        {
+            caption: "", buttonicon: "glyphicon glyphicon glyphicon-zoom-in", title: "Appointment Details",
+            onClickButton: function () {
+                var selRowId = $(grid).jqGrid('getGridParam', 'selrow');
+                if (selRowId == null) {
+                    $.jgrid.info_dialog('Warning', 'Please, select row', '', { styleUI: 'Bootstrap' });
+                } else {
+                    var rowData = $(grid).jqGrid("getRowData", selRowId);
+                    ShowAppointmentDetailPopup(rowData.TokenNumber, rowData.EncryptTokenNumber);
+                }
+            }
+        });
+
+
+
+
     $(grid).jqGrid('filterToolbar', {
         stringResult: true,
         searchOnEnter: false,
@@ -104,4 +124,52 @@ $(document).ready(function () {
             modifySearchingFilter.call(this, ' ');
         }
     });
+});
+
+
+
+//icon
+
+function ShowAppointmentDetailPopup(TokenNumber, EncryptTokenNumber)
+{
+
+    $('#AppointmentDetailModalPopup').modal();
+    $.ajax({
+        url: relativepath + '/Appointment/GetAppointmentDetail?id=' + EncryptTokenNumber,
+        type: "GET",
+        success: function (res) {
+            console.log(res);
+            var title = res.FirstName + " " + res.LastName;
+            $('#ProfileTitle').text(title);
+            //$('#ProfileImage').attr('src', res.ProfileImage);
+            $('#FirstName').val(res.FirstName);
+            $('#LastName').val(res.LastName);
+            $('#Email').val(res.Email);
+            $('#Gender').val(res.GenderDesc);
+            $('#Age').val(res.Age);
+            $('#DateofAppointment').val(res.DateofAppointment);
+            $('#DateofBirth').val(res.DateofBirth);
+            $('#Problem').val(res.Problem);
+            $('#PhoneNumber').val(res.PhoneNumber);
+            $('#Address').val(res.Address);
+            $('#ConsultingDoctor').val(res.ConsultingDoctor);
+            $('#TimeSlot').val(res.TimeSlotDesc);
+            $('#Department').val(res.DepartmentDesc);
+            
+            //if (res.ProfileImage == "") {
+            //    $('#ProfileImage').attr('src', relativepath + "Images/default_profile.jpg");
+            //}
+            
+            //  alert(result);
+        },
+        error: function (err) {
+            Notify_Validation(err.statusText);
+        }
+    });
+
+}
+
+$('#btnAppointmentDetailModalPopupClose').click(function () {
+    $('#AppointmentDetailModalPopup').empty();
+
 });

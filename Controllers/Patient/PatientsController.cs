@@ -134,6 +134,22 @@ namespace HospitalManagementSystem.Controllers
 
         }
 
+
+        //icon
+
+        public ActionResult GetPatientDetail(string id)
+        {
+            int patientDetailId = default(int);
+            if (!string.IsNullOrEmpty(id))
+            {
+                int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out patientDetailId);
+            }
+            var patientRepository = new PatientRepository();
+            var result = patientRepository.GetPatientDetail(patientDetailId);
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
     }
 
 

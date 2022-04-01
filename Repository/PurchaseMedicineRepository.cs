@@ -148,5 +148,35 @@ namespace HospitalManagementSystem.DataAccess.Repository
 
         }
 
+
+        //icon
+
+        public PurchaseMedicineViewModel GetPurchaseMedicineDetail(int MedicineId)
+        {
+            var result = dbcontext.PurchaseMedicineDetails.Where(x => x.IsActive && x.MedicineId == MedicineId).Select(s => new PurchaseMedicineViewModel()
+            {
+
+                MedicineId = s.MedicineId,
+                SupplierName = s.SupplierName,
+                Code = s.Code,
+                Date = s.Date,
+                CategoryDesc = dbcontext.Master_Category.Where(x => x.CategoryId == s.Category).Select(b => b.Description).FirstOrDefault(),
+                Category = s.Category,
+                MedicineDesc = dbcontext.Master_Medicine.Where(x => x.MedicineId == s.Medicine).Select(b => b.Description).FirstOrDefault(),
+                Medicine = s.Medicine,
+                Quantity = s.Quantity.ToString(),
+                Notes = s.Notes,
+                Discount = s.Discount.ToString(),
+                GrandTotal = s.GrandTotal.ToString(),
+                PaymentMethod = dbcontext.Master_Payment.Where(x => x.PaymentId == s.PaymentType).Select(b => b.Method).FirstOrDefault(),
+                Payment = s.PaymentType,
+                PaymentStatusMethod = dbcontext.Master_PaymentStatus.Where(x => x.PaymentStatusId == s.PaymentStatus).Select(b => b.Method).FirstOrDefault(),
+                PaymentStatus = s.PaymentStatus,
+                IsActive = s.IsActive,
+            }).FirstOrDefault();
+            //result.ForEach(x => x.EncryptUserDetailId = Cryptography.EncryptStringToBytes_Aes(x.UserDetailId.ToString()));
+            return result;
+        }
+
     }
 }

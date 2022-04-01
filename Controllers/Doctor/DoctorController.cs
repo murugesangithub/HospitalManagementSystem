@@ -172,5 +172,21 @@ namespace HospitalManagementSystem.Controllers.Doctor
             return View(model);
         }
 
+
+
+        //icon
+
+        public ActionResult GetDoctorDetail(string id)
+        {
+            int doctorDetailId = default(int);
+            if (!string.IsNullOrEmpty(id))
+            {
+                int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out doctorDetailId);
+            }
+            var doctorRepository = new DoctorRepository();
+            var result = doctorRepository.GetDoctorDetail(doctorDetailId);
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
     }
 }

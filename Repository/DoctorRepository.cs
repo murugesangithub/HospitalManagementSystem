@@ -156,5 +156,36 @@ namespace HospitalManagementSystem.DataAccess.Repository
 
         }
 
+
+
+        //icon
+
+
+        public DoctorViewModel GetDoctorDetail(int doctorDetailId)
+        {
+            var result = dbcontext.DoctorDetails.Where(x => x.IsActive && x.DoctorDetailId == doctorDetailId).Select(s => new DoctorViewModel()
+            {
+                DoctorDetailId = s.DoctorDetailId,
+                FirstName = s.FirstName,
+                LastName = s.LastName,
+                Email = s.Email,
+                MobileNo = s.MobileNo,
+                Address = s.Address,
+                Gender = s.Gender,
+                GenderDesc = dbcontext.Master_Gender.Where(x => x.GenderId == s.Gender).Select(b => b.Description).FirstOrDefault(),
+                State = s.State,
+                StateDesc = dbcontext.Master_State.Where(x => x.StateId == s.State).Select(b => b.Description).FirstOrDefault(),
+                City = s.City,
+                CityDesc = dbcontext.Master_City.Where(x => x.CityId == s.City).Select(b => b.Description).FirstOrDefault(),
+
+                Specialist = s.Specialist,
+                SpecialistDesc = dbcontext.Master_Specialist.Where(x => x.SpecialistId == s.Specialist).Select(b => b.Description).FirstOrDefault(),
+                IsActive = s.IsActive,
+
+            }).FirstOrDefault();
+            //result.ForEach(x => x.EncryptUserDetailId = Cryptography.EncryptStringToBytes_Aes(x.UserDetailId.ToString()));
+            return result;
+        }
+
     }
 }
