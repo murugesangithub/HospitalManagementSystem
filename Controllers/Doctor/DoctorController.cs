@@ -31,7 +31,7 @@ namespace HospitalManagementSystem.Controllers.Doctor
             viewmodel.StateList = GetStateList();
             viewmodel.CityList = GetCityList();
             viewmodel.SpecialistList = GetSpecialistList();
-            return View(viewmodel)
+            return View(viewmodel);
         }
         public ActionResult AddDoctor(DoctorViewModel model)
         {

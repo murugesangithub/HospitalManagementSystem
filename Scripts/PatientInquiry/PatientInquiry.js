@@ -134,10 +134,10 @@ $(document).ready(function () {
     });
 });
 function ShowPatientInquiryDetailPopup(PatientId, EncryptPatientId) {
-
+    console.log(EncryptPatientId);
     $('#PatientInquiryDetailModalPopup').modal();
     $.ajax({
-        url: relativepath + '/PatientInquiry/GetPatientInquiryDetail?id=' + EncryptPatientId,
+        url: relativepath + 'PatientInquiry/GetPatientInquiryDetail?id=' + EncryptPatientId,
         type: "GET",
         success: function (res) {
             console.log(res);
