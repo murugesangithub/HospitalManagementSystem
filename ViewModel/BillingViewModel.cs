@@ -18,7 +18,17 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Doctor Name")]
         public string DoctorName { get; set; }
 
+        [Required]
+        [Display(Name = "Doctor Charges")]
+        public string DoctorCharges { get; set; }
 
+        [Required]
+        [Display(Name = "Medicine Charges")]
+        public string MedicineCharges { get; set; }
+
+        [Required]
+        [Display(Name = "Room Charges")]
+        public string RoomCharges { get; set; }
 
         [Required(ErrorMessage = "Select your Department")]
         public List<System.Web.Mvc.SelectListItem> DepartmentList { get; set; } = new List<System.Web.Mvc.SelectListItem>();

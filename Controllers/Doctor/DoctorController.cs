@@ -131,14 +131,12 @@ namespace HospitalManagementSystem.Controllers.Doctor
             {
                 int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out doctorDetailId);
             }
-
             var doctorRepository = new DoctorRepository();
             var model = doctorRepository.GetDoctorDetailById(doctorDetailId);
             model.GenderList = GetGenderList();
             model.StateList = GetStateList();
             model.CityList = GetCityList();
             model.SpecialistList = GetSpecialistList();
-
             return View(model);
         }
         //icon

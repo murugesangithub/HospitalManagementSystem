@@ -49,5 +49,6 @@ namespace HospitalManagementSystem.Entity
         public virtual DbSet<Master_Medicine> Master_Medicine { get; set; }
         public virtual DbSet<PurchaseMedicineDetail> PurchaseMedicineDetails { get; set; }
         public virtual DbSet<PatientAdmitForm> PatientAdmitForms { get; set; }
+        public virtual DbSet<Master_Designation> Master_Designation { get; set; }
     }
 }

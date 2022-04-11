@@ -101,6 +101,14 @@
           <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="Master_Designation">
+          <Key>
+            <PropertyRef Name="DesignationId" />
+          </Key>
+          <Property Name="DesignationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="Master_Gender">
           <Key>
             <PropertyRef Name="GenderId" />
@@ -317,6 +325,7 @@
           <EntitySet Name="Master_City" EntityType="Self.Master_City" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_Country" EntityType="Self.Master_Country" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_Department" EntityType="Self.Master_Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master_Designation" EntityType="Self.Master_Designation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_Gender" EntityType="Self.Master_Gender" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_MaritalStatus" EntityType="Self.Master_MaritalStatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_Medicine" EntityType="Self.Master_Medicine" Schema="dbo" store:Type="Tables" />
@@ -371,6 +380,7 @@
           <EntitySet Name="Master_Medicine" EntityType="HMSModel.Master_Medicine" />
           <EntitySet Name="PurchaseMedicineDetails" EntityType="HMSModel.PurchaseMedicineDetail" />
           <EntitySet Name="PatientAdmitForms" EntityType="HMSModel.PatientAdmitForm" />
+          <EntitySet Name="Master_Designation" EntityType="HMSModel.Master_Designation" />
         </EntityContainer>
         <EntityType Name="UserDetail">
           <Key>
@@ -665,6 +675,14 @@
           <Property Name="PostalCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Contact" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="State" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_Designation">
+          <Key>
+            <PropertyRef Name="DesignationId" />
+          </Key>
+          <Property Name="DesignationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
       </Schema>
@@ -997,6 +1015,15 @@
                 <ScalarProperty Name="AdmissionDate" ColumnName="AdmissionDate" />
                 <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
                 <ScalarProperty Name="PatientAdmissionId" ColumnName="PatientAdmissionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Designation">
+            <EntityTypeMapping TypeName="HMSModel.Master_Designation">
+              <MappingFragment StoreEntitySet="Master_Designation">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DesignationId" ColumnName="DesignationId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

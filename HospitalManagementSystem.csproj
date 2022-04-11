@@ -153,6 +153,7 @@
     <Compile Include="Controllers\Medicine\MedicineController.cs" />
     <Compile Include="Controllers\PatientAdmission\PatientAdmissionController.cs" />
     <Compile Include="Controllers\PatientInquiry\PatientInquiryController.cs" />
+    <Compile Include="Controllers\PatientTreatment\PatientTreatmentController.cs" />
     <Compile Include="Controllers\Patient\PatientsController.cs" />
     <Compile Include="Controllers\Purchase\PurchaseMedicineController.cs" />
     <Compile Include="Controllers\User\UserController.cs" />
@@ -193,6 +194,9 @@
       <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\Master_Department.cs">
+      <DependentUpon>HMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Master_Designation.cs">
       <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\Master_Gender.cs">
@@ -250,6 +254,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\MasterDesignationRepository.cs" />
     <Compile Include="Repository\MasterMedicineRepository.cs" />
     <Compile Include="Repository\PurchaseMedicineRepository.cs" />
     <Compile Include="Repository\PatientInquiryRepository.cs" />
@@ -274,6 +279,7 @@
     <Compile Include="Repository\AccountRepostitory.cs" />
     <Compile Include="Repository\BaseRepository.cs" />
     <Compile Include="Repository\ReportRepository.cs" />
+    <Compile Include="ViewModel\PatientTreatmentViewModel.cs" />
     <Compile Include="ViewModel\BillingViewModel.cs" />
     <Compile Include="ViewModel\PatientAdmissionViewModel.cs" />
     <Compile Include="ViewModel\PatientInquiryViewModel.cs" />
@@ -421,6 +427,7 @@
     <Content Include="Views\PatientInquiry\UpdatePatientInquiryDetail.cshtml" />
     <Content Include="Views\PurchaseMedicine\Index.cshtml" />
     <Content Include="Views\PurchaseMedicine\UpdatePurchaseMedicine.cshtml" />
+    <Content Include="Views\PatientTreatment\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

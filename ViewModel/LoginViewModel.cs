@@ -31,6 +31,43 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
+        [Required]
+        [Display(Name = "Mobile Number")]
+        [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "Phone number only in 10 digits")]
+        public string MobileNumber { get; set; }
+
+        [Required]
+        [Display(Name = "State")]
+        public List<System.Web.Mvc.SelectListItem> StateList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
+        public int State { get; set; }
+        public string StateDesc { get; set; }
+
+        [Required]
+        [Display(Name = "Designation")]
+        public List<System.Web.Mvc.SelectListItem> DesignationList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
+        public int Designation { get; set; }
+        public string DesignationDesc { get; set; }
+
+        [Required]
+        [Display(Name = "City")]
+        public string City { get; set; }
+
+        [Required]
+        [Display(Name = "Address")]
+        public string Address { get; set; }
+
+        [Required]
+        [Display(Name = "Specialist in")]
+        public List<System.Web.Mvc.SelectListItem> SpecialistList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
+        public int Specialist { get; set; }
+        public string SpecialistDesc { get; set; }
+
+        [Required]
+        [Display(Name = "Gender")]
+        public List<System.Web.Mvc.SelectListItem> GenderList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
+        public int Gender { get; set; }
+        public string GenderDesc { get; set; }
+
 
         [Required]
         [EmailAddress]

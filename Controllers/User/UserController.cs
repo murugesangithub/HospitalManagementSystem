@@ -45,6 +45,10 @@ namespace HospitalManagementSystem.Controllers.User
 
             }
             model.RoleList = GetRoles();
+            model.GenderList = GetGenderList();
+            model.StateList = GetStateList();
+            model.DesignationList = GetDesignationList();
+            model.SpecialistList = GetSpecialistList();
             return View(model);
         }
 
@@ -75,6 +79,7 @@ namespace HospitalManagementSystem.Controllers.User
                 {
                     ModelState.AddModelError("", "Email is already exist");
                     model.RoleList = GetRoles();
+                 
                     return View(model);
                 }
 
@@ -97,11 +102,7 @@ namespace HospitalManagementSystem.Controllers.User
                 TempData[AppConstant.Response] = AppConstant.Success;
                 return RedirectToAction("Index");
             }
-
-
         }
-
-
 
         public ActionResult ResetPassword(string id = null)
         {
@@ -165,7 +166,63 @@ namespace HospitalManagementSystem.Controllers.User
 
             return result;
         }
+        private List<SelectListItem> GetGenderList()
+        {
+            var genderSelectList = new List<SelectListItem>();
 
+            var mastergenderRepository = new MasterGenderRepository();
+            var genderList = mastergenderRepository.GetGenderList();
+
+            foreach (var item in genderList)
+            {
+                genderSelectList.Add(new SelectListItem() { Text = item.Description, Value = item.GenderId.ToString() });
+            }
+            return genderSelectList;
+        }
+
+        private List<SelectListItem> GetStateList()
+        {
+            var stateSelectList = new List<SelectListItem>();
+
+            var masterStateRepository = new MasterStateRepository();
+            var stateList = masterStateRepository.GetStatelist();
+
+            foreach (var item in stateList)
+            {
+                stateSelectList.Add(new SelectListItem() { Text = item.Description, Value = item.StateId.ToString() });
+            }
+
+            return stateSelectList;
+        }
+
+        private List<SelectListItem> GetSpecialistList()
+        {
+            var specialistSelectList = new List<SelectListItem>();
+
+            var masterspecialistRepository = new MasterSpecialistRepository();
+            var specialistList = masterspecialistRepository.GetSpecialistlist();
+
+            foreach (var item in specialistList)
+            {
+                specialistSelectList.Add(new SelectListItem() { Text = item.Description, Value = item.SpecialistId.ToString() });
+            }
+
+            return specialistSelectList;
+        }
+        private List<SelectListItem> GetDesignationList()
+        {
+            var designationSelectList = new List<SelectListItem>();
+
+            var masterdesignationRepository = new MasterDesignationRepository();
+            var designationList = masterdesignationRepository.GetDesignationList();
+
+            foreach (var item in designationList)
+            {
+                designationSelectList.Add(new SelectListItem() { Text = item.Description, Value = item.DesignationId.ToString() });
+            }
+
+            return designationSelectList;
+        }
         public ActionResult GetUserDetail(string id)
         {
             int userDetailId = default(int);

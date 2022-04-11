@@ -1,0 +1,118 @@
+﻿@model HospitalManagementSystem.ViewModel.PatientTreatmentViewModel
+@using HospitalManagementSystem.Common;
+@{
+    ViewBag.Title = "Add";
+}
+
+<section class="content-header">
+    <h1>
+        Patient Treatment Management
+        <small>Registration</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/Home/Index"><i class="fa fa-dashboard"></i>Home</a></li>
+        <li><a href="/PatientTreatment/Add">Patient Treatment Registration</a></li>
+        @*<li class="active">General Elements</li>*@
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Treatment Details</h3>
+                </div>
+
+                @using (Html.BeginForm("Add", "PatientTreatment", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+
+            <div class="box-body">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.PatientName, new { @class = "col-sm-3 control-label " })
+                    <div class="col-md-6">
+                        @Html.TextBoxFor(m => m.PatientName, new { placeholder = "Patient Name", @maxlength = "20", @class = "form-control " })
+                        @Html.ValidationMessageFor(m => m.PatientName, "", new { @class = "text-danger " })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.MedicineName, new { @class = "col-sm-3 control-label " })
+                    <div class="col-md-6">
+                        @Html.TextBoxFor(m => m.MedicineName, new { placeholder = "Medicine Name", @maxlength = "20", @class = "form-control " })
+                        @Html.ValidationMessageFor(m => m.MedicineName, "", new { @class = "text-danger " })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Quantity, new { @class = "col-sm-3 control-label " })
+                    <div class="col-md-6">
+                        @Html.TextBoxFor(m => m.Quantity, new { placeholder = "Quantity", @maxlength = "10", @class = "form-control " })
+                        @Html.ValidationMessageFor(m => m.Quantity, "", new { @class = "text-danger " })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.DosageDesc, new { @class = "col-sm-3 control-label " })
+                    <div class="col-md-6">
+                        @Html.TextBoxFor(m => m.DosageDesc, new { placeholder = "DosageDesc", @maxlength = "20", @class = "form-control " })
+                        @Html.ValidationMessageFor(m => m.DosageDesc, "", new { @class = "text-danger " })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Remarks, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-md-6">
+                        @Html.TextAreaFor(m => m.Remarks, new { placeholder = "Remarks", @maxlength = "100", @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Remarks, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="box-header with-border">
+                    <h3 class="box-title">Room Details</h3>
+                </div><br />
+                <div class="form-group">
+                    @Html.LabelFor(m => m.RoomNumber, new { @class = "col-sm-3 control-label " })
+                    <div class="col-md-6">
+                        @Html.TextBoxFor(m => m.RoomNumber, new { placeholder = "Room Number", @maxlength = "20", @class = "form-control " })
+                        @Html.ValidationMessageFor(m => m.RoomNumber, "", new { @class = "text-danger " })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.RoomType, new { @class = "col-sm-3 control-label " })
+                    <div class="col-md-6">
+                        @Html.TextBoxFor(m => m.RoomType, new { placeholder = "Room Type", @maxlength = "20", @class = "form-control " })
+                        @Html.ValidationMessageFor(m => m.RoomType, "", new { @class = "text-danger " })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.RoomPrice, new { @class = "col-sm-3 control-label " })
+                    <div class="col-md-6">
+                        @Html.TextBoxFor(m => m.RoomPrice, new { placeholder = "Room Price", @maxlength = "20", @class = "form-control " })
+                        @Html.ValidationMessageFor(m => m.RoomPrice, "", new { @class = "text-danger " })
+                    </div>
+                </div>
+
+            </div>
+                    <div class="box-footer">
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-4">  <button class="btn btn-gradgreen" type="submit"><i class="fa fa-plus-square"></i> SAVE </button></div>
+                            <div class="col-md-2">  <button class="btn btn-gradgray pull-right" type="reset"><i class="fa fa-refresh"></i> Reset</button></div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

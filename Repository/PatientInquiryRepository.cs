@@ -14,9 +14,6 @@ namespace HospitalManagementSystem.DataAccess.Repository
         //insert
         public void PatientInquiryDetailInsertion(PatientInquiryViewModel patientInquiryViewModel)
         {
-
-         
-
                 PatientInquiryDetailForm patientInquiryDetailForm = new PatientInquiryDetailForm()
                 {
                     PatientId= patientInquiryViewModel.PatientId,
