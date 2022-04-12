@@ -150,6 +150,7 @@
     <Compile Include="Controllers\Doctor\DoctorController.cs" />
     <Compile Include="Controllers\Employee\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Hospital\HospitalController.cs" />
     <Compile Include="Controllers\Medicine\MedicineController.cs" />
     <Compile Include="Controllers\PatientAdmission\PatientAdmissionController.cs" />
     <Compile Include="Controllers\PatientInquiry\PatientInquiryController.cs" />
@@ -283,6 +284,7 @@
     <Compile Include="ViewModel\BillingViewModel.cs" />
     <Compile Include="ViewModel\PatientAdmissionViewModel.cs" />
     <Compile Include="ViewModel\PatientInquiryViewModel.cs" />
+    <Compile Include="ViewModel\HospitalViewModel.cs" />
     <Compile Include="ViewModel\PurchaseMedicineViewModel.cs" />
     <Compile Include="ViewModel\AppointmentViewModel.cs" />
     <Compile Include="ViewModel\DoctorViewModel.cs" />
@@ -428,6 +430,7 @@
     <Content Include="Views\PurchaseMedicine\Index.cshtml" />
     <Content Include="Views\PurchaseMedicine\UpdatePurchaseMedicine.cshtml" />
     <Content Include="Views\PatientTreatment\Add.cshtml" />
+    <Content Include="Views\Hospital\hospital.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
