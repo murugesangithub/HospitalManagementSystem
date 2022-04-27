@@ -18,8 +18,9 @@ namespace HospitalManagementSystem.ViewModel
         public string HospitalName { get; set; }
 
         [Required]
-        [Display(Name = "Hospital Id ")]
-        public int HospitalId { get; set; }
+        [Display(Name = "Hospital Phone Number")]
+        public string HospitalPhoneNumber { get; set; }
+
 
         [Required]
         [Display(Name = "Contact No ")]
@@ -29,10 +30,44 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required]
         [Display(Name = "Address")]
+
         public string Address { get; set; }
 
+        [Required]
+        [Display(Name = "State")]
+
+        public string State { get; set; }
 
 
+        [Required]
+        [Display(Name = "City")]
+
+        public string City { get; set; }
+
+        [Required]
+        [Display(Name = "Postal Code")]
+
+        public string PostalCode { get; set; }
+
+        [Required]
+        [Display(Name = "Hospital Address")]
+
+        public string HospitalAddress { get; set; }
+
+        [Required]
+        [Display(Name = "Chart Number")]
+
+        public string ChartNumber { get; set; }
+
+        //[Required(ErrorMessage = "Select your Country")]
+        //[Display(Name = "Country")]
+        //public List<System.Web.Mvc.SelectListItem> CountryList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
+        //public int Country { get; set; }
+        //public string CountryDesc { get; set; }
+
+        [Required]
+        [Display(Name = "Health Care Number")]
+        public string HealthCareNumber { get; set; }
 
         [Required]
         [Display(Name = "Contact Person")]
