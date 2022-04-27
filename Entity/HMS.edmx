@@ -36,9 +36,12 @@
           <Property Name="AdmitDate" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="DischargeDate" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="Service" Type="int" Nullable="false" />
-          <Property Name="CostofTreatment" Type="int" Nullable="false" />
+          <Property Name="CostOfTreatment" Type="int" Nullable="false" />
+          <Property Name="DoctorCharges" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="MedicineCharges" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="RoomCharges" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Discount" Type="int" Nullable="false" />
-          <Property Name="TotalAmount" Type="int" Nullable="false" />
+          <Property Name="TotalAmount" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Payment" Type="int" Nullable="false" />
           <Property Name="CheckNo" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="PaymentStatus" Type="int" Nullable="false" />
@@ -117,6 +120,14 @@
           <Property Name="Description" Type="nchar" MaxLength="50" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="Master_Hospital">
+          <Key>
+            <PropertyRef Name="HospitalId" />
+          </Key>
+          <Property Name="HospitalId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HospitalName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="Master_MaritalStatus">
           <Key>
             <PropertyRef Name="MaritalStatusId" />
@@ -147,6 +158,22 @@
           </Key>
           <Property Name="PaymentStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Method" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_RoomNumber">
+          <Key>
+            <PropertyRef Name="RoomNumberId" />
+          </Key>
+          <Property Name="RoomNumberId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoomNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_RoomType">
+          <Key>
+            <PropertyRef Name="RoomTypeId" />
+          </Key>
+          <Property Name="RoomTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoomType" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Master_Service">
@@ -327,10 +354,13 @@
           <EntitySet Name="Master_Department" EntityType="Self.Master_Department" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_Designation" EntityType="Self.Master_Designation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_Gender" EntityType="Self.Master_Gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master_Hospital" EntityType="Self.Master_Hospital" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_MaritalStatus" EntityType="Self.Master_MaritalStatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_Medicine" EntityType="Self.Master_Medicine" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_Payment" EntityType="Self.Master_Payment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_PaymentStatus" EntityType="Self.Master_PaymentStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master_RoomNumber" EntityType="Self.Master_RoomNumber" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master_RoomType" EntityType="Self.Master_RoomType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_Service" EntityType="Self.Master_Service" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_Specialist" EntityType="Self.Master_Specialist" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_State" EntityType="Self.Master_State" Schema="dbo" store:Type="Tables" />
@@ -368,7 +398,6 @@
           <EntitySet Name="Master_State" EntityType="HMSModel.Master_State" />
           <EntitySet Name="Master_Category" EntityType="HMSModel.Master_Category" />
           <EntitySet Name="AppointmentDetails" EntityType="HMSModel.AppointmentDetail" />
-          <EntitySet Name="BillingDetails" EntityType="HMSModel.BillingDetail" />
           <EntitySet Name="DoctorDetails" EntityType="HMSModel.DoctorDetail" />
           <EntitySet Name="Master_Payment" EntityType="HMSModel.Master_Payment" />
           <EntitySet Name="Master_PaymentStatus" EntityType="HMSModel.Master_PaymentStatus" />
@@ -377,10 +406,14 @@
           <EntitySet Name="PatientDetails" EntityType="HMSModel.PatientDetail" />
           <EntitySet Name="Master_Department" EntityType="HMSModel.Master_Department" />
           <EntitySet Name="PatientInquiryDetailForms" EntityType="HMSModel.PatientInquiryDetailForm" />
-          <EntitySet Name="Master_Medicine" EntityType="HMSModel.Master_Medicine" />
           <EntitySet Name="PurchaseMedicineDetails" EntityType="HMSModel.PurchaseMedicineDetail" />
           <EntitySet Name="PatientAdmitForms" EntityType="HMSModel.PatientAdmitForm" />
           <EntitySet Name="Master_Designation" EntityType="HMSModel.Master_Designation" />
+          <EntitySet Name="Master_RoomNumber" EntityType="HMSModel.Master_RoomNumber" />
+          <EntitySet Name="Master_RoomType" EntityType="HMSModel.Master_RoomType" />
+          <EntitySet Name="Master_Medicine" EntityType="HMSModel.Master_Medicine" />
+          <EntitySet Name="BillingDetails" EntityType="HMSModel.BillingDetail" />
+          <EntitySet Name="Master_Hospital" EntityType="HMSModel.Master_Hospital" />
         </EntityContainer>
         <EntityType Name="UserDetail">
           <Key>
@@ -486,25 +519,6 @@
           <Property Name="Department" Type="Int32" Nullable="false" />
           <Property Name="DateofAppointment" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="Problem" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="BillingDetail">
-          <Key>
-            <PropertyRef Name="PatientId" />
-          </Key>
-          <Property Name="PatientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PatientName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Department" Type="Int32" Nullable="false" />
-          <Property Name="DoctorName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="AdmitDate" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="DischargeDate" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="Service" Type="Int32" Nullable="false" />
-          <Property Name="CostofTreatment" Type="Int32" Nullable="false" />
-          <Property Name="Discount" Type="Int32" Nullable="false" />
-          <Property Name="TotalAmount" Type="Int32" Nullable="false" />
-          <Property Name="Payment" Type="Int32" Nullable="false" />
-          <Property Name="CheckNo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="PaymentStatus" Type="Int32" Nullable="false" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="DoctorDetail">
@@ -627,14 +641,6 @@
           <Property Name="MedicalDocuments" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityType Name="Master_Medicine">
-          <Key>
-            <PropertyRef Name="MedicineId" />
-          </Key>
-          <Property Name="MedicineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
         <EntityType Name="PurchaseMedicineDetail">
           <Key>
             <PropertyRef Name="MedicineId" />
@@ -683,6 +689,60 @@
           </Key>
           <Property Name="DesignationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_RoomNumber">
+          <Key>
+            <PropertyRef Name="RoomNumberId" />
+          </Key>
+          <Property Name="RoomNumberId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoomNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_RoomType">
+          <Key>
+            <PropertyRef Name="RoomTypeId" />
+          </Key>
+          <Property Name="RoomTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoomType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_Medicine">
+          <Key>
+            <PropertyRef Name="MedicineId" />
+          </Key>
+          <Property Name="MedicineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BillingDetail">
+          <Key>
+            <PropertyRef Name="PatientId" />
+          </Key>
+          <Property Name="PatientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Department" Type="Int32" Nullable="false" />
+          <Property Name="DoctorName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AdmitDate" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="DischargeDate" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Service" Type="Int32" Nullable="false" />
+          <Property Name="CostOfTreatment" Type="Int32" Nullable="false" />
+          <Property Name="DoctorCharges" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MedicineCharges" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="RoomCharges" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Discount" Type="Int32" Nullable="false" />
+          <Property Name="TotalAmount" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Payment" Type="Int32" Nullable="false" />
+          <Property Name="CheckNo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentStatus" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_Hospital">
+          <Key>
+            <PropertyRef Name="HospitalId" />
+          </Key>
+          <Property Name="HospitalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HospitalName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
       </Schema>
@@ -817,26 +877,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="BillingDetails">
-            <EntityTypeMapping TypeName="HMSModel.BillingDetail">
-              <MappingFragment StoreEntitySet="BillingDetail">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
-                <ScalarProperty Name="CheckNo" ColumnName="CheckNo" />
-                <ScalarProperty Name="Payment" ColumnName="Payment" />
-                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
-                <ScalarProperty Name="Discount" ColumnName="Discount" />
-                <ScalarProperty Name="CostofTreatment" ColumnName="CostofTreatment" />
-                <ScalarProperty Name="Service" ColumnName="Service" />
-                <ScalarProperty Name="DischargeDate" ColumnName="DischargeDate" />
-                <ScalarProperty Name="AdmitDate" ColumnName="AdmitDate" />
-                <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
-                <ScalarProperty Name="Department" ColumnName="Department" />
-                <ScalarProperty Name="PatientName" ColumnName="PatientName" />
-                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="DoctorDetails">
             <EntityTypeMapping TypeName="HMSModel.DoctorDetail">
               <MappingFragment StoreEntitySet="DoctorDetail">
@@ -965,15 +1005,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Master_Medicine">
-            <EntityTypeMapping TypeName="HMSModel.Master_Medicine">
-              <MappingFragment StoreEntitySet="Master_Medicine">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="MedicineId" ColumnName="MedicineId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="PurchaseMedicineDetails">
             <EntityTypeMapping TypeName="HMSModel.PurchaseMedicineDetail">
               <MappingFragment StoreEntitySet="PurchaseMedicineDetail">
@@ -1024,6 +1055,65 @@
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="DesignationId" ColumnName="DesignationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_RoomNumber">
+            <EntityTypeMapping TypeName="HMSModel.Master_RoomNumber">
+              <MappingFragment StoreEntitySet="Master_RoomNumber">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+                <ScalarProperty Name="RoomNumberId" ColumnName="RoomNumberId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_RoomType">
+            <EntityTypeMapping TypeName="HMSModel.Master_RoomType">
+              <MappingFragment StoreEntitySet="Master_RoomType">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+                <ScalarProperty Name="RoomTypeId" ColumnName="RoomTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Medicine">
+            <EntityTypeMapping TypeName="HMSModel.Master_Medicine">
+              <MappingFragment StoreEntitySet="Master_Medicine">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="MedicineId" ColumnName="MedicineId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BillingDetails">
+            <EntityTypeMapping TypeName="HMSModel.BillingDetail">
+              <MappingFragment StoreEntitySet="BillingDetail">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+                <ScalarProperty Name="CheckNo" ColumnName="CheckNo" />
+                <ScalarProperty Name="Payment" ColumnName="Payment" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="RoomCharges" ColumnName="RoomCharges" />
+                <ScalarProperty Name="MedicineCharges" ColumnName="MedicineCharges" />
+                <ScalarProperty Name="DoctorCharges" ColumnName="DoctorCharges" />
+                <ScalarProperty Name="CostOfTreatment" ColumnName="CostOfTreatment" />
+                <ScalarProperty Name="Service" ColumnName="Service" />
+                <ScalarProperty Name="DischargeDate" ColumnName="DischargeDate" />
+                <ScalarProperty Name="AdmitDate" ColumnName="AdmitDate" />
+                <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Hospital">
+            <EntityTypeMapping TypeName="HMSModel.Master_Hospital">
+              <MappingFragment StoreEntitySet="Master_Hospital">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="HospitalName" ColumnName="HospitalName" />
+                <ScalarProperty Name="HospitalId" ColumnName="HospitalId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -37,7 +37,6 @@ namespace HospitalManagementSystem.Entity
         public virtual DbSet<Master_State> Master_State { get; set; }
         public virtual DbSet<Master_Category> Master_Category { get; set; }
         public virtual DbSet<AppointmentDetail> AppointmentDetails { get; set; }
-        public virtual DbSet<BillingDetail> BillingDetails { get; set; }
         public virtual DbSet<DoctorDetail> DoctorDetails { get; set; }
         public virtual DbSet<Master_Payment> Master_Payment { get; set; }
         public virtual DbSet<Master_PaymentStatus> Master_PaymentStatus { get; set; }
@@ -46,9 +45,13 @@ namespace HospitalManagementSystem.Entity
         public virtual DbSet<PatientDetail> PatientDetails { get; set; }
         public virtual DbSet<Master_Department> Master_Department { get; set; }
         public virtual DbSet<PatientInquiryDetailForm> PatientInquiryDetailForms { get; set; }
-        public virtual DbSet<Master_Medicine> Master_Medicine { get; set; }
         public virtual DbSet<PurchaseMedicineDetail> PurchaseMedicineDetails { get; set; }
         public virtual DbSet<PatientAdmitForm> PatientAdmitForms { get; set; }
         public virtual DbSet<Master_Designation> Master_Designation { get; set; }
+        public virtual DbSet<Master_RoomNumber> Master_RoomNumber { get; set; }
+        public virtual DbSet<Master_RoomType> Master_RoomType { get; set; }
+        public virtual DbSet<Master_Medicine> Master_Medicine { get; set; }
+        public virtual DbSet<BillingDetail> BillingDetails { get; set; }
+        public virtual DbSet<Master_Hospital> Master_Hospital { get; set; }
     }
 }

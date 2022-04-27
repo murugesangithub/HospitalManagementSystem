@@ -21,9 +21,12 @@ namespace HospitalManagementSystem.Entity
         public string AdmitDate { get; set; }
         public string DischargeDate { get; set; }
         public int Service { get; set; }
-        public int CostofTreatment { get; set; }
+        public int CostOfTreatment { get; set; }
+        public string DoctorCharges { get; set; }
+        public string MedicineCharges { get; set; }
+        public string RoomCharges { get; set; }
         public int Discount { get; set; }
-        public int TotalAmount { get; set; }
+        public string TotalAmount { get; set; }
         public int Payment { get; set; }
         public string CheckNo { get; set; }
         public int PaymentStatus { get; set; }

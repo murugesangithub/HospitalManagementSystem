@@ -22,6 +22,7 @@ namespace HospitalManagementSystem.Controllers.Doctor
         public List<SelectListItem> CityList { get; private set; }
         public List<SelectListItem> SpecialistList { get; private set; }
         public List<SelectListItem> GenderList { get; private set; }
+        public List<SelectListItem> HospitalNameList { get; private set; }
         // GET: Doctor
         public ActionResult Add()
         {
@@ -30,6 +31,7 @@ namespace HospitalManagementSystem.Controllers.Doctor
             viewmodel.GenderList = GetGenderList();
             viewmodel.StateList = GetStateList();
             viewmodel.CityList = GetCityList();
+            viewmodel.HospitalNameList = GetHospitalNameList();
             viewmodel.SpecialistList = GetSpecialistList();
             return View(viewmodel);
         }
@@ -78,7 +80,20 @@ namespace HospitalManagementSystem.Controllers.Doctor
 
             return stateSelectList;
         }
+        private List<SelectListItem> GetHospitalNameList()
+        {
+            var hospitalnameSelectList = new List<SelectListItem>();
 
+            var masterhospitalRepository = new MasterHospitalRepository();
+            var hospitalnameList = masterhospitalRepository.GetHospitalNameList();
+
+            foreach (var item in hospitalnameList)
+            {
+                hospitalnameSelectList.Add(new SelectListItem() { Text = item.HospitalName, Value = item.HospitalId.ToString() });
+            }
+
+            return hospitalnameSelectList;
+        }
         private List<SelectListItem> GetCityList()
         {
             var citySelectList = new List<SelectListItem>();

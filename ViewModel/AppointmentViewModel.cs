@@ -26,6 +26,10 @@ namespace HospitalManagementSystem.ViewModel
         public int Gender { get; set; }
         public string GenderDescription { get; set; }
 
+        [Required(ErrorMessage = "Status is required")]
+        [Display(Name = "Status")]
+        [DataType(DataType.Text)]
+        public string Status { get; set; }
 
         [Required]
         [DataType(DataType.Text)]

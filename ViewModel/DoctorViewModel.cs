@@ -51,6 +51,12 @@ namespace HospitalManagementSystem.ViewModel
         public int Gender { get; set; }
         public string GenderDesc { get; set; }
 
+        [Required]
+        [Display(Name = "HospitalName")]
+        public List<System.Web.Mvc.SelectListItem> HospitalNameList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
+        public int HospitalName { get; set; }
+        public string HospitalNameDesc { get; set; }
+
 
         [Required]
         [Display(Name = "State")]

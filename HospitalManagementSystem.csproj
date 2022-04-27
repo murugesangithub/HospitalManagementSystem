@@ -203,6 +203,9 @@
     <Compile Include="Entity\Master_Gender.cs">
       <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\Master_Hospital.cs">
+      <DependentUpon>HMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\Master_MaritalStatus.cs">
       <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
@@ -213,6 +216,12 @@
       <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\Master_PaymentStatus.cs">
+      <DependentUpon>HMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Master_RoomNumber.cs">
+      <DependentUpon>HMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Master_RoomType.cs">
       <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\Master_Service.cs">
@@ -255,8 +264,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\MasterRoomTypeRepository.cs" />
+    <Compile Include="Repository\MasterRoomNumberRepository.cs" />
     <Compile Include="Repository\MasterDesignationRepository.cs" />
     <Compile Include="Repository\MasterMedicineRepository.cs" />
+    <Compile Include="Repository\MasterHospitalRepository.cs" />
     <Compile Include="Repository\PurchaseMedicineRepository.cs" />
     <Compile Include="Repository\PatientInquiryRepository.cs" />
     <Compile Include="Repository\BillingRepostitory.cs" />
@@ -431,6 +443,7 @@
     <Content Include="Views\PurchaseMedicine\UpdatePurchaseMedicine.cshtml" />
     <Content Include="Views\PatientTreatment\Add.cshtml" />
     <Content Include="Views\Hospital\hospital.cshtml" />
+    <Content Include="Views\PatientTreatment\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
