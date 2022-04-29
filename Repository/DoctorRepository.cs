@@ -17,6 +17,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 FirstName = doctorViewModel.FirstName,
                 LastName = doctorViewModel.LastName,
                 Email = doctorViewModel.Email,
+                HospitalName=doctorViewModel.HospitalName,
                 MobileNo = doctorViewModel.MobileNo,
                 Address = doctorViewModel.Address,
                 Gender = doctorViewModel.Gender,
@@ -43,6 +44,8 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 FirstName = s.FirstName,
                 LastName = s.LastName,
                 Email = s.Email,
+                HospitalName = s.HospitalName,
+               HospitalNameDesc = dbcontext.Master_Hospital.Where(x => x.HospitalId == s.HospitalName).Select(b => b.Description).FirstOrDefault(),
                 MobileNo = s.MobileNo,
                 Address = s.Address,
                 Gender = s.Gender,
@@ -55,10 +58,11 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 SpecialistDesc = dbcontext.Master_Specialist.Where(x => x.SpecialistId == s.Specialist).Select(b => b.Description).FirstOrDefault(),
                 IsActive = s.IsActive,
             }).ToList();
+
             result.ForEach(x => x.EncryptDoctorDetailId = Cryptography.EncryptStringToBytes_Aes(x.DoctorDetailId.ToString()));
             return result.AsQueryable();
         }
-        public DoctorViewModel GetDoctorDetailById(int doctorDetailId)
+        public DoctorViewModel GetDoctorDetailByDoctorDetailId(int doctorDetailId)
         {
             var result = dbcontext.DoctorDetails.Where(x => x.IsActive && x.DoctorDetailId == doctorDetailId).Select(s => new DoctorViewModel()
             {
@@ -66,6 +70,8 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 FirstName = s.FirstName,
                 LastName = s.LastName,
                 Email = s.Email,
+                HospitalName = s.HospitalName,
+                HospitalNameDesc = dbcontext.Master_Hospital.Where(x => x.HospitalId == s.HospitalName).Select(b => b.Description).FirstOrDefault(),
                 MobileNo = s.MobileNo,
                 Address = s.Address,
                 Gender = s.Gender,
@@ -99,12 +105,15 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 isDoctorDetailExit.FirstName = doctorViewModel.FirstName;
                 isDoctorDetailExit.LastName = doctorViewModel.LastName;
                 isDoctorDetailExit.MobileNo = doctorViewModel.MobileNo;
+                isDoctorDetailExit.HospitalName = doctorViewModel.HospitalName;
                 isDoctorDetailExit.Address = doctorViewModel.Address;
                 isDoctorDetailExit.Gender = doctorViewModel.Gender;
                 isDoctorDetailExit.City = doctorViewModel.City;
                 isDoctorDetailExit.State = doctorViewModel.State;
                 isDoctorDetailExit.Specialist = doctorViewModel.Specialist;
+
                 isDoctorDetailExit.IsActive = true;
+
                 dbcontext.Entry(isDoctorDetailExit);
                 dbcontext.SaveChanges();
             }
@@ -118,6 +127,8 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 FirstName = s.FirstName,
                 LastName = s.LastName,
                 Email = s.Email,
+                HospitalName = s.HospitalName,
+                HospitalNameDesc = dbcontext.Master_Hospital.Where(x => x.HospitalId == s.HospitalName).Select(b => b.Description).FirstOrDefault(),
                 MobileNo = s.MobileNo,
                 Address = s.Address,
                 Gender = s.Gender,
@@ -133,5 +144,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
             //result.ForEach(x => x.EncryptUserDetailId = Cryptography.EncryptStringToBytes_Aes(x.UserDetailId.ToString()));
             return result;
         }
+
+
     }
 }

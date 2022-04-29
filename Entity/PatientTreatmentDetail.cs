@@ -16,12 +16,13 @@ namespace HospitalManagementSystem.Entity
     {
         public int PatientId { get; set; }
         public string PatientName { get; set; }
-        public string MedicineName { get; set; }
+        public int MedicineName { get; set; }
         public int Quantity { get; set; }
         public string DosageDesc { get; set; }
         public string Remarks { get; set; }
         public int RoomNumber { get; set; }
-        public string RoomType { get; set; }
+        public int RoomType { get; set; }
+        public string NoofDays { get; set; }
         public int RoomPrice { get; set; }
         public bool IsActive { get; set; }
     }

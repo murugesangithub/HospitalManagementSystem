@@ -15,7 +15,7 @@ namespace HospitalManagementSystem.Entity
     public partial class Master_RoomType
     {
         public int RoomTypeId { get; set; }
-        public string RoomType { get; set; }
+        public string Description { get; set; }
         public bool IsActive { get; set; }
     }
 }

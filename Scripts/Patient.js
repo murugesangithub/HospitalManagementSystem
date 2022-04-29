@@ -1,8 +1,8 @@
 ﻿
 $(document).ready(function () {
 
-    var grid = "#jqDoctorGrid";
-    var gridpager = "#jqDoctorGridPager";
+    var grid = "#jqPatientGrid";
+    var gridpager = "#jqPatientGridPager";
 
     var bodyElem = $('body');
 
@@ -15,7 +15,7 @@ $(document).ready(function () {
 
 
     $(grid).jqGrid({
-        url: relativepath + "Doctor/GetDoctorList",
+        url: relativepath + "Patients/GetPatientsList",
         mtype: "POST",
         styleUI: 'Bootstrap',
         datatype: "json",
@@ -23,24 +23,28 @@ $(document).ready(function () {
         jsonReader: jsonreader,
         colModel: [
 
-            { label: 'DoctorDetailId', name: 'DoctorDetailId', key: true, width: 200, hidden: true, },
-            { label: 'EncryptDoctorDetailId', name: 'EncryptDoctorDetailId', key: true, width: 200, hidden: true, },
+            { label: 'PatientDetailId', name: 'PatientDetailId', key: true, width: 100, hidden: true, },
+            { label: 'EncryptPatientDetailId', name: 'EncryptPatientDetailId', hidden: true, },
+            
+
             { label: 'First Name', name: 'FirstName', width: 200, },
             { label: 'Last Name', name: 'LastName', width: 200, },
-
-               { label: 'Hospital Name', name: 'HospitalNameDesc', width: 200, hidden: true, },
-            { label: 'HospitalName', name: 'HospitalNameDesc', width: 200, },
-
-            //{ label: 'Mobile No', name: 'MobileNo', width: 200, },
+            //{ label: 'MaritalStatus', name: 'MaritalStatus', width: 200, hidden: true, },
+            //{ label: 'Marital Status', name: 'MaritalStatusDescription', width: 200, },
             //{ label: 'Gender', name: 'Gender', width: 200, hidden: true, },
-            //{ label: 'Gender', name: 'GenderDesc', width: 200, },
-            //{ label: 'State', name: 'State', width: 200, hidden: true, },
-            //{ label: 'State', name: 'StateDesc', width: 200, },
-            //{ label: 'City', name: 'City', width: 200, hidden: true, },
-            //{ label: 'City', name: 'CityDesc', width: 200, },
-            //{ label: 'Specialist', name: 'Specialist', width: 200, hidden: true, },
-            { label: 'Specialist', name: 'SpecialistDesc', width: 200, },
-
+            //{ label: 'Gender', name: 'GenderDescription', width: 200, },
+            { label: 'Age', name: 'Age', width: 200, },
+            { label: 'Guardian Name', name: 'GuardianName', width: 200, },
+            //{ label: 'DoB', name: 'DateofBirth', width: 200, },
+            //{ label: 'Problem', name: 'Problem', width: 200, },
+            //{ label: 'Email', name: 'Email', width: 200, },
+            //{ label: 'Phone Number', name: 'PhoneNumber', width: 200, },
+            //{ label: 'Address', name: 'Address', width: 200, },
+            //{ label: 'City', name: 'City', width: 200, },
+            //{ label: 'Postal Code', name: 'PostalCode', width: 200, },
+            //{ label: 'State', name: 'State', width: 200, },
+            //{ label: 'State', name: 'State', width: 200, hidden: true,},
+            //{ label: 'Country', name: 'CountryDesc', width: 200, },
 
         ],
         rownumbers: true,
@@ -49,24 +53,28 @@ $(document).ready(function () {
         rowList: [10, 20, 30, 40, 50],
         //editurl: relativepath + "Material/MaterialManipulation",
         pager: gridpager,
-        caption: "Doctor List"
+        caption: "Patient List"
     });
+
+    //delete
+
+
     $(grid).jqGrid('navGrid', gridpager, { edit: false, add: false, del: true, refresh: true, search: false },
 
         {},
         {},
         {
-            url: relativepath + "Doctor/Delete",
+            url: relativepath + "Patients/Delete",
             closeOnEscape: true,
             reloadAfterSubmit: true,
             closeAfterDel: true,
             recreateFrom: true,
 
             delData: {
-                DoctorDetailId: function () {
+                patientDetailId: function () {
                     var selRowId = $(grid).jqGrid('getGridParam', 'selrow');
                     var rowData = $(grid).jqGrid("getRowData", selRowId);
-                    return rowData.DoctorDetailId;
+                    return rowData.PatientDetailId;
                 }
             }
         },
@@ -74,17 +82,19 @@ $(document).ready(function () {
         {}
     );
 
-    
+    //Add
 
     $(grid).jqGrid('navButtonAdd', gridpager,
         {
             caption: "", buttonicon: "glyphicon glyphicon-plus", title: "Add new row",
             onClickButton: function () {
-                window.location = relativepath + "Doctor/Add";
+                window.location = relativepath + "Patients/Add";
             },
 
         });
-    
+
+    //update
+
     $(grid).jqGrid('navButtonAdd', gridpager,
         {
             caption: "", buttonicon: "glyphicon glyphicon-edit", title: "Edit selected row",
@@ -94,29 +104,30 @@ $(document).ready(function () {
                     $.jgrid.info_dialog('Warning', 'Please, select row', '', { styleUI: 'Bootstrap' });
                 } else {
                     var rowData = $(grid).jqGrid("getRowData", selRowId);
-                    window.location = relativepath + "Doctor/UpdateDoctorDetail?id=" + rowData.EncryptDoctorDetailId;
+                    window.location = relativepath + "Patients/UpdatePatientDetail?id=" + rowData.EncryptPatientDetailId;
                 }
             }
         });
 
 
-    //icon
 
+
+    //icon
 
     $(grid).jqGrid('navButtonAdd', gridpager,
         {
-            caption: "", buttonicon: "glyphicon glyphicon glyphicon-zoom-in", title: "Doctor Details",
+            caption: "", buttonicon: "glyphicon glyphicon glyphicon-zoom-in", title: "Patient Details",
             onClickButton: function () {
                 var selRowId = $(grid).jqGrid('getGridParam', 'selrow');
                 if (selRowId == null) {
                     $.jgrid.info_dialog('Warning', 'Please, select row', '', { styleUI: 'Bootstrap' });
                 } else {
                     var rowData = $(grid).jqGrid("getRowData", selRowId);
-                    ShowDoctorDetailPopup(rowData.DoctorDetailId, rowData.EncryptDoctorDetailId);
+                    ShowPatientDetailPopup(rowData.PatientDetailId, rowData.EncryptPatientDetailId);
                 }
             }
         });
-
+  
 
     $(grid).jqGrid('filterToolbar', {
         stringResult: true,
@@ -126,8 +137,6 @@ $(document).ready(function () {
             modifySearchingFilter.call(this, ' ');
         }
     });
-
-    
 });
 
 
@@ -136,11 +145,11 @@ $(document).ready(function () {
 //icon
 
 
-function ShowDoctorDetailPopup(DoctorDetailId, EncryptDoctorDetailId) {
+function ShowPatientDetailPopup(PatientDetailId, EncryptPatientDetailId) {
 
-    $('#DoctorDetailModalPopup').modal();
+    $('#PatientDetailModalPopup').modal();
     $.ajax({
-        url: relativepath + '/Doctor/GetDoctorDetail?id=' + EncryptDoctorDetailId,
+        url: relativepath + '/Patients/GetPatientDetail?id=' + EncryptPatientDetailId,
         type: "GET",
         success: function (res) {
             console.log(res);
@@ -150,15 +159,18 @@ function ShowDoctorDetailPopup(DoctorDetailId, EncryptDoctorDetailId) {
             $('#FirstName').val(res.FirstName);
             $('#LastName').val(res.LastName);
             $('#Email').val(res.Email);
-            $('#HospitalName').val(res.HospitalNameDesc);
-            $('#Gender').val(res.GenderDesc);
-            $('#State').val(res.StateDesc);
-            $('#City').val(res.CityDesc);
-            $('#Specialist').val(res.SpecialistDesc);
-            $('#MobileNo').val(res.MobileNo);
+            $('#Gender').val(res.GenderDescription);
+            $('#MaritalStatus').val(res.MaritalStatusDescription);
+            $('#Age').val(res.Age);
+            $('#GuardianName').val(res.GuardianName);
+            $('#DateofBirth').val(res.DateofBirth);
+            $('#Problem').val(res.FirstName);
+            $('#PhoneNumber').val(res.PhoneNumber);
             $('#Address').val(res.Address);
-           
-
+            $('#City').val(res.City);
+            $('#PostalCode').val(res.PostalCode);
+            $('#State').val(res.State);
+            $('#Country').val(res.CountryDesc);
             //if (res.ProfileImage == "") {
             //    $('#ProfileImage').attr('src', relativepath + "Images/default_profile.jpg");
             //}
@@ -172,7 +184,7 @@ function ShowDoctorDetailPopup(DoctorDetailId, EncryptDoctorDetailId) {
 
 }
 
-$('#btnDoctorDetailModalPopupClose').click(function () {
-    $('#DoctorDetailModalPopup').empty();
+$('#btnPatientDetailModalPopupClose').click(function () {
+    $('#PatientDetailModalPopup').empty();
 
 });

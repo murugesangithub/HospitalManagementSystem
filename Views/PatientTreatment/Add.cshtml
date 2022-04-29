@@ -25,7 +25,7 @@
                     <h3 class="box-title">Treatment Details</h3>
                 </div>
 
-                @using (Html.BeginForm("Add", "PatientTreatment", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                @using (Html.BeginForm("AddPatientTreatment", "PatientTreatment", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
                 {
                     @Html.AntiForgeryToken()
 

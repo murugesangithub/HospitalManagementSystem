@@ -56,6 +56,9 @@ namespace HospitalManagementSystem.ViewModel
         public int RoomType { get; set; }
         public string RoomTypeDescription { get; set; }
 
+        public int PatientId { get; set; }
+        public string EncryptPatientId { get; set; }
+
         public bool IsActive { get; set; }
     }
 }

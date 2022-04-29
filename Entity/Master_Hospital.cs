@@ -15,7 +15,7 @@ namespace HospitalManagementSystem.Entity
     public partial class Master_Hospital
     {
         public int HospitalId { get; set; }
-        public string HospitalName { get; set; }
+        public string Description { get; set; }
         public bool IsActive { get; set; }
     }
 }

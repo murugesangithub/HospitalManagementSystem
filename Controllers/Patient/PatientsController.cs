@@ -16,9 +16,7 @@ namespace HospitalManagementSystem.Controllers
         public ActionResult Index()
         {
             return View();
-        }
-       
-       
+        }    
         public List<SelectListItem> MaritalStatusList { get; private set; }
         public List<SelectListItem> CountryList { get; private set; }
         public List<SelectListItem> GenderList { get; private set; }
@@ -46,8 +44,6 @@ namespace HospitalManagementSystem.Controllers
             }
             else
             {
-
-
                 patientRepository.PatientDetailUpdation(model);
                 TempData[AppConstant.Response] = AppConstant.Success;
                 return RedirectToAction("Index");
@@ -56,7 +52,6 @@ namespace HospitalManagementSystem.Controllers
             return View();
 
         }
-
         private List<SelectListItem> GetGenderList()
         {
             var genderSelectList = new List<SelectListItem>();
@@ -69,7 +64,6 @@ namespace HospitalManagementSystem.Controllers
             }
             return genderSelectList;
         }
-
         private List<SelectListItem> GetMaritalStatusList()
         {
             var maritalstatusSelectList = new List<SelectListItem>();
@@ -82,7 +76,6 @@ namespace HospitalManagementSystem.Controllers
             }
             return maritalstatusSelectList;
         }
-
         private List<SelectListItem> GetCountryList()
         {
             var countrySelectList = new List<SelectListItem>();
@@ -95,7 +88,6 @@ namespace HospitalManagementSystem.Controllers
             }
             return countrySelectList;
         }
-
         public ActionResult GetPatientsList(JQGridSort jQGridSort)
         {
             var patientRepository = new PatientRepository();
@@ -103,14 +95,12 @@ namespace HospitalManagementSystem.Controllers
 
             return Json(result, JsonRequestBehavior.AllowGet);
         }
-
         public ActionResult Delete(int patientDetailId)
         {
             var patientRepository = new PatientRepository();
             patientRepository.PatientsDeletion(patientDetailId);
             return Json(new AjaxResponse() { IsSuccess = true });
         }
-
         public ActionResult UpdatePatientDetail(string id = null)
         {
             int patientDetailId = default(int);
@@ -133,10 +123,7 @@ namespace HospitalManagementSystem.Controllers
             return View(model);
 
         }
-
-
         //icon
-
         public ActionResult GetPatientDetail(string id)
         {
             int patientDetailId = default(int);
@@ -150,7 +137,6 @@ namespace HospitalManagementSystem.Controllers
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
+
     }
-
-
 }

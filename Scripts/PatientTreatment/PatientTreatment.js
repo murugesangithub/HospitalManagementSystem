@@ -6,6 +6,7 @@ $(document).ready(function () {
     var gridpager = "#jqPatientTreatmentGridPager";
 
     var bodyElem = $('body');
+
     new ResizeSensor(bodyElem, function () {
         var bodyElemWidth = Math.round($('.content-wrapper').width());
         var newGridWidth = bodyElemWidth - 25;
@@ -22,12 +23,14 @@ $(document).ready(function () {
         height: 'auto',
         jsonReader: jsonreader,
         colModel: [
+
             { label: 'PatientId', name: 'PatientId', key: true, width: 100, hidden: true, },
             { label: 'EncryptPatientId', name: 'EncryptPatientId', hidden: true, },
             { label: 'Patient Name', name: 'PatientName', width: 200, },
-           /* { label: 'Medicine Name', name: 'MedicineName', width: 200, },*/
+            { label: 'Medicine Name', name: 'MedicineName', width: 200, hidden: true, },
+            { label: 'Medicine Name', name: 'MedicineNameDescription', width: 200, },
             { label: 'Quantity', name: 'Quantity', width: 200, },
-            { label: 'Dosage Desc', name: 'DosageDesc', width: 200, },
+            { label: 'Dosage Description ', name: 'DosageDesc', width: 200, },
         ],
         rownumbers: true,
         viewrecords: true,
@@ -37,6 +40,10 @@ $(document).ready(function () {
         pager: gridpager,
         caption: "Patient Treatment List"
     });
+
+    //delete
+
+
     $(grid).jqGrid('navGrid', gridpager, { edit: false, add: false, del: true, refresh: true, search: false },
 
         {},
@@ -60,6 +67,8 @@ $(document).ready(function () {
         {}
     );
 
+    //Add
+
     $(grid).jqGrid('navButtonAdd', gridpager,
         {
             caption: "", buttonicon: "glyphicon glyphicon-plus", title: "Add new row",
@@ -68,6 +77,9 @@ $(document).ready(function () {
             },
 
         });
+
+    //update
+
     $(grid).jqGrid('navButtonAdd', gridpager,
         {
             caption: "", buttonicon: "glyphicon glyphicon-edit", title: "Edit selected row",
@@ -81,9 +93,15 @@ $(document).ready(function () {
                 }
             }
         });
+
+
+
+
+    //icon
+
     $(grid).jqGrid('navButtonAdd', gridpager,
         {
-            caption: "", buttonicon: "glyphicon glyphicon glyphicon-zoom-in", title: "View Details",
+            caption: "", buttonicon: "glyphicon glyphicon glyphicon-zoom-in", title: "Patient Treatment Details",
             onClickButton: function () {
                 var selRowId = $(grid).jqGrid('getGridParam', 'selrow');
                 if (selRowId == null) {
@@ -95,6 +113,7 @@ $(document).ready(function () {
             }
         });
 
+
     $(grid).jqGrid('filterToolbar', {
         stringResult: true,
         searchOnEnter: false,
@@ -103,9 +122,13 @@ $(document).ready(function () {
             modifySearchingFilter.call(this, ' ');
         }
     });
+
 });
 
-function ShowPatientTreatmentDetailPopup(PatientId, EncryptPatientId) {
+//icon
+
+
+function ShowPatientTreatmentDetailPopup(PatienId, EncryptPatientId) {
 
     $('#PatientTreatmentDetailModalPopup').modal();
     $.ajax({
@@ -113,19 +136,19 @@ function ShowPatientTreatmentDetailPopup(PatientId, EncryptPatientId) {
         type: "GET",
         success: function (res) {
             console.log(res);
-            var title = res.PatientName;
+            var title = res.PatientName ;
             $('#ProfileTitle').text(title);
-       /*     $('#ProfileImage').attr('src', res.ProfileImage);*/
+            //$('#ProfileImage').attr('src', res.ProfileImage);
             $('#PatientName').val(res.PatientName);
-         /*   $('#MedicineName').val(res.MedicineName);*/
+            $('#MedicineName').val(res.MedicineNameDescription);
             $('#Quantity').val(res.Quantity);
             $('#DosageDesc').val(res.DosageDesc);
             $('#Remarks').val(res.Remarks);
-            $('#RoomNumber').val(res.RoomNumber);
-            $('#RoomType').val(res.RoomType);
+            $('#RoomNumber').val(res.RoomNumberDescription);
+            $('#RoomType').val(res.RoomTypeDescription);
+            $('#NoofDays').val(res.Noofdays);
             $('#RoomPrice').val(res.RoomPrice);
           
-
             //if (res.ProfileImage == "") {
             //    $('#ProfileImage').attr('src', relativepath + "Images/default_profile.jpg");
             //}
@@ -136,6 +159,7 @@ function ShowPatientTreatmentDetailPopup(PatientId, EncryptPatientId) {
             Notify_Validation(err.statusText);
         }
     });
+
 }
 
 $('#btnPatientTreatmentDetailModalPopupClose').click(function () {

@@ -89,7 +89,7 @@ namespace HospitalManagementSystem.Controllers.Doctor
 
             foreach (var item in hospitalnameList)
             {
-                hospitalnameSelectList.Add(new SelectListItem() { Text = item.HospitalName, Value = item.HospitalId.ToString() });
+                hospitalnameSelectList.Add(new SelectListItem() { Text = item.Description, Value = item.HospitalId.ToString() });
             }
 
             return hospitalnameSelectList;
@@ -146,8 +146,9 @@ namespace HospitalManagementSystem.Controllers.Doctor
             {
                 int.TryParse(Cryptography.DecryptStringFromBytes_Aes(id), out doctorDetailId);
             }
+            var model = new DoctorViewModel();
             var doctorRepository = new DoctorRepository();
-            var model = doctorRepository.GetDoctorDetailById(doctorDetailId);
+          model = doctorRepository.GetDoctorDetailByDoctorDetailId(doctorDetailId);
             model.GenderList = GetGenderList();
             model.StateList = GetStateList();
             model.CityList = GetCityList();

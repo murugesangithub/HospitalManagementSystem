@@ -1,7 +1,84 @@
 ﻿
+
 @{
     ViewBag.Title = "Index";
 }
+<style>
 
-<h2>Index</h2>
+    .border-right {
+        border-right: 1px solid #dee2e6 !important;
+    }
 
+    .form-control[disabled], .form-control[readonly], fieldset[disabled] {
+        background-color: #fff;
+    }
+</style>
+
+<div class="panel">
+
+    <div class="panel panel-info">
+        <div class="panel-heading">PatientTreatment Details</div>
+        <div class="panel-body">
+            <table id="jqPatientTreatmentGrid"></table>
+            <div id="jqPatientTreatmentGridPager"></div>
+
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/PatientTreatment/PatientTreatment.js"></script>
+
+<section class="content">
+    <div class="modal fade" id="PatientTreatmentDetailModalPopup">
+        <div class="modal-dialog box box-info" style="width:80%;">
+            <div class="modal-content ">
+                <div class="box-header with-border">
+                    <h3 class="box-title" id="ProfileTitle"></h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 border-right">
+                                @*<div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                                        <img class="rounded-circle mt-5 image" id="ProfileImage" style="max-width:220px" src="">
+                                    </div>*@
+                            </div>
+                            <div class="col-md-5 border-right">
+                                <div class="p-3 py-5  form-group">
+
+
+                                    <div class="row md-3 form-group">
+                                        <div class="col-md-12 form-group"><label class="labels">Patient Name</label><input type="text" id="PatientName" class="form-control" readonly></div>
+                                        <div class="col-md-12 form-group"><label class="labels">Medicine Name</label><input type="text" id="MedicineName" class="form-control" readonly></div>
+                                        <div class="col-md-12 form-group"><label class="labels">Quantity</label><input type="text" id="Quantity" class="form-control" readonly></div>
+                                        <div class="col-md-12 form-group"><label class="labels">Dosage Desc</label><input type="text" id="DosageDesc" class="form-control" readonly></div>
+                                        <div class="col-md-12 form-group"><label class="labels">Remarks</label><input type="text" id="Remarks" class="form-control" readonly></div>
+
+                                    </div>
+                                    @*<div class="row md-3 form-group">
+
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="p-3 py-5">
+                                    <div class="col-md-12 form-group"><label class="labels">Room Number</label><input type="text" id="RoomNumber" class="form-control" readonly></div> <br>
+                                    <div class="col-md-12 form-group"><label class="labels">Room Type</label><input type="text" id="RoomType" class="form-control" readonly></div>
+                                    <div class="col-md-12 form-group"><label class="labels">No of Days</label><input type="text" id="NoofDays" class="form-control" readonly></div>
+                                    <div class="col-md-12 form-group"><label class="labels">Room Price</label><input type="text" id="RoomPrice" class="form-control" readonly></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</section>

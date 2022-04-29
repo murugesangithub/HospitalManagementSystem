@@ -1,7 +1,8 @@
-﻿@model HospitalManagementSystem.ViewModel.PatientTreatmentViewModel
+﻿
+@model HospitalManagementSystem.ViewModel.PatientTreatmentViewModel
 @using HospitalManagementSystem.Common;
 @{
-    ViewBag.Title = "UpdatePatientTreatmentDetail";
+    ViewBag.Title = "Add";
 }
 
 <section class="content-header">
@@ -25,76 +26,92 @@
                     <h3 class="box-title">Treatment Details</h3>
                 </div>
 
-                @using (Html.BeginForm("Add", "PatientTreatment", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                @using (Html.BeginForm("AddPatientTreatment", "PatientTreatment", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
                 {
                     @Html.AntiForgeryToken()
                     @Html.HiddenFor(m => m.PatientId, new { @class = "form-control" })
+
                     @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
 
                     <div class="box-body">
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.PatientName, new { @class = "col-sm-3 control-label " })
+                        <div class="row">
                             <div class="col-md-6">
-                                @Html.TextBoxFor(m => m.PatientName, new { placeholder = "Patient Name", @maxlength = "20", @class = "form-control " })
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.PatientName, new { @class = "col-sm-3 control-label " })
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(m => m.PatientName, new { placeholder = "Patient Name", @maxlength = "20", @class = "form-control " })
+                                        @Html.ValidationMessageFor(m => m.PatientName, "", new { @class = "text-danger " })
+                                    </div>
+                                </div>
 
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.MedicineName, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                    <div class="col-md-9">
+                                        @Html.DropDownListFor(m => m.MedicineName, Model.MedicineList, "Select Your Medicine Name", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.MedicineName, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Quantity, new { @class = "col-sm-3 control-label " })
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(m => m.Quantity, new { placeholder = "Quantity", @maxlength = "10", @class = "form-control " })
+                                        @Html.ValidationMessageFor(m => m.Quantity, "", new { @class = "text-danger " })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.DosageDesc, new { @class = "col-sm-3 control-label " })
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(m => m.DosageDesc, new { placeholder = "Dosage Desc", @maxlength = "20", @class = "form-control " })
+                                        @Html.ValidationMessageFor(m => m.DosageDesc, "", new { @class = "text-danger " })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Remarks, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                    <div class="col-md-9">
+                                        @Html.TextAreaFor(m => m.Remarks, new { placeholder = "Remarks", @maxlength = "100", @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Remarks, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.MedicineName, new { @class = "col-sm-3 control-label " })
-                            <div class="col-md-6">
-                                @Html.TextBoxFor(m => m.MedicineName, new { placeholder = "Medicine Name", @maxlength = "20", @class = "form-control " })
-
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.Quantity, new { @class = "col-sm-3 control-label " })
-                            <div class="col-md-6">
-                                @Html.TextBoxFor(m => m.Quantity, new { placeholder = "Quantity", @maxlength = "10", @class = "form-control " })
-
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.DosageDesc, new { @class = "col-sm-3 control-label " })
-                            <div class="col-md-6">
-                                @Html.TextBoxFor(m => m.DosageDesc, new { placeholder = "DosageDesc", @maxlength = "20", @class = "form-control " })
-
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Remarks, htmlAttributes: new { @class = "col-sm-3 control-label" })
-                            <div class="col-md-6">
-                                @Html.TextAreaFor(m => m.Remarks, new { placeholder = "Remarks", @maxlength = "100", @class = "form-control" })
-
-                            </div>
-                        </div>
-
                         <div class="box-header with-border">
                             <h3 class="box-title">Room Details</h3>
                         </div><br />
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.RoomNumber, new { @class = "col-sm-3 control-label " })
+                        <div class="row">
                             <div class="col-md-6">
-                                @Html.TextBoxFor(m => m.RoomNumber, new { placeholder = "Room Number", @maxlength = "20", @class = "form-control " })
-
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.RoomNumber, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                    <div class="col-md-9">
+                                        @Html.DropDownListFor(m => m.RoomNumber, Model.RoomNumberList, "Select Your RoomNumber", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.RoomNumber, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.RoomType, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                    <div class="col-md-9">
+                                        @Html.DropDownListFor(m => m.RoomType, Model.RoomTypeList, "Select Your RoomType", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.RoomType, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.RoomType, new { @class = "col-sm-3 control-label " })
                             <div class="col-md-6">
-                                @Html.TextBoxFor(m => m.RoomType, new { placeholder = "Room Type", @maxlength = "20", @class = "form-control " })
-
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.RoomPrice, new { @class = "col-sm-3 control-label " })
-                            <div class="col-md-6">
-                                @Html.TextBoxFor(m => m.RoomPrice, new { placeholder = "Room Price", @maxlength = "20", @class = "form-control " })
-
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Noofdays, new { @class = "col-sm-3 control-label " })
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(m => m.Noofdays, new { placeholder = "No of Days", @maxlength = "20", @class = "form-control " })
+                                        @Html.ValidationMessageFor(m => m.Noofdays, "", new { @class = "text-danger " })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.RoomPrice, new { @class = "col-sm-3 control-label " })
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(m => m.RoomPrice, new { placeholder = "Room Price", @maxlength = "20", @class = "form-control " })
+                                        @Html.ValidationMessageFor(m => m.RoomPrice, "", new { @class = "text-danger " })
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -115,5 +132,4 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
-
 
