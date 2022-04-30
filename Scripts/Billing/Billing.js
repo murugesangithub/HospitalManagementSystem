@@ -130,6 +130,9 @@ function ShowBillingDetailPopup(PatientId, EncryptPatientId) {
             $('#DischargeDate').val(res.DischargeDate);
             $('#Service').val(res.ServiceDesc);
             $('#CostOfTreatment').val(res.CostofTreatment);
+            $('#MedicineCharges').val(res.MedicineCharges);
+            $('#DoctorCharges').val(res.DoctorCharges);
+            $('#RoomCharges').val(res.RoomCharges);
             $('#Discount').val(res.Discount);
             $('#TotalAmount').val(res.TotalAmount);
             $('#Payment').val(res.PaymentMethod);

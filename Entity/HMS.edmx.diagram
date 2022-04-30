@@ -17,7 +17,6 @@
         <EntityTypeShape EntityType="HMSModel.Master_Specialist" Width="1.5" PointX="9.375" PointY="3.75" />
         <EntityTypeShape EntityType="HMSModel.Master_State" Width="1.5" PointX="9.375" PointY="6.75" />
         <EntityTypeShape EntityType="HMSModel.Master_Category" Width="1.5" PointX="9.375" PointY="9.75" />
-        <EntityTypeShape EntityType="HMSModel.AppointmentDetail" Width="1.5" PointX="5.75" PointY="6.75" />
         <EntityTypeShape EntityType="HMSModel.Master_Payment" Width="1.5" PointX="11.75" PointY="0.75" />
         <EntityTypeShape EntityType="HMSModel.Master_PaymentStatus" Width="1.5" PointX="2.75" PointY="11.75" />
         <EntityTypeShape EntityType="HMSModel.Master_Service" Width="1.5" PointX="11.75" PointY="3.75" />
@@ -29,12 +28,13 @@
         <EntityTypeShape EntityType="HMSModel.PatientAdmitForm" Width="1.5" PointX="11.375" PointY="6.75" />
         <EntityTypeShape EntityType="HMSModel.Master_Designation" Width="1.5" PointX="13.375" PointY="8.75" />
         <EntityTypeShape EntityType="HMSModel.Master_Medicine" Width="1.5" PointX="15.375" PointY="11.75" />
-        <EntityTypeShape EntityType="HMSModel.BillingDetail" Width="1.5" PointX="11.375" PointY="15.75" />
         <EntityTypeShape EntityType="HMSModel.Master_RoomNumber" Width="1.5" PointX="0.75" PointY="14.75" />
         <EntityTypeShape EntityType="HMSModel.Master_RoomType" Width="1.5" PointX="2.75" PointY="15.75" />
         <EntityTypeShape EntityType="HMSModel.PatientTreatmentDetail" Width="1.5" PointX="15.375" PointY="14.75" />
         <EntityTypeShape EntityType="HMSModel.DoctorDetail" Width="1.5" PointX="16.375" PointY="0.75" />
         <EntityTypeShape EntityType="HMSModel.Master_Hospital" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="HMSModel.BillingDetail" Width="1.5" PointX="11.375" PointY="15.75" />
+        <EntityTypeShape EntityType="HMSModel.AppointmentDetail" Width="1.5" PointX="5.375" PointY="6.75" />
       
       </Diagram>
     </edmx:Diagrams>

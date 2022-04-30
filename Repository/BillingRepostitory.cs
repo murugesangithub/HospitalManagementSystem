@@ -24,7 +24,10 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 AdmitDate = billingViewModel.AdmitDate,
                 DischargeDate = billingViewModel.DischargeDate,
                 Service = billingViewModel.Service,
-                CostOfTreatment = (int)Convert.ToInt64(billingViewModel.CostofTreatment),
+                CostOfTreatment =(int)Convert.ToInt64 (billingViewModel.CostofTreatment),
+                MedicineCharges=billingViewModel.MedicineCharges,
+                DoctorCharges=billingViewModel.DoctorCharges,
+                RoomCharges=billingViewModel.RoomCharges,
                 Discount = (int)Convert.ToInt64(billingViewModel.Discount),
                 TotalAmount = billingViewModel.TotalAmount,
                 Payment = billingViewModel.Payment,
@@ -52,6 +55,9 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 isBillingDetailExist.DischargeDate = billingViewModel.DischargeDate;
                 isBillingDetailExist.Service = billingViewModel.Service;
                 isBillingDetailExist.CostOfTreatment = (int)Convert.ToInt64(billingViewModel.CostofTreatment);
+                isBillingDetailExist.MedicineCharges = billingViewModel.MedicineCharges;
+                isBillingDetailExist.DoctorCharges = billingViewModel.DoctorCharges;
+                isBillingDetailExist.RoomCharges = billingViewModel.RoomCharges;
                 isBillingDetailExist.Discount = (int)Convert.ToInt64(billingViewModel.Discount);
                 isBillingDetailExist.TotalAmount = billingViewModel.TotalAmount;
                 isBillingDetailExist.Payment = billingViewModel.Payment;
@@ -88,7 +94,10 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 DischargeDate = s.DischargeDate,
                 ServiceDesc = dbcontext.Master_Service.Where(x => x.ServiceId == s.Service).Select(b => b.Description).FirstOrDefault(),
                 Service = s.Service,
-                CostofTreatment = s.CostOfTreatment.ToString(),
+                CostofTreatment = s.CostOfTreatment.ToString(),               
+                DoctorCharges=s.DoctorCharges,
+                MedicineCharges = s.MedicineCharges,
+                RoomCharges =s.RoomCharges,
                 Discount = s.Discount.ToString(),
                 TotalAmount = s.TotalAmount,
                 PaymentMethod = dbcontext.Master_Payment.Where(x => x.PaymentId == s.Payment).Select(b => b.Method).FirstOrDefault(),
@@ -119,7 +128,10 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 DischargeDate = s.DischargeDate,
                 ServiceDesc = dbcontext.Master_Service.Where(x => x.ServiceId == s.Service).Select(b => b.Description).FirstOrDefault(),
                 Service = s.Service,
-                CostofTreatment = s.CostOfTreatment.ToString(),
+                CostofTreatment = s.CostOfTreatment.ToString(),               
+                DoctorCharges = s.DoctorCharges,
+                MedicineCharges = s.MedicineCharges,
+                RoomCharges = s.RoomCharges,
                 Discount = s.Discount.ToString(),
                 TotalAmount = s.TotalAmount,
                 PaymentMethod = dbcontext.Master_Payment.Where(x => x.PaymentId == s.Payment).Select(b => b.Method).FirstOrDefault(),
@@ -163,7 +175,10 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 DischargeDate = s.DischargeDate,
                 ServiceDesc = dbcontext.Master_Service.Where(x => x.ServiceId == s.Service).Select(b => b.Description).FirstOrDefault(),
                 Service = s.Service,
-                CostofTreatment = s.CostOfTreatment.ToString(),
+                CostofTreatment = s.CostOfTreatment.ToString(),             
+                DoctorCharges = s.DoctorCharges,
+                MedicineCharges = s.MedicineCharges,
+                RoomCharges = s.RoomCharges,
                 Discount = s.Discount.ToString(),
                 TotalAmount = s.TotalAmount,
                 PaymentMethod = dbcontext.Master_Payment.Where(x => x.PaymentId == s.Payment).Select(b => b.Method).FirstOrDefault(),

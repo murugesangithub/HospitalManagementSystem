@@ -30,12 +30,13 @@
                     @Html.AntiForgeryToken()
 
                     @Html.HiddenFor(m => m.MedicineId, new { @class = "form-control" })
-                    <div class="box-body">
+            <div class="box-body">
 
-
+                <div class="row">
+                    <div class="col-md-6">
                         <div class="form-group">
                             @Html.LabelFor(m => m.SupplierName, new { @class = "col-sm-3 control-label" })
-                            <div class="col-md-6">
+                            <div class="col-md-9">
                                 @Html.TextBoxFor(m => m.SupplierName, new { placeholder = "Supplier Name", @maxlength = "20", @class = "form-control" })
                                 @Html.ValidationMessageFor(m => m.SupplierName, "", new { @class = "text-danger" })
                             </div>
@@ -43,7 +44,7 @@
 
                         <div class="form-group">
                             @Html.LabelFor(m => m.Code, new { @class = "col-sm-3 control-label" })
-                            <div class="col-md-6">
+                            <div class="col-md-9">
                                 @Html.TextBoxFor(m => m.Code, new { placeholder = "Enter Purchase No", @maxlength = "20", @class = "form-control" })
                                 @Html.ValidationMessageFor(m => m.Code, "", new { @class = "text-danger" })
                             </div>
@@ -51,64 +52,61 @@
 
                         <div class="form-group">
                             @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "col-sm-3 control-label" })
-                            <div class="col-md-6">
+                            <div class="col-md-9">
                                 @Html.EditorFor(model => model.Date, new { placeholder = "Select Purchase Date", @maxlength = "15", htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.Category, htmlAttributes: new { @class = "col-sm-3 control-label" })
-                            <div class="col-md-6">
-                                @Html.DropDownListFor(m => m.Category, Model.CategoryList, "Select Catogory", new { @class = "form-control" })
-                                @Html.ValidationMessageFor(m => m.Category, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-
                         <div class="form-group">
                             @Html.LabelFor(m => m.Medicine, htmlAttributes: new { @class = "col-sm-3 control-label" })
-                            <div class="col-md-6">
+                            <div class="col-md-9">
                                 @Html.DropDownListFor(m => m.Medicine, Model.MedicineList, "Select Medicine", new { @class = "form-control" })
                                 @Html.ValidationMessageFor(m => m.Medicine, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
                         <div class="form-group">
+                            @Html.LabelFor(m => m.Category, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                            <div class="col-md-9">
+                                @Html.DropDownListFor(m => m.Category, Model.CategoryList, "Select Catogory", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Category, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
                             @Html.LabelFor(m => m.Quantity, new { @class = "col-sm-3 control-label" })
-                            <div class="col-md-6">
+                            <div class="col-md-9">
                                 @Html.TextBoxFor(m => m.Quantity, new { placeholder = "Enter Quantity", @maxlength = "10", @class = "form-control" })
                                 @Html.ValidationMessageFor(m => m.Quantity, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
+                    </div>
 
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "col-sm-3 control-label" })
-                            <div class="col-md-6">
-                                @Html.TextAreaFor(m => m.Notes, new { placeholder = "Enter Notes", @maxlength = "50", @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
+                    <div class="col-md-6">
+
 
                         <div class="form-group">
                             @Html.LabelFor(m => m.Discount, new { @class = "col-sm-3 control-label" })
-                            <div class="col-md-6">
-                                @Html.TextBoxFor(m => m.Discount, new { placeholder = "", @maxlength = "3", @class = "form-control" })
+                            <div class="col-md-9">
+                                @Html.TextBoxFor(m => m.Discount, new { placeholder = "Discount", @maxlength = "3", @class = "form-control" })
                                 @Html.ValidationMessageFor(m => m.Discount, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
                         <div class="form-group">
                             @Html.LabelFor(m => m.GrandTotal, new { @class = "col-sm-3 control-label" })
-                            <div class="col-md-6">
-                                @Html.TextBoxFor(m => m.GrandTotal, new { placeholder = "", @maxlength = "10", @class = "form-control" })
+                            <div class="col-md-9">
+                                @Html.TextBoxFor(m => m.GrandTotal, new { placeholder = "GrandTotal", @maxlength = "10", @class = "form-control" })
                                 @Html.ValidationMessageFor(m => m.GrandTotal, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
                         <div class="form-group">
                             @Html.LabelFor(m => m.Payment, htmlAttributes: new { @class = "col-sm-3 control-label" })
-                            <div class="col-md-6">
+                            <div class="col-md-9">
                                 @Html.DropDownListFor(m => m.Payment, Model.PaymentList, "Select Payment Type", new { @class = "form-control" })
                                 @Html.ValidationMessageFor(m => m.Payment, "", new { @class = "text-danger" })
                             </div>
@@ -116,12 +114,23 @@
 
                         <div class="form-group">
                             @Html.LabelFor(m => m.PaymentStatus, htmlAttributes: new { @class = "col-sm-3 control-label" })
-                            <div class="col-md-6">
+                            <div class="col-md-9">
                                 @Html.DropDownListFor(m => m.PaymentStatus, Model.PaymentStatusList, "Select Payment Status", new { @class = "form-control" })
                                 @Html.ValidationMessageFor(m => m.PaymentStatus, "", new { @class = "text-danger" })
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                            <div class="col-md-9">
+                                @Html.TextAreaFor(m => m.Notes, new { placeholder = "Enter Notes", @maxlength = "50", @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
                     </div>
+                </div>
+
+            </div>
 
                     <div class="box-footer">
                         <div class="row">

@@ -45,7 +45,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 LastName = s.LastName,
                 Email = s.Email,
                 HospitalName = s.HospitalName,
-               HospitalNameDesc = dbcontext.Master_Hospital.Where(x => x.HospitalId == s.HospitalName).Select(b => b.Description).FirstOrDefault(),
+                HospitalNameDesc = dbcontext.Master_Hospital.Where(x => x.HospitalId == s.HospitalName).Select(b => b.Description).FirstOrDefault(),
                 MobileNo = s.MobileNo,
                 Address = s.Address,
                 Gender = s.Gender,

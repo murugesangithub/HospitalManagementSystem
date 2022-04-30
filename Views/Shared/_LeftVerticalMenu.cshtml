@@ -39,6 +39,20 @@
 
             <li class="treeview">
                 <a href="/User/Index">
+                    <i class="fa fa-hospital-o"></i>
+                    <span>Hospital Management</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    @*<li><a href="/User/Index"><i class="fa fa-users"></i>Users List</a></li>*@
+                    <li><a href="/Hospital/hospital"><i class="fa fa-circle-o"></i> Add </a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="/User/Index">
                     <i class="fa fa-user-plus"></i>
                     <span>User Management</span>
                     <span class="pull-right-container">
@@ -46,7 +60,7 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="/User/Index"><i class="fa fa-users"></i>Users List</a></li>
+                    <li><a href="/User/Index"><i class="fa fa-circle-o"></i>Users List</a></li>
                     <li><a href="/User/Add"><i class="fa fa-plus"></i> Add User</a></li>
                 </ul>
             </li>
@@ -165,8 +179,12 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="/PatientTreatment/Index"><i class="fa fa-circle-o"></i>
-                        Patient Treatment List</a></li>
+                    <li>
+                        <a href="/PatientTreatment/Index">
+                            <i class="fa fa-circle-o"></i>
+                            Patient Treatment List
+                        </a>
+                    </li>
                     <li><a href="/PatientTreatment/Add"><i class="fa fa-plus"></i>Add</a></li>
                 </ul>
             </li>
