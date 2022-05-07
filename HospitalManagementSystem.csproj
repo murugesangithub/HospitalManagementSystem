@@ -206,6 +206,9 @@
     <Compile Include="Entity\Master_Hospital.cs">
       <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\Master_Language.cs">
+      <DependentUpon>HMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\Master_MaritalStatus.cs">
       <DependentUpon>HMS.tt</DependentUpon>
     </Compile>
@@ -384,6 +387,7 @@
     <Content Include="Images\avatar.png" />
     <Content Include="Images\default_profile.jpg" />
     <Content Include="Scripts\adminlte.min.js" />
+    <Content Include="Scripts\Appointment\AddAppointment.js" />
     <Content Include="Scripts\Billing\Billing.js" />
     <Content Include="Scripts\Appointment\Appointment.js" />
     <Content Include="Scripts\bootstrap.js" />

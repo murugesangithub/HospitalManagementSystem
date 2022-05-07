@@ -35,7 +35,7 @@ $(document).ready(function () {
             //{ label: 'Problem', name: 'Problem', width: 200, },
             //{ label: 'Email', name: 'Email', width: 200, },
             //{ label: 'Phone Number', name: 'PhoneNumber', width: 200, },
-            { label: 'Appointment Date', name: 'DateofAppointment', width: 200, },
+            { label: 'Appointment Date', name: 'DateofAppointment', width: 200, formatter: 'date',  formatoptions: { srcformat: "d/m/Y H:i:s", newformat: "d-m-Y" } },
             //{ label: 'Address', name: 'Address', width: 200, },
             { label: 'ConsultingDoctor', name: 'ConsultingDoctor', width: 200, },
             //{ label: 'TimeSlot', name: 'TimeSlot', width: 200, hidden: true, },

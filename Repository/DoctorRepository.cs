@@ -24,6 +24,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 City = doctorViewModel.City,
                 State = doctorViewModel.State,
                 Specialist = doctorViewModel.Specialist,
+                ProfileImage = doctorViewModel.ProfileImage,
                 IsActive = true,
             };
             dbcontext.DoctorDetails.Add(doctorDetail);
@@ -56,6 +57,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 CityDesc = dbcontext.Master_City.Where(x => x.CityId == s.City).Select(b => b.Description).FirstOrDefault(),
                 Specialist = s.Specialist,
                 SpecialistDesc = dbcontext.Master_Specialist.Where(x => x.SpecialistId == s.Specialist).Select(b => b.Description).FirstOrDefault(),
+                //ProfileImage = s.ProfileImage ?? string.Empty,
                 IsActive = s.IsActive,
             }).ToList();
 
@@ -82,6 +84,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 CityDesc = dbcontext.Master_City.Where(x => x.CityId == s.City).Select(b => b.Description).FirstOrDefault(),
                 Specialist = s.Specialist,
                 SpecialistDesc = dbcontext.Master_Specialist.Where(x => x.SpecialistId == s.Specialist).Select(b => b.Description).FirstOrDefault(),
+                ProfileImage = s.ProfileImage ?? string.Empty,
                 IsActive = s.IsActive,
             }).FirstOrDefault();
             return result;
@@ -111,12 +114,18 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 isDoctorDetailExit.City = doctorViewModel.City;
                 isDoctorDetailExit.State = doctorViewModel.State;
                 isDoctorDetailExit.Specialist = doctorViewModel.Specialist;
-
+                if (doctorViewModel.ProfileImage.Length > 0)
+                {
+                    isDoctorDetailExit.ProfileImage = doctorViewModel.ProfileImage;
+                }
                 isDoctorDetailExit.IsActive = true;
 
                 dbcontext.Entry(isDoctorDetailExit);
                 dbcontext.SaveChanges();
             }
+
+
+          
         }
         //icon
         public DoctorViewModel GetDoctorDetail(int doctorDetailId)
@@ -139,12 +148,36 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 CityDesc = dbcontext.Master_City.Where(x => x.CityId == s.City).Select(b => b.Description).FirstOrDefault(),
                 Specialist = s.Specialist,
                 SpecialistDesc = dbcontext.Master_Specialist.Where(x => x.SpecialistId == s.Specialist).Select(b => b.Description).FirstOrDefault(),
+                ProfileImage = s.ProfileImage ?? string.Empty,
                 IsActive = s.IsActive,
             }).FirstOrDefault();
             //result.ForEach(x => x.EncryptUserDetailId = Cryptography.EncryptStringToBytes_Aes(x.UserDetailId.ToString()));
             return result;
         }
 
+
+        public JQGridResponse<DoctorViewModel> GetDoctorListForAppointment(JQGridSort jQGridSort)
+        {
+            IQueryable<DoctorViewModel> list = GetDoctorListQueryForAppointment();
+            var predicate = JQGridSorting.GeneratePredicate<DoctorViewModel>(jQGridSort);
+            var result = JqGridResult.GridFilteration(jQGridSort, list.Where(predicate).ToList());
+            return result;
+        }
+        public IQueryable<DoctorViewModel> GetDoctorListQueryForAppointment()
+        {
+            var result = dbcontext.DoctorDetails.Where(x => x.IsActive).Select(s => new DoctorViewModel()
+            {
+                DoctorDetailId = s.DoctorDetailId,
+                FirstName = s.FirstName,
+                LastName =  s.LastName,
+                SpecialistDesc = dbcontext.Master_Specialist.Where(x => x.SpecialistId == s.Specialist).Select(b => b.Description).FirstOrDefault(),
+                ProfileImage = s.ProfileImage ?? string.Empty,
+              
+            }).ToList();
+
+            result.ForEach(x => x.EncryptDoctorDetailId = Cryptography.EncryptStringToBytes_Aes(x.DoctorDetailId.ToString()));
+            return result.AsQueryable();
+        }
 
     }
 }

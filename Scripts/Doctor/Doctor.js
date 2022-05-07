@@ -146,7 +146,7 @@ function ShowDoctorDetailPopup(DoctorDetailId, EncryptDoctorDetailId) {
             console.log(res);
             var title = res.FirstName + " " + res.LastName;
             $('#ProfileTitle').text(title);
-            //$('#ProfileImage').attr('src', res.ProfileImage);
+            $('#ProfileImage').attr('src', res.ProfileImage);
             $('#FirstName').val(res.FirstName);
             $('#LastName').val(res.LastName);
             $('#Email').val(res.Email);
@@ -154,14 +154,14 @@ function ShowDoctorDetailPopup(DoctorDetailId, EncryptDoctorDetailId) {
             $('#Gender').val(res.GenderDesc);
             $('#State').val(res.StateDesc);
             $('#City').val(res.CityDesc);
-            $('#Specialist').val(res.SpecialistDesc);
+            $('#Specialistin').val(res.SpecialistDesc);
             $('#MobileNo').val(res.MobileNo);
             $('#Address').val(res.Address);
            
 
-            //if (res.ProfileImage == "") {
-            //    $('#ProfileImage').attr('src', relativepath + "Images/default_profile.jpg");
-            //}
+            if (res.ProfileImage == "") {
+                $('#ProfileImage').attr('src', relativepath + "Images/default_profile.jpg");
+            }
             
             //  alert(result);
         },

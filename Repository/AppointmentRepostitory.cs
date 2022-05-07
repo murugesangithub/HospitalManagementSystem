@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using HospitalManagementSystem.Common;
@@ -189,6 +190,12 @@ namespace HospitalManagementSystem.DataAccess.Repository
 
             }).FirstOrDefault();
             //result.ForEach(x => x.EncryptUserDetailId = Cryptography.EncryptStringToBytes_Aes(x.UserDetailId.ToString()));
+            return result;
+        }
+
+        public List<int> GetAppointmentTimeDetailByDate(DateTime appointmentDate)
+        {
+            var result = dbcontext.AppointmentDetails.Where(x => x.IsActive && x.DateofAppointment == appointmentDate).Select(s => s.TimeSlot).ToList();
             return result;
         }
     }

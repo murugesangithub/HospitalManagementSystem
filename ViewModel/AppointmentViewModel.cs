@@ -53,15 +53,15 @@ namespace HospitalManagementSystem.ViewModel
 
 
 
-        [Required]
-        [Display(Name = "Date of Birth")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
-        public DateTime DateofBirth { get; set; } = DateTime.Now;
+        //[Required]
+        //[Display(Name = "Date of Birth")]
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
+        //public DateTime DateofBirth { get; set; } = DateTime.Now;
 
         [Required]
         [Display(Name = "Appointment Date ")]
-        [DataType(DataType.Date)]
-        public string DateofAppointment { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
+        public DateTime DateofAppointment { get; set; } = DateTime.Now;
 
         [Required(ErrorMessage = "Consulting Doctor is required")]
         [Display(Name = "Consulting Doctor ")]
@@ -84,7 +84,8 @@ namespace HospitalManagementSystem.ViewModel
         public string TokenNumber { get; set; }*/
 
         [Required(ErrorMessage = "Select your Time Slot")]
-        public List<System.Web.Mvc.SelectListItem> TimeSlotList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
+        public List<System.Web.Mvc.SelectListItem> TimeSlotListMorning { get; set; } = new List<System.Web.Mvc.SelectListItem>();
+        public List<System.Web.Mvc.SelectListItem> TimeSlotListEvening { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int TimeSlot { get; set; }
         public string TimeSlotDesc { get; set; }
 

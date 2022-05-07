@@ -31,10 +31,11 @@
         <EntityTypeShape EntityType="HMSModel.Master_RoomNumber" Width="1.5" PointX="0.75" PointY="14.75" />
         <EntityTypeShape EntityType="HMSModel.Master_RoomType" Width="1.5" PointX="2.75" PointY="15.75" />
         <EntityTypeShape EntityType="HMSModel.PatientTreatmentDetail" Width="1.5" PointX="15.375" PointY="14.75" />
-        <EntityTypeShape EntityType="HMSModel.DoctorDetail" Width="1.5" PointX="16.375" PointY="0.75" />
         <EntityTypeShape EntityType="HMSModel.Master_Hospital" Width="1.5" PointX="0.75" PointY="7.75" />
         <EntityTypeShape EntityType="HMSModel.BillingDetail" Width="1.5" PointX="11.375" PointY="15.75" />
+        <EntityTypeShape EntityType="HMSModel.Master_Language" Width="1.5" PointX="15.375" PointY="8.75" />
         <EntityTypeShape EntityType="HMSModel.AppointmentDetail" Width="1.5" PointX="5.375" PointY="6.75" />
+        <EntityTypeShape EntityType="HMSModel.DoctorDetail" Width="1.5" PointX="16.375" PointY="0.75" />
       
       </Diagram>
     </edmx:Diagrams>
