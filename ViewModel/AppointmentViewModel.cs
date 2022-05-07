@@ -55,8 +55,8 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required]
         [Display(Name = "Date of Birth")]
-        [DataType(DataType.Date)]
-        public string DateofBirth { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
+        public DateTime DateofBirth { get; set; } = DateTime.Now;
 
         [Required]
         [Display(Name = "Appointment Date ")]

@@ -59,7 +59,7 @@
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.Email, htmlAttributes: new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
-                                        @Html.TextBoxFor(m => m.Email, new { placeholder = "Email", @maxlength = "30", @class = "form-control" })
+                                        @Html.TextBoxFor(m => m.Email, new { placeholder = "Email", @maxlength = "50", @class = "form-control" })
                                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -86,7 +86,7 @@
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.Age, new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
-                                        @Html.TextBoxFor(m => m.Age, new { placeholder = "Age", @maxlength = "3", @class = "form-control" })
+                                        @Html.TextBoxFor(m => m.Age, new { placeholder = "Age", @maxlength = "3", @class = "form-control", @type="number", @min = "1", @max = "100" })
                                         @Html.ValidationMessageFor(m => m.Age, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -187,12 +187,122 @@
         </div>
     </div>
 </section>
+<style>
+
+    /*Appintment Time Css*/
+    .apptm_sec {
+        padding-bottom: 25px;
+    }
+
+        .apptm_sec .head {
+            margin-bottom: 2px;
+            font-size: 17px;
+            font-weight: 400;
+        }
+
+    .apptm_ul {
+    }
+
+        .apptm_ul li {
+            width: 19%;
+            float: left;
+            margin-right: 1%;
+            margin-top: 1%;
+        }
+
+            .apptm_ul li a {
+                border: #ccc solid 1px;
+                padding: 6px;
+                display: block;
+                border-radius: 2px;
+                text-align: center;
+                color: #222;
+            }
+
+                .apptm_ul li a.grey {
+                    color: #ccc;
+                }
+
+                .apptm_ul li a.active {
+                    background: #000;
+                    color: #fff;
+                }
+
+    .grnbtnbg {
+        box-shadow: none !important;
+    }
+
+    .chkopt {
+        float: left;
+        width: 100%;
+        background: #fbfbfb;
+        padding-left: 5px;
+    }
+
+        .chkopt .opt {
+            float: left;
+            width: 100%;
+            margin: 0px 0 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+
+</style>
+<div id="TimeslotsFdate" class="panel-body">
+    <div class="apptm_sec">
+        <p class="head">Morning</p>
+        <ul class="apptm_ul">
+            <li><a onclick="slctTimeslt('10:00 AM');" class="" href="javascript:void(0);">10:00 AM</a></li>
+            <li><a onclick="slctTimeslt('10:30 AM');" class="" href="javascript:void(0);">10:30 AM</a></li>
+            <li><a onclick="slctTimeslt('11:00 AM');" class="" href="javascript:void(0);">11:00 AM</a></li>
+            <li><a onclick="slctTimeslt('11:30 AM');" class="" href="javascript:void(0);">11:30 AM</a></li>
+            <li><a onclick="slctTimeslt('12:00 PM');" class="" href="javascript:void(0);">12:00 PM</a></li>
+        </ul>
+    </div><div class="apptm_sec">
+        <p class="head">Afternoon</p>
+        <ul class="apptm_ul">
+            <li><a onclick="slctTimeslt('01:00 PM');" class="" href="javascript:void(0);">01:00 PM</a></li>
+            <li><a onclick="slctTimeslt('01:30 PM');" class="" href="javascript:void(0);">01:30 PM</a></li>
+            <li><a onclick="slctTimeslt('02:00 PM');" class="" href="javascript:void(0);">02:00 PM</a></li>
+            <li><a onclick="slctTimeslt('02:30 PM');" class="" href="javascript:void(0);">02:30 PM</a></li>
+            <li><a onclick="slctTimeslt('03:00 PM');" class="" href="javascript:void(0);">03:00 PM</a></li>
+            <li><a onclick="slctTimeslt('03:30 PM');" class="" href="javascript:void(0);">03:30 PM</a></li>
+            <li><a onclick="slctTimeslt('04:00 PM');" class="" href="javascript:void(0);">04:00 PM</a></li>
+            <li><a onclick="slctTimeslt('04:30 PM');" class="" href="javascript:void(0);">04:30 PM</a></li>
+            <li><a onclick="slctTimeslt('05:00 PM');" class="" href="javascript:void(0);">05:00 PM</a></li>
+        </ul>
+    </div><div class="apptm_sec">
+        <p class="head">Evening</p>
+        <ul class="apptm_ul">
+            <li><a onclick="slctTimeslt('06:00 PM');" class="" href="javascript:void(0);">06:00 PM</a></li>
+            <li><a onclick="slctTimeslt('06:30 PM');" class="" href="javascript:void(0);">06:30 PM</a></li>
+            <li><a onclick="slctTimeslt('07:00 PM');" class="" href="javascript:void(0);">07:00 PM</a></li>
+            <li><a onclick="slctTimeslt('07:30 PM');" class="" href="javascript:void(0);">07:30 PM</a></li>
+        </ul>
+    </div>
+</div>
 
 
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")
     }
+<script>
 
+    $(document).ready(function () {
+        $('input[type=datetime]').datepicker({
+            dateFormat: "dd-mm-yy",
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-60:+0",
+             onSelect: function (dateString, txtDate) {
+                alert("Selected Date: " + dateString + "\nTextBox ID: " + txtDate.id);
+            }
+        });
+
+    });
+</script>
 
 
 

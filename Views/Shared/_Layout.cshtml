@@ -92,6 +92,8 @@
 
     <!-- SlimScroll -->
     <script src="~/Scripts/jquery.slimscroll.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.13.1.js"></script>
+    <link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
     <!-- ChartJS -->
     @*<script src="~/Scripts/Chart.js"></script>*@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
@@ -115,8 +117,23 @@
         {
             <script>
                 Notify_Success();
+            
             </script>
         }
     }
+
+    <script>
+
+        jQuery.validator.methods.date = function (value, element) {
+            if (value) {
+                try {
+                    $.datepicker.parseDate('dd-mm-yy', value);
+                } catch (ex) {
+                    return false;
+                }
+            }
+            return true;
+        };
+    </script>
 </body>
 </html>
