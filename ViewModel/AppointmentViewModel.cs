@@ -67,6 +67,7 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Consulting Doctor ")]
         [DataType(DataType.Text)]
         public string ConsultingDoctor { get; set; }
+       
 
         [Required]
         [Display(Name = "Appointment Time ")]
@@ -97,5 +98,6 @@ namespace HospitalManagementSystem.ViewModel
         public int TokenNumber { get; set; }
         public string EncryptTokenNumber { get; set; }
         public bool IsActive { get; set; }
+        public int DoctorId { get; set; }
     }
 }

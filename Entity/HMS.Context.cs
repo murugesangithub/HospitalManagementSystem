@@ -53,7 +53,7 @@ namespace HospitalManagementSystem.Entity
         public virtual DbSet<Master_Hospital> Master_Hospital { get; set; }
         public virtual DbSet<BillingDetail> BillingDetails { get; set; }
         public virtual DbSet<Master_Language> Master_Language { get; set; }
-        public virtual DbSet<AppointmentDetail> AppointmentDetails { get; set; }
         public virtual DbSet<DoctorDetail> DoctorDetails { get; set; }
+        public virtual DbSet<AppointmentDetail> AppointmentDetails { get; set; }
     }
 }

@@ -1,20 +1,37 @@
 ﻿
 $(document).ready(function () {
+
     $('input[type=datetime]').datepicker({
         dateFormat: "dd-mm-yy",
+        minDate: 0,
+        maxDate: 7,
         changeMonth: true,
         changeYear: true,
-        yearRange: "-60:+0",
+        yearRange: "-1:+0",
+        beforeShowDay: function (date) {
+            var day = date.getDay();
+            return [(day != 0), ''];
+        },
         onSelect: function (dateString, txtDate) {
             //alert("Selected Date: " + dateString + "\nTextBox ID: " + txtDate.id);
             GetAppointmentDetails(dateString);
         }
     });
+    jQuery.validator.methods.date = function (value, element) {
+        if (value) {
+            try {
+                $.datepicker.parseDate('dd-mm-yy', value);
+            } catch (ex) {
+                return false;
+            }
+        }
+        return true;
+    };
+
+
     GetAppointmentDetails($('input[type=datetime]').val());
 
-
-
-    $('#ConsultingDoctor').on('click', function () {
+    $('#ConsultingDoctor, #doctorsearchicon').on('click', function () {
         $('#DoctorModalPopup').modal();
         DoctorGridForAppointment();
     });
@@ -52,14 +69,14 @@ $(document).ready(function () {
                     search: false,
                     align: 'center',
                     formatter: function (cellvalue, options, rowObject) {
-                        var img = "<img src=" + relativepath + "Images/default_profile.jpg alt='Profile Image' class='rounded-circle' width='36' >"
+                        var img = "<img src=" + relativepath + "Images/default_profile.jpg alt='Profile Image' class='rounded-circle' width='50' >"
                         if (cellvalue.length > 0) {
-                            img = "<img src='" + cellvalue + "' alt='Profile Image' class='rounded-circle' width='36' />";
+                            img = "<img src='" + cellvalue + "' alt='Profile Image' class='rounded-circle' width='50' />";
                         }
                         return img;
                     }
                 },
-                { label: 'First Name', name: 'FirstName', width: 200, },
+                { label: 'First Name', name: 'FirstName', width: 200,  valign:"middle"},
                 { label: 'Last Name', name: 'LastName', width: 200, },
                 { label: 'Specialist', name: 'SpecialistDesc', width: 200, },
 
@@ -75,6 +92,7 @@ $(document).ready(function () {
 
                 var gridRow = $(this).getRowData(id);
                 var doctorname = gridRow.FirstName + " " + gridRow.LastName;
+                $('#DoctorId').val(gridRow.DoctorDetailId);
                 $('#ConsultingDoctor').val(doctorname);
                 //$('#DoctorModalPopup').empty();
                 $('#DoctorModalPopup').modal('toggle');
@@ -92,6 +110,7 @@ $(document).ready(function () {
 
     }
 
+  
 });
 
 function GetAppointmentDetails(date) {

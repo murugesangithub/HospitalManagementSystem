@@ -17,7 +17,7 @@
           <Property Name="Email" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="PhoneNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="ConsultingDoctor" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="DoctorId" Type="int" Nullable="false" />
           <Property Name="TimeSlot" Type="int" Nullable="false" />
           <Property Name="Department" Type="int" Nullable="false" />
           <Property Name="DateofAppointment" Type="date" Nullable="false" />
@@ -441,8 +441,8 @@
           <EntitySet Name="Master_Hospital" EntityType="HMSModel.Master_Hospital" />
           <EntitySet Name="BillingDetails" EntityType="HMSModel.BillingDetail" />
           <EntitySet Name="Master_Language" EntityType="HMSModel.Master_Language" />
-          <EntitySet Name="AppointmentDetails" EntityType="HMSModel.AppointmentDetail" />
           <EntitySet Name="DoctorDetails" EntityType="HMSModel.DoctorDetail" />
+          <EntitySet Name="AppointmentDetails" EntityType="HMSModel.AppointmentDetail" />
         </EntityContainer>
         <EntityType Name="UserDetail">
           <Key>
@@ -762,25 +762,6 @@
           <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityType Name="AppointmentDetail">
-          <Key>
-            <PropertyRef Name="TokenNumber" />
-          </Key>
-          <Property Name="TokenNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="LastName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Gender" Type="Int32" Nullable="false" />
-          <Property Name="Age" Type="Int32" Nullable="false" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ConsultingDoctor" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="TimeSlot" Type="Int32" Nullable="false" />
-          <Property Name="Department" Type="Int32" Nullable="false" />
-          <Property Name="DateofAppointment" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Problem" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
         <EntityType Name="DoctorDetail">
           <Key>
             <PropertyRef Name="DoctorDetailId" />
@@ -797,6 +778,25 @@
           <Property Name="Specialist" Type="Int32" Nullable="false" />
           <Property Name="Gender" Type="Int32" Nullable="false" />
           <Property Name="ProfileImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AppointmentDetail">
+          <Key>
+            <PropertyRef Name="TokenNumber" />
+          </Key>
+          <Property Name="TokenNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="Int32" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DoctorId" Type="Int32" Nullable="false" />
+          <Property Name="TimeSlot" Type="Int32" Nullable="false" />
+          <Property Name="Department" Type="Int32" Nullable="false" />
+          <Property Name="DateofAppointment" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Problem" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
       </Schema>
@@ -1159,26 +1159,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="AppointmentDetails">
-            <EntityTypeMapping TypeName="HMSModel.AppointmentDetail">
-              <MappingFragment StoreEntitySet="AppointmentDetail">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Problem" ColumnName="Problem" />
-                <ScalarProperty Name="DateofAppointment" ColumnName="DateofAppointment" />
-                <ScalarProperty Name="Department" ColumnName="Department" />
-                <ScalarProperty Name="TimeSlot" ColumnName="TimeSlot" />
-                <ScalarProperty Name="ConsultingDoctor" ColumnName="ConsultingDoctor" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="TokenNumber" ColumnName="TokenNumber" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="DoctorDetails">
             <EntityTypeMapping TypeName="HMSModel.DoctorDetail">
               <MappingFragment StoreEntitySet="DoctorDetail">
@@ -1195,6 +1175,26 @@
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="DoctorDetailId" ColumnName="DoctorDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppointmentDetails">
+            <EntityTypeMapping TypeName="HMSModel.AppointmentDetail">
+              <MappingFragment StoreEntitySet="AppointmentDetail">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Problem" ColumnName="Problem" />
+                <ScalarProperty Name="DateofAppointment" ColumnName="DateofAppointment" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="TimeSlot" ColumnName="TimeSlot" />
+                <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="TokenNumber" ColumnName="TokenNumber" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
