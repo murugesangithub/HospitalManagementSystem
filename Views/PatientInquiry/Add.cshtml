@@ -94,7 +94,7 @@
                                     </div>
                                 </div>
 
-                                
+
 
                             </div>
                             <div class="col-md-6">
@@ -156,7 +156,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
 
 
 
@@ -165,169 +165,169 @@
                             <h3 class="box-title">Medical Conditions</h3>
                         </div><br />
 
-                              <div class="row">
-                                  <div class="col-md-6">
-                                      <div class="form-group">
-                                          @Html.LabelFor(m => m.Diabetes, new { @class = "col-sm-3 control-label " })
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Diabetes, new { @class = "col-sm-3 control-label " })
 
-                                          <div class="col-md-9 ">
-                                              Yes
-                                              @Html.RadioButtonFor(model => model.Diabetes, "Yes")
-                                              No
-                                              @Html.RadioButtonFor(model => model.Diabetes, "No")
+                                    <div class="col-md-9 ">
+                                        Yes
+                                        @Html.RadioButtonFor(model => model.Diabetes, "Yes")
+                                        No
+                                        @Html.RadioButtonFor(model => model.Diabetes, "No")
 
-                                              @Html.ValidationMessageFor(m => m.Diabetes, "", new { @class = "text-danger " })
+                                        @Html.ValidationMessageFor(m => m.Diabetes, "", new { @class = "text-danger " })
 
-                                          </div>
+                                    </div>
 
-                                      </div>
+                                </div>
 
-                                      <div class="form-group">
-                                          @Html.LabelFor(m => m.ThyroidProblems, new { @class = "col-sm-3 control-label " })
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.ThyroidProblems, new { @class = "col-sm-3 control-label " })
 
-                                          <div class="col-md-9">
-                                              Yes
-                                              @Html.RadioButtonFor(model => model.ThyroidProblems, "Yes")
-                                              No
-                                              @Html.RadioButtonFor(model => model.ThyroidProblems, "No")
+                                    <div class="col-md-9">
+                                        Yes
+                                        @Html.RadioButtonFor(model => model.ThyroidProblems, "Yes")
+                                        No
+                                        @Html.RadioButtonFor(model => model.ThyroidProblems, "No")
 
-                                              @Html.ValidationMessageFor(m => m.ThyroidProblems, "", new { @class = "text-danger " })
+                                        @Html.ValidationMessageFor(m => m.ThyroidProblems, "", new { @class = "text-danger " })
 
-                                          </div>
-                                      </div>
-
-
-
-                                      <div class="form-group">
-                                          @Html.LabelFor(m => m.LungProblems, new { @class = "col-sm-3 control-label " })
-                                          <div class="col-md-9">
-                                              Yes
-                                              @Html.RadioButtonFor(model => model.LungProblems, "Yes")
-                                              No
-                                              @Html.RadioButtonFor(model => model.LungProblems, "No")
-
-                                              @Html.ValidationMessageFor(m => m.LungProblems, "", new { @class = "text-danger " })
-
-                                          </div>
-                                      </div>
-
-                                      <div class="form-group">
-                                          @Html.LabelFor(m => m.HeartProblems, new { @class = "col-sm-3 control-label " })
-                                          <div class="col-md-9">
-                                              Yes
-                                              @Html.RadioButtonFor(model => model.HeartProblems, "Yes")
-                                              No
-                                              @Html.RadioButtonFor(model => model.HeartProblems, "No")
-
-                                              @Html.ValidationMessageFor(m => m.HeartProblems, "", new { @class = "text-danger " })
-
-                                          </div>
-                                      </div>
-
-                                      <div class="form-group">
-                                          @Html.LabelFor(m => m.BloodPressureProblems, new { @class = "col-sm-3 control-label " })
-                                          <div class="col-md-9">
-                                              Yes
-                                              @Html.RadioButtonFor(model => model.BloodPressureProblems, "Yes")
-                                              No
-                                              @Html.RadioButtonFor(model => model.BloodPressureProblems, "No")
-
-                                              @Html.ValidationMessageFor(m => m.BloodPressureProblems, "", new { @class = "text-danger " })
-
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-6">
-                                      <div class="form-group">
-                                          @Html.LabelFor(m => m.KidneyorLiverProblems, new { @class = "col-sm-3 control-label " })
-                                          <div class="col-md-9">
-                                              Yes
-                                              @Html.RadioButtonFor(model => model.KidneyorLiverProblems, "Yes")
-                                              No
-                                              @Html.RadioButtonFor(model => model.KidneyorLiverProblems, "No")
-
-                                              @Html.ValidationMessageFor(m => m.KidneyorLiverProblems, "", new { @class = "text-danger " })
-
-                                          </div>
-                                      </div>
-
-                                      <div class="form-group">
-                                          @Html.LabelFor(m => m.Cancer, new { @class = "col-sm-3 control-label " })
-                                          <div class="col-md-9">
-                                              Yes
-                                              @Html.RadioButtonFor(model => model.Cancer, "Yes")
-                                              No
-                                              @Html.RadioButtonFor(model => model.Cancer, "No")
-
-                                              @Html.ValidationMessageFor(m => m.Cancer, "", new { @class = "text-danger " })
-
-                                          </div>
-                                      </div>
-
-                                      <div class="form-group">
-                                          @Html.LabelFor(m => m.Doyousmoke, new { @class = "col-sm-3 control-label " })
-                                          <div class="col-md-9">
-                                              Yes
-                                              @Html.RadioButtonFor(model => model.Doyousmoke, "Yes")
-                                              No
-                                              @Html.RadioButtonFor(model => model.Doyousmoke, "No")
-
-                                              @Html.ValidationMessageFor(m => m.Doyousmoke, "", new { @class = "text-danger " })
-
-                                          </div>
-                                      </div>
+                                    </div>
+                                </div>
 
 
-                                      <div class="form-group ">
-                                          @Html.LabelFor(m => m.Doyoudrinkalchocol, new { @class = "col-sm-3 control-label " })
-                                          <div class="col-md-9 ">
-                                              Yes
-                                              @Html.RadioButtonFor(model => model.Doyoudrinkalchocol, "Yes")
-                                              No
-                                              @Html.RadioButtonFor(model => model.Doyoudrinkalchocol, "No")
 
-                                              @Html.ValidationMessageFor(m => m.Doyoudrinkalchocol, "", new { @class = "text-danger " })
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.LungProblems, new { @class = "col-sm-3 control-label " })
+                                    <div class="col-md-9">
+                                        Yes
+                                        @Html.RadioButtonFor(model => model.LungProblems, "Yes")
+                                        No
+                                        @Html.RadioButtonFor(model => model.LungProblems, "No")
 
-                                          </div>
-                                      </div>
-                                  </div>
-                                  </div>
-                                  
-                              <div class="row">
-                                  <div class="col-md-6">
-                                      <div class="form-group">
-                                          @Html.LabelFor(model => model.MedicalConditions, htmlAttributes: new { @class = "col-sm-3 control-label" })
-                                          <div class="col-md-9">
-                                              @Html.TextAreaFor(m => m.MedicalConditions, new { placeholder = "Medical Conditions", @maxlength = "20", @class = "form-control" })
-                                              @Html.ValidationMessageFor(model => model.MedicalConditions, "", new { @class = "text-danger" })
-                                          </div>
-                                      </div>
+                                        @Html.ValidationMessageFor(m => m.LungProblems, "", new { @class = "text-danger " })
 
-                                      <div class="form-group">
-                                          @Html.LabelFor(model => model.Allergy, htmlAttributes: new { @class = "col-sm-3 control-label" })
-                                          <div class="col-md-9">
-                                              @Html.TextAreaFor(m => m.Allergy, new { placeholder = "Allergy", @maxlength = "10", @class = "form-control" })
-                                              @Html.ValidationMessageFor(model => model.Allergy, "", new { @class = "text-danger" })
-                                          </div>
-                                      </div>
-                                      </div>
-                                  <div class="col-md-6">
-                                      <div class="form-group">
-                                          @Html.LabelFor(model => model.Lastdose, htmlAttributes: new { @class = "col-sm-3 control-label" })
-                                          <div class="col-md-9">
-                                              @Html.TextAreaFor(m => m.Lastdose, new { placeholder = "Last Dose", @maxlength = "20", @class = "form-control" })
-                                              @Html.ValidationMessageFor(model => model.Lastdose, "", new { @class = "text-danger" })
-                                          </div>
-                                      </div>
-                                      <div class="form-group">
-                                          @Html.LabelFor(m => m.AttachFile, new { @class = "col-sm-3 control-label" })
-                                          <div class="col-sm-9">
-                                              @Html.TextBoxFor(m => m.AttachFile, new { @class = "form-control", @type = "file", @name = "Files", @accept = "image/*" })
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.HeartProblems, new { @class = "col-sm-3 control-label " })
+                                    <div class="col-md-9">
+                                        Yes
+                                        @Html.RadioButtonFor(model => model.HeartProblems, "Yes")
+                                        No
+                                        @Html.RadioButtonFor(model => model.HeartProblems, "No")
+
+                                        @Html.ValidationMessageFor(m => m.HeartProblems, "", new { @class = "text-danger " })
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.BloodPressureProblems, new { @class = "col-sm-3 control-label " })
+                                    <div class="col-md-9">
+                                        Yes
+                                        @Html.RadioButtonFor(model => model.BloodPressureProblems, "Yes")
+                                        No
+                                        @Html.RadioButtonFor(model => model.BloodPressureProblems, "No")
+
+                                        @Html.ValidationMessageFor(m => m.BloodPressureProblems, "", new { @class = "text-danger " })
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.KidneyorLiverProblems, new { @class = "col-sm-3 control-label " })
+                                    <div class="col-md-9">
+                                        Yes
+                                        @Html.RadioButtonFor(model => model.KidneyorLiverProblems, "Yes")
+                                        No
+                                        @Html.RadioButtonFor(model => model.KidneyorLiverProblems, "No")
+
+                                        @Html.ValidationMessageFor(m => m.KidneyorLiverProblems, "", new { @class = "text-danger " })
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Cancer, new { @class = "col-sm-3 control-label " })
+                                    <div class="col-md-9">
+                                        Yes
+                                        @Html.RadioButtonFor(model => model.Cancer, "Yes")
+                                        No
+                                        @Html.RadioButtonFor(model => model.Cancer, "No")
+
+                                        @Html.ValidationMessageFor(m => m.Cancer, "", new { @class = "text-danger " })
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Doyousmoke, new { @class = "col-sm-3 control-label " })
+                                    <div class="col-md-9">
+                                        Yes
+                                        @Html.RadioButtonFor(model => model.Doyousmoke, "Yes")
+                                        No
+                                        @Html.RadioButtonFor(model => model.Doyousmoke, "No")
+
+                                        @Html.ValidationMessageFor(m => m.Doyousmoke, "", new { @class = "text-danger " })
+
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group ">
+                                    @Html.LabelFor(m => m.Doyoudrinkalchocol, new { @class = "col-sm-3 control-label " })
+                                    <div class="col-md-9 ">
+                                        Yes
+                                        @Html.RadioButtonFor(model => model.Doyoudrinkalchocol, "Yes")
+                                        No
+                                        @Html.RadioButtonFor(model => model.Doyoudrinkalchocol, "No")
+
+                                        @Html.ValidationMessageFor(m => m.Doyoudrinkalchocol, "", new { @class = "text-danger " })
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.MedicalConditions, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                    <div class="col-md-9">
+                                        @Html.TextAreaFor(m => m.MedicalConditions, new { placeholder = "Medical Conditions", @maxlength = "20", @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.MedicalConditions, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Allergy, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                    <div class="col-md-9">
+                                        @Html.TextAreaFor(m => m.Allergy, new { placeholder = "Allergy", @maxlength = "10", @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Allergy, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Lastdose, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                    <div class="col-md-9">
+                                        @Html.TextAreaFor(m => m.Lastdose, new { placeholder = "Last Dose", @maxlength = "20", @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Lastdose, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.AttachFile, new { @class = "col-sm-3 control-label" })
+                                    <div class="col-sm-9">
+                                        @Html.TextBoxFor(m => m.AttachFile, new { @class = "form-control", @type = "file", @name = "Files", @accept = "image/*" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="box-footer">
                         <div class="row">
@@ -345,5 +345,21 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+<script>
+
+    $(document).ready(function () {
+        $('input[type=datetime]').datepicker({
+            dateFormat: "dd-mm-yy",
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-60:+0",
+             onSelect: function (dateString, txtDate) {
+                alert("Selected Date: " + dateString + "\nTextBox ID: " + txtDate.id);
+            }
+        });
+
+    });
+</script>
 
 

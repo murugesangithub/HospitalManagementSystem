@@ -50,7 +50,7 @@ namespace HospitalManagementSystem.Controllers
             }
             return View();
         }
-        public ActionResult GetPurchaseMedicineList(JQGridSort jQGridSort)                   
+        public ActionResult GetPurchaseMedicineList(JQGridSort jQGridSort)
         {
             var purchaseMedicineRepository = new PurchaseMedicineRepository();
             var result = purchaseMedicineRepository.GetPurchaseMedicineList(jQGridSort);
@@ -155,7 +155,7 @@ namespace HospitalManagementSystem.Controllers
 
 
 
-        
+
 
 
     }

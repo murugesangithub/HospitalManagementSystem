@@ -17,9 +17,9 @@ namespace HospitalManagementSystem.Entity
         public int MedicineId { get; set; }
         public string SupplierName { get; set; }
         public string Code { get; set; }
-        public string Date { get; set; }
+        public System.DateTime Date { get; set; }
         public int Category { get; set; }
-        public int Medicine { get; set; }
+        public int MedicineName { get; set; }
         public int Quantity { get; set; }
         public string Notes { get; set; }
         public int Discount { get; set; }

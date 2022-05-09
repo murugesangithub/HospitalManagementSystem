@@ -13,11 +13,8 @@ namespace HospitalManagementSystem.DataAccess.Repository
 
         //insert
 
-
-
         public void AppointmentDetailInsertion(AppointmentViewModel appointmentViewModel)
         {
-
             AppointmentDetail appointmentDetail = new AppointmentDetail()
             {
                 TokenNumber = appointmentViewModel.TokenNumber,
@@ -25,55 +22,44 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 LastName = appointmentViewModel.LastName,
                 Email = appointmentViewModel.Email,
                 Address = appointmentViewModel.Address,
-                Age = Convert.ToInt32(appointmentViewModel.Age),
+                Age = appointmentViewModel.Age,
                 PhoneNumber = appointmentViewModel.PhoneNumber,
                 ConsultingDoctor = appointmentViewModel.ConsultingDoctor,
-                DateofAppointment = appointmentViewModel.DateofAppointment,
+                AppointmentDate = appointmentViewModel.DateofAppointment,
                 Problem = appointmentViewModel.Problem,
-                //DateofBirth = appointmentViewModel.DateofBirth,
+                DateOfBirth= appointmentViewModel.DateofBirth,
                 Gender = appointmentViewModel.Gender,
                 TimeSlot = appointmentViewModel.TimeSlot,
                 Department = appointmentViewModel.Department,
-
                 IsActive = true,
-
-
             };
 
             dbcontext.AppointmentDetails.Add(appointmentDetail);
             dbcontext.SaveChanges();
-
-
-
         }
         //update
         public void AppointmentDetailUpdation(AppointmentViewModel appointmentViewModel)
         {
-
             var isAppointmentDetailExist = dbcontext.AppointmentDetails.Where(x => x.IsActive && x.TokenNumber == appointmentViewModel.TokenNumber).FirstOrDefault();
             if (isAppointmentDetailExist != null)
             {
-
                 isAppointmentDetailExist.TokenNumber = appointmentViewModel.TokenNumber;
                 isAppointmentDetailExist.FirstName = appointmentViewModel.FirstName;
                 isAppointmentDetailExist.LastName = appointmentViewModel.LastName;
                 isAppointmentDetailExist.Email = appointmentViewModel.Email;
                 isAppointmentDetailExist.Address = appointmentViewModel.Address;
-                isAppointmentDetailExist.Age = Convert.ToInt32(appointmentViewModel.Age);
+                isAppointmentDetailExist.Age = appointmentViewModel.Age;
                 isAppointmentDetailExist.PhoneNumber = appointmentViewModel.PhoneNumber;
                 isAppointmentDetailExist.ConsultingDoctor = appointmentViewModel.ConsultingDoctor;
-                isAppointmentDetailExist.DateofAppointment = appointmentViewModel.DateofAppointment;
+                isAppointmentDetailExist.AppointmentDate = appointmentViewModel.DateofAppointment;
                 isAppointmentDetailExist.Problem = appointmentViewModel.Problem;
-                //isAppointmentDetailExist.DateofBirth = appointmentViewModel.DateofBirth;
+                isAppointmentDetailExist.DateOfBirth = appointmentViewModel.DateofBirth;
                 isAppointmentDetailExist.Gender = appointmentViewModel.Gender;
                 isAppointmentDetailExist.TimeSlot = appointmentViewModel.TimeSlot;
                 isAppointmentDetailExist.Department = appointmentViewModel.Department;
-
                 isAppointmentDetailExist.IsActive = true;
-
                 dbcontext.Entry(isAppointmentDetailExist);
                 dbcontext.SaveChanges();
-
             }
         }
 
@@ -95,9 +81,9 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 LastName = s.LastName,
                 GenderDescription = dbcontext.Master_Gender.Where(x => x.GenderId == s.Gender).Select(b => b.Description).FirstOrDefault(),
                 Gender = s.Gender,
-                Age = s.Age.ToString(),
-                DateofAppointment = s.DateofAppointment,
-                //DateofBirth = s.DateofBirth,
+                Age = s.Age,
+                DateofAppointment = s.AppointmentDate,
+                DateofBirth = s.DateOfBirth,
                 Problem = s.Problem,
                 Email = s.Email,
                 PhoneNumber = s.PhoneNumber,
@@ -124,10 +110,10 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 FirstName = s.FirstName,
                 LastName = s.LastName,
                 GenderDescription = dbcontext.Master_Gender.Where(x => x.GenderId == s.Gender).Select(b => b.Description).FirstOrDefault(),
-               Gender = s.Gender,
-                Age = s.Age.ToString(),
-                DateofAppointment = s.DateofAppointment,
-                //DateofBirth = s.DateofBirth,
+                Gender = s.Gender,
+                Age = s.Age,
+                DateofAppointment = s.AppointmentDate,
+                DateofBirth = s.DateOfBirth,
                 Problem = s.Problem,
                 Email = s.Email,
                 PhoneNumber = s.PhoneNumber,
@@ -155,14 +141,9 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 dbcontext.Entry(appointmentdetail);
                 dbcontext.SaveChanges();
             }
-
-
         }
 
-
         //icon
-
-
         public AppointmentViewModel GetAppointmentDetail(int tokenNumber)
         {
             var result = dbcontext.AppointmentDetails.Where(x => x.IsActive && x.TokenNumber == tokenNumber).Select(s => new AppointmentViewModel()
@@ -172,9 +153,9 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 LastName = s.LastName,
                 GenderDescription = dbcontext.Master_Gender.Where(x => x.GenderId == s.Gender).Select(b => b.Description).FirstOrDefault(),
                 Gender = s.Gender,
-                Age = s.Age.ToString(),
-                DateofAppointment = s.DateofAppointment,
-                //DateofBirth = s.DateofBirth,
+                Age = s.Age,
+                DateofAppointment = s.AppointmentDate,
+                DateofBirth = s.DateOfBirth,
                 Problem = s.Problem,
                 Email = s.Email,
                 PhoneNumber = s.PhoneNumber,
@@ -184,7 +165,6 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 TimeSlot = s.TimeSlot,
                 DepartmentDesc = dbcontext.Master_Department.Where(x => x.DepartmentId == s.Department).Select(b => b.Description).FirstOrDefault(),
                 Department = s.Department,
-
                 IsActive = s.IsActive,
 
             }).FirstOrDefault();

@@ -17,16 +17,16 @@ namespace HospitalManagementSystem.Entity
         public int TokenNumber { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int Gender { get; set; }
         public int Age { get; set; }
-        public string DateofBirth { get; set; }
+        public int Gender { get; set; }
         public string Email { get; set; }
-        public string PhoneNumber { get; set; }
+        public int PhoneNumber { get; set; }
         public string Address { get; set; }
+        public System.DateTime DateOfBirth { get; set; }
         public string ConsultingDoctor { get; set; }
+        public System.DateTime AppointmentDate { get; set; }
         public int TimeSlot { get; set; }
         public int Department { get; set; }
-        public string DateofAppointment { get; set; }
         public string Problem { get; set; }
         public bool IsActive { get; set; }
     }

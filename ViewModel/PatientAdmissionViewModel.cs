@@ -10,8 +10,6 @@ namespace HospitalManagementSystem.ViewModel
 {
     public class PatientAdmissionViewModel
     {
-
-
         [Required(ErrorMessage = "Doctor Name is required")]
         [Display(Name = "Doctor Name")]
         [DataType(DataType.Text)]
@@ -19,8 +17,8 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required]
         [Display(Name = "Admission Date ")]
-        [DataType(DataType.Date)]
-        public string AdmissionDate { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
+        public DateTime AdmissionDate { get; set;}= DateTime.Now;
 
         [Required(ErrorMessage = "Planned Procedure is required")]
         [Display(Name = "Planned Procedure")]
@@ -45,7 +43,6 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Marital Status")]
         public string MaritalStatus { get; set; }
 
-
         [Required]
         [Display(Name = "Which one(s) do you prefer to be contacted by")]
         public string Contact { get; set; }
@@ -65,10 +62,9 @@ namespace HospitalManagementSystem.ViewModel
         [Required]
         [Display(Name = "Phone Number")]
         [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "Phone number only in 10 digits")]
-        public string PhoneNumber { get; set; }
+        public int PhoneNumber { get; set; }
 
         [Required]
-
         public string Address { get; set; }
 
         [Required]
@@ -79,16 +75,12 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required]
         [RegularExpression(@"^\S[0-9]{0,6}$", ErrorMessage = "PostalCode must be a number")]
-        public string PostalCode { get; set; }
-
-
+        public int PostalCode { get; set; }
 
         [Required]
         [Display(Name = "Date of Birth")]
-        [DataType(DataType.Date)]
-        public string DateofBirth { get; set; }
-
-
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
+        public DateTime DateofBirth { get; set; } = DateTime.Now;
 
         public int PatientAdmissionId { get; set; }
         public bool IsActive { get; set; }

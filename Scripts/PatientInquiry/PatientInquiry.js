@@ -164,7 +164,7 @@ function ShowPatientInquiryDetailPopup(PatientId, EncryptPatientId) {
             $('#ThyroidProblems').val(res.ThyroidProblems);
             $('#LungProblems').val(res.LungProblems);
             $('#HeartProblems').val(res.HeartProblems);
-            $('#BloodPressureProblems').val(res.LastName);
+            $('#BloodPressureProblems').val(res.BloodPressureProblems);
             $('#KidneyProblems').val(res.KidneyorLiverProblems);
             $('#Cancer').val(res.Cancer);
             $('#Doyousmoke').val(res.Doyousmoke);

@@ -24,7 +24,6 @@ namespace HospitalManagementSystem.Controllers
 
         public ActionResult PatientAdmitForm(PatientAdmissionViewModel model)
         {
-
             var patientAdmissionRepository = new PatientAdmissionRepository();
             if (model.PatientAdmissionId == default(int))
             {
@@ -34,17 +33,12 @@ namespace HospitalManagementSystem.Controllers
             }
             else
             {
-
-
                 patientAdmissionRepository.PatientAdmissionUpdation(model);
                 TempData[AppConstant.Response] = AppConstant.Success;
                 return RedirectToAction("AddAdmission");
             }
-
             return View();
         }
-
-
         //select grid
         public ActionResult GetPatientAdmissionList(JQGridSort jQGridSort)
         {
@@ -53,8 +47,6 @@ namespace HospitalManagementSystem.Controllers
 
             return Json(result, JsonRequestBehavior.AllowGet);
         }
-
-
         //delete
 
         public ActionResult Delete(int patientAdmissionId)
@@ -63,8 +55,6 @@ namespace HospitalManagementSystem.Controllers
             patientAdmissionRepository.PatientAdmissionDeletion(patientAdmissionId);
             return Json(new AjaxResponse() { IsSuccess = true });
         }
-
-
 
         public ActionResult UpdatePatientAdmission(string id = null)
         {

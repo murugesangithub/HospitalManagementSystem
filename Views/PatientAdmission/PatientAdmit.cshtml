@@ -19,28 +19,23 @@
             <div class="box box-info">
                 <div class="box-header with-border">
                     <h1 class="box-title">Hospital Admission Form</h1>
-
                 </div>
+
                 @using (Html.BeginForm("PatientAdmitForm", "PatientAdmission", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
                 {
                     @Html.AntiForgeryToken()
 
-
                     @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
-
                     <div class="box-body">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.DoctorName, new { @class = "col-sm-3 control-label " })
-
                                     <div class="col-md-9">
                                         @Html.TextBoxFor(m => m.DoctorName, new { placeholder = "Doctor Name", @maxlength = "20", @class = "form-control " })
-
                                         @Html.ValidationMessageFor(m => m.DoctorName, "", new { @class = "text-danger " })
                                     </div>
                                 </div>
-
 
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.AdmissionDate, htmlAttributes: new { @class = "col-sm-3 control-label" })
@@ -50,37 +45,32 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-md-6">
-
                                 <div class="form-group">
-
                                     @Html.LabelFor(m => m.PlannedProcedure, new { @class = "col-sm-3 control-label " })
-
                                     <div class="col-sm-9">
                                         @Html.TextBoxFor(m => m.PlannedProcedure, new { placeholder = "Planned Procedure", @maxlength = "20", @class = "form-control " })
-
                                         @Html.ValidationMessageFor(m => m.PlannedProcedure, "", new { @class = "text-danger " })
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-
                                     @Html.LabelFor(m => m.ItemNumber, new { @class = "col-sm-3 control-label " })
-
                                     <div class="col-sm-9">
                                         @Html.TextBoxFor(m => m.ItemNumber, new { placeholder = "Item Number", @maxlength = "10", @class = "form-control " })
-
                                         @Html.ValidationMessageFor(m => m.ItemNumber, "", new { @class = "text-danger " })
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                         <div class="box-header with-border">
                             <h1 class="box-title">Patient Information</h1>
 
                         </div>
-                     
-                        <br/>
+
+                        <br />
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -136,33 +126,23 @@
                                         @Html.RadioButtonFor(model => model.MaritalStatus, "Other")
                                         Other
                                         @Html.ValidationMessageFor(m => m.MaritalStatus, "", new { @class = "text-danger " })
-
                                     </div>
-
                                 </div>
-
-
 
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.Patient, new { @class = "col-sm-3 control-label " })
-
                                     <div class="col-md-9 ">
-
                                         @Html.RadioButtonFor(model => model.Patient, "Yes")
                                         Yes
                                         @Html.RadioButtonFor(model => model.Patient, "No")
                                         No
                                         @Html.ValidationMessageFor(m => m.Patient, "", new { @class = "text-danger " })
-
                                     </div>
-
                                 </div>
 
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.Contact, new { @class = "col-sm-3 control-label " })
-
                                     <div class="col-md-9 ">
-
                                         @Html.RadioButtonFor(model => model.Contact, "Phone")
                                         Phone
                                         @Html.RadioButtonFor(model => model.Contact, "Email")
@@ -173,17 +153,11 @@
                                         SMS
                                         @Html.RadioButtonFor(model => model.Contact, "Other")
                                         Other
-
                                         @Html.ValidationMessageFor(m => m.Contact, "", new { @class = "text-danger " })
-
                                     </div>
-
                                 </div>
-
-
                             </div>
                             <div class="col-md-6">
-
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.GuardianName, new { @class = "col-sm-3 control-label" })
                                     <div class="col-sm-9">
@@ -191,9 +165,6 @@
                                         @Html.ValidationMessageFor(m => m.GuardianName, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
-
-
-
 
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-sm-3 control-label" })
@@ -220,7 +191,7 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 @Html.TextBoxFor(m => m.City, new { placeholder = "city", @maxlength = "20", @class = "form-control" })
-                                                @Html.ValidationMessageFor(m => m.City, "", new { @class = "text-danger" })<br />
+                                                @Html.ValidationMessageFor(m => m.City, "", new { @class = "text-danger" })<br/>
 
                                                 @Html.TextBoxFor(m => m.PostalCode, new { placeholder = "ZIP/Postal Code", @maxlength = "10", @class = "form-control" })
                                                 @Html.ValidationMessageFor(m => m.PostalCode, "", new { @class = "text-danger" })
@@ -228,24 +199,15 @@
                                             </div>
                                             <div class="col-sm-6">
                                                 @Html.TextBoxFor(m => m.State, new { placeholder = "State/Province", @maxlength = "20", @class = "form-control" })
-                                                @Html.ValidationMessageFor(m => m.State, "", new { @class = "text-danger" })<br />
-
+                                                @Html.ValidationMessageFor(m => m.State, "", new { @class = "text-danger" })<br/>
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
-
-
-
-
-                                
-
-
                             </div>
                         </div>
-
-                        </div>
-                   
+                    </div>
 
                     <div class="box-footer">
                         <div class="row">
@@ -254,15 +216,31 @@
                             <div class="col-md-2">  <button class="btn btn-gradgray pull-right" type="reset"><i class="fa fa-refresh"></i> Reset</button></div>
                         </div>
                     </div>
+
                 }
             </div>
         </div>
     </div>
 </section>
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
 
+<script>
+    $(document).ready(function () {
+        $('input[type=datetime]').datepicker({
+            dateFormat: "dd-mm-yy",
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-60:+0",
+             onSelect: function (dateString, txtDate) {
+                alert("Selected Date: " + dateString + "\nTextBox ID: " + txtDate.id);
+            }
+        });
+
+    });
+</script>
 
 
 

@@ -46,7 +46,7 @@ namespace HospitalManagementSystem.Controllers
             var medicineRepository = new MedicineRepository();
             if (model.MedicineId == default(int))
             {
-               medicineRepository.MedicineDetailInsertion(model);
+                medicineRepository.MedicineDetailInsertion(model);
                 TempData[AppConstant.Response] = AppConstant.Success;
                 return RedirectToAction("Add");
             }
@@ -54,7 +54,7 @@ namespace HospitalManagementSystem.Controllers
             {
 
 
-              medicineRepository.MedicineDetailUpdation(model);
+                medicineRepository.MedicineDetailUpdation(model);
                 TempData[AppConstant.Response] = AppConstant.Success;
                 return RedirectToAction("Index");
             }

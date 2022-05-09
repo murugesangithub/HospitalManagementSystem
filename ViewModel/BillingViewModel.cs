@@ -41,13 +41,13 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required]
         [Display(Name = "Admit Date ")]
-        [DataType(DataType.Date)]
-        public string AdmitDate { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
+        public DateTime AdmitDate { get; set; } = DateTime.Now;
 
         [Required]
         [Display(Name = "Discharge Date ")]
-        [DataType(DataType.Date)]
-        public string DischargeDate { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
+        public DateTime DischargeDate { get; set; } = DateTime.Now;
 
         [Required(ErrorMessage = "Select your Department")]
         [Display(Name = "Service Name ")]

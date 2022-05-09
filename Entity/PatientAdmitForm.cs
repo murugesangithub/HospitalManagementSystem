@@ -16,11 +16,11 @@ namespace HospitalManagementSystem.Entity
     {
         public int PatientAdmissionId { get; set; }
         public string DoctorName { get; set; }
-        public string AdmissionDate { get; set; }
+        public System.DateTime AdmissionDate { get; set; }
         public string PlannedProcedure { get; set; }
         public string ItemNumber { get; set; }
         public string PatientName { get; set; }
-        public string DateofBirth { get; set; }
+        public System.DateTime DateofBirth { get; set; }
         public string GuardianName { get; set; }
         public string Gender { get; set; }
         public string MaritalStatus { get; set; }
@@ -29,7 +29,7 @@ namespace HospitalManagementSystem.Entity
         public string Email { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
-        public string PostalCode { get; set; }
+        public int PostalCode { get; set; }
         public string Contact { get; set; }
         public string State { get; set; }
         public bool IsActive { get; set; }

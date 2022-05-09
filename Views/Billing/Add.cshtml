@@ -7,7 +7,7 @@
 
 <section class="content-header">
     <h1>
-     Billing Patient Management
+        Billing Patient Management
         <small>Registration</small>
     </h1>
     <ol class="breadcrumb">
@@ -170,7 +170,7 @@
                         </div>
 
                     </div>
-                    
+
                     <div class="box-footer">
                         <div class="row">
                             <div class="col-md-1"></div>
@@ -183,11 +183,24 @@
             </div>
         </div>
     </div>
-
-
 </section>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+<script>
+
+    $(document).ready(function () {
+        $('input[type=datetime]').datepicker({
+            dateFormat: "dd-mm-yy",
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-60:+0",
+             onSelect: function (dateString, txtDate) {
+                alert("Selected Date: " + dateString + "\nTextBox ID: " + txtDate.id);
+            }
+        });
+
+    });
+</script>
 

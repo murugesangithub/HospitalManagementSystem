@@ -76,7 +76,6 @@ namespace HospitalManagementSystem.Controllers
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
-
         public ActionResult UpdatePatientInquiry(string id = null)
         {
             int patientId = default(int);

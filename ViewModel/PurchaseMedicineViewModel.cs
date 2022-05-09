@@ -25,8 +25,8 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required]
         [Display(Name = " Date ")]
-        [DataType(DataType.Date)]
-        public string Date { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
+        public DateTime Date { get; set; } = DateTime.Now;
 
         [Required(ErrorMessage = "Select your Catogory")]
         public List<System.Web.Mvc.SelectListItem> CategoryList { get; set; } = new List<System.Web.Mvc.SelectListItem>();

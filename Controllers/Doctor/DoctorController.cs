@@ -149,7 +149,7 @@ namespace HospitalManagementSystem.Controllers.Doctor
             }
             var model = new DoctorViewModel();
             var doctorRepository = new DoctorRepository();
-           model = doctorRepository.GetDoctorDetailByDoctorDetailId(doctorDetailId);
+            model = doctorRepository.GetDoctorDetailByDoctorDetailId(doctorDetailId);
             model.GenderList = GetGenderList();
             model.StateList = GetStateList();
             model.HospitalNameList = GetHospitalNameList();

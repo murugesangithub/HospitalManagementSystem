@@ -17,13 +17,13 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 FirstName = doctorViewModel.FirstName,
                 LastName = doctorViewModel.LastName,
                 Email = doctorViewModel.Email,
-                HospitalName=doctorViewModel.HospitalName,
-                MobileNo = doctorViewModel.MobileNo,
+                HospitalName = doctorViewModel.HospitalName,
+                MobileNo=doctorViewModel.MobileNo,
                 Address = doctorViewModel.Address,
                 Gender = doctorViewModel.Gender,
                 City = doctorViewModel.City,
                 State = doctorViewModel.State,
-                Specialist = doctorViewModel.Specialist,
+                SpecialistIn = doctorViewModel.Specialist,
                 IsActive = true,
             };
             dbcontext.DoctorDetails.Add(doctorDetail);
@@ -54,8 +54,8 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 StateDesc = dbcontext.Master_State.Where(x => x.StateId == s.State).Select(b => b.Description).FirstOrDefault(),
                 City = s.City,
                 CityDesc = dbcontext.Master_City.Where(x => x.CityId == s.City).Select(b => b.Description).FirstOrDefault(),
-                Specialist = s.Specialist,
-                SpecialistDesc = dbcontext.Master_Specialist.Where(x => x.SpecialistId == s.Specialist).Select(b => b.Description).FirstOrDefault(),
+                Specialist = s.SpecialistIn,
+                SpecialistDesc = dbcontext.Master_Specialist.Where(x => x.SpecialistId == s.SpecialistIn).Select(b => b.Description).FirstOrDefault(),
                 IsActive = s.IsActive,
             }).ToList();
 
@@ -80,8 +80,8 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 StateDesc = dbcontext.Master_State.Where(x => x.StateId == s.State).Select(b => b.Description).FirstOrDefault(),
                 City = s.City,
                 CityDesc = dbcontext.Master_City.Where(x => x.CityId == s.City).Select(b => b.Description).FirstOrDefault(),
-                Specialist = s.Specialist,
-                SpecialistDesc = dbcontext.Master_Specialist.Where(x => x.SpecialistId == s.Specialist).Select(b => b.Description).FirstOrDefault(),
+                Specialist = s.SpecialistIn,
+                SpecialistDesc = dbcontext.Master_Specialist.Where(x => x.SpecialistId == s.SpecialistIn).Select(b => b.Description).FirstOrDefault(),
                 IsActive = s.IsActive,
             }).FirstOrDefault();
             return result;
@@ -110,7 +110,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 isDoctorDetailExit.Gender = doctorViewModel.Gender;
                 isDoctorDetailExit.City = doctorViewModel.City;
                 isDoctorDetailExit.State = doctorViewModel.State;
-                isDoctorDetailExit.Specialist = doctorViewModel.Specialist;
+                isDoctorDetailExit.SpecialistIn = doctorViewModel.Specialist;
 
                 isDoctorDetailExit.IsActive = true;
 
@@ -137,8 +137,8 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 StateDesc = dbcontext.Master_State.Where(x => x.StateId == s.State).Select(b => b.Description).FirstOrDefault(),
                 City = s.City,
                 CityDesc = dbcontext.Master_City.Where(x => x.CityId == s.City).Select(b => b.Description).FirstOrDefault(),
-                Specialist = s.Specialist,
-                SpecialistDesc = dbcontext.Master_Specialist.Where(x => x.SpecialistId == s.Specialist).Select(b => b.Description).FirstOrDefault(),
+                Specialist = s.SpecialistIn,
+                SpecialistDesc = dbcontext.Master_Specialist.Where(x => x.SpecialistId == s.SpecialistIn).Select(b => b.Description).FirstOrDefault(),
                 IsActive = s.IsActive,
             }).FirstOrDefault();
             //result.ForEach(x => x.EncryptUserDetailId = Cryptography.EncryptStringToBytes_Aes(x.UserDetailId.ToString()));

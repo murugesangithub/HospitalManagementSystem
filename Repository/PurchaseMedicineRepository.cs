@@ -17,31 +17,27 @@ namespace HospitalManagementSystem.DataAccess.Repository
             PurchaseMedicineDetail purchaseMedicineDetail = new PurchaseMedicineDetail()
             {
                 MedicineId = purchaseMedicineViewModel.MedicineId,
-               SupplierName = purchaseMedicineViewModel.SupplierName,
-                 Code= purchaseMedicineViewModel.Code,
-                Date= purchaseMedicineViewModel.Date,
-               Category = purchaseMedicineViewModel.Category,
-              Medicine= purchaseMedicineViewModel.Medicine,
-             Quantity= Convert.ToInt32(purchaseMedicineViewModel.Quantity),
-              Notes = purchaseMedicineViewModel.Notes,
+                SupplierName = purchaseMedicineViewModel.SupplierName,
+                Code = purchaseMedicineViewModel.Code,
+                Date = purchaseMedicineViewModel.Date,
+                Category = purchaseMedicineViewModel.Category,
+                MedicineName = purchaseMedicineViewModel.Medicine,
+                Quantity = Convert.ToInt32(purchaseMedicineViewModel.Quantity),
+                Notes = purchaseMedicineViewModel.Notes,
                 Discount = Convert.ToInt32(purchaseMedicineViewModel.Discount),
-               GrandTotal = Convert.ToInt32(purchaseMedicineViewModel.GrandTotal),
-                PaymentType= purchaseMedicineViewModel.Payment,
-                PaymentStatus= purchaseMedicineViewModel.PaymentStatus,
+                GrandTotal = Convert.ToInt32(purchaseMedicineViewModel.GrandTotal),
+                PaymentType = purchaseMedicineViewModel.Payment,
+                PaymentStatus = purchaseMedicineViewModel.PaymentStatus,
 
                 IsActive = true,
             };
 
             dbcontext.PurchaseMedicineDetails.Add(purchaseMedicineDetail);
             dbcontext.SaveChanges();
-
-
-
         }
         //update
         public void PurchaseDetailUpdation(PurchaseMedicineViewModel purchaseMedicineViewModel)
         {
-
             var isPurchaseMedicineDetailExist = dbcontext.PurchaseMedicineDetails.Where(x => x.IsActive && x.MedicineId == purchaseMedicineViewModel.MedicineId).FirstOrDefault();
             if (isPurchaseMedicineDetailExist != null)
             {
@@ -51,20 +47,16 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 isPurchaseMedicineDetailExist.Code = purchaseMedicineViewModel.Code;
                 isPurchaseMedicineDetailExist.Date = purchaseMedicineViewModel.Date;
                 isPurchaseMedicineDetailExist.Category = purchaseMedicineViewModel.Category;
-                isPurchaseMedicineDetailExist.Medicine = purchaseMedicineViewModel.Medicine;
+                isPurchaseMedicineDetailExist.MedicineName = purchaseMedicineViewModel.Medicine;
                 isPurchaseMedicineDetailExist.Quantity = Convert.ToInt32(purchaseMedicineViewModel.Quantity);
                 isPurchaseMedicineDetailExist.Notes = purchaseMedicineViewModel.Notes;
                 isPurchaseMedicineDetailExist.Discount = Convert.ToInt32(purchaseMedicineViewModel.Discount);
                 isPurchaseMedicineDetailExist.GrandTotal = Convert.ToInt32(purchaseMedicineViewModel.GrandTotal);
                 isPurchaseMedicineDetailExist.PaymentType = purchaseMedicineViewModel.Payment;
                 isPurchaseMedicineDetailExist.PaymentStatus = purchaseMedicineViewModel.PaymentStatus;
-          
-
                 isPurchaseMedicineDetailExist.IsActive = true;
-
                 dbcontext.Entry(isPurchaseMedicineDetailExist);
                 dbcontext.SaveChanges();
-
             }
         }
 
@@ -81,16 +73,16 @@ namespace HospitalManagementSystem.DataAccess.Repository
         {
             var result = dbcontext.PurchaseMedicineDetails.Where(x => x.IsActive).Select(s => new PurchaseMedicineViewModel()
             {
-               MedicineId= s.MedicineId,
+                MedicineId = s.MedicineId,
                 SupplierName = s.SupplierName,
                 Code = s.Code,
                 Date = s.Date,
                 CategoryDesc = dbcontext.Master_Category.Where(x => x.CategoryId == s.Category).Select(b => b.Description).FirstOrDefault(),
-               Category= s.Category,
-                MedicineDesc = dbcontext.Master_Medicine.Where(x => x.MedicineId == s.Medicine).Select(b => b.Description).FirstOrDefault(),
-               Medicine = s.Medicine,
+                Category = s.Category,
+                MedicineDesc = dbcontext.Master_Medicine.Where(x => x.MedicineId == s.MedicineName).Select(b => b.Description).FirstOrDefault(),
+                Medicine = s.MedicineName,
                 Quantity = s.Quantity.ToString(),
-                Notes=s.Notes,
+                Notes = s.Notes,
                 Discount = s.Discount.ToString(),
                 GrandTotal = s.GrandTotal.ToString(),
                 PaymentMethod = dbcontext.Master_Payment.Where(x => x.PaymentId == s.PaymentType).Select(b => b.Method).FirstOrDefault(),
@@ -115,8 +107,8 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 Date = s.Date,
                 CategoryDesc = dbcontext.Master_Category.Where(x => x.CategoryId == s.Category).Select(b => b.Description).FirstOrDefault(),
                 Category = s.Category,
-                MedicineDesc = dbcontext.Master_Medicine.Where(x => x.MedicineId == s.Medicine).Select(b => b.Description).FirstOrDefault(),
-                Medicine = s.Medicine,
+                MedicineDesc = dbcontext.Master_Medicine.Where(x => x.MedicineId == s.MedicineName).Select(b => b.Description).FirstOrDefault(),
+                Medicine = s.MedicineName,
                 Quantity = s.Quantity.ToString(),
                 Notes = s.Notes,
                 Discount = s.Discount.ToString(),
@@ -126,9 +118,6 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 PaymentStatusMethod = dbcontext.Master_PaymentStatus.Where(x => x.PaymentStatusId == s.PaymentStatus).Select(b => b.Method).FirstOrDefault(),
                 PaymentStatus = s.PaymentStatus,
                 IsActive = s.IsActive,
-
-                
-
             }).FirstOrDefault();
 
             return result;
@@ -144,10 +133,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 dbcontext.Entry(purchaseMedicineDetail);
                 dbcontext.SaveChanges();
             }
-
-
         }
-
 
         //icon
 
@@ -162,8 +148,8 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 Date = s.Date,
                 CategoryDesc = dbcontext.Master_Category.Where(x => x.CategoryId == s.Category).Select(b => b.Description).FirstOrDefault(),
                 Category = s.Category,
-                MedicineDesc = dbcontext.Master_Medicine.Where(x => x.MedicineId == s.Medicine).Select(b => b.Description).FirstOrDefault(),
-                Medicine = s.Medicine,
+                MedicineDesc = dbcontext.Master_Medicine.Where(x => x.MedicineId == s.MedicineName).Select(b => b.Description).FirstOrDefault(),
+                Medicine = s.MedicineName,
                 Quantity = s.Quantity.ToString(),
                 Notes = s.Notes,
                 Discount = s.Discount.ToString(),

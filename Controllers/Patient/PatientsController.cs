@@ -60,7 +60,7 @@ namespace HospitalManagementSystem.Controllers
 
             foreach (var item in genderList)
             {
-               genderSelectList.Add(new SelectListItem() { Text = item.Description, Value = item.GenderId.ToString() });
+                genderSelectList.Add(new SelectListItem() { Text = item.Description, Value = item.GenderId.ToString() });
             }
             return genderSelectList;
         }
@@ -112,7 +112,7 @@ namespace HospitalManagementSystem.Controllers
             var model = new PatientViewModel();
             var patientRepository = new PatientRepository();
 
-             model = patientRepository.GetPatientByPatientDetailId(patientDetailId);
+            model = patientRepository.GetPatientByPatientDetailId(patientDetailId);
 
             model.MaritalStatusList = GetMaritalStatusList();
 

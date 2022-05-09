@@ -18,8 +18,8 @@ namespace HospitalManagementSystem.Entity
         public string PatientName { get; set; }
         public int Department { get; set; }
         public string DoctorName { get; set; }
-        public string AdmitDate { get; set; }
-        public string DischargeDate { get; set; }
+        public System.DateTime AdmitDate { get; set; }
+        public System.DateTime DischargeDate { get; set; }
         public int Service { get; set; }
         public int CostOfTreatment { get; set; }
         public string DoctorCharges { get; set; }

@@ -10,47 +10,45 @@ namespace HospitalManagementSystem.DataAccess.Repository
 {
     public class PatientInquiryRepository : BaseRepository
     {
-
         //insert
         public void PatientInquiryDetailInsertion(PatientInquiryViewModel patientInquiryViewModel)
         {
-                PatientInquiryDetailForm patientInquiryDetailForm = new PatientInquiryDetailForm()
-                {
-                    PatientId= patientInquiryViewModel.PatientId,
-                    FirstName = patientInquiryViewModel.FirstName,
-                    LastName = patientInquiryViewModel.LastName,
-                    Email = patientInquiryViewModel.Email,
-                   DateofBirth= patientInquiryViewModel.DateofBirth,
-                    Age = Convert.ToInt32(patientInquiryViewModel.Age),
-                    PhoneNumber = (int)Convert.ToInt64(patientInquiryViewModel.PhoneNumber),
-                    Height= (int)Convert.ToInt64(patientInquiryViewModel.Height),
-                    Weight = (int)Convert.ToInt64(patientInquiryViewModel.Weight),
-                    GuardianName= patientInquiryViewModel.GuardianName,
-                    Problem= patientInquiryViewModel.Problem,
-                    Gender = Convert.ToInt32(patientInquiryViewModel.Gender),
-                    Address = patientInquiryViewModel.Address,
-                    City = patientInquiryViewModel.City,
-                    State= patientInquiryViewModel.State,
-                    Country = patientInquiryViewModel.Country,
-                    PostalCode = (int)Convert.ToInt64(patientInquiryViewModel.PostalCode),
-                    Diabetes= patientInquiryViewModel.Diabetes,
-                   ThyroidProblems = patientInquiryViewModel.ThyroidProblems,
-                    LungProblems = patientInquiryViewModel.LungProblems,
-                   HeartProblems= patientInquiryViewModel.HeartProblems,
-                   BloodProblems = patientInquiryViewModel.BloodPressureProblems,
-                   Kidney = patientInquiryViewModel.KidneyorLiverProblems,
-                    Cancer = patientInquiryViewModel.Cancer,
-                    Smoke = patientInquiryViewModel.Doyousmoke,
-                    Alchocol = patientInquiryViewModel.Doyoudrinkalchocol,
-                   MedicalConditions= patientInquiryViewModel.MedicalConditions,
-                    Allergy= patientInquiryViewModel.Allergy,
-                   LastDose= patientInquiryViewModel.Lastdose,
-                    MedicalDocuments = patientInquiryViewModel.AttachFileImage,
-                    IsActive = true,
-                };
-
-                dbcontext.PatientInquiryDetailForms.Add(patientInquiryDetailForm);
-                dbcontext.SaveChanges();
+            PatientInquiryDetailForm patientInquiryDetailForm = new PatientInquiryDetailForm()
+            {
+                PatientId = patientInquiryViewModel.PatientId,
+                FirstName = patientInquiryViewModel.FirstName,
+                LastName = patientInquiryViewModel.LastName,
+                Email = patientInquiryViewModel.Email,
+                DateofBirth = patientInquiryViewModel.DateofBirth,
+                Age = Convert.ToInt32(patientInquiryViewModel.Age),
+                PhoneNumber = (int)Convert.ToInt64(patientInquiryViewModel.PhoneNumber),
+                Height = (int)Convert.ToInt64(patientInquiryViewModel.Height),
+                Weight = (int)Convert.ToInt64(patientInquiryViewModel.Weight),
+                GuardianName = patientInquiryViewModel.GuardianName,
+                Problem = patientInquiryViewModel.Problem,
+                Gender = Convert.ToInt32(patientInquiryViewModel.Gender),
+                Address = patientInquiryViewModel.Address,
+                City = patientInquiryViewModel.City,
+                State = patientInquiryViewModel.State,
+                Country = patientInquiryViewModel.Country,
+                PostalCode = (int)Convert.ToInt64(patientInquiryViewModel.PostalCode),
+                Diabetes = patientInquiryViewModel.Diabetes,
+                ThyroidProblems = patientInquiryViewModel.ThyroidProblems,
+                LungProblems = patientInquiryViewModel.LungProblems,
+                HeartProblems = patientInquiryViewModel.HeartProblems,
+                BloodProblems = patientInquiryViewModel.BloodPressureProblems,
+                Kidney = patientInquiryViewModel.KidneyorLiverProblems,
+                Cancer = patientInquiryViewModel.Cancer,
+                Smoke = patientInquiryViewModel.Doyousmoke,
+                Alchocol = patientInquiryViewModel.Doyoudrinkalchocol,
+                MedicalConditions = patientInquiryViewModel.MedicalConditions,
+                Allergy = patientInquiryViewModel.Allergy,
+                LastDose = patientInquiryViewModel.Lastdose,
+                MedicalDocuments = patientInquiryViewModel.AttachFileImage,
+                IsActive = true,
+            };
+            dbcontext.PatientInquiryDetailForms.Add(patientInquiryDetailForm);
+            dbcontext.SaveChanges();
         }
         public void PatientInquiryDetailUpdation(PatientInquiryViewModel patientinquiryViewModel)
         {
@@ -61,6 +59,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 isPatientInquiryDetailExist.FirstName = patientinquiryViewModel.FirstName;
                 isPatientInquiryDetailExist.LastName = patientinquiryViewModel.LastName;
                 isPatientInquiryDetailExist.Email = patientinquiryViewModel.Email;
+                isPatientInquiryDetailExist.DateofBirth = patientinquiryViewModel.DateofBirth;
                 isPatientInquiryDetailExist.Address = patientinquiryViewModel.Address;
                 isPatientInquiryDetailExist.Age = Convert.ToInt32(patientinquiryViewModel.Age);
                 isPatientInquiryDetailExist.PhoneNumber = (int)Convert.ToInt64(patientinquiryViewModel.PhoneNumber);
@@ -69,7 +68,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 isPatientInquiryDetailExist.Gender = patientinquiryViewModel.Gender;
                 isPatientInquiryDetailExist.City = patientinquiryViewModel.City;
                 isPatientInquiryDetailExist.State = patientinquiryViewModel.State;
-                isPatientInquiryDetailExist.PostalCode = (int)Convert.ToInt64(patientinquiryViewModel.PostalCode);               
+                isPatientInquiryDetailExist.PostalCode = (int)Convert.ToInt64(patientinquiryViewModel.PostalCode);
                 isPatientInquiryDetailExist.Problem = patientinquiryViewModel.Problem;
                 isPatientInquiryDetailExist.Weight = (int)Convert.ToInt64(patientinquiryViewModel.Weight);
                 isPatientInquiryDetailExist.Height = (int)Convert.ToInt64(patientinquiryViewModel.Height);
@@ -81,7 +80,6 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 isPatientInquiryDetailExist.LungProblems = patientinquiryViewModel.LungProblems;
                 isPatientInquiryDetailExist.BloodProblems = patientinquiryViewModel.BloodPressureProblems;
                 isPatientInquiryDetailExist.Kidney = patientinquiryViewModel.KidneyorLiverProblems;
-              
                 isPatientInquiryDetailExist.MedicalConditions = patientinquiryViewModel.MedicalConditions;
                 isPatientInquiryDetailExist.Allergy = patientinquiryViewModel.Allergy;
                 isPatientInquiryDetailExist.LastDose = patientinquiryViewModel.Lastdose;
@@ -89,10 +87,8 @@ namespace HospitalManagementSystem.DataAccess.Repository
 
                 dbcontext.Entry(isPatientInquiryDetailExist);
                 dbcontext.SaveChanges();
-
             }
         }
-
         public JQGridResponse<PatientInquiryViewModel> GetPatientInquiryList(JQGridSort jQGridSort)
         {
             IQueryable<PatientInquiryViewModel> list = GetPatientInquiryListQuery();
@@ -100,7 +96,6 @@ namespace HospitalManagementSystem.DataAccess.Repository
             var result = JqGridResult.GridFilteration(jQGridSort, list.Where(predicate).ToList());
             return result;
         }
-
         public IQueryable<PatientInquiryViewModel> GetPatientInquiryListQuery()
         {
             var result = dbcontext.PatientInquiryDetailForms.Where(x => x.IsActive).Select(s => new PatientInquiryViewModel()
@@ -132,13 +127,11 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 HeartProblems = s.HeartProblems,
                 LungProblems = s.LungProblems,
                 BloodPressureProblems = s.BloodProblems,
-                KidneyorLiverProblems = s.Kidney,              
+                KidneyorLiverProblems = s.Kidney,
                 MedicalConditions = s.MedicalConditions,
                 Allergy = s.Allergy,
                 Lastdose = s.LastDose,
                 IsActive = s.IsActive,
-
-
 
             }).ToList();
             result.ForEach(x => x.EncryptPatientId = Cryptography.EncryptStringToBytes_Aes(x.PatientId.ToString()));
@@ -181,9 +174,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 Allergy = s.Allergy,
                 Lastdose = s.LastDose,
                 IsActive = s.IsActive,
-
             }).FirstOrDefault();
-
             return result;
         }
         //delete

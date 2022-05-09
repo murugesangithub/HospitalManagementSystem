@@ -35,7 +35,7 @@ namespace HospitalManagementSystem.ViewModel
         [DataType(DataType.Text)]
         [Display(Name = "Age")]
         [RegularExpression(@"^\S[0-9]{0,3}$", ErrorMessage = "Age must be a number")]
-        public string Age { get; set; }
+        public int Age { get; set; }
 
         [Required]
         [Display(Name = "Address")]
@@ -49,9 +49,7 @@ namespace HospitalManagementSystem.ViewModel
         [Required]
         [Display(Name = "Phone Number")]
         [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "Phone number only in 10 digits")]
-        public string PhoneNumber { get; set; }
-
-
+        public int PhoneNumber { get; set; }
 
         [Required]
         [Display(Name = "Date of Birth")]
@@ -60,8 +58,9 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required]
         [Display(Name = "Appointment Date ")]
-        [DataType(DataType.Date)]
-        public string DateofAppointment { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
+        public DateTime DateofAppointment { get; set; } = DateTime.Now;
+
 
         [Required(ErrorMessage = "Consulting Doctor is required")]
         [Display(Name = "Consulting Doctor ")]
@@ -71,7 +70,8 @@ namespace HospitalManagementSystem.ViewModel
         [Required]
         [Display(Name = "Appointment Time ")]
         [DataType(DataType.Text)]
-        public string TimeofAppointment { get; set; }
+        public string TimeofAppointment { get; set; } 
+
 
         [Required]
         [Display(Name = "Problem ")]

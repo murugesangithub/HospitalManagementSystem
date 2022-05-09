@@ -46,7 +46,6 @@ namespace HospitalManagementSystem.ViewModel
         [RegularExpression(@"^\S[0-9]{0,6}$", ErrorMessage = "PostalCode must be a number")]
         public string PostalCode { get; set; }
 
-
         [Required]
         [Display(Name = "Problem")]
         public string Problem { get; set; }
@@ -129,8 +128,8 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required]
         [Display(Name = "Date of Birth ")]
-        [DataType(DataType.Date)]
-        public string DateofBirth { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]   
+        public DateTime DateofBirth { get; set; } = DateTime.Now;
 
         [Required(ErrorMessage = "Select your Country")]
         [Display(Name = "Country")]

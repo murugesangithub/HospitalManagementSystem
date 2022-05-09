@@ -18,9 +18,9 @@ namespace HospitalManagementSystem.Entity
         public string MedicineName { get; set; }
         public int Category { get; set; }
         public string CompanyName { get; set; }
-        public string PurchaseDate { get; set; }
+        public System.DateTime PurchaseDate { get; set; }
         public string Price { get; set; }
-        public string ExpiredDate { get; set; }
+        public System.DateTime ExpiredDate { get; set; }
         public string Stock { get; set; }
         public bool IsActive { get; set; }
     }

@@ -24,7 +24,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 GuardianName = patientAdmissionViewModel.GuardianName,
                 Email = patientAdmissionViewModel.Email,
                 Address = patientAdmissionViewModel.Address,
-                PhoneNumber = (int)Convert.ToInt64(patientAdmissionViewModel.PhoneNumber),
+                PhoneNumber =patientAdmissionViewModel.PhoneNumber,
                 City = patientAdmissionViewModel.City,
                 State = patientAdmissionViewModel.State,
                 PostalCode = patientAdmissionViewModel.PostalCode,
@@ -64,16 +64,14 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 PatientAdmissionId = s.PatientAdmissionId,
                 DoctorName = s.DoctorName,
                 AdmissionDate = s.AdmissionDate,
-
                 PlannedProcedure = s.PlannedProcedure,
-
                 MaritalStatus = s.MaritalStatus,
                 ItemNumber = s.ItemNumber,
                 GuardianName = s.GuardianName,
                 DateofBirth = s.DateofBirth,
                 Contact = s.Contact,
                 Email = s.Email,
-                PhoneNumber = s.PhoneNumber.ToString(),
+                PhoneNumber = s.PhoneNumber,
                 Address = s.Address,
                 City = s.City,
                 PostalCode = s.PostalCode,
@@ -119,7 +117,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 isPatientAdmitFormExist.Address = patientAdmissionViewModel.Address;
                 isPatientAdmitFormExist.PatientBelow18 = patientAdmissionViewModel.Patient;
                 isPatientAdmitFormExist.Contact = patientAdmissionViewModel.Contact;
-                isPatientAdmitFormExist.PhoneNumber = (int)Convert.ToInt64(patientAdmissionViewModel.PhoneNumber);
+                isPatientAdmitFormExist.PhoneNumber =patientAdmissionViewModel.PhoneNumber;
                 isPatientAdmitFormExist.City = patientAdmissionViewModel.City;
                 isPatientAdmitFormExist.State = patientAdmissionViewModel.State;
                 isPatientAdmitFormExist.PostalCode = patientAdmissionViewModel.PostalCode;
@@ -144,16 +142,14 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 PatientAdmissionId = s.PatientAdmissionId,
                 DoctorName = s.DoctorName,
                 AdmissionDate = s.AdmissionDate,
-
                 PlannedProcedure = s.PlannedProcedure,
-
                 MaritalStatus = s.MaritalStatus,
                 ItemNumber = s.ItemNumber,
                 GuardianName = s.GuardianName,
                 DateofBirth = s.DateofBirth,
                 Contact = s.Contact,
                 Email = s.Email,
-                PhoneNumber = s.PhoneNumber.ToString(),
+                PhoneNumber = s.PhoneNumber,
                 Address = s.Address,
                 City = s.City,
                 PostalCode = s.PostalCode,
@@ -182,7 +178,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 DateofBirth = s.DateofBirth,
                 Contact = s.Contact,
                 Email = s.Email,
-                PhoneNumber = s.PhoneNumber.ToString(),
+                PhoneNumber = s.PhoneNumber,
                 Address = s.Address,
                 City = s.City,
                 PostalCode = s.PostalCode,

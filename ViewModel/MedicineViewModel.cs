@@ -27,13 +27,13 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required]
         [Display(Name = "Purchase Date ")]
-        [DataType(DataType.Date)]
-        public string PurchaseDate { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
+        public DateTime PurchaseDate { get; set; } = DateTime.Now;
 
         [Required]
         [Display(Name = "Expired Date ")]
-        [DataType(DataType.Date)]
-        public string ExpiredDate { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
+        public DateTime ExpiredDate { get; set; } = DateTime.Now;
 
         [Required(ErrorMessage = "Select your Catogory")]
         public List<System.Web.Mvc.SelectListItem> CategoryList { get; set; } = new List<System.Web.Mvc.SelectListItem>();

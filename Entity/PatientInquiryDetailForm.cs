@@ -18,7 +18,7 @@ namespace HospitalManagementSystem.Entity
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int Gender { get; set; }
-        public string DateofBirth { get; set; }
+        public System.DateTime DateofBirth { get; set; }
         public int Age { get; set; }
         public string Email { get; set; }
         public int PhoneNumber { get; set; }

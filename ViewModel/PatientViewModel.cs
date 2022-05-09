@@ -29,7 +29,7 @@ namespace HospitalManagementSystem.ViewModel
         [DataType(DataType.Password)]
         [Display(Name = "Age")]
         [RegularExpression(@"^\S[0-9]{0,3}$", ErrorMessage = "Age must be a number")]
-        public string Age { get; set; }
+        public int Age { get; set; }
 
         [Required]
         //[Display(Name = "Address")]
@@ -58,7 +58,7 @@ namespace HospitalManagementSystem.ViewModel
         [Required]
         [Display(Name = "Phone Number")]
         [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "Phone number only in 10 digits")]
-        public string PhoneNumber { get; set; }
+        public int PhoneNumber { get; set; }
 
 
         [Required(ErrorMessage = "Select your Gender")]
@@ -68,8 +68,8 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required]
         [Display(Name = "Date of Birth ")]
-        [DataType(DataType.Date)]
-        public string DateofBirth { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
+        public DateTime DateofBirth { get; set; } = DateTime.Now;
 
         [Required(ErrorMessage = "Select your MaritalStatus")]
         public List<System.Web.Mvc.SelectListItem> MaritalStatusList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
