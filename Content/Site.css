@@ -127,3 +127,61 @@ input.valid, select.valid, textarea.valid {
     .bg-danger, .bg-danger > a {
         color: #fff !important;
     }
+
+
+
+.customRadio input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+}
+
+    .customRadio input[type="radio"] + label {
+        position: relative;
+        padding: 3px 10px 10px 40px;
+        cursor: pointer;
+        width: 140px;
+        font-weight: normal;
+    }
+
+        .customRadio input[type="radio"] + label:before {
+            content: '';
+            background: #fff;
+            border: 2px solid #311B92;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 15px;
+        }
+
+        .customRadio input[type="radio"] + label:after {
+            content: '';
+            background: #311B92;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+            left: 20px;
+            opacity: 0;
+            transform: scale(2);
+            transition: transform 0.3s linear, opacity 0.3s linear;
+        }
+
+    .customRadio input[type="radio"]:checked + label:after {
+        opacity: 1;
+        transform: scale(1);
+    }
+.doctorsearchicon{
+    position:absolute;
+    margin:10px;
+}
+
+.doctorsearchspan {
+    float: right;
+    margin: 0 35px;
+}
+.ui-jqgrid tr.jqgrow td {
+    vertical-align: middle !important
+}

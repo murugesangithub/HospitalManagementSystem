@@ -23,7 +23,12 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 Gender = doctorViewModel.Gender,
                 City = doctorViewModel.City,
                 State = doctorViewModel.State,
+<<<<<<< HEAD
                 SpecialistIn = doctorViewModel.Specialist,
+=======
+                Specialist = doctorViewModel.Specialist,
+                ProfileImage = doctorViewModel.ProfileImage,
+>>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
                 IsActive = true,
             };
             dbcontext.DoctorDetails.Add(doctorDetail);
@@ -54,8 +59,14 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 StateDesc = dbcontext.Master_State.Where(x => x.StateId == s.State).Select(b => b.Description).FirstOrDefault(),
                 City = s.City,
                 CityDesc = dbcontext.Master_City.Where(x => x.CityId == s.City).Select(b => b.Description).FirstOrDefault(),
+<<<<<<< HEAD
                 Specialist = s.SpecialistIn,
                 SpecialistDesc = dbcontext.Master_Specialist.Where(x => x.SpecialistId == s.SpecialistIn).Select(b => b.Description).FirstOrDefault(),
+=======
+                Specialist = s.Specialist,
+                SpecialistDesc = dbcontext.Master_Specialist.Where(x => x.SpecialistId == s.Specialist).Select(b => b.Description).FirstOrDefault(),
+                //ProfileImage = s.ProfileImage ?? string.Empty,
+>>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
                 IsActive = s.IsActive,
             }).ToList();
 
@@ -80,8 +91,14 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 StateDesc = dbcontext.Master_State.Where(x => x.StateId == s.State).Select(b => b.Description).FirstOrDefault(),
                 City = s.City,
                 CityDesc = dbcontext.Master_City.Where(x => x.CityId == s.City).Select(b => b.Description).FirstOrDefault(),
+<<<<<<< HEAD
                 Specialist = s.SpecialistIn,
                 SpecialistDesc = dbcontext.Master_Specialist.Where(x => x.SpecialistId == s.SpecialistIn).Select(b => b.Description).FirstOrDefault(),
+=======
+                Specialist = s.Specialist,
+                SpecialistDesc = dbcontext.Master_Specialist.Where(x => x.SpecialistId == s.Specialist).Select(b => b.Description).FirstOrDefault(),
+                ProfileImage = s.ProfileImage ?? string.Empty,
+>>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
                 IsActive = s.IsActive,
             }).FirstOrDefault();
             return result;
@@ -110,13 +127,24 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 isDoctorDetailExit.Gender = doctorViewModel.Gender;
                 isDoctorDetailExit.City = doctorViewModel.City;
                 isDoctorDetailExit.State = doctorViewModel.State;
+<<<<<<< HEAD
                 isDoctorDetailExit.SpecialistIn = doctorViewModel.Specialist;
 
+=======
+                isDoctorDetailExit.Specialist = doctorViewModel.Specialist;
+                if (doctorViewModel.ProfileImage.Length > 0)
+                {
+                    isDoctorDetailExit.ProfileImage = doctorViewModel.ProfileImage;
+                }
+>>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
                 isDoctorDetailExit.IsActive = true;
 
                 dbcontext.Entry(isDoctorDetailExit);
                 dbcontext.SaveChanges();
             }
+
+
+          
         }
         //icon
         public DoctorViewModel GetDoctorDetail(int doctorDetailId)
@@ -137,14 +165,43 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 StateDesc = dbcontext.Master_State.Where(x => x.StateId == s.State).Select(b => b.Description).FirstOrDefault(),
                 City = s.City,
                 CityDesc = dbcontext.Master_City.Where(x => x.CityId == s.City).Select(b => b.Description).FirstOrDefault(),
+<<<<<<< HEAD
                 Specialist = s.SpecialistIn,
                 SpecialistDesc = dbcontext.Master_Specialist.Where(x => x.SpecialistId == s.SpecialistIn).Select(b => b.Description).FirstOrDefault(),
+=======
+                Specialist = s.Specialist,
+                SpecialistDesc = dbcontext.Master_Specialist.Where(x => x.SpecialistId == s.Specialist).Select(b => b.Description).FirstOrDefault(),
+                ProfileImage = s.ProfileImage ?? string.Empty,
+>>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
                 IsActive = s.IsActive,
             }).FirstOrDefault();
             //result.ForEach(x => x.EncryptUserDetailId = Cryptography.EncryptStringToBytes_Aes(x.UserDetailId.ToString()));
             return result;
         }
 
+
+        public JQGridResponse<DoctorViewModel> GetDoctorListForAppointment(JQGridSort jQGridSort)
+        {
+            IQueryable<DoctorViewModel> list = GetDoctorListQueryForAppointment();
+            var predicate = JQGridSorting.GeneratePredicate<DoctorViewModel>(jQGridSort);
+            var result = JqGridResult.GridFilteration(jQGridSort, list.Where(predicate).ToList());
+            return result;
+        }
+        public IQueryable<DoctorViewModel> GetDoctorListQueryForAppointment()
+        {
+            var result = dbcontext.DoctorDetails.Where(x => x.IsActive).Select(s => new DoctorViewModel()
+            {
+                DoctorDetailId = s.DoctorDetailId,
+                FirstName = s.FirstName,
+                LastName =  s.LastName,
+                SpecialistDesc = dbcontext.Master_Specialist.Where(x => x.SpecialistId == s.Specialist).Select(b => b.Description).FirstOrDefault(),
+                ProfileImage = s.ProfileImage ?? string.Empty,
+              
+            }).ToList();
+
+            result.ForEach(x => x.EncryptDoctorDetailId = Cryptography.EncryptStringToBytes_Aes(x.DoctorDetailId.ToString()));
+            return result.AsQueryable();
+        }
 
     }
 }

@@ -18,15 +18,25 @@ namespace HospitalManagementSystem.Entity
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int Age { get; set; }
+<<<<<<< HEAD
         public int Gender { get; set; }
+=======
+>>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
         public string Email { get; set; }
         public int PhoneNumber { get; set; }
         public string Address { get; set; }
+<<<<<<< HEAD
         public System.DateTime DateOfBirth { get; set; }
         public string ConsultingDoctor { get; set; }
         public System.DateTime AppointmentDate { get; set; }
         public int TimeSlot { get; set; }
         public int Department { get; set; }
+=======
+        public int DoctorId { get; set; }
+        public int TimeSlot { get; set; }
+        public int Department { get; set; }
+        public System.DateTime DateofAppointment { get; set; }
+>>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
         public string Problem { get; set; }
         public bool IsActive { get; set; }
     }

@@ -29,7 +29,9 @@ namespace HospitalManagementSystem.Controllers
             var ViewModel = new AppointmentViewModel();
 
             ViewModel.DepartmentList = GetDepartmentList();
-            ViewModel.TimeSlotList = GetTimeSlotList();
+            var masterTimeSlotList = GetMasterTimeSlotList();
+            ViewModel.TimeSlotListMorning = GetMorningTimeSlotList(masterTimeSlotList);
+            ViewModel.TimeSlotListEvening = GetEveningTimeSlotList(masterTimeSlotList);
             ViewModel.GenderList = GetGenderList();
             return View(ViewModel);
 
@@ -78,14 +80,28 @@ namespace HospitalManagementSystem.Controllers
         }
 
 
-        private List<SelectListItem> GetTimeSlotList()
+        private List<Entity.Master_TimeSlot> GetMasterTimeSlotList()
         {
             var timeslotSelectList = new List<SelectListItem>();
             var mastertimeslotRepository = new MasterTimeSlotRepository();
             var timeslotList = mastertimeslotRepository.GetTimeSlotList();
 
+            return timeslotList;
+        }
+        private List<SelectListItem> GetMorningTimeSlotList(List<Entity.Master_TimeSlot> timeslotList)
+        {
+            var timeslotSelectList = new List<SelectListItem>();
 
-            foreach (var item in timeslotList)
+            foreach (var item in timeslotList.Where(x => x.TimeSlotId <= 21))
+            {
+                timeslotSelectList.Add(new SelectListItem() { Text = item.Description, Value = item.TimeSlotId.ToString() });
+            }
+            return timeslotSelectList;
+        }
+        private List<SelectListItem> GetEveningTimeSlotList(List<Entity.Master_TimeSlot> timeslotList)
+        {
+            var timeslotSelectList = new List<SelectListItem>();
+            foreach (var item in timeslotList.Where(x => x.TimeSlotId > 21))
             {
                 timeslotSelectList.Add(new SelectListItem() { Text = item.Description, Value = item.TimeSlotId.ToString() });
             }
@@ -118,7 +134,9 @@ namespace HospitalManagementSystem.Controllers
             var appointmentRepository = new AppointmentRepository();
             model = appointmentRepository.GetAppointmentByAppointmentDetailId(tokenNumber);
             model.DepartmentList = GetDepartmentList();
-            model.TimeSlotList = GetTimeSlotList();
+            var masterTimeSlotList = GetMasterTimeSlotList();
+            model.TimeSlotListMorning = GetMorningTimeSlotList(masterTimeSlotList);
+            model.TimeSlotListEvening = GetEveningTimeSlotList(masterTimeSlotList);
             model.GenderList = GetGenderList();
 
             return View(model);
@@ -135,6 +153,15 @@ namespace HospitalManagementSystem.Controllers
             var appointmentRepository = new AppointmentRepository();
             var result = appointmentRepository.GetAppointmentDetail(TokenNumber);
 
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+        
+        public ActionResult GetAppointmentTimeDetailByDate(string date)
+        {
+            DateTime appointmentDate;
+            DateTime.TryParse(date, out appointmentDate);
+            var appointmentRepository = new AppointmentRepository();
+            var result = appointmentRepository.GetAppointmentTimeDetailByDate(appointmentDate);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using HospitalManagementSystem.Common;
@@ -24,8 +25,13 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 Address = appointmentViewModel.Address,
                 Age = appointmentViewModel.Age,
                 PhoneNumber = appointmentViewModel.PhoneNumber,
+<<<<<<< HEAD
                 ConsultingDoctor = appointmentViewModel.ConsultingDoctor,
                 AppointmentDate = appointmentViewModel.DateofAppointment,
+=======
+                DoctorId = appointmentViewModel.DoctorId,
+                DateofAppointment = appointmentViewModel.DateofAppointment,
+>>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
                 Problem = appointmentViewModel.Problem,
                 DateOfBirth= appointmentViewModel.DateofBirth,
                 Gender = appointmentViewModel.Gender,
@@ -50,8 +56,13 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 isAppointmentDetailExist.Address = appointmentViewModel.Address;
                 isAppointmentDetailExist.Age = appointmentViewModel.Age;
                 isAppointmentDetailExist.PhoneNumber = appointmentViewModel.PhoneNumber;
+<<<<<<< HEAD
                 isAppointmentDetailExist.ConsultingDoctor = appointmentViewModel.ConsultingDoctor;
                 isAppointmentDetailExist.AppointmentDate = appointmentViewModel.DateofAppointment;
+=======
+                isAppointmentDetailExist.DoctorId = appointmentViewModel.DoctorId;
+                isAppointmentDetailExist.DateofAppointment = appointmentViewModel.DateofAppointment;
+>>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
                 isAppointmentDetailExist.Problem = appointmentViewModel.Problem;
                 isAppointmentDetailExist.DateOfBirth = appointmentViewModel.DateofBirth;
                 isAppointmentDetailExist.Gender = appointmentViewModel.Gender;
@@ -88,7 +99,8 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 Email = s.Email,
                 PhoneNumber = s.PhoneNumber,
                 Address = s.Address,
-                ConsultingDoctor = s.ConsultingDoctor,
+                ConsultingDoctor =  dbcontext.DoctorDetails.Where(x => x.DoctorDetailId == s.DoctorId).Select(b => b.FirstName + " " + b.LastName ).FirstOrDefault(),
+                DoctorId = s.DoctorId,
                 TimeSlotDesc = dbcontext.Master_TimeSlot.Where(x => x.TimeSlotId == s.TimeSlot).Select(b => b.Description).FirstOrDefault(),
                 TimeSlot = s.TimeSlot,
                 DepartmentDesc = dbcontext.Master_Department.Where(x => x.DepartmentId == s.Department).Select(b => b.Description).FirstOrDefault(),
@@ -118,7 +130,8 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 Email = s.Email,
                 PhoneNumber = s.PhoneNumber,
                 Address = s.Address,
-                ConsultingDoctor = s.ConsultingDoctor,
+                ConsultingDoctor = dbcontext.DoctorDetails.Where(x => x.DoctorDetailId == s.DoctorId).Select(b => b.FirstName + " " + b.LastName).FirstOrDefault(),
+                DoctorId = s.DoctorId,
                 TimeSlotDesc = dbcontext.Master_TimeSlot.Where(x => x.TimeSlotId == s.TimeSlot).Select(b => b.Description).FirstOrDefault(),
                 TimeSlot = s.TimeSlot,
                 DepartmentDesc = dbcontext.Master_Department.Where(x => x.DepartmentId == s.Department).Select(b => b.Description).FirstOrDefault(),
@@ -160,7 +173,8 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 Email = s.Email,
                 PhoneNumber = s.PhoneNumber,
                 Address = s.Address,
-                ConsultingDoctor = s.ConsultingDoctor,
+                ConsultingDoctor = dbcontext.DoctorDetails.Where(x => x.DoctorDetailId == s.DoctorId).Select(b => b.FirstName + " " + b.LastName).FirstOrDefault(),
+                DoctorId = s.DoctorId,
                 TimeSlotDesc = dbcontext.Master_TimeSlot.Where(x => x.TimeSlotId == s.TimeSlot).Select(b => b.Description).FirstOrDefault(),
                 TimeSlot = s.TimeSlot,
                 DepartmentDesc = dbcontext.Master_Department.Where(x => x.DepartmentId == s.Department).Select(b => b.Description).FirstOrDefault(),
@@ -169,6 +183,12 @@ namespace HospitalManagementSystem.DataAccess.Repository
 
             }).FirstOrDefault();
             //result.ForEach(x => x.EncryptUserDetailId = Cryptography.EncryptStringToBytes_Aes(x.UserDetailId.ToString()));
+            return result;
+        }
+
+        public List<int> GetAppointmentTimeDetailByDate(DateTime appointmentDate)
+        {
+            var result = dbcontext.AppointmentDetails.Where(x => x.IsActive && x.DateofAppointment == appointmentDate).Select(s => s.TimeSlot).ToList();
             return result;
         }
     }

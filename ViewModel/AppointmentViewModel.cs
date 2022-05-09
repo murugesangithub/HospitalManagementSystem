@@ -51,21 +51,27 @@ namespace HospitalManagementSystem.ViewModel
         [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "Phone number only in 10 digits")]
         public int PhoneNumber { get; set; }
 
-        [Required]
-        [Display(Name = "Date of Birth")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
-        public DateTime DateofBirth { get; set; } = DateTime.Now;
+        //[Required]
+        //[Display(Name = "Date of Birth")]
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
+        //public DateTime DateofBirth { get; set; } = DateTime.Now;
 
         [Required]
         [Display(Name = "Appointment Date ")]
+<<<<<<< HEAD
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
         public DateTime DateofAppointment { get; set; } = DateTime.Now;
 
+=======
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
+        public DateTime DateofAppointment { get; set; } = DateTime.Now;
+>>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
 
         [Required(ErrorMessage = "Consulting Doctor is required")]
         [Display(Name = "Consulting Doctor ")]
         [DataType(DataType.Text)]
         public string ConsultingDoctor { get; set; }
+       
 
         [Required]
         [Display(Name = "Appointment Time ")]
@@ -84,7 +90,8 @@ namespace HospitalManagementSystem.ViewModel
         public string TokenNumber { get; set; }*/
 
         [Required(ErrorMessage = "Select your Time Slot")]
-        public List<System.Web.Mvc.SelectListItem> TimeSlotList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
+        public List<System.Web.Mvc.SelectListItem> TimeSlotListMorning { get; set; } = new List<System.Web.Mvc.SelectListItem>();
+        public List<System.Web.Mvc.SelectListItem> TimeSlotListEvening { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int TimeSlot { get; set; }
         public string TimeSlotDesc { get; set; }
 
@@ -96,5 +103,6 @@ namespace HospitalManagementSystem.ViewModel
         public int TokenNumber { get; set; }
         public string EncryptTokenNumber { get; set; }
         public bool IsActive { get; set; }
+        public int DoctorId { get; set; }
     }
 }

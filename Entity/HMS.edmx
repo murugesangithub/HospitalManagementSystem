@@ -13,6 +13,7 @@
           <Property Name="FirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="LastName" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Age" Type="int" Nullable="false" />
+<<<<<<< HEAD
           <Property Name="Gender" Type="int" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PhoneNumber" Type="int" Nullable="false" />
@@ -22,6 +23,15 @@
           <Property Name="AppointmentDate" Type="datetime" Nullable="false" />
           <Property Name="TimeSlot" Type="int" Nullable="false" />
           <Property Name="Department" Type="int" Nullable="false" />
+=======
+          <Property Name="Email" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DoctorId" Type="int" Nullable="false" />
+          <Property Name="TimeSlot" Type="int" Nullable="false" />
+          <Property Name="Department" Type="int" Nullable="false" />
+          <Property Name="DateofAppointment" Type="date" Nullable="false" />
+>>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
           <Property Name="Problem" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
@@ -62,6 +72,7 @@
           <Property Name="State" Type="int" Nullable="false" />
           <Property Name="SpecialistIn" Type="int" Nullable="false" />
           <Property Name="Gender" Type="int" Nullable="false" />
+          <Property Name="ProfileImage" Type="nvarchar(max)" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="ErrorLog">
@@ -127,6 +138,14 @@
           </Key>
           <Property Name="HospitalId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_Language">
+          <Key>
+            <PropertyRef Name="LanguageDetailId" />
+          </Key>
+          <Property Name="LanguageDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Master_MaritalStatus">
@@ -372,6 +391,7 @@
           <EntitySet Name="Master_Designation" EntityType="Self.Master_Designation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_Gender" EntityType="Self.Master_Gender" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_Hospital" EntityType="Self.Master_Hospital" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master_Language" EntityType="Self.Master_Language" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_MaritalStatus" EntityType="Self.Master_MaritalStatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_Medicine" EntityType="Self.Master_Medicine" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_Payment" EntityType="Self.Master_Payment" Schema="dbo" store:Type="Tables" />
@@ -425,6 +445,12 @@
           <EntitySet Name="Master_RoomType" EntityType="HMSModel.Master_RoomType" />
           <EntitySet Name="PatientTreatmentDetails" EntityType="HMSModel.PatientTreatmentDetail" />
           <EntitySet Name="Master_Hospital" EntityType="HMSModel.Master_Hospital" />
+<<<<<<< HEAD
+=======
+          <EntitySet Name="BillingDetails" EntityType="HMSModel.BillingDetail" />
+          <EntitySet Name="Master_Language" EntityType="HMSModel.Master_Language" />
+          <EntitySet Name="DoctorDetails" EntityType="HMSModel.DoctorDetail" />
+>>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
           <EntitySet Name="AppointmentDetails" EntityType="HMSModel.AppointmentDetail" />
           <EntitySet Name="BillingDetails" EntityType="HMSModel.BillingDetail" />
           <EntitySet Name="DoctorDetails" EntityType="HMSModel.DoctorDetail" />
@@ -650,7 +676,37 @@
           <Property Name="PaymentStatus" Type="Int32" Nullable="false" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
+<<<<<<< HEAD
         <EntityType Name="DoctorDetail">
+=======
+        <EntityType Name="Master_Language">
+          <Key>
+            <PropertyRef Name="LanguageDetailId" />
+          </Key>
+          <Property Name="LanguageDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DoctorDetail">
+          <Key>
+            <PropertyRef Name="DoctorDetailId" />
+          </Key>
+          <Property Name="DoctorDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HospitalName" Type="Int32" Nullable="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="Int32" Nullable="false" />
+          <Property Name="State" Type="Int32" Nullable="false" />
+          <Property Name="Specialist" Type="Int32" Nullable="false" />
+          <Property Name="Gender" Type="Int32" Nullable="false" />
+          <Property Name="ProfileImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AppointmentDetail">
+>>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
           <Key>
             <PropertyRef Name="DoctorDetailId" />
           </Key>
@@ -665,6 +721,7 @@
           <Property Name="State" Type="Int32" Nullable="false" />
           <Property Name="SpecialistIn" Type="Int32" Nullable="false" />
           <Property Name="Gender" Type="Int32" Nullable="false" />
+<<<<<<< HEAD
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="MedicineDetail">
@@ -697,8 +754,12 @@
           <Property Name="MaritalStatus" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="PatientBelow18" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
+=======
+          <Property Name="Age" Type="Int32" Nullable="false" />
+>>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
           <Property Name="Email" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+<<<<<<< HEAD
           <Property Name="City" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="PostalCode" Type="Int32" Nullable="false" />
           <Property Name="Contact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -717,6 +778,12 @@
           <Property Name="MaritalStatus" Type="Int32" Nullable="false" />
           <Property Name="Age" Type="Int32" Nullable="false" />
           <Property Name="DateofBirth" Type="DateTime" Nullable="false" Precision="3" />
+=======
+          <Property Name="DoctorId" Type="Int32" Nullable="false" />
+          <Property Name="TimeSlot" Type="Int32" Nullable="false" />
+          <Property Name="Department" Type="Int32" Nullable="false" />
+          <Property Name="DateofAppointment" Type="DateTime" Nullable="false" Precision="0" />
+>>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
           <Property Name="Problem" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
@@ -1034,6 +1101,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< HEAD
           <EntitySetMapping Name="DoctorDetails">
             <EntityTypeMapping TypeName="HMSModel.DoctorDetail">
               <MappingFragment StoreEntitySet="DoctorDetail">
@@ -1105,6 +1173,48 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Problem" ColumnName="Problem" />
                 <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+=======
+          <EntitySetMapping Name="Master_Language">
+            <EntityTypeMapping TypeName="HMSModel.Master_Language">
+              <MappingFragment StoreEntitySet="Master_Language">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LanguageDetailId" ColumnName="LanguageDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DoctorDetails">
+            <EntityTypeMapping TypeName="HMSModel.DoctorDetail">
+              <MappingFragment StoreEntitySet="DoctorDetail">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Specialist" ColumnName="Specialist" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="HospitalName" ColumnName="HospitalName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="DoctorDetailId" ColumnName="DoctorDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppointmentDetails">
+            <EntityTypeMapping TypeName="HMSModel.AppointmentDetail">
+              <MappingFragment StoreEntitySet="AppointmentDetail">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Problem" ColumnName="Problem" />
+                <ScalarProperty Name="DateofAppointment" ColumnName="DateofAppointment" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="TimeSlot" ColumnName="TimeSlot" />
+                <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+>>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
                 <ScalarProperty Name="Age" ColumnName="Age" />
                 <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
                 <ScalarProperty Name="GuardianName" ColumnName="GuardianName" />

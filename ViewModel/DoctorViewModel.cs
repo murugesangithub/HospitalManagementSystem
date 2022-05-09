@@ -70,7 +70,12 @@ namespace HospitalManagementSystem.ViewModel
         public int City { get; set; }
         public string CityDesc { get; set; }
 
-        public int DoctorDetailId { get; internal set; }
+        [Display(Name = "Profile Image")]
+        [AllowedFileExtension(".jpg", ".png", ".gif", ".jpeg", ".jfif")]
+        public HttpPostedFileBase ImageFileUpload { get; set; }
+        public string ProfileImage { get; set; } = string.Empty;
+
+        public int DoctorDetailId { get; set; }
         public string EncryptDoctorDetailId { get; set; }
         public bool IsActive { get; set; }
     }

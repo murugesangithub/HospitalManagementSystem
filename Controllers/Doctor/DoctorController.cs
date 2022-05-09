@@ -4,6 +4,7 @@ using HospitalManagementSystem.JqGrid;
 using HospitalManagementSystem.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -38,6 +39,16 @@ namespace HospitalManagementSystem.Controllers.Doctor
         public ActionResult AddDoctor(DoctorViewModel model)
         {
             var doctorRepository = new DoctorRepository();
+
+            byte[] bytes = null;
+            if (model.ImageFileUpload != null)
+            {
+                using (BinaryReader br = new BinaryReader(model.ImageFileUpload.InputStream))
+                {
+                    bytes = br.ReadBytes(model.ImageFileUpload.ContentLength);
+                }
+                model.ProfileImage = "data:image/" + model.ImageFileUpload.ContentType + ";base64," + Convert.ToBase64String(bytes, 0, bytes.Length);
+            }
             if (model.DoctorDetailId == default(int))
             {
                 doctorRepository.DoctorDetailInsertion(model);
@@ -170,5 +181,14 @@ namespace HospitalManagementSystem.Controllers.Doctor
 
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+        public ActionResult GetDoctorListForAppointment(JQGridSort jQGridSort)
+        {
+            var doctorRepository = new DoctorRepository();
+            var result = doctorRepository.GetDoctorListForAppointment(jQGridSort);
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        
     }
 }
