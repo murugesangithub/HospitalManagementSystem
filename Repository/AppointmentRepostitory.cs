@@ -25,18 +25,12 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 Address = appointmentViewModel.Address,
                 Age = appointmentViewModel.Age,
                 PhoneNumber = appointmentViewModel.PhoneNumber,
-<<<<<<< HEAD
-                ConsultingDoctor = appointmentViewModel.ConsultingDoctor,
-                AppointmentDate = appointmentViewModel.DateofAppointment,
-=======
                 DoctorId = appointmentViewModel.DoctorId,
                 DateofAppointment = appointmentViewModel.DateofAppointment,
->>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
                 Problem = appointmentViewModel.Problem,
-                DateOfBirth= appointmentViewModel.DateofBirth,
+                //DateOfBirth= appointmentViewModel.DateofBirth,
                 Gender = appointmentViewModel.Gender,
                 TimeSlot = appointmentViewModel.TimeSlot,
-                Department = appointmentViewModel.Department,
                 IsActive = true,
             };
 
@@ -56,18 +50,13 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 isAppointmentDetailExist.Address = appointmentViewModel.Address;
                 isAppointmentDetailExist.Age = appointmentViewModel.Age;
                 isAppointmentDetailExist.PhoneNumber = appointmentViewModel.PhoneNumber;
-<<<<<<< HEAD
-                isAppointmentDetailExist.ConsultingDoctor = appointmentViewModel.ConsultingDoctor;
-                isAppointmentDetailExist.AppointmentDate = appointmentViewModel.DateofAppointment;
-=======
+                isAppointmentDetailExist.DateofAppointment = appointmentViewModel.DateofAppointment;
                 isAppointmentDetailExist.DoctorId = appointmentViewModel.DoctorId;
                 isAppointmentDetailExist.DateofAppointment = appointmentViewModel.DateofAppointment;
->>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
                 isAppointmentDetailExist.Problem = appointmentViewModel.Problem;
-                isAppointmentDetailExist.DateOfBirth = appointmentViewModel.DateofBirth;
+                //isAppointmentDetailExist.DateOfBirth = appointmentViewModel.DateofBirth;
                 isAppointmentDetailExist.Gender = appointmentViewModel.Gender;
                 isAppointmentDetailExist.TimeSlot = appointmentViewModel.TimeSlot;
-                isAppointmentDetailExist.Department = appointmentViewModel.Department;
                 isAppointmentDetailExist.IsActive = true;
                 dbcontext.Entry(isAppointmentDetailExist);
                 dbcontext.SaveChanges();
@@ -93,8 +82,8 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 GenderDescription = dbcontext.Master_Gender.Where(x => x.GenderId == s.Gender).Select(b => b.Description).FirstOrDefault(),
                 Gender = s.Gender,
                 Age = s.Age,
-                DateofAppointment = s.AppointmentDate,
-                DateofBirth = s.DateOfBirth,
+                DateofAppointment = s.DateofAppointment,
+                //DateofBirth = s.DateOfBirth,
                 Problem = s.Problem,
                 Email = s.Email,
                 PhoneNumber = s.PhoneNumber,
@@ -103,8 +92,6 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 DoctorId = s.DoctorId,
                 TimeSlotDesc = dbcontext.Master_TimeSlot.Where(x => x.TimeSlotId == s.TimeSlot).Select(b => b.Description).FirstOrDefault(),
                 TimeSlot = s.TimeSlot,
-                DepartmentDesc = dbcontext.Master_Department.Where(x => x.DepartmentId == s.Department).Select(b => b.Description).FirstOrDefault(),
-                Department = s.Department,
 
                 IsActive = s.IsActive,
 
@@ -124,8 +111,8 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 GenderDescription = dbcontext.Master_Gender.Where(x => x.GenderId == s.Gender).Select(b => b.Description).FirstOrDefault(),
                 Gender = s.Gender,
                 Age = s.Age,
-                DateofAppointment = s.AppointmentDate,
-                DateofBirth = s.DateOfBirth,
+                DateofAppointment = s.DateofAppointment,
+                //DateofBirth = s.DateOfBirth,
                 Problem = s.Problem,
                 Email = s.Email,
                 PhoneNumber = s.PhoneNumber,
@@ -134,8 +121,6 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 DoctorId = s.DoctorId,
                 TimeSlotDesc = dbcontext.Master_TimeSlot.Where(x => x.TimeSlotId == s.TimeSlot).Select(b => b.Description).FirstOrDefault(),
                 TimeSlot = s.TimeSlot,
-                DepartmentDesc = dbcontext.Master_Department.Where(x => x.DepartmentId == s.Department).Select(b => b.Description).FirstOrDefault(),
-                Department = s.Department,
 
                 IsActive = s.IsActive,
 
@@ -167,8 +152,8 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 GenderDescription = dbcontext.Master_Gender.Where(x => x.GenderId == s.Gender).Select(b => b.Description).FirstOrDefault(),
                 Gender = s.Gender,
                 Age = s.Age,
-                DateofAppointment = s.AppointmentDate,
-                DateofBirth = s.DateOfBirth,
+                DateofAppointment = s.DateofAppointment,
+                //DateofBirth = s.DateOfBirth,
                 Problem = s.Problem,
                 Email = s.Email,
                 PhoneNumber = s.PhoneNumber,
@@ -177,8 +162,6 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 DoctorId = s.DoctorId,
                 TimeSlotDesc = dbcontext.Master_TimeSlot.Where(x => x.TimeSlotId == s.TimeSlot).Select(b => b.Description).FirstOrDefault(),
                 TimeSlot = s.TimeSlot,
-                DepartmentDesc = dbcontext.Master_Department.Where(x => x.DepartmentId == s.Department).Select(b => b.Description).FirstOrDefault(),
-                Department = s.Department,
                 IsActive = s.IsActive,
 
             }).FirstOrDefault();

@@ -41,14 +41,14 @@ $(document).ready(function () {
         var grid = "#jqDoctorGridAppointment";
         var gridpager = "#jqDoctorGridAppointmentPager";
 
-        var bodyElem = $('body');
+        //var bodyElem = $('body');
 
-        new ResizeSensor(bodyElem, function () {
-            var bodyElemWidth = Math.round($('.content-wrapper').width());
-            var newGridWidth = bodyElemWidth - 100;
-            $(grid).jqGrid("setGridWidth", newGridWidth, true);
-            $('.ui-jqgrid-bdiv').css('overflow', 'hidden');
-        });
+        //new ResizeSensor(bodyElem, function () {
+        //    var bodyElemWidth = Math.round($('.content-wrapper').width());
+        //    var newGridWidth = bodyElemWidth - 100;
+        //    $(grid).jqGrid("setGridWidth", newGridWidth, true);
+        //    $('.ui-jqgrid-bdiv').css('overflow', 'hidden');
+        //});
 
 
         $(grid).jqGrid({
@@ -56,6 +56,7 @@ $(document).ready(function () {
             mtype: "POST",
             styleUI: 'Bootstrap',
             datatype: "json",
+            width: "1189",
             height: 'auto',
             jsonReader: jsonreader,
             colModel: [

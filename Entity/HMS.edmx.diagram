@@ -4,44 +4,37 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="39af4973c666443d9692ad8da27e271c" Name="Diagram1">
-    
-        <EntityTypeShape EntityType="HMSModel.Role" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HMSModel.UserDetail" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="HMSModel.ErrorLog" Width="1.5" PointX="4.75" PointY="0.75" />
-        <EntityTypeShape EntityType="HMSModel.Master_TimeSlot" Width="1.5" PointX="2.75" PointY="4.75" />
-        <EntityTypeShape EntityType="HMSModel.Master_Country" Width="1.5" PointX="4.75" PointY="3.75" />
-        <EntityTypeShape EntityType="HMSModel.Master_MaritalStatus" Width="1.5" PointX="6.75" PointY="0.75" />
-        <EntityTypeShape EntityType="HMSModel.Master_Gender" Width="1.5" PointX="6.75" PointY="3.75" />
-        <EntityTypeShape EntityType="HMSModel.Master_City" Width="1.5" PointX="9.375" PointY="0.75" />
-        <EntityTypeShape EntityType="HMSModel.Master_Specialist" Width="1.5" PointX="9.375" PointY="3.75" />
-        <EntityTypeShape EntityType="HMSModel.Master_State" Width="1.5" PointX="9.375" PointY="6.75" />
-        <EntityTypeShape EntityType="HMSModel.Master_Category" Width="1.5" PointX="9.375" PointY="9.75" />
-        <EntityTypeShape EntityType="HMSModel.Master_Payment" Width="1.5" PointX="11.75" PointY="0.75" />
-        <EntityTypeShape EntityType="HMSModel.Master_PaymentStatus" Width="1.5" PointX="2.75" PointY="11.75" />
-        <EntityTypeShape EntityType="HMSModel.Master_Service" Width="1.5" PointX="11.75" PointY="3.75" />
-        <EntityTypeShape EntityType="HMSModel.Master_Department" Width="1.5" PointX="13.375" PointY="12.75" />
-        <EntityTypeShape EntityType="HMSModel.Master_Designation" Width="1.5" PointX="13.375" PointY="8.75" />
-        <EntityTypeShape EntityType="HMSModel.Master_Medicine" Width="1.5" PointX="15.375" PointY="11.75" />
-        <EntityTypeShape EntityType="HMSModel.Master_RoomNumber" Width="1.5" PointX="0.75" PointY="14.75" />
-        <EntityTypeShape EntityType="HMSModel.Master_RoomType" Width="1.5" PointX="2.75" PointY="15.75" />
-        <EntityTypeShape EntityType="HMSModel.PatientTreatmentDetail" Width="1.5" PointX="15.375" PointY="14.75" />
-        <EntityTypeShape EntityType="HMSModel.Master_Hospital" Width="1.5" PointX="0.75" PointY="7.75" />
-<<<<<<< HEAD
-=======
-        <EntityTypeShape EntityType="HMSModel.BillingDetail" Width="1.5" PointX="11.375" PointY="15.75" />
-        <EntityTypeShape EntityType="HMSModel.Master_Language" Width="1.5" PointX="15.375" PointY="8.75" />
-        <EntityTypeShape EntityType="HMSModel.DoctorDetail" Width="1.5" PointX="16.375" PointY="0.75" />
->>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
-        <EntityTypeShape EntityType="HMSModel.AppointmentDetail" Width="1.5" PointX="5.375" PointY="6.75" />
-        <EntityTypeShape EntityType="HMSModel.BillingDetail" Width="1.5" PointX="11.375" PointY="15.75" />
-        <EntityTypeShape EntityType="HMSModel.DoctorDetail" Width="1.5" PointX="16.375" PointY="0.75" />
-        <EntityTypeShape EntityType="HMSModel.MedicineDetail" Width="1.5" PointX="16.375" PointY="5.75" />
-        <EntityTypeShape EntityType="HMSModel.PatientAdmitForm" Width="1.5" PointX="5.375" PointY="17.75" />
-        <EntityTypeShape EntityType="HMSModel.PatientDetail" Width="1.5" PointX="5.375" PointY="11.75" />
-        <EntityTypeShape EntityType="HMSModel.PurchaseMedicineDetail" Width="1.5" PointX="7.375" PointY="12.75" />
-        <EntityTypeShape EntityType="HMSModel.PatientInquiryDetailForm" Width="1.5" PointX="7.375" PointY="17.75" />
-      
+      <Diagram DiagramId="5a135ebc11ad4b02a3b9cb155cd7615b" Name="Diagram1">
+        <EntityTypeShape EntityType="HMSModel.ErrorLog" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.Master_Category" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.Master_City" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.Master_Country" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.Master_Department" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.Master_Designation" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.Master_Gender" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.Master_Hospital" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.Master_Language" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.Master_MaritalStatus" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.Master_Medicine" Width="1.5" PointX="6.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.Master_Payment" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.Master_PaymentStatus" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.Master_RoomNumber" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.Master_RoomType" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.Master_Service" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.Master_Specialist" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.Master_State" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.Master_TimeSlot" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.PatientTreatmentDetail" Width="1.5" PointX="8.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.Role" Width="1.5" PointX="14.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.UserDetail" Width="1.5" PointX="14.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.BillingDetail" Width="1.5" PointX="0.75" PointY="15.75" />
+        <EntityTypeShape EntityType="HMSModel.PatientInquiryDetailForm" Width="1.5" PointX="13.375" PointY="12.75" />
+        <EntityTypeShape EntityType="HMSModel.MedicineDetail" Width="1.5" PointX="15.375" PointY="12.75" />
+        <EntityTypeShape EntityType="HMSModel.PatientAdmitForm" Width="1.5" PointX="3.375" PointY="15.75" />
+        <EntityTypeShape EntityType="HMSModel.DoctorDetail" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="HMSModel.PurchaseMedicineDetail" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="HMSModel.PatientDetail" Width="1.5" PointX="5.375" PointY="12.75" />
+        <EntityTypeShape EntityType="HMSModel.AppointmentDetail" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

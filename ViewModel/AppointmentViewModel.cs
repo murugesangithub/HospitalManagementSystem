@@ -49,7 +49,7 @@ namespace HospitalManagementSystem.ViewModel
         [Required]
         [Display(Name = "Phone Number")]
         [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "Phone number only in 10 digits")]
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
         //[Required]
         //[Display(Name = "Date of Birth")]
@@ -58,14 +58,8 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required]
         [Display(Name = "Appointment Date ")]
-<<<<<<< HEAD
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
-        public DateTime DateofAppointment { get; set; } = DateTime.Now;
-
-=======
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime DateofAppointment { get; set; } = DateTime.Now;
->>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
 
         [Required(ErrorMessage = "Consulting Doctor is required")]
         [Display(Name = "Consulting Doctor ")]

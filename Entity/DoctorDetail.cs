@@ -20,12 +20,13 @@ namespace HospitalManagementSystem.Entity
         public string Email { get; set; }
         public int HospitalName { get; set; }
         public string Address { get; set; }
-        public int MobileNo { get; set; }
+        public string MobileNo { get; set; }
         public int City { get; set; }
         public int State { get; set; }
-        public int SpecialistIn { get; set; }
+        public int Specialist { get; set; }
         public int Gender { get; set; }
         public string ProfileImage { get; set; }
         public bool IsActive { get; set; }
+        public int DoctorId { get; set; }
     }
 }

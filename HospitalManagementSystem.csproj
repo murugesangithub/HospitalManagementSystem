@@ -397,6 +397,8 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="ClassDiagram1.cd" />
+    <Content Include="ClassDiagram2.cd" />
     <EntityDeploy Include="Entity\HMS.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>HMS.Designer.cs</LastGenOutput>
@@ -404,8 +406,6 @@
     <Content Include="Entity\HMS.edmx.diagram">
       <DependentUpon>HMS.edmx</DependentUpon>
     </Content>
-    <Content Include="ClassDiagram1.cd" />
-    <Content Include="ClassDiagram2.cd" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\Common\Common.js" />

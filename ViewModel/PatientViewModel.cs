@@ -58,7 +58,7 @@ namespace HospitalManagementSystem.ViewModel
         [Required]
         [Display(Name = "Phone Number")]
         [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "Phone number only in 10 digits")]
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
 
         [Required(ErrorMessage = "Select your Gender")]

@@ -75,7 +75,7 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required]
         [RegularExpression(@"^\S[0-9]{0,6}$", ErrorMessage = "PostalCode must be a number")]
-        public int PostalCode { get; set; }
+        public string PostalCode { get; set; }
 
         [Required]
         [Display(Name = "Date of Birth")]

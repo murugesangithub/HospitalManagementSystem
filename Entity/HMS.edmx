@@ -12,27 +12,15 @@
           <Property Name="TokenNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="LastName" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="Age" Type="int" Nullable="false" />
-<<<<<<< HEAD
           <Property Name="Gender" Type="int" Nullable="false" />
-          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="PhoneNumber" Type="int" Nullable="false" />
-          <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="DateOfBirth" Type="datetime" Nullable="false" />
-          <Property Name="ConsultingDoctor" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="AppointmentDate" Type="datetime" Nullable="false" />
-          <Property Name="TimeSlot" Type="int" Nullable="false" />
-          <Property Name="Department" Type="int" Nullable="false" />
-=======
+          <Property Name="Age" Type="int" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="PhoneNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="DoctorId" Type="int" Nullable="false" />
-          <Property Name="TimeSlot" Type="int" Nullable="false" />
-          <Property Name="Department" Type="int" Nullable="false" />
           <Property Name="DateofAppointment" Type="date" Nullable="false" />
->>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
+          <Property Name="TimeSlot" Type="int" Nullable="false" />
           <Property Name="Problem" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DoctorId" Type="int" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="BillingDetail">
@@ -67,11 +55,12 @@
           <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="HospitalName" Type="int" Nullable="false" />
           <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="MobileNo" Type="int" Nullable="false" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="City" Type="int" Nullable="false" />
           <Property Name="State" Type="int" Nullable="false" />
-          <Property Name="SpecialistIn" Type="int" Nullable="false" />
+          <Property Name="Specialist" Type="int" Nullable="false" />
           <Property Name="Gender" Type="int" Nullable="false" />
+          <Property Name="DoctorId" Type="int" Nullable="false" />
           <Property Name="ProfileImage" Type="nvarchar(max)" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
@@ -261,8 +250,8 @@
           <Property Name="Email" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="City" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="PostalCode" Type="int" Nullable="false" />
-          <Property Name="Contact" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Contact" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="State" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
@@ -280,12 +269,12 @@
           <Property Name="DateofBirth" Type="datetime" Nullable="false" />
           <Property Name="Problem" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="PhoneNumber" Type="int" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="City" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="PostalCode" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Country" Type="int" Nullable="false" />
-          <Property Name="State" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="State" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="PatientInquiryDetailForm">
@@ -298,7 +287,7 @@
           <Property Name="Gender" Type="int" Nullable="false" />
           <Property Name="DateofBirth" Type="datetime" Nullable="false" />
           <Property Name="Age" Type="int" Nullable="false" />
-          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="PhoneNumber" Type="int" Nullable="false" />
           <Property Name="Height" Type="int" Nullable="false" />
           <Property Name="Weight" Type="int" Nullable="false" />
@@ -318,9 +307,9 @@
           <Property Name="Cancer" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Smoke" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Alchocol" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="MedicalConditions" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="Allergy" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="LastDose" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MedicalConditions" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Allergy" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="LastDose" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="MedicalDocuments" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
@@ -349,7 +338,7 @@
           <Property Name="Code" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
           <Property Name="Category" Type="int" Nullable="false" />
-          <Property Name="MedicineName" Type="int" Nullable="false" />
+          <Property Name="Medicine" Type="int" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
           <Property Name="Notes" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Discount" Type="int" Nullable="false" />
@@ -415,6 +404,175 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ErrorLog">
+          <Key>
+            <PropertyRef Name="ErrorLogId" />
+          </Key>
+          <Property Name="ErrorLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Subject" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_City">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_Country">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_Department">
+          <Key>
+            <PropertyRef Name="DepartmentId" />
+          </Key>
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_Designation">
+          <Key>
+            <PropertyRef Name="DesignationId" />
+          </Key>
+          <Property Name="DesignationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_Gender">
+          <Key>
+            <PropertyRef Name="GenderId" />
+          </Key>
+          <Property Name="GenderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_Hospital">
+          <Key>
+            <PropertyRef Name="HospitalId" />
+          </Key>
+          <Property Name="HospitalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_Language">
+          <Key>
+            <PropertyRef Name="LanguageDetailId" />
+          </Key>
+          <Property Name="LanguageDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_MaritalStatus">
+          <Key>
+            <PropertyRef Name="MaritalStatusId" />
+          </Key>
+          <Property Name="MaritalStatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_Medicine">
+          <Key>
+            <PropertyRef Name="MedicineId" />
+          </Key>
+          <Property Name="MedicineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_Payment">
+          <Key>
+            <PropertyRef Name="PaymentId" />
+          </Key>
+          <Property Name="PaymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Method" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_PaymentStatus">
+          <Key>
+            <PropertyRef Name="PaymentStatusId" />
+          </Key>
+          <Property Name="PaymentStatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Method" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_RoomNumber">
+          <Key>
+            <PropertyRef Name="RoomNumberId" />
+          </Key>
+          <Property Name="RoomNumberId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_RoomType">
+          <Key>
+            <PropertyRef Name="RoomTypeId" />
+          </Key>
+          <Property Name="RoomTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_Service">
+          <Key>
+            <PropertyRef Name="ServiceId" />
+          </Key>
+          <Property Name="ServiceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_Specialist">
+          <Key>
+            <PropertyRef Name="SpecialistId" />
+          </Key>
+          <Property Name="SpecialistId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_State">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master_TimeSlot">
+          <Key>
+            <PropertyRef Name="TimeSlotId" />
+          </Key>
+          <Property Name="TimeSlotId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatientTreatmentDetail">
+          <Key>
+            <PropertyRef Name="PatientId" />
+          </Key>
+          <Property Name="PatientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MedicineName" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="DosageDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Remarks" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoomNumber" Type="Int32" Nullable="false" />
+          <Property Name="RoomType" Type="Int32" Nullable="false" />
+          <Property Name="NoofDays" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoomPrice" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
         <EntityType Name="Role">
           <Key>
             <PropertyRef Name="RoleId" />
@@ -423,237 +581,51 @@
           <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="HMSEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Roles" EntityType="Self.Role" />
-          <EntitySet Name="UserDetails" EntityType="HMSModel.UserDetail" />
-          <EntitySet Name="ErrorLogs" EntityType="HMSModel.ErrorLog" />
-          <EntitySet Name="Master_TimeSlot" EntityType="HMSModel.Master_TimeSlot" />
-          <EntitySet Name="Master_Country" EntityType="HMSModel.Master_Country" />
-          <EntitySet Name="Master_MaritalStatus" EntityType="HMSModel.Master_MaritalStatus" />
-          <EntitySet Name="Master_Gender" EntityType="HMSModel.Master_Gender" />
-          <EntitySet Name="Master_City" EntityType="HMSModel.Master_City" />
-          <EntitySet Name="Master_Specialist" EntityType="HMSModel.Master_Specialist" />
-          <EntitySet Name="Master_State" EntityType="HMSModel.Master_State" />
-          <EntitySet Name="Master_Category" EntityType="HMSModel.Master_Category" />
-          <EntitySet Name="Master_Payment" EntityType="HMSModel.Master_Payment" />
-          <EntitySet Name="Master_PaymentStatus" EntityType="HMSModel.Master_PaymentStatus" />
-          <EntitySet Name="Master_Service" EntityType="HMSModel.Master_Service" />
-          <EntitySet Name="Master_Department" EntityType="HMSModel.Master_Department" />
-          <EntitySet Name="Master_Designation" EntityType="HMSModel.Master_Designation" />
-          <EntitySet Name="Master_Medicine" EntityType="HMSModel.Master_Medicine" />
-          <EntitySet Name="Master_RoomNumber" EntityType="HMSModel.Master_RoomNumber" />
-          <EntitySet Name="Master_RoomType" EntityType="HMSModel.Master_RoomType" />
-          <EntitySet Name="PatientTreatmentDetails" EntityType="HMSModel.PatientTreatmentDetail" />
-          <EntitySet Name="Master_Hospital" EntityType="HMSModel.Master_Hospital" />
-<<<<<<< HEAD
-=======
-          <EntitySet Name="BillingDetails" EntityType="HMSModel.BillingDetail" />
-          <EntitySet Name="Master_Language" EntityType="HMSModel.Master_Language" />
-          <EntitySet Name="DoctorDetails" EntityType="HMSModel.DoctorDetail" />
->>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
-          <EntitySet Name="AppointmentDetails" EntityType="HMSModel.AppointmentDetail" />
-          <EntitySet Name="BillingDetails" EntityType="HMSModel.BillingDetail" />
-          <EntitySet Name="DoctorDetails" EntityType="HMSModel.DoctorDetail" />
-          <EntitySet Name="MedicineDetails" EntityType="HMSModel.MedicineDetail" />
-          <EntitySet Name="PatientAdmitForms" EntityType="HMSModel.PatientAdmitForm" />
-          <EntitySet Name="PatientDetails" EntityType="HMSModel.PatientDetail" />
-          <EntitySet Name="PurchaseMedicineDetails" EntityType="HMSModel.PurchaseMedicineDetail" />
-          <EntitySet Name="PatientInquiryDetailForms" EntityType="HMSModel.PatientInquiryDetailForm" />
-        </EntityContainer>
         <EntityType Name="UserDetail">
           <Key>
             <PropertyRef Name="UserDetailId" />
           </Key>
           <Property Name="UserDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="LastName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Role" Type="Int32" Nullable="false" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
           <Property Name="ProfileImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="ErrorLog">
-          <Key>
-            <PropertyRef Name="ErrorLogId" />
-          </Key>
-          <Property Name="ErrorLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Subject" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="IPAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="Master_TimeSlot">
-          <Key>
-            <PropertyRef Name="TimeSlotId" />
-          </Key>
-          <Property Name="TimeSlotId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Master_Country">
-          <Key>
-            <PropertyRef Name="CountryId" />
-          </Key>
-          <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Master_MaritalStatus">
-          <Key>
-            <PropertyRef Name="MaritalStatusId" />
-          </Key>
-          <Property Name="MaritalStatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Master_Gender">
-          <Key>
-            <PropertyRef Name="GenderId" />
-          </Key>
-          <Property Name="GenderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Master_City">
-          <Key>
-            <PropertyRef Name="CityId" />
-          </Key>
-          <Property Name="CityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Master_Specialist">
-          <Key>
-            <PropertyRef Name="SpecialistId" />
-          </Key>
-          <Property Name="SpecialistId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Master_State">
-          <Key>
-            <PropertyRef Name="StateId" />
-          </Key>
-          <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Master_Category">
-          <Key>
-            <PropertyRef Name="CategoryId" />
-          </Key>
-          <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Master_Payment">
-          <Key>
-            <PropertyRef Name="PaymentId" />
-          </Key>
-          <Property Name="PaymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Method" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Master_PaymentStatus">
-          <Key>
-            <PropertyRef Name="PaymentStatusId" />
-          </Key>
-          <Property Name="PaymentStatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Method" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Master_Service">
-          <Key>
-            <PropertyRef Name="ServiceId" />
-          </Key>
-          <Property Name="ServiceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Master_Department">
-          <Key>
-            <PropertyRef Name="DepartmentId" />
-          </Key>
-          <Property Name="DepartmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Master_Designation">
-          <Key>
-            <PropertyRef Name="DesignationId" />
-          </Key>
-          <Property Name="DesignationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Master_Medicine">
-          <Key>
-            <PropertyRef Name="MedicineId" />
-          </Key>
-          <Property Name="MedicineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Master_RoomNumber">
-          <Key>
-            <PropertyRef Name="RoomNumberId" />
-          </Key>
-          <Property Name="RoomNumberId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Master_RoomType">
-          <Key>
-            <PropertyRef Name="RoomTypeId" />
-          </Key>
-          <Property Name="RoomTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="PatientTreatmentDetail">
-          <Key>
-            <PropertyRef Name="PatientId" />
-          </Key>
-          <Property Name="PatientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PatientName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MedicineName" Type="Int32" Nullable="false" />
-          <Property Name="Quantity" Type="Int32" Nullable="false" />
-          <Property Name="DosageDesc" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Remarks" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="RoomNumber" Type="Int32" Nullable="false" />
-          <Property Name="RoomType" Type="Int32" Nullable="false" />
-          <Property Name="NoofDays" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="RoomPrice" Type="Int32" Nullable="false" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Master_Hospital">
-          <Key>
-            <PropertyRef Name="HospitalId" />
-          </Key>
-          <Property Name="HospitalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="AppointmentDetail">
-          <Key>
-            <PropertyRef Name="TokenNumber" />
-          </Key>
-          <Property Name="TokenNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="LastName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Age" Type="Int32" Nullable="false" />
-          <Property Name="Gender" Type="Int32" Nullable="false" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
-          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ConsultingDoctor" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="AppointmentDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="TimeSlot" Type="Int32" Nullable="false" />
-          <Property Name="Department" Type="Int32" Nullable="false" />
-          <Property Name="Problem" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
+        <EntityContainer Name="HMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ErrorLogs" EntityType="Self.ErrorLog" />
+          <EntitySet Name="Master_Category" EntityType="Self.Master_Category" />
+          <EntitySet Name="Master_City" EntityType="Self.Master_City" />
+          <EntitySet Name="Master_Country" EntityType="Self.Master_Country" />
+          <EntitySet Name="Master_Department" EntityType="Self.Master_Department" />
+          <EntitySet Name="Master_Designation" EntityType="Self.Master_Designation" />
+          <EntitySet Name="Master_Gender" EntityType="Self.Master_Gender" />
+          <EntitySet Name="Master_Hospital" EntityType="Self.Master_Hospital" />
+          <EntitySet Name="Master_Language" EntityType="Self.Master_Language" />
+          <EntitySet Name="Master_MaritalStatus" EntityType="Self.Master_MaritalStatus" />
+          <EntitySet Name="Master_Medicine" EntityType="Self.Master_Medicine" />
+          <EntitySet Name="Master_Payment" EntityType="Self.Master_Payment" />
+          <EntitySet Name="Master_PaymentStatus" EntityType="Self.Master_PaymentStatus" />
+          <EntitySet Name="Master_RoomNumber" EntityType="Self.Master_RoomNumber" />
+          <EntitySet Name="Master_RoomType" EntityType="Self.Master_RoomType" />
+          <EntitySet Name="Master_Service" EntityType="Self.Master_Service" />
+          <EntitySet Name="Master_Specialist" EntityType="Self.Master_Specialist" />
+          <EntitySet Name="Master_State" EntityType="Self.Master_State" />
+          <EntitySet Name="Master_TimeSlot" EntityType="Self.Master_TimeSlot" />
+          <EntitySet Name="PatientTreatmentDetails" EntityType="Self.PatientTreatmentDetail" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="UserDetails" EntityType="Self.UserDetail" />
+          <EntitySet Name="BillingDetails" EntityType="HMSModel.BillingDetail" />
+          <EntitySet Name="PatientInquiryDetailForms" EntityType="HMSModel.PatientInquiryDetailForm" />
+          <EntitySet Name="MedicineDetails" EntityType="HMSModel.MedicineDetail" />
+          <EntitySet Name="PatientAdmitForms" EntityType="HMSModel.PatientAdmitForm" />
+          <EntitySet Name="DoctorDetails" EntityType="HMSModel.DoctorDetail" />
+          <EntitySet Name="PurchaseMedicineDetails" EntityType="HMSModel.PurchaseMedicineDetail" />
+          <EntitySet Name="PatientDetails" EntityType="HMSModel.PatientDetail" />
+          <EntitySet Name="AppointmentDetails" EntityType="HMSModel.AppointmentDetail" />
+        </EntityContainer>
         <EntityType Name="BillingDetail">
           <Key>
             <PropertyRef Name="PatientId" />
@@ -676,52 +648,40 @@
           <Property Name="PaymentStatus" Type="Int32" Nullable="false" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
-<<<<<<< HEAD
-        <EntityType Name="DoctorDetail">
-=======
-        <EntityType Name="Master_Language">
+        <EntityType Name="PatientInquiryDetailForm">
           <Key>
-            <PropertyRef Name="LanguageDetailId" />
+            <PropertyRef Name="PatientId" />
           </Key>
-          <Property Name="LanguageDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="DoctorDetail">
-          <Key>
-            <PropertyRef Name="DoctorDetailId" />
-          </Key>
-          <Property Name="DoctorDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="HospitalName" Type="Int32" Nullable="false" />
-          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="MobileNo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="City" Type="Int32" Nullable="false" />
-          <Property Name="State" Type="Int32" Nullable="false" />
-          <Property Name="Specialist" Type="Int32" Nullable="false" />
           <Property Name="Gender" Type="Int32" Nullable="false" />
-          <Property Name="ProfileImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="AppointmentDetail">
->>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
-          <Key>
-            <PropertyRef Name="DoctorDetailId" />
-          </Key>
-          <Property Name="DoctorDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="LastName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="HospitalName" Type="Int32" Nullable="false" />
-          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="MobileNo" Type="Int32" Nullable="false" />
-          <Property Name="City" Type="Int32" Nullable="false" />
-          <Property Name="State" Type="Int32" Nullable="false" />
-          <Property Name="SpecialistIn" Type="Int32" Nullable="false" />
-          <Property Name="Gender" Type="Int32" Nullable="false" />
-<<<<<<< HEAD
+          <Property Name="DateofBirth" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
+          <Property Name="Height" Type="Int32" Nullable="false" />
+          <Property Name="Weight" Type="Int32" Nullable="false" />
+          <Property Name="GuardianName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Problem" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="Int32" Nullable="false" />
+          <Property Name="State" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="Int32" Nullable="false" />
+          <Property Name="Diabetes" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ThyroidProblems" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LungProblems" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="HeartProblems" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BloodProblems" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Kidney" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Cancer" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Smoke" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Alchocol" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MedicalConditions" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Allergy" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LastDose" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MedicalDocuments" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="MedicineDetail">
@@ -754,16 +714,49 @@
           <Property Name="MaritalStatus" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="PatientBelow18" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
-=======
-          <Property Name="Age" Type="Int32" Nullable="false" />
->>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
           <Property Name="Email" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-<<<<<<< HEAD
           <Property Name="City" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="PostalCode" Type="Int32" Nullable="false" />
-          <Property Name="Contact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Contact" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="State" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DoctorDetail">
+          <Key>
+            <PropertyRef Name="DoctorDetailId" />
+          </Key>
+          <Property Name="DoctorDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HospitalName" Type="Int32" Nullable="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="Int32" Nullable="false" />
+          <Property Name="State" Type="Int32" Nullable="false" />
+          <Property Name="Specialist" Type="Int32" Nullable="false" />
+          <Property Name="Gender" Type="Int32" Nullable="false" />
+          <Property Name="ProfileImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="DoctorId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PurchaseMedicineDetail">
+          <Key>
+            <PropertyRef Name="MedicineId" />
+          </Key>
+          <Property Name="MedicineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Category" Type="Int32" Nullable="false" />
+          <Property Name="Medicine" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Notes" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Discount" Type="Int32" Nullable="false" />
+          <Property Name="GrandTotal" Type="Int32" Nullable="false" />
+          <Property Name="PaymentType" Type="Int32" Nullable="false" />
+          <Property Name="PaymentStatus" Type="Int32" Nullable="false" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="PatientDetail">
@@ -778,74 +771,32 @@
           <Property Name="MaritalStatus" Type="Int32" Nullable="false" />
           <Property Name="Age" Type="Int32" Nullable="false" />
           <Property Name="DateofBirth" Type="DateTime" Nullable="false" Precision="3" />
-=======
-          <Property Name="DoctorId" Type="Int32" Nullable="false" />
-          <Property Name="TimeSlot" Type="Int32" Nullable="false" />
-          <Property Name="Department" Type="Int32" Nullable="false" />
-          <Property Name="DateofAppointment" Type="DateTime" Nullable="false" Precision="0" />
->>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
           <Property Name="Problem" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="City" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="PostalCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Country" Type="Int32" Nullable="false" />
-          <Property Name="State" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityType Name="PurchaseMedicineDetail">
+        <EntityType Name="AppointmentDetail">
           <Key>
-            <PropertyRef Name="MedicineId" />
+            <PropertyRef Name="TokenNumber" />
           </Key>
-          <Property Name="MedicineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Code" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Category" Type="Int32" Nullable="false" />
-          <Property Name="MedicineName" Type="Int32" Nullable="false" />
-          <Property Name="Quantity" Type="Int32" Nullable="false" />
-          <Property Name="Notes" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Discount" Type="Int32" Nullable="false" />
-          <Property Name="GrandTotal" Type="Int32" Nullable="false" />
-          <Property Name="PaymentType" Type="Int32" Nullable="false" />
-          <Property Name="PaymentStatus" Type="Int32" Nullable="false" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="PatientInquiryDetailForm">
-          <Key>
-            <PropertyRef Name="PatientId" />
-          </Key>
-          <Property Name="PatientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TokenNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Gender" Type="Int32" Nullable="false" />
-          <Property Name="DateofBirth" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Age" Type="Int32" Nullable="false" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
-          <Property Name="Height" Type="Int32" Nullable="false" />
-          <Property Name="Weight" Type="Int32" Nullable="false" />
-          <Property Name="GuardianName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DateofAppointment" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TimeSlot" Type="Int32" Nullable="false" />
           <Property Name="Problem" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="City" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="PostalCode" Type="Int32" Nullable="false" />
-          <Property Name="State" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Country" Type="Int32" Nullable="false" />
-          <Property Name="Diabetes" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="ThyroidProblems" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="LungProblems" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="HeartProblems" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="BloodProblems" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Kidney" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Cancer" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Smoke" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Alchocol" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MedicalConditions" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="Allergy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="LastDose" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MedicalDocuments" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DoctorId" Type="Int32" Nullable="false" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
       </Schema>
@@ -854,6 +805,195 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="HMSModelStoreContainer" CdmEntityContainer="HMSEntities">
+          <EntitySetMapping Name="ErrorLogs">
+            <EntityTypeMapping TypeName="HMSModel.ErrorLog">
+              <MappingFragment StoreEntitySet="ErrorLog">
+                <ScalarProperty Name="ErrorLogId" ColumnName="ErrorLogId" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Category">
+            <EntityTypeMapping TypeName="HMSModel.Master_Category">
+              <MappingFragment StoreEntitySet="Master_Category">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_City">
+            <EntityTypeMapping TypeName="HMSModel.Master_City">
+              <MappingFragment StoreEntitySet="Master_City">
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Country">
+            <EntityTypeMapping TypeName="HMSModel.Master_Country">
+              <MappingFragment StoreEntitySet="Master_Country">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Department">
+            <EntityTypeMapping TypeName="HMSModel.Master_Department">
+              <MappingFragment StoreEntitySet="Master_Department">
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Designation">
+            <EntityTypeMapping TypeName="HMSModel.Master_Designation">
+              <MappingFragment StoreEntitySet="Master_Designation">
+                <ScalarProperty Name="DesignationId" ColumnName="DesignationId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Gender">
+            <EntityTypeMapping TypeName="HMSModel.Master_Gender">
+              <MappingFragment StoreEntitySet="Master_Gender">
+                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Hospital">
+            <EntityTypeMapping TypeName="HMSModel.Master_Hospital">
+              <MappingFragment StoreEntitySet="Master_Hospital">
+                <ScalarProperty Name="HospitalId" ColumnName="HospitalId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Language">
+            <EntityTypeMapping TypeName="HMSModel.Master_Language">
+              <MappingFragment StoreEntitySet="Master_Language">
+                <ScalarProperty Name="LanguageDetailId" ColumnName="LanguageDetailId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_MaritalStatus">
+            <EntityTypeMapping TypeName="HMSModel.Master_MaritalStatus">
+              <MappingFragment StoreEntitySet="Master_MaritalStatus">
+                <ScalarProperty Name="MaritalStatusId" ColumnName="MaritalStatusId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Medicine">
+            <EntityTypeMapping TypeName="HMSModel.Master_Medicine">
+              <MappingFragment StoreEntitySet="Master_Medicine">
+                <ScalarProperty Name="MedicineId" ColumnName="MedicineId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Payment">
+            <EntityTypeMapping TypeName="HMSModel.Master_Payment">
+              <MappingFragment StoreEntitySet="Master_Payment">
+                <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+                <ScalarProperty Name="Method" ColumnName="Method" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_PaymentStatus">
+            <EntityTypeMapping TypeName="HMSModel.Master_PaymentStatus">
+              <MappingFragment StoreEntitySet="Master_PaymentStatus">
+                <ScalarProperty Name="PaymentStatusId" ColumnName="PaymentStatusId" />
+                <ScalarProperty Name="Method" ColumnName="Method" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_RoomNumber">
+            <EntityTypeMapping TypeName="HMSModel.Master_RoomNumber">
+              <MappingFragment StoreEntitySet="Master_RoomNumber">
+                <ScalarProperty Name="RoomNumberId" ColumnName="RoomNumberId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_RoomType">
+            <EntityTypeMapping TypeName="HMSModel.Master_RoomType">
+              <MappingFragment StoreEntitySet="Master_RoomType">
+                <ScalarProperty Name="RoomTypeId" ColumnName="RoomTypeId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Service">
+            <EntityTypeMapping TypeName="HMSModel.Master_Service">
+              <MappingFragment StoreEntitySet="Master_Service">
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Specialist">
+            <EntityTypeMapping TypeName="HMSModel.Master_Specialist">
+              <MappingFragment StoreEntitySet="Master_Specialist">
+                <ScalarProperty Name="SpecialistId" ColumnName="SpecialistId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_State">
+            <EntityTypeMapping TypeName="HMSModel.Master_State">
+              <MappingFragment StoreEntitySet="Master_State">
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_TimeSlot">
+            <EntityTypeMapping TypeName="HMSModel.Master_TimeSlot">
+              <MappingFragment StoreEntitySet="Master_TimeSlot">
+                <ScalarProperty Name="TimeSlotId" ColumnName="TimeSlotId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientTreatmentDetails">
+            <EntityTypeMapping TypeName="HMSModel.PatientTreatmentDetail">
+              <MappingFragment StoreEntitySet="PatientTreatmentDetail">
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+                <ScalarProperty Name="MedicineName" ColumnName="MedicineName" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="DosageDesc" ColumnName="DosageDesc" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+                <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+                <ScalarProperty Name="NoofDays" ColumnName="NoofDays" />
+                <ScalarProperty Name="RoomPrice" ColumnName="RoomPrice" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Roles">
             <EntityTypeMapping TypeName="HMSModel.Role">
               <MappingFragment StoreEntitySet="Role">
@@ -866,215 +1006,14 @@
           <EntitySetMapping Name="UserDetails">
             <EntityTypeMapping TypeName="HMSModel.UserDetail">
               <MappingFragment StoreEntitySet="UserDetail">
-                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Role" ColumnName="Role" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="UserDetailId" ColumnName="UserDetailId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ErrorLogs">
-            <EntityTypeMapping TypeName="HMSModel.ErrorLog">
-              <MappingFragment StoreEntitySet="ErrorLog">
-                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Subject" ColumnName="Subject" />
-                <ScalarProperty Name="ErrorLogId" ColumnName="ErrorLogId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Master_TimeSlot">
-            <EntityTypeMapping TypeName="HMSModel.Master_TimeSlot">
-              <MappingFragment StoreEntitySet="Master_TimeSlot">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="TimeSlotId" ColumnName="TimeSlotId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Master_Country">
-            <EntityTypeMapping TypeName="HMSModel.Master_Country">
-              <MappingFragment StoreEntitySet="Master_Country">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Master_MaritalStatus">
-            <EntityTypeMapping TypeName="HMSModel.Master_MaritalStatus">
-              <MappingFragment StoreEntitySet="Master_MaritalStatus">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="MaritalStatusId" ColumnName="MaritalStatusId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Master_Gender">
-            <EntityTypeMapping TypeName="HMSModel.Master_Gender">
-              <MappingFragment StoreEntitySet="Master_Gender">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Master_City">
-            <EntityTypeMapping TypeName="HMSModel.Master_City">
-              <MappingFragment StoreEntitySet="Master_City">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="CityId" ColumnName="CityId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Master_Specialist">
-            <EntityTypeMapping TypeName="HMSModel.Master_Specialist">
-              <MappingFragment StoreEntitySet="Master_Specialist">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="SpecialistId" ColumnName="SpecialistId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Master_State">
-            <EntityTypeMapping TypeName="HMSModel.Master_State">
-              <MappingFragment StoreEntitySet="Master_State">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="StateId" ColumnName="StateId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Master_Category">
-            <EntityTypeMapping TypeName="HMSModel.Master_Category">
-              <MappingFragment StoreEntitySet="Master_Category">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Master_Payment">
-            <EntityTypeMapping TypeName="HMSModel.Master_Payment">
-              <MappingFragment StoreEntitySet="Master_Payment">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Method" ColumnName="Method" />
-                <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Master_PaymentStatus">
-            <EntityTypeMapping TypeName="HMSModel.Master_PaymentStatus">
-              <MappingFragment StoreEntitySet="Master_PaymentStatus">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Method" ColumnName="Method" />
-                <ScalarProperty Name="PaymentStatusId" ColumnName="PaymentStatusId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Master_Service">
-            <EntityTypeMapping TypeName="HMSModel.Master_Service">
-              <MappingFragment StoreEntitySet="Master_Service">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Master_Department">
-            <EntityTypeMapping TypeName="HMSModel.Master_Department">
-              <MappingFragment StoreEntitySet="Master_Department">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Master_Designation">
-            <EntityTypeMapping TypeName="HMSModel.Master_Designation">
-              <MappingFragment StoreEntitySet="Master_Designation">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="DesignationId" ColumnName="DesignationId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Master_Medicine">
-            <EntityTypeMapping TypeName="HMSModel.Master_Medicine">
-              <MappingFragment StoreEntitySet="Master_Medicine">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="MedicineId" ColumnName="MedicineId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Master_RoomNumber">
-            <EntityTypeMapping TypeName="HMSModel.Master_RoomNumber">
-              <MappingFragment StoreEntitySet="Master_RoomNumber">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="RoomNumberId" ColumnName="RoomNumberId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Master_RoomType">
-            <EntityTypeMapping TypeName="HMSModel.Master_RoomType">
-              <MappingFragment StoreEntitySet="Master_RoomType">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="RoomTypeId" ColumnName="RoomTypeId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PatientTreatmentDetails">
-            <EntityTypeMapping TypeName="HMSModel.PatientTreatmentDetail">
-              <MappingFragment StoreEntitySet="PatientTreatmentDetail">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="RoomPrice" ColumnName="RoomPrice" />
-                <ScalarProperty Name="NoofDays" ColumnName="NoofDays" />
-                <ScalarProperty Name="RoomType" ColumnName="RoomType" />
-                <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
-                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
-                <ScalarProperty Name="DosageDesc" ColumnName="DosageDesc" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="MedicineName" ColumnName="MedicineName" />
-                <ScalarProperty Name="PatientName" ColumnName="PatientName" />
-                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Master_Hospital">
-            <EntityTypeMapping TypeName="HMSModel.Master_Hospital">
-              <MappingFragment StoreEntitySet="Master_Hospital">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="HospitalId" ColumnName="HospitalId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="AppointmentDetails">
-            <EntityTypeMapping TypeName="HMSModel.AppointmentDetail">
-              <MappingFragment StoreEntitySet="AppointmentDetail">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Problem" ColumnName="Problem" />
-                <ScalarProperty Name="Department" ColumnName="Department" />
-                <ScalarProperty Name="TimeSlot" ColumnName="TimeSlot" />
-                <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
-                <ScalarProperty Name="ConsultingDoctor" ColumnName="ConsultingDoctor" />
-                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="TokenNumber" ColumnName="TokenNumber" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1101,22 +1040,40 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-<<<<<<< HEAD
-          <EntitySetMapping Name="DoctorDetails">
-            <EntityTypeMapping TypeName="HMSModel.DoctorDetail">
-              <MappingFragment StoreEntitySet="DoctorDetail">
+          <EntitySetMapping Name="PatientInquiryDetailForms">
+            <EntityTypeMapping TypeName="HMSModel.PatientInquiryDetailForm">
+              <MappingFragment StoreEntitySet="PatientInquiryDetailForm">
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="SpecialistIn" ColumnName="SpecialistIn" />
+                <ScalarProperty Name="MedicalDocuments" ColumnName="MedicalDocuments" />
+                <ScalarProperty Name="LastDose" ColumnName="LastDose" />
+                <ScalarProperty Name="Allergy" ColumnName="Allergy" />
+                <ScalarProperty Name="MedicalConditions" ColumnName="MedicalConditions" />
+                <ScalarProperty Name="Alchocol" ColumnName="Alchocol" />
+                <ScalarProperty Name="Smoke" ColumnName="Smoke" />
+                <ScalarProperty Name="Cancer" ColumnName="Cancer" />
+                <ScalarProperty Name="Kidney" ColumnName="Kidney" />
+                <ScalarProperty Name="BloodProblems" ColumnName="BloodProblems" />
+                <ScalarProperty Name="HeartProblems" ColumnName="HeartProblems" />
+                <ScalarProperty Name="LungProblems" ColumnName="LungProblems" />
+                <ScalarProperty Name="ThyroidProblems" ColumnName="ThyroidProblems" />
+                <ScalarProperty Name="Diabetes" ColumnName="Diabetes" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
                 <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
                 <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="HospitalName" ColumnName="HospitalName" />
+                <ScalarProperty Name="Problem" ColumnName="Problem" />
+                <ScalarProperty Name="GuardianName" ColumnName="GuardianName" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="DoctorDetailId" ColumnName="DoctorDetailId" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1160,32 +1117,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PatientDetails">
-            <EntityTypeMapping TypeName="HMSModel.PatientDetail">
-              <MappingFragment StoreEntitySet="PatientDetail">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="State" ColumnName="State" />
-                <ScalarProperty Name="Country" ColumnName="Country" />
-                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Problem" ColumnName="Problem" />
-                <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
-=======
-          <EntitySetMapping Name="Master_Language">
-            <EntityTypeMapping TypeName="HMSModel.Master_Language">
-              <MappingFragment StoreEntitySet="Master_Language">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="LanguageDetailId" ColumnName="LanguageDetailId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="DoctorDetails">
             <EntityTypeMapping TypeName="HMSModel.DoctorDetail">
               <MappingFragment StoreEntitySet="DoctorDetail">
+                <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
@@ -1202,29 +1137,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="AppointmentDetails">
-            <EntityTypeMapping TypeName="HMSModel.AppointmentDetail">
-              <MappingFragment StoreEntitySet="AppointmentDetail">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Problem" ColumnName="Problem" />
-                <ScalarProperty Name="DateofAppointment" ColumnName="DateofAppointment" />
-                <ScalarProperty Name="Department" ColumnName="Department" />
-                <ScalarProperty Name="TimeSlot" ColumnName="TimeSlot" />
-                <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
->>>>>>> f5f152f9bcd10aeed78703eb058e88d79827421d
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
-                <ScalarProperty Name="GuardianName" ColumnName="GuardianName" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="PatientDetailId" ColumnName="PatientDetailId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="PurchaseMedicineDetails">
             <EntityTypeMapping TypeName="HMSModel.PurchaseMedicineDetail">
               <MappingFragment StoreEntitySet="PurchaseMedicineDetail">
@@ -1235,7 +1147,7 @@
                 <ScalarProperty Name="Discount" ColumnName="Discount" />
                 <ScalarProperty Name="Notes" ColumnName="Notes" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="MedicineName" ColumnName="MedicineName" />
+                <ScalarProperty Name="Medicine" ColumnName="Medicine" />
                 <ScalarProperty Name="Category" ColumnName="Category" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
@@ -1244,40 +1156,45 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PatientInquiryDetailForms">
-            <EntityTypeMapping TypeName="HMSModel.PatientInquiryDetailForm">
-              <MappingFragment StoreEntitySet="PatientInquiryDetailForm">
+          <EntitySetMapping Name="PatientDetails">
+            <EntityTypeMapping TypeName="HMSModel.PatientDetail">
+              <MappingFragment StoreEntitySet="PatientDetail">
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="MedicalDocuments" ColumnName="MedicalDocuments" />
-                <ScalarProperty Name="LastDose" ColumnName="LastDose" />
-                <ScalarProperty Name="Allergy" ColumnName="Allergy" />
-                <ScalarProperty Name="MedicalConditions" ColumnName="MedicalConditions" />
-                <ScalarProperty Name="Alchocol" ColumnName="Alchocol" />
-                <ScalarProperty Name="Smoke" ColumnName="Smoke" />
-                <ScalarProperty Name="Cancer" ColumnName="Cancer" />
-                <ScalarProperty Name="Kidney" ColumnName="Kidney" />
-                <ScalarProperty Name="BloodProblems" ColumnName="BloodProblems" />
-                <ScalarProperty Name="HeartProblems" ColumnName="HeartProblems" />
-                <ScalarProperty Name="LungProblems" ColumnName="LungProblems" />
-                <ScalarProperty Name="ThyroidProblems" ColumnName="ThyroidProblems" />
-                <ScalarProperty Name="Diabetes" ColumnName="Diabetes" />
-                <ScalarProperty Name="Country" ColumnName="Country" />
                 <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
                 <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
                 <ScalarProperty Name="City" ColumnName="City" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Problem" ColumnName="Problem" />
-                <ScalarProperty Name="GuardianName" ColumnName="GuardianName" />
-                <ScalarProperty Name="Weight" ColumnName="Weight" />
-                <ScalarProperty Name="Height" ColumnName="Height" />
                 <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Problem" ColumnName="Problem" />
                 <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="GuardianName" ColumnName="GuardianName" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="PatientDetailId" ColumnName="PatientDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppointmentDetails">
+            <EntityTypeMapping TypeName="HMSModel.AppointmentDetail">
+              <MappingFragment StoreEntitySet="AppointmentDetail">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+                <ScalarProperty Name="Problem" ColumnName="Problem" />
+                <ScalarProperty Name="TimeSlot" ColumnName="TimeSlot" />
+                <ScalarProperty Name="DateofAppointment" ColumnName="DateofAppointment" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="TokenNumber" ColumnName="TokenNumber" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1296,7 +1213,7 @@
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

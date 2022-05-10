@@ -19,7 +19,7 @@ namespace HospitalManagementSystem.Entity
         public string Code { get; set; }
         public System.DateTime Date { get; set; }
         public int Category { get; set; }
-        public int MedicineName { get; set; }
+        public int Medicine { get; set; }
         public int Quantity { get; set; }
         public string Notes { get; set; }
         public int Discount { get; set; }

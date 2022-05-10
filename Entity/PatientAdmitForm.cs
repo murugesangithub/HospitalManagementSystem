@@ -29,7 +29,7 @@ namespace HospitalManagementSystem.Entity
         public string Email { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
-        public int PostalCode { get; set; }
+        public string PostalCode { get; set; }
         public string Contact { get; set; }
         public string State { get; set; }
         public bool IsActive { get; set; }

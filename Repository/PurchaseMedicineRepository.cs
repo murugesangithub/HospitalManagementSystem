@@ -21,7 +21,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 Code = purchaseMedicineViewModel.Code,
                 Date = purchaseMedicineViewModel.Date,
                 Category = purchaseMedicineViewModel.Category,
-                MedicineName = purchaseMedicineViewModel.Medicine,
+                Medicine = purchaseMedicineViewModel.Medicine,
                 Quantity = Convert.ToInt32(purchaseMedicineViewModel.Quantity),
                 Notes = purchaseMedicineViewModel.Notes,
                 Discount = Convert.ToInt32(purchaseMedicineViewModel.Discount),
@@ -47,7 +47,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 isPurchaseMedicineDetailExist.Code = purchaseMedicineViewModel.Code;
                 isPurchaseMedicineDetailExist.Date = purchaseMedicineViewModel.Date;
                 isPurchaseMedicineDetailExist.Category = purchaseMedicineViewModel.Category;
-                isPurchaseMedicineDetailExist.MedicineName = purchaseMedicineViewModel.Medicine;
+                isPurchaseMedicineDetailExist.Medicine = purchaseMedicineViewModel.Medicine;
                 isPurchaseMedicineDetailExist.Quantity = Convert.ToInt32(purchaseMedicineViewModel.Quantity);
                 isPurchaseMedicineDetailExist.Notes = purchaseMedicineViewModel.Notes;
                 isPurchaseMedicineDetailExist.Discount = Convert.ToInt32(purchaseMedicineViewModel.Discount);
@@ -79,8 +79,8 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 Date = s.Date,
                 CategoryDesc = dbcontext.Master_Category.Where(x => x.CategoryId == s.Category).Select(b => b.Description).FirstOrDefault(),
                 Category = s.Category,
-                MedicineDesc = dbcontext.Master_Medicine.Where(x => x.MedicineId == s.MedicineName).Select(b => b.Description).FirstOrDefault(),
-                Medicine = s.MedicineName,
+                MedicineDesc = dbcontext.Master_Medicine.Where(x => x.MedicineId == s.MedicineId).Select(b => b.Description).FirstOrDefault(),
+                Medicine = s.MedicineId,
                 Quantity = s.Quantity.ToString(),
                 Notes = s.Notes,
                 Discount = s.Discount.ToString(),
@@ -107,8 +107,8 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 Date = s.Date,
                 CategoryDesc = dbcontext.Master_Category.Where(x => x.CategoryId == s.Category).Select(b => b.Description).FirstOrDefault(),
                 Category = s.Category,
-                MedicineDesc = dbcontext.Master_Medicine.Where(x => x.MedicineId == s.MedicineName).Select(b => b.Description).FirstOrDefault(),
-                Medicine = s.MedicineName,
+                MedicineDesc = dbcontext.Master_Medicine.Where(x => x.MedicineId == s.MedicineId).Select(b => b.Description).FirstOrDefault(),
+                Medicine = s.MedicineId,
                 Quantity = s.Quantity.ToString(),
                 Notes = s.Notes,
                 Discount = s.Discount.ToString(),
@@ -148,8 +148,8 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 Date = s.Date,
                 CategoryDesc = dbcontext.Master_Category.Where(x => x.CategoryId == s.Category).Select(b => b.Description).FirstOrDefault(),
                 Category = s.Category,
-                MedicineDesc = dbcontext.Master_Medicine.Where(x => x.MedicineId == s.MedicineName).Select(b => b.Description).FirstOrDefault(),
-                Medicine = s.MedicineName,
+                MedicineDesc = dbcontext.Master_Medicine.Where(x => x.MedicineId == s.MedicineId).Select(b => b.Description).FirstOrDefault(),
+                Medicine = s.MedicineId,
                 Quantity = s.Quantity.ToString(),
                 Notes = s.Notes,
                 Discount = s.Discount.ToString(),
