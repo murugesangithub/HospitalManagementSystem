@@ -44,16 +44,16 @@ namespace HospitalManagementSystem.Entity
         public virtual DbSet<Master_Specialist> Master_Specialist { get; set; }
         public virtual DbSet<Master_State> Master_State { get; set; }
         public virtual DbSet<Master_TimeSlot> Master_TimeSlot { get; set; }
-        public virtual DbSet<PatientTreatmentDetail> PatientTreatmentDetails { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<UserDetail> UserDetails { get; set; }
+        public virtual DbSet<AppointmentDetail> AppointmentDetails { get; set; }
         public virtual DbSet<BillingDetail> BillingDetails { get; set; }
-        public virtual DbSet<PatientInquiryDetailForm> PatientInquiryDetailForms { get; set; }
+        public virtual DbSet<DoctorDetail> DoctorDetails { get; set; }
         public virtual DbSet<MedicineDetail> MedicineDetails { get; set; }
         public virtual DbSet<PatientAdmitForm> PatientAdmitForms { get; set; }
-        public virtual DbSet<DoctorDetail> DoctorDetails { get; set; }
-        public virtual DbSet<PurchaseMedicineDetail> PurchaseMedicineDetails { get; set; }
         public virtual DbSet<PatientDetail> PatientDetails { get; set; }
-        public virtual DbSet<AppointmentDetail> AppointmentDetails { get; set; }
+        public virtual DbSet<PatientInquiryDetailForm> PatientInquiryDetailForms { get; set; }
+        public virtual DbSet<PatientTreatmentDetail> PatientTreatmentDetails { get; set; }
+        public virtual DbSet<PurchaseMedicineDetail> PurchaseMedicineDetails { get; set; }
     }
 }

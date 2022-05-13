@@ -12,21 +12,15 @@ namespace HospitalManagementSystem.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class DoctorDetail
+    public partial class HospitalDetail
     {
-        public int DoctorDetailId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public int HospitalDetailId { get; set; }
+        public string HospitalName { get; set; }
+        public int HospitalId { get; set; }
         public string Email { get; set; }
-        public int HospitalName { get; set; }
+        public string ContactNo { get; set; }
+        public string ContactPerson { get; set; }
         public string Address { get; set; }
-        public string MobileNo { get; set; }
-        public int City { get; set; }
-        public int State { get; set; }
-        public int Specialist { get; set; }
-        public int Gender { get; set; }
-        public int DoctorId { get; set; }
-        public string ProfileImage { get; set; }
         public bool IsActive { get; set; }
     }
 }

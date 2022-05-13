@@ -26,7 +26,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 Age = appointmentViewModel.Age,
                 PhoneNumber = appointmentViewModel.PhoneNumber,
                 DoctorId = appointmentViewModel.DoctorId,
-                DateofAppointment = appointmentViewModel.DateofAppointment,
+                DateofAppointment =/*Convert.ToDateTime(*/appointmentViewModel.DateofAppointment/*)*/,
                 Problem = appointmentViewModel.Problem,
                 //DateOfBirth= appointmentViewModel.DateofBirth,
                 Gender = appointmentViewModel.Gender,
@@ -50,9 +50,8 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 isAppointmentDetailExist.Address = appointmentViewModel.Address;
                 isAppointmentDetailExist.Age = appointmentViewModel.Age;
                 isAppointmentDetailExist.PhoneNumber = appointmentViewModel.PhoneNumber;
-                isAppointmentDetailExist.DateofAppointment = appointmentViewModel.DateofAppointment;
-                isAppointmentDetailExist.DoctorId = appointmentViewModel.DoctorId;
-                isAppointmentDetailExist.DateofAppointment = appointmentViewModel.DateofAppointment;
+                isAppointmentDetailExist.DateofAppointment = /*Convert.ToDateTime(*/appointmentViewModel.DateofAppointment/*)*/;
+                isAppointmentDetailExist.DoctorId = appointmentViewModel.DoctorId;             
                 isAppointmentDetailExist.Problem = appointmentViewModel.Problem;
                 //isAppointmentDetailExist.DateOfBirth = appointmentViewModel.DateofBirth;
                 isAppointmentDetailExist.Gender = appointmentViewModel.Gender;
@@ -112,8 +111,9 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 Gender = s.Gender,
                 Age = s.Age,
                 DateofAppointment = s.DateofAppointment,
-                //DateofBirth = s.DateOfBirth,
-                Problem = s.Problem,
+               
+            //DateofBirth = s.DateOfBirth,
+            Problem = s.Problem,
                 Email = s.Email,
                 PhoneNumber = s.PhoneNumber,
                 Address = s.Address,
@@ -153,7 +153,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 Gender = s.Gender,
                 Age = s.Age,
                 DateofAppointment = s.DateofAppointment,
-                //DateofBirth = s.DateOfBirth,
+               //DateofBirth = s.DateOfBirth,
                 Problem = s.Problem,
                 Email = s.Email,
                 PhoneNumber = s.PhoneNumber,

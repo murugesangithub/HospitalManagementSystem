@@ -26,7 +26,7 @@ $(document).ready(function () {
             { label: 'EncryptPatientAdmissionId', name: 'EncryptPatientAdmissionId', hidden: true, },
             { label: 'Patient Name', name: 'PatientName', width: 200, },
             { label: 'Doctor Name', name: 'DoctorName', width: 200, },
-            { label: 'Admission Date', name: 'AdmissionDate', width: 200, },
+            { label: 'Admission Date', name: 'AdmissionDate', width: 200, formatter: 'date', formatoptions: { srcformat: "d/m/Y H:i:s", newformat: "d-m-Y" } },
 
             //{ label: 'Planned Procedure', name: 'PlannedProcedure', width: 200, },
             { label: 'Email', name: 'Email', width: 200, },

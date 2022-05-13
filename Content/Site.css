@@ -23,12 +23,9 @@ textarea {
     max-width: 280px;
 }*/
 
-
-
 .rounded-circle {
     border-radius: 50% !important
 }
-
 
 .btn-gradgreen {
     background-image: linear-gradient(to right, #6ae35b 0%, #45B649 51%, #DCE35B 100%)
@@ -46,7 +43,6 @@ textarea {
     background-image: linear-gradient(to right, #8e8181 0%, #b2b0b0 51%, #706e6e 100%)
 }
 
-
 .btn-gradgreen, .btn-gradblue, .btn-gradyellow, .btn-gradgray {
     padding: 10px 15px;
     text-align: center;
@@ -56,7 +52,7 @@ textarea {
     box-shadow: 0 0 20px #eee;
     border-radius: 5px;
     display: block;
-    border: none;
+    border: none;  
 }
 
     .btn-gradgreen:hover, .btn-gradblue:hover, .btn-gradyellow:hover, .btn-gradgray:hover {
@@ -64,33 +60,51 @@ textarea {
         color: #fff;
         text-decoration: none;
     }
+
 input.input-validation-error,
 textarea.input-validation-error,
 select.input-validation-error {
     border: 1px solid #b94a48;
-  
 }
+
 input.input-validation-error:focus {
     border: 1px solid #b94a48;
     box-shadow: 0 0 0 0.2rem rgb(220 53 69 / 25%);
 }
+
 .form-control {
     border-radius: 4px;
 }
+
 input.valid, select.valid, textarea.valid { 
     border: 1px solid Green;
 }
+
     input.valid:focus, select.valid:focus, textarea.valid:focus {
         box-shadow: 0 0 0 0.2rem rgb(0,128,0,0.4);
         border: 1px solid Green;
     }
+
 .col-md-5 {
     width: 31.9999966666667%;
 }
+
 .col-md-1 {
     width: 12.33333333%;
 }
+
+/*.col-md-5 {
+    width: 24.666667%;
+}
+.col-md-2 {
+    width: 12.66666667%;
+}
+.col-sm-2 {
+    width: 12.66666667%;
+}*/
+
 .rad{padding-left:200px;}
+
 .form-group h4 {
     margin-bottom: 0px;
     font-weight: bold;
@@ -98,19 +112,20 @@ input.valid, select.valid, textarea.valid {
     padding: 10px;
     width: auto;
 }
+
 .bg-info {
     background-color: #17a2b8 !important;
 }
+
     .bg-info, .bg-info > a {
         color: #fff !important;
     }
 
-
-
 .bg-success {
     background-color: #28a745 !important;
 }
-    .bg-success, .bg-success > a {
+
+.bg-success, .bg-success > a {
         color: #fff !important;
     }
 
@@ -124,18 +139,17 @@ input.valid, select.valid, textarea.valid {
 .bg-danger {
     background-color: #dc3545 !important;
 }
-    .bg-danger, .bg-danger > a {
+
+.bg-danger, .bg-danger > a {
         color: #fff !important;
     }
-
-
 
 .customRadio input[type="radio"] {
     position: absolute;
     left: -9999px;
 }
 
-    .customRadio input[type="radio"] + label {
+   .customRadio input[type="radio"] + label {
         position: relative;
         padding: 3px 10px 10px 40px;
         cursor: pointer;
@@ -143,7 +157,7 @@ input.valid, select.valid, textarea.valid {
         font-weight: normal;
     }
 
-        .customRadio input[type="radio"] + label:before {
+   .customRadio input[type="radio"] + label:before {
             content: '';
             background: #fff;
             border: 2px solid #311B92;

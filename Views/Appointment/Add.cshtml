@@ -100,12 +100,12 @@
                                 </div>
 
                                 @*<div class="form-group">
-                            @Html.LabelFor(model => model.DateofBirth, htmlAttributes: new { @class = "col-sm-3 control-label" })
-                            <div class="col-md-9">
-                                @Html.EditorFor(model => model.DateofBirth, new { placeholder = "Date of Birth", @maxlength = "15", htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.DateofBirth, "", new { @class = "text-danger" })
-                            </div>
-                        </div>*@
+                                        @Html.LabelFor(model => model.DateofBirth, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                        <div class="col-md-9">
+                                            @Html.EditorFor(model => model.DateofBirth, new { placeholder = "Date of Birth", @maxlength = "15", htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.DateofBirth, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>*@
                             </div>
                         </div>
                         <div class="row">
@@ -131,15 +131,13 @@
                                     </div>
                                 </div>
 
-
-
                                 @*<div class="form-group">
-                            @Html.LabelFor(model => model.Department, htmlAttributes: new { @class = "col-sm-3 control-label" })
-                            <div class="col-md-9">
-                                @Html.DropDownListFor(m => m.Department, Model.DepartmentList, "Select", new { @class = "form-control" })
-                                @Html.ValidationMessageFor(m => m.Department, "", new { @class = "text-danger" })
-                            </div>
-                        </div>*@
+                                        @Html.LabelFor(model => model.Department, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                        <div class="col-md-9">
+                                            @Html.DropDownListFor(m => m.Department, Model.DepartmentList, "Select", new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Department, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>*@
 
                             </div>
 
@@ -151,7 +149,6 @@
                                         @Html.ValidationMessageFor(model => model.Problem, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                         <br />
@@ -200,7 +197,7 @@
                     <div class="box-footer">
                         <div class="row">
                             <div class="col-md-1"></div>
-                            <div class="col-md-5">  <button class="btn btn-gradgreen" type="submit"><i class="fa fa-plus-square"></i> SAVE </button></div>
+                            <div class="col-md-5">  <button class="btn btn-gradgreen pull-left" type="submit"><i class="fa fa-plus-square"></i> SAVE </button></div>
                             <div class="col-md-3">  <button class="btn btn-gradgray pull-right" type="reset"><i class="fa fa-refresh"></i> Reset</button></div>
                         </div>
                     </div>
@@ -238,6 +235,22 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+<script>
+
+    $(document).ready(function () {
+        $('input[type=datetime]').datepicker({
+            dateFormat: "dd-mm-yy",
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-60:+0",
+            onSelect: function (dateString, txtDate) {
+                alert("Selected Date: " + dateString + "\nTextBox ID: " + txtDate.id);
+            }
+        });
+
+    });
+</script>
+
 
 <script src="~/Scripts/Appointment/AddAppointment.js"></script>
 

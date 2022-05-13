@@ -133,7 +133,7 @@ namespace HospitalManagementSystem.Controllers
             var model = new AppointmentViewModel();
             var appointmentRepository = new AppointmentRepository();
             model = appointmentRepository.GetAppointmentByAppointmentDetailId(tokenNumber);
-            model.DepartmentList = GetDepartmentList();
+            //model.DepartmentList = GetDepartmentList();
             var masterTimeSlotList = GetMasterTimeSlotList();
             model.TimeSlotListMorning = GetMorningTimeSlotList(masterTimeSlotList);
             model.TimeSlotListEvening = GetEveningTimeSlotList(masterTimeSlotList);

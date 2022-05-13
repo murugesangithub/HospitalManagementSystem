@@ -1,8 +1,8 @@
 ﻿
 $(document).ready(function () {
 
-    var grid = "#jqAppointmentGrid";
-    var gridpager = "#jqAppointmentGridPager";
+    var grid = "#jqDoctorGrid";
+    var gridpager = "#jqDoctorGridPager";
 
     var bodyElem = $('body');
 
@@ -15,7 +15,7 @@ $(document).ready(function () {
 
 
     $(grid).jqGrid({
-        url: relativepath + "Appointment/GetAppointmentList",
+        url: relativepath + "Doctor/GetDoctorList",
         mtype: "POST",
         styleUI: 'Bootstrap',
         datatype: "json",
@@ -23,25 +23,26 @@ $(document).ready(function () {
         jsonReader: jsonreader,
         colModel: [
 
-            { label: 'Token Number', name: 'TokenNumber', key: true, width: 100, hidden: true, },
-            { label: 'EncryptTokenNumber', name: 'EncryptTokenNumber', hidden: true, },
-
+            { label: 'DoctorDetailId', name: 'DoctorDetailId', key: true, width: 200, hidden: true, },
+            { label: 'EncryptDoctorDetailId', name: 'EncryptDoctorDetailId', key: true, width: 200, hidden: true, },
             { label: 'First Name', name: 'FirstName', width: 200, },
             { label: 'Last Name', name: 'LastName', width: 200, },
-            //{ label: 'Gender', name: 'Gender', width: 200,hidden:true, },
-            //{ label: 'Gender ', name: 'GenderDescription', width: 200, },
-            //{ label: 'Age', name: 'Age', width: 200, },        
-            //{ label: 'DOB', name: 'DateofBirth', width: 200, },
-            //{ label: 'Problem', name: 'Problem', width: 200, },
-            //{ label: 'Email', name: 'Email', width: 200, },
-            //{ label: 'Phone Number', name: 'PhoneNumber', width: 200, },
-            { label: 'Appointment Date', name: 'DateofAppointment', width: 200, formatter: 'date',  formatoptions: { srcformat: "d/m/Y H:i:s", newformat: "d-m-Y" } },
-            //{ label: 'Address', name: 'Address', width: 200, },
-            { label: 'ConsultingDoctor', name: 'ConsultingDoctor', width: 200, },
-            //{ label: 'TimeSlot', name: 'TimeSlot', width: 200, hidden: true, },
-            //{ label: 'TimeSlot', name: 'TimeSlotDesc', width: 200, },
-            //{ label: 'Department', name: 'Department', width: 200, hidden: true, },
-            //{ label: 'Department', name: 'DepartmentDesc', width: 200, },
+
+            { label: 'Email', name: 'Email', width: 200, },
+
+            { label: 'Address', name: 'Address', width: 200, },
+
+            //{ label: 'Mobile No', name: 'MobileNo', width: 200, },
+            //{ label: 'Gender', name: 'Gender', width: 200, hidden: true, },
+            //{ label: 'Gender', name: 'GenderDesc', width: 200, },
+            //{ label: 'State', name: 'State', width: 200, hidden: true, },
+            //{ label: 'State', name: 'StateDesc', width: 200, },
+            //{ label: 'City', name: 'City', width: 200, hidden: true, },
+            //{ label: 'City', name: 'CityDesc', width: 200, },
+            //{ label: 'Specialist', name: 'Specialist', width: 200, hidden: true, },
+            { label: 'Specialist', name: 'SpecialistDesc', width: 200, },
+
+
         ],
         rownumbers: true,
         viewrecords: true,
@@ -49,24 +50,24 @@ $(document).ready(function () {
         rowList: [10, 20, 30, 40, 50],
         //editurl: relativepath + "Material/MaterialManipulation",
         pager: gridpager,
-        caption: "Appointment List"
+        caption: "Doctor List"
     });
     $(grid).jqGrid('navGrid', gridpager, { edit: false, add: false, del: true, refresh: true, search: false },
 
         {},
         {},
         {
-            url: relativepath + "Appointment/Delete",
+            url: relativepath + "Doctor/Delete",
             closeOnEscape: true,
             reloadAfterSubmit: true,
             closeAfterDel: true,
             recreateFrom: true,
 
             delData: {
-                tokenNumber: function () {
+                DoctorDetailId: function () {
                     var selRowId = $(grid).jqGrid('getGridParam', 'selrow');
                     var rowData = $(grid).jqGrid("getRowData", selRowId);
-                    return rowData.TokenNumber;
+                    return rowData.DoctorDetailId;
                 }
             }
         },
@@ -74,11 +75,13 @@ $(document).ready(function () {
         {}
     );
 
+    
+
     $(grid).jqGrid('navButtonAdd', gridpager,
         {
             caption: "", buttonicon: "glyphicon glyphicon-plus", title: "Add new row",
             onClickButton: function () {
-                window.location = relativepath + "Appointment/Add";
+                window.location = relativepath + "Doctor/Add";
             },
 
         });
@@ -91,27 +94,30 @@ $(document).ready(function () {
                     $.jgrid.info_dialog('Warning', 'Please, select row', '', { styleUI: 'Bootstrap' });
                 } else {
                     var rowData = $(grid).jqGrid("getRowData", selRowId);
-                    window.location = relativepath + "Appointment/UpdateAppointmentDetail?id=" + rowData.EncryptTokenNumber;
+                    window.location = relativepath + "Doctor/UpdateDoctorDetail?id=" + rowData.EncryptDoctorDetailId;
                 }
             }
         });
 
 
+
     //icon
+
 
     $(grid).jqGrid('navButtonAdd', gridpager,
         {
-            caption: "", buttonicon: "glyphicon glyphicon glyphicon-zoom-in", title: "Appointment Details",
+            caption: "", buttonicon: "glyphicon glyphicon glyphicon-zoom-in", title: "Doctor Details",
             onClickButton: function () {
                 var selRowId = $(grid).jqGrid('getGridParam', 'selrow');
                 if (selRowId == null) {
                     $.jgrid.info_dialog('Warning', 'Please, select row', '', { styleUI: 'Bootstrap' });
                 } else {
                     var rowData = $(grid).jqGrid("getRowData", selRowId);
-                    ShowAppointmentDetailPopup(rowData.TokenNumber, rowData.EncryptTokenNumber);
+                    ShowDoctorDetailPopup(rowData.DoctorDetailId, rowData.EncryptDoctorDetailId);
                 }
             }
         });
+
 
     $(grid).jqGrid('filterToolbar', {
         stringResult: true,
@@ -121,16 +127,21 @@ $(document).ready(function () {
             modifySearchingFilter.call(this, ' ');
         }
     });
+
+    
 });
+
+
+
 
 //icon
 
-function ShowAppointmentDetailPopup(TokenNumber, EncryptTokenNumber)
-{
 
-    $('#AppointmentDetailModalPopup').modal();
+function ShowDoctorDetailPopup(DoctorDetailId, EncryptDoctorDetailId) {
+
+    $('#DoctorDetailModalPopup').modal();
     $.ajax({
-        url: relativepath + '/Appointment/GetAppointmentDetail?id=' + EncryptTokenNumber,
+        url: relativepath + '/Doctor/GetDoctorDetail?id=' + EncryptDoctorDetailId,
         type: "GET",
         success: function (res) {
             console.log(res);
@@ -140,16 +151,14 @@ function ShowAppointmentDetailPopup(TokenNumber, EncryptTokenNumber)
             $('#FirstName').val(res.FirstName);
             $('#LastName').val(res.LastName);
             $('#Email').val(res.Email);
-            $('#Gender').val(res.GenderDescription);
-            $('#Age').val(res.Age);
-            $('#DateofAppointment').val(res.DateofAppointment );           
-            $('#Problem').val(res.Problem);
-            $('#PhoneNumber').val(res.PhoneNumber);
+            $('#Gender').val(res.GenderDesc);
+            $('#State').val(res.StateDesc);
+            $('#City').val(res.CityDesc);
+            $('#Specialist').val(res.SpecialistDesc);
+            $('#MobileNo').val(res.MobileNo);
             $('#Address').val(res.Address);
-            $('#ConsultingDoctor').val(res.ConsultingDoctor);
-            $('#TimeSlot').val(res.TimeSlotDesc);
-            $('#Department').val(res.DepartmentDesc);
-            
+           
+
             //if (res.ProfileImage == "") {
             //    $('#ProfileImage').attr('src', relativepath + "Images/default_profile.jpg");
             //}
@@ -160,9 +169,10 @@ function ShowAppointmentDetailPopup(TokenNumber, EncryptTokenNumber)
             Notify_Validation(err.statusText);
         }
     });
+
 }
 
-$('#btnAppointmentDetailModalPopupClose').click(function () {
-    $('#AppointmentDetailModalPopup').empty();
+$('#btnDoctorDetailModalPopupClose').click(function () {
+    $('#DoctorDetailModalPopup').empty();
 
 });

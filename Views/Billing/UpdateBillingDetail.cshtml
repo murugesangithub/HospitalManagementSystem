@@ -40,7 +40,7 @@
                                     @Html.LabelFor(m => m.PatientName, new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.TextBoxFor(m => m.PatientName, new { placeholder = "Patient Name", @maxlength = "20", @class = "form-control" })
-                                       
+
                                     </div>
                                 </div>
 
@@ -48,7 +48,7 @@
                                     @Html.LabelFor(model => model.Department, htmlAttributes: new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.DropDownListFor(m => m.Department, Model.DepartmentList, "Select Department", new { @class = "form-control" })
-                                        
+
                                     </div>
                                 </div>
 
@@ -56,7 +56,7 @@
                                     @Html.LabelFor(m => m.DoctorName, new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.TextBoxFor(m => m.DoctorName, new { placeholder = "Doctor Name", @maxlength = "20", @class = "form-control" })
-                                      
+
                                     </div>
                                 </div>
                             </div>
@@ -65,14 +65,14 @@
                                     @Html.LabelFor(model => model.AdmitDate, htmlAttributes: new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.EditorFor(model => model.AdmitDate, new { placeholder = "Select Admit Date", @maxlength = "15", htmlAttributes = new { @class = "form-control" } })
-                                    
+
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.DischargeDate, htmlAttributes: new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.EditorFor(model => model.DischargeDate, new { placeholder = "Select Discharge Date", @maxlength = "15", htmlAttributes = new { @class = "form-control" } })
-                                   
+
                                     </div>
                                 </div>
                             </div>
@@ -86,7 +86,7 @@
                                     @Html.LabelFor(m => m.Service, htmlAttributes: new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.DropDownListFor(m => m.Service, Model.ServiceList, "Select Service Name", new { @class = "form-control" })
-                                     
+
                                     </div>
                                 </div>
                             </div>
@@ -95,7 +95,7 @@
                                     @Html.LabelFor(m => m.CostofTreatment, new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.TextBoxFor(m => m.CostofTreatment, new { placeholder = "Cost of Treatment", @maxlength = "20", @class = "form-control" })
-                                     
+
                                     </div>
                                 </div>
                             </div>
@@ -116,14 +116,14 @@
                                     @Html.LabelFor(m => m.MedicineCharges, new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.TextBoxFor(m => m.MedicineCharges, new { placeholder = "Medicine Charges", @maxlength = "10", @class = "form-control" })
-                                      
+
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.RoomCharges, new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.TextBoxFor(m => m.RoomCharges, new { placeholder = "Room Charges", @maxlength = "10", @class = "form-control" })
-                                      
+
                                     </div>
 
                                 </div>
@@ -132,7 +132,7 @@
                                     @Html.LabelFor(m => m.Discount, new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.TextBoxFor(m => m.Discount, new { placeholder = "Discount", @maxlength = "3", @class = "form-control" })
-                                       
+
                                     </div>
                                 </div>
                             </div>
@@ -141,7 +141,7 @@
                                     @Html.LabelFor(m => m.TotalAmount, new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.TextBoxFor(m => m.TotalAmount, new { placeholder = "Amount", @maxlength = "10", @class = "form-control" })
-                                     
+
                                     </div>
                                 </div>
 
@@ -149,7 +149,7 @@
                                     @Html.LabelFor(m => m.Payment, htmlAttributes: new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.DropDownListFor(m => m.Payment, Model.PaymentList, "Select Payment Type", new { @class = "form-control" })
-                                       
+
                                     </div>
                                 </div>
 
@@ -157,14 +157,14 @@
                                     @Html.LabelFor(m => m.CheckNo, new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.TextBoxFor(m => m.CheckNo, new { placeholder = "Card/CheckNo", @maxlength = "20", @class = "form-control" })
-                                      
+
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.PaymentStatus, htmlAttributes: new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.DropDownListFor(m => m.PaymentStatus, Model.PaymentStatusList, "Select Payment Status", new { @class = "form-control" })
-                                     
+
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@
                     <div class="box-footer">
                         <div class="row">
                             <div class="col-md-1"></div>
-                            <div class="col-md-5">  <button class="btn btn-gradgreen" type="submit"><i class="fa fa-plus-square"></i> SAVE </button></div>
+                            <div class="col-md-5">  <button class="btn btn-gradgreen pull-left" type="submit"><i class="fa fa-plus-square"></i> SAVE </button></div>
                             <div class="col-md-3">  <button class="btn btn-gradgray pull-right" type="reset"><i class="fa fa-refresh"></i> Reset</button></div>
                         </div>
                     </div>
@@ -187,11 +187,22 @@
 
 
 </section>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+<script>
+    $(document).ready(function () {
+        $('input[type=datetime]').datepicker({
+            dateFormat: "dd-mm-yy",
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-60:+0",
+            onSelect: function (dateString, txtDate) {
+                alert("Selected Date: " + dateString + "\nTextBox ID: " + txtDate.id);
+            }
+        });
 
-
+    });
+</script>
 
 

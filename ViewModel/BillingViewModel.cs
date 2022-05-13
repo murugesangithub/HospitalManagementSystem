@@ -42,7 +42,7 @@ namespace HospitalManagementSystem.ViewModel
         [Required]
         [Display(Name = "Admit Date ")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
-        public DateTime AdmitDate { get; set; } = DateTime.Now;
+        public DateTime AdmitDate { get; set; }= DateTime.Now;
 
         [Required]
         [Display(Name = "Discharge Date ")]

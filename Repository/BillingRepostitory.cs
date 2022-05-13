@@ -157,10 +157,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 dbcontext.Entry(billingdetail);
                 dbcontext.SaveChanges();
             }
-
-
         }
-
         public BillingViewModel GetBillingDetail(int patientId)
         {
             var result = dbcontext.BillingDetails.Where(x => x.IsActive && x.PatientId == patientId).Select(s => new BillingViewModel()

@@ -58,6 +58,7 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required]
         [Display(Name = "Appointment Date ")]
+        
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime DateofAppointment { get; set; } = DateTime.Now;
 

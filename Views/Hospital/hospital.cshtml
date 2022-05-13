@@ -134,7 +134,7 @@
                                         @Html.TextBoxFor(m => m.City, new { placeholder = "city", @maxlength = "20", @class = "form-control" })
                                         @Html.ValidationMessageFor(m => m.City, "", new { @class = "text-danger" })<br />
                                         @Html.TextBoxFor(m => m.PostalCode, new { placeholder = "ZIP/Postal Code", @maxlength = "10", @class = "form-control" })
-                                        @Html.ValidationMessageFor(m => m.PostalCode, "", new { @class = "text-danger" })
+                                        @Html.ValidationMessageFor(m => m.PostalCode, "", new { @class = "text-danger" })<br />
                                     </div>
                                     <div class="col-md-6">
                                         @Html.TextBoxFor(m => m.State, new { placeholder = "State", @maxlength = "20", @class = "form-control" })
@@ -152,7 +152,7 @@
                 <div class="box-footer">
                     <div class="row">
                         <div class="col-md-1"></div>
-                        <div class="col-md-5"><button class="btn btn-gradgreen" type="submit"><i class="fa fa-plus-square"></i> SAVE </button></div>
+                        <div class="col-md-5"><button class="btn btn-gradgreen pull-left " type="submit"><i class="fa fa-plus-square"></i> SAVE </button></div>
                         <div class="col-md-3"><button class="btn btn-gradgray pull-right" type="reset"><i class="fa fa-refresh"></i> Reset</button></div>
                     </div>
                 </div>

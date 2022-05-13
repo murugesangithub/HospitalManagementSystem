@@ -17,7 +17,7 @@
 <div class="panel">
 
     <div class="panel panel-info">
-        <div class="panel-heading">Appointment Details</div>
+        <div class="panel-heading">Billing Details</div>
         <div class="panel-body">
             <table id="jqBillingGrid"></table>
             <div id="jqBillingGridPager"></div>
@@ -41,10 +41,10 @@
                     <div class="container">
                         <div class="row">
                             @*<div class="col-md-3 border-right">
-                                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                                    <img class="rounded-circle mt-5 image" id="ProfileImage" style="max-width:220px" src="">
-                                </div>
-                            </div>*@
+                                    <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                                        <img class="rounded-circle mt-5 image" id="ProfileImage" style="max-width:220px" src="">
+                                    </div>
+                                </div>*@
                             <div class="col-md-4 border-right">
                                 <div class="p-3 py-5 form-group">
                                     <div class="col-md-12 form-group"><label class="labels">Patient Name</label><input type="text" id="PatientName" class="form-control" readonly></div>
@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4 border-right">
-                                <div class="p-3 py-5  form-group">                                  
+                                <div class="p-3 py-5  form-group">
                                     <div class="row md-4 form-group">
                                         <div class="col-md-12 form-group"><label class="labels">Service</label><input type="text" id="Service" class="form-control" readonly></div>
                                         <div class="col-md-12 form-group"><label class="labels">Cost Of Treatment</label><input type="text" id="CostOfTreatment" class="form-control" readonly></div>
@@ -64,7 +64,7 @@
                                         <div class="col-md-12 form-group"><label class="labels">Room Charges</label><input type="text" id="RoomCharges" class="form-control" readonly></div>
 
 
-                                    </div>      
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -83,7 +83,19 @@
             </div>
         </div>
     </div>
-
-
-
 </section>
+<script>
+
+    $(document).ready(function () {
+        $('input[type=datetime]').datepicker({
+            dateFormat: "dd-mm-yy",
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-60:+0",
+            onSelect: function (dateString, txtDate) {
+                alert("Selected Date: " + dateString + "\nTextBox ID: " + txtDate.id);
+            }
+        });
+
+    });
+</script>

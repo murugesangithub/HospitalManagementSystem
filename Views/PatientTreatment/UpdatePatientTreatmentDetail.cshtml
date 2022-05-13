@@ -40,7 +40,7 @@
                                     @Html.LabelFor(m => m.PatientName, new { @class = "col-sm-3 control-label " })
                                     <div class="col-md-9">
                                         @Html.TextBoxFor(m => m.PatientName, new { placeholder = "Patient Name", @maxlength = "20", @class = "form-control " })
-                                        @Html.ValidationMessageFor(m => m.PatientName, "", new { @class = "text-danger " })
+                                       
                                     </div>
                                 </div>
 
@@ -48,14 +48,14 @@
                                     @Html.LabelFor(m => m.MedicineName, htmlAttributes: new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.DropDownListFor(m => m.MedicineName, Model.MedicineList, "Select Your Medicine Name", new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(m => m.MedicineName, "", new { @class = "text-danger" })
+                                      
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.Quantity, new { @class = "col-sm-3 control-label " })
                                     <div class="col-md-9">
                                         @Html.TextBoxFor(m => m.Quantity, new { placeholder = "Quantity", @maxlength = "10", @class = "form-control " })
-                                        @Html.ValidationMessageFor(m => m.Quantity, "", new { @class = "text-danger " })
+                                     
                                     </div>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
                                     @Html.LabelFor(m => m.DosageDesc, new { @class = "col-sm-3 control-label " })
                                     <div class="col-md-9">
                                         @Html.TextBoxFor(m => m.DosageDesc, new { placeholder = "Dosage Desc", @maxlength = "20", @class = "form-control " })
-                                        @Html.ValidationMessageFor(m => m.DosageDesc, "", new { @class = "text-danger " })
+                                       
                                     </div>
                                 </div>
 
@@ -72,7 +72,7 @@
                                     @Html.LabelFor(model => model.Remarks, htmlAttributes: new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.TextAreaFor(m => m.Remarks, new { placeholder = "Remarks", @maxlength = "100", @class = "form-control" })
-                                        @Html.ValidationMessageFor(model => model.Remarks, "", new { @class = "text-danger" })
+                                      
                                     </div>
                                 </div>
                             </div>
@@ -86,14 +86,14 @@
                                     @Html.LabelFor(m => m.RoomNumber, htmlAttributes: new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.DropDownListFor(m => m.RoomNumber, Model.RoomNumberList, "Select Your RoomNumber", new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(m => m.RoomNumber, "", new { @class = "text-danger" })
+                                       
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.RoomType, htmlAttributes: new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
                                         @Html.DropDownListFor(m => m.RoomType, Model.RoomTypeList, "Select Your RoomType", new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(m => m.RoomType, "", new { @class = "text-danger" })
+                                     
                                     </div>
                                 </div>
                             </div>
@@ -102,14 +102,14 @@
                                     @Html.LabelFor(m => m.Noofdays, new { @class = "col-sm-3 control-label " })
                                     <div class="col-md-9">
                                         @Html.TextBoxFor(m => m.Noofdays, new { placeholder = "No of Days", @maxlength = "20", @class = "form-control " })
-                                        @Html.ValidationMessageFor(m => m.Noofdays, "", new { @class = "text-danger " })
+                                       
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.RoomPrice, new { @class = "col-sm-3 control-label " })
                                     <div class="col-md-9">
                                         @Html.TextBoxFor(m => m.RoomPrice, new { placeholder = "Room Price", @maxlength = "20", @class = "form-control " })
-                                        @Html.ValidationMessageFor(m => m.RoomPrice, "", new { @class = "text-danger " })
+                                    
                                     </div>
                                 </div>
                             </div>
@@ -119,9 +119,9 @@
 
                     <div class="box-footer">
                         <div class="row">
-                            <div class="col-md-3"></div>
-                            <div class="col-md-4">  <button class="btn btn-gradgreen" type="submit"><i class="fa fa-plus-square"></i> SAVE </button></div>
-                            <div class="col-md-2">  <button class="btn btn-gradgray pull-right" type="reset"><i class="fa fa-refresh"></i> Reset</button></div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">  <button class="btn btn-gradgreen pull-left" type="submit"><i class="fa fa-plus-square"></i> SAVE </button></div>
+                            <div class="col-md-3">  <button class="btn btn-gradgray pull-right" type="reset"><i class="fa fa-refresh"></i> Reset</button></div>
                         </div>
                     </div>
 

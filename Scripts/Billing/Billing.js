@@ -27,8 +27,8 @@ $(document).ready(function () {
             { label: 'Patient Name', name: 'PatientName', width: 200, },
             /*  { label: 'Department', name: 'DepartmentDesc', width: 200, },*/
             { label: 'Doctor Name', name: 'DoctorName', width: 200, },
-            { label: 'Admit Date', name: 'AdmitDate', width: 200, },
-            { label: 'Discharge Date', name: 'DischargeDate', width: 200, },
+            { label: 'Admit Date', name: 'AdmitDate', width: 200, formatter: 'date', formatoptions: { srcformat: "d/m/Y H:i:s", newformat: "d-m-Y" }},
+            { label: 'Discharge Date', name: 'DischargeDate', width: 200, formatter: 'date', formatoptions: { srcformat: "d/m/Y H:i:s", newformat: "d-m-Y" } },
             /*  { label: 'Service ', name: 'ServiceDesc', width: 200, },*/
             /*  { label: 'Discount', name: 'Discount', width: 200, },*/
             { label: 'Total Amount', name: 'TotalAmount', width: 200, },

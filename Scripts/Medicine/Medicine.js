@@ -28,7 +28,7 @@ $(document).ready(function () {
             { label: 'Category', name: 'Category', width: 200, hidden: true, },
             { label: 'Category ', name: 'CategoryDesc', width: 200, },
             /*  { label: 'Company Name', name: 'CompanyName', width: 200, },     */
-            { label: 'Purchase Date', name: 'PurchaseDate', width: 200, },
+            { label: 'Purchase Date', name: 'PurchaseDate', width: 200, formatter: 'date', formatoptions: { srcformat: "d/m/Y H:i:s", newformat: "d-m-Y" } },
             { label: 'Price', name: 'Price', width: 200, },
             /*     { label: 'Expired Date', name: 'ExpiredDate', width: 200, },*/
             //{ label: 'Stock', name: 'Stock', width: 200, },

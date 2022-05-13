@@ -109,9 +109,7 @@ $(document).ready(function () {
             {}
         );
 
-    }
-
-  
+    } 
 });
 
 function GetAppointmentDetails(date) {
