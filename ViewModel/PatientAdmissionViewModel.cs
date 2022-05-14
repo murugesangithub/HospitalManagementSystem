@@ -17,7 +17,7 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required]
         [Display(Name = "Admission Date ")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime AdmissionDate { get; set;}= DateTime.Now;
 
         [Required(ErrorMessage = "Planned Procedure is required")]

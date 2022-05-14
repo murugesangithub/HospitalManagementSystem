@@ -128,7 +128,7 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required]
         [Display(Name = "Date of Birth ")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]   
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]   
         public DateTime DateofBirth { get; set; } = DateTime.Now;
 
         [Required(ErrorMessage = "Select your Country")]

@@ -13,7 +13,6 @@ $(document).ready(function () {
         $('.ui-jqgrid-bdiv').css('overflow', 'hidden');
     });
 
-
     $(grid).jqGrid({
         url: relativepath + "Patients/GetPatientsList",
         mtype: "POST",
@@ -164,7 +163,7 @@ function ShowPatientDetailPopup(PatientDetailId, EncryptPatientDetailId) {
             $('#Age').val(res.Age);
             $('#GuardianName').val(res.GuardianName);
             $('#DateofBirth').val(res.DateofBirth);
-            $('#Problem').val(res.FirstName);
+            $('#Problem').val(res.Problem);
             $('#PhoneNumber').val(res.PhoneNumber);
             $('#Address').val(res.Address);
             $('#City').val(res.City);

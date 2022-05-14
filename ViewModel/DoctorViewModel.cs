@@ -33,8 +33,6 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Mobile No")]
         public string MobileNo { get; set; }
 
-
-
         [Required]
         [Display(Name = "Address")]
         public string Address { get; set; }
@@ -56,7 +54,6 @@ namespace HospitalManagementSystem.ViewModel
         public List<System.Web.Mvc.SelectListItem> HospitalNameList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int HospitalName { get; set; }
         public string HospitalNameDesc { get; set; }
-
 
         [Required]
         [Display(Name = "State")]

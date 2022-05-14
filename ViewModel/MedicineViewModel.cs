@@ -27,12 +27,12 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required]
         [Display(Name = "Purchase Date ")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime PurchaseDate { get; set; } = DateTime.Now;
 
         [Required]
         [Display(Name = "Expired Date ")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime ExpiredDate { get; set; } = DateTime.Now;
 
         [Required(ErrorMessage = "Select your Catogory")]
@@ -49,10 +49,6 @@ namespace HospitalManagementSystem.ViewModel
 
         public string EncryptMedicineId { get; set; }
         public bool IsActive { get; set; }
-
-
-
-
 
     }
 

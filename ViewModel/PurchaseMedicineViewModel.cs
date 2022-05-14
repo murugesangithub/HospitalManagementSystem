@@ -25,7 +25,7 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required]
         [Display(Name = " Date ")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime Date { get; set; } = DateTime.Now;
 
         [Required(ErrorMessage = "Select your Catogory")]

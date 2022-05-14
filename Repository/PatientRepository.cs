@@ -22,7 +22,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 Email = patientViewModel.Email,
                 Address = patientViewModel.Address,
                 //Age = Convert.ToInt32(patientViewModel.Age),
-                Age=patientViewModel.Age,
+                Age = patientViewModel.Age,
                 PhoneNumber = patientViewModel.PhoneNumber,
                 City = patientViewModel.City,
                 State = patientViewModel.State,
@@ -84,7 +84,7 @@ namespace HospitalManagementSystem.DataAccess.Repository
                 MaritalStatusDescription = dbcontext.Master_MaritalStatus.Where(x => x.MaritalStatusId == s.MaritalStatus).Select(b => b.Description).FirstOrDefault(),
                 MaritalStatus = s.MaritalStatus,
                 //Age = s.Age.ToString(),
-                Age=s.Age,
+                Age = s.Age,
                 GuardianName = s.GuardianName,
                 DateofBirth = s.DateofBirth,
                 Problem = s.Problem,
@@ -140,7 +140,6 @@ namespace HospitalManagementSystem.DataAccess.Repository
             }
         }
         //icon
-
         public PatientViewModel GetPatientDetail(int patientDetailId)
         {
             var result = dbcontext.PatientDetails.Where(x => x.IsActive && x.PatientDetailId == patientDetailId).Select(s => new PatientViewModel()
