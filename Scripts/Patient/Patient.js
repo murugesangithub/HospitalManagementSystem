@@ -52,7 +52,12 @@ $(document).ready(function () {
         rowList: [10, 20, 30, 40, 50],
         //editurl: relativepath + "Material/MaterialManipulation",
         pager: gridpager,
-        caption: "Patient List"
+        caption: "Patient List",
+
+        ondblClickRow: function (rowId) {
+            var rowData = $(grid).jqGrid("getRowData", rowId);
+            ShowPatientDetailPopup(rowData.PatientDetailId, rowData.EncryptPatientDetailId);
+        }
     });
 
     //delete

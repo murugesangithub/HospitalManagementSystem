@@ -38,7 +38,12 @@ $(document).ready(function () {
         rowList: [10, 20, 30, 40, 50],
         //editurl: relativepath + "Material/MaterialManipulation",
         pager: gridpager,
-        caption: "Patient Treatment List"
+        caption: "Patient Treatment List",
+
+        ondblClickRow: function (rowId) {
+            var rowData = $(grid).jqGrid("getRowData", rowId);
+            ShowPatientTreatmentDetailPopup(rowData.PatientId, rowData.EncryptPatientId);
+        }
     });
 
     //delete

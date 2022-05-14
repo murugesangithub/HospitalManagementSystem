@@ -49,7 +49,12 @@ $(document).ready(function () {
         rowList: [10, 20, 30, 40, 50],
         //editurl: relativepath + "Material/MaterialManipulation",
         pager: gridpager,
-        caption: "Purchase Medicine List"
+        caption: "Purchase Medicine List",
+
+        ondblClickRow: function (rowId) {
+            var rowData = $(grid).jqGrid("getRowData", rowId);
+            ShowPurchaseMedicineDetailPopup(rowData.MedicineId, rowData.EncryptMedicineId);
+        }
     });
     $(grid).jqGrid('navGrid', gridpager, { edit: false, add: false, del: true, refresh: true, search: false },
 

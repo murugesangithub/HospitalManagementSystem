@@ -53,7 +53,12 @@ $(document).ready(function () {
         rowList: [10, 20, 30, 40, 50],
         //editurl: relativepath + "Material/MaterialManipulation",
         pager: gridpager,
-        caption: "Patient Admission List"
+        caption: "Patient Admission List",
+
+        ondblClickRow: function (rowId) {
+            var rowData = $(grid).jqGrid("getRowData", rowId);
+            ShowPatientAdmissionPopup(rowData.PatientAdmissionId, rowData.EncryptPatientAdmissionId);
+        }
     });
     $(grid).jqGrid('navGrid', gridpager, { edit: false, add: false, del: true, refresh: true, search: false },
 
