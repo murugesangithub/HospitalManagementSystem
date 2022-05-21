@@ -147,6 +147,7 @@
     <Compile Include="Controllers\Account\AccountController.cs" />
     <Compile Include="Controllers\Appointment\AppointmentController.cs" />
     <Compile Include="Controllers\Billing\BillingController.cs" />
+    <Compile Include="Controllers\Dashboard\DashboardController.cs" />
     <Compile Include="Controllers\Doctor\DoctorController.cs" />
     <Compile Include="Controllers\Employee\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -324,6 +325,7 @@
     <Content Include="Content\css.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\homecss.css" />
     <Content Include="Content\ionicons.min.css" />
     <Content Include="Content\jquery-jvectormap.css" />
     <Content Include="Content\themes\base\accordion.css" />
@@ -498,11 +500,11 @@
     <Content Include="Views\PatientTreatment\Index.cshtml" />
     <Content Include="Views\PatientTreatment\UpdatePatientTreatmentDetail.cshtml" />
     <Content Include="Views\Home\User.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Dashboard\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
