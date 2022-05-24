@@ -388,6 +388,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\avatar.png" />
     <Content Include="Images\default_profile.jpg" />
+    <Content Include="Images\Hms3.jpg" />
+    <Content Include="Images\icon.png" />
+    <Content Include="Images\icon2.png" />
+    <Content Include="Images\icon3.png" />
+    <Content Include="Images\icon4.png" />
+    <Content Include="Images\icon5.png" />
+    <Content Include="Images\icon6.png" />
     <Content Include="Scripts\adminlte.min.js" />
     <Content Include="Scripts\Appointment\AddAppointment.js" />
     <Content Include="Scripts\Billing\Billing.js" />
@@ -408,6 +415,9 @@
     <Content Include="Entity\HMS.edmx.diagram">
       <DependentUpon>HMS.edmx</DependentUpon>
     </Content>
+    <Content Include="Images\HomePictures\xbg_1.jpg.pagespeed.ic.3YLdXSW0r8.webp" />
+    <Content Include="Images\HomePictures\xbg_2.jpg.pagespeed.ic.FkPJ2827NG.webp" />
+    <Content Include="Images\covid-19-vaccine-graphic-img.jpg.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\Common\Common.js" />

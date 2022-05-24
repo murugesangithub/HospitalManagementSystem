@@ -3514,7 +3514,9 @@ figure {
 
 img {
   vertical-align: middle;
-  border-style: none; }
+  border-style: none;
+  width:50px;
+}
 
 svg {
   overflow: hidden;
@@ -4376,6 +4378,7 @@ fieldset:disabled a.btn {
   border-radius: 0.25rem; }
 
 .media-body {
+    height:250px;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1; }
@@ -6610,3 +6613,4 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+.para{font-size:18px;}
