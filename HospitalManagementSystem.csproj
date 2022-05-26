@@ -429,6 +429,7 @@
     <Content Include="Scripts\JQGrid\jquery.jqGrid.js" />
     <Content Include="Scripts\jquery-ui-1.13.1.js" />
     <Content Include="Scripts\jquery-ui-1.13.1.min.js" />
+    <Content Include="Scripts\Js.js" />
     <Content Include="Scripts\Medicine\Medicine.js" />
     <Content Include="Scripts\Notification\bootstrap-notify.js" />
     <Content Include="Scripts\PatientAdmit\PatientAdmit.js" />

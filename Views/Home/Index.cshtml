@@ -10,8 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    @*<script src="~/Scripts/Js.js"></script>*@
     <link href="~/Content/homecss.css" rel="stylesheet" />
-    <script nonce="fbf3191d-c414-48b1-8234-314d72e7e297">(function (w, d) { !function (a, e, t, r) { a.zarazData = a.zarazData || {}, a.zarazData.executed = [], a.zaraz = { deferred: [] }, a.zaraz.q = [], a.zaraz._f = function (e) { return function () { var t = Array.prototype.slice.call(arguments); a.zaraz.q.push({ m: e, a: t }) } }; for (const e of ["track", "set", "ecommerce", "debug"]) a.zaraz[e] = a.zaraz._f(e); a.addEventListener("DOMContentLoaded", (() => { var t = e.getElementsByTagName(r)[0], z = e.createElement(r), n = e.getElementsByTagName("title")[0]; for (n && (a.zarazData.t = e.getElementsByTagName("title")[0].text), a.zarazData.x = Math.random(), a.zarazData.w = a.screen.width, a.zarazData.h = a.screen.height, a.zarazData.j = a.innerHeight, a.zarazData.e = a.innerWidth, a.zarazData.l = a.location.href, a.zarazData.r = e.referrer, a.zarazData.k = a.screen.colorDepth, a.zarazData.n = e.characterSet, a.zarazData.o = (new Date).getTimezoneOffset(), a.zarazData.q = []; a.zaraz.q.length;) { const e = a.zaraz.q.shift(); a.zarazData.q.push(e) } z.defer = !0; for (const e of [localStorage, sessionStorage]) Object.keys(e).filter((a => a.startsWith("_zaraz_"))).forEach((t => { try { a.zarazData["z_" + t.slice(7)] = JSON.parse(e.getItem(t)) } catch{ a.zarazData["z_" + t.slice(7)] = e.getItem(t) } })); z.referrerPolicy = "origin", z.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(a.zarazData))), t.parentNode.insertBefore(z, t) })) }(w, d, 0, "script"); })(window, document);</script>
+    <script nonce="fbf3191d-c414-48b1-8234-314d72e7e297">(function (w, d) { !function (a, e, t, r) { a.zarazData = a.zarazData || {}, a.zarazData.executed = [], a.zaraz = { deferred: [] }, a.zaraz.q = [], a.zaraz._f = function (e) { return function () { var t = Array.prototype.slice.call(arguments); a.zaraz.q.push({ m: e, a: t }) } }; for (const e of ["track", "set", "ecommerce", "debug"]) a.zaraz[e] = a.zaraz._f(e); a.addEventListener("DOMContentLoaded", (() => { var t = e.getElementsByTagName(r)[0], z = e.createElement(r), n = e.getElementsByTagName("title")[0]; for (n && (a.zarazData.t = e.getElementsByTagName("title")[0].text), a.zarazData.x = Math.random(), a.zarazData.w = a.screen.width, a.zarazData.h = a.screen.height, a.zarazData.j = a.innerHeight, a.zarazData.e = a.innerWidth, a.zarazData.l = a.location.href, a.zarazData.r = e.referrer, a.zarazData.k = a.screen.colorDepth, a.zarazData.n = e.characterSet, a.zarazData.o = (new Date).getTimezoneOffset(), a.zarazData.q = []; a.zaraz.q.length;) { const e = a.zaraz.q.shift(); a.zarazData.q.push(e) } z.defer = !0; for (const e of [localStorage, sessionStorage]) Object.keys(e).filter((a => a.startsWith("_zaraz_"))).forEach((t => { try { a.zarazData["z_" + t.slice(7)] = JSON.parse(e.getItem(t)) } catch { a.zarazData["z_" + t.slice(7)] = e.getItem(t) } })); z.referrerPolicy = "origin", z.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(a.zarazData))), t.parentNode.insertBefore(z, t) })) }(w, d, 0, "script"); })(window, document);</script>
 </head>
 <body>
     <div class="top py-1">
@@ -64,17 +66,17 @@
                 <span class="fa fa-bars"></span> Menu
             </button>
             <div class="order-lg-last">
-                <a href="#" class="btn btn-primary">Make an appointment</a>
+                <a href="#Appointment"  class="btn btn-primary">Make an appointment</a>
             </div>
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
+                    @*<li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>*@
                     <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="department.html" class="nav-link">Departments</a></li>
+                    @*<li class="nav-item"><a href="department.html" class="nav-link">Departments</a></li>*@
                     <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    @*<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>*@
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </div>
@@ -92,7 +94,7 @@
                             <div class="text w-100">
                                 <h1 class="mb-4">Welcome To Our Selvam Hospital Center</h1>
                                 <p>Our team of over doctors join me in giving you the best of modern healthcare to ensure you stay healthy, always.</p>
-                                <p><a href="#" class="btn btn-primary">Book an appointment</a></p>
+                                <p><a href="#Appointment" class="btn btn-primary">Book an appointment</a></p>
                             </div>
                         </div>
                     </div>
@@ -100,7 +102,7 @@
 
             </div>
 
-            <div class="slider-item" style="background-image: url(https://www.seekpng.com/png/detail/261-2610289_best-hospital-for-surgical-care-india-doctor-with.png) ">
+            <div class="slider-item" style="background-image: url(https://superdr.in/home/images/blog/discharge-process.jpg) ">
                 <div class="overlay"></div>
                 <div class="container">
                     <div class="row no-gutters slider-text align-items-center justify-content-end">
@@ -108,7 +110,7 @@
                             <div class="text w-100">
                                 <h1 class="mb-4">We Care For Your Health Every Moment</h1>
                                 <p>Get the most advanced emergency care anywhere in just minutes. Contact Selvam Hospital Now.</p>
-                                <p><a href="#" class="btn btn-primary">Book an appointment</a></p>
+                                <p><a href="#Appointment" class="btn btn-primary">Book an appointment</a></p>
                             </div>
                         </div>
                     </div>
@@ -116,13 +118,13 @@
             </div>
         </div>
     </div>
-    <section class="ftco-appointment ftco-section ftco-no-pt ftco-no-pb">
+    <section class="ftco-appointment ftco-section ftco-no-pt ftco-no-pb"  >
         <div class="overlay"></div>
         <div class="container">
             <div class="row d-md-flex justify-content-center">
                 <div class="col-md-12">
                     <div class="wrap-appointment d-md-flex">
-                        <div class="col-md-8 bg-primary p-5 heading-section heading-section-white">
+                        <div class="col-md-8 bg-primary p-5 heading-section heading-section-white" id="Appointment">
                             <span class="subheading">Booking an Appointment</span>
                             <h2 class="mb-4">Free Consultation</h2>
                             <form action="#" class="appointment">
@@ -241,12 +243,12 @@
                             <h3 class="heading">Cardiology</h3>
                             <p>Cardiology OP service is available in the evenings. Being associated with Selvam Hospitals Chest Pain Clinic, 
                             patients are transferred to Selvam Hospital for tertiary care support during cardiac emergencies after stablisation. </p>
-                            <p><a href="#" class="btn-custom">Read more</a></p>
+                            @*<p><a href="#" class="btn-custom">Read more</a></p>*@
                         </div>
                     </div>
                     <div class="d-block d-flex">
                         <div class="icon d-flex justify-content-center align-items-center">
-                            <span @*class="flaticon-acupuncture"*@>
+                            <span>
                                 <img src="~/Images/icon4.png" />                      
                             </span>
                         </div>
@@ -254,14 +256,14 @@
                             <h3 class="heading">Gastroenterology</h3>
                             <p>Doctors at Selvam Care are highly educated and qualified to treat patients suffering from diseases like Deviated Nasal Septum, Throat Infection, Hearing Loss, Gallstones, Piles, 
                             Nose Infection, Mastoiditis, Sinus, Trouble Sleeping. </p>
-                            <p><a href="#" class="btn-custom">Read more</a></p>
+                            @*<p><a href="#" class="btn-custom">Read more</a></p>*@
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 services ftco-animate">
                     <div class="d-block d-flex">
                         <div class="icon d-flex justify-content-center align-items-center">
-                            <span @*class="flaticon-electrotherapy"*@>
+                            <span >
                                 <img src="~/Images/icon2.png" />
                                
                             </span>
@@ -269,12 +271,10 @@
                         <div class="media-body pl-3">
                             <h3 class="heading">Orthopedic & Traumatology</h3>
                             <p>
-                                @*We are a tertiary level referral centre which takes care of disorders of the bones, joints and the musculoskeletal system in both children and adults,
-        including trauma and cold orthopaedics.*@
                                 Our comprehensive orthopaedic services include trauma care, arthritis treatment, osteoporosis care and surgical services. 
                                 Our Computer Assisted Navigation Surgery provides excellent results for patients with knee problems.
                             </p>
-                            <p><a href="#" class="btn-custom">Read more</a></p>
+                            @*<p><a href="#" class="btn-custom">Read more</a></p>*@
                         </div>
                     </div>
                     <div class="d-block d-flex">
@@ -291,7 +291,7 @@
                                 Selvam Hospital provides comprehensive diagnostic and treatment services for the wide range of neurological diseases and disorders.
                                 We specialize in headaches, so you know you are getting neurologists with specific experience.@*Our neurologists will check for complex neurology diseases and conditions of the patient and provide treatment based on the observation.*@
                             </p>
-                            <p><a href="#" class="btn-custom">Read more</a></p>
+                            @*<p><a href="#" class="btn-custom">Read more</a></p>*@
                         </div>
                     </div>
                 </div>
@@ -308,7 +308,7 @@
                                 Headed by a Sr. Consultant, our team offers comprehensive services to treat urinary tract diseases and male 
                                 infertility. The aim is to provide relief and improve the quality of life of patients to enable them to live a fuller and more satisfying life.
                             </p>
-                            <p><a href="#" class="btn-custom">Read more</a></p>
+                            @*<p><a href="#" class="btn-custom">Read more</a></p>*@
                         </div>
                     </div>
                     <div class="d-block d-flex">
@@ -323,7 +323,7 @@
                                 General Medicine or Internal Medicine is headed by Sr. Consultant. 
                                 We are experienced in handling complex and emergency situations and offer timely service for patients with general fever, pains, injuries etc.
                             </p>
-                            <p><a href="#" class="btn-custom">Read more</a></p>
+                            @*<p><a href="#" class="btn-custom">Read more</a></p>*@
                         </div>
                     </div>
                 </div>
@@ -454,48 +454,49 @@
                 </div>
                 <div class="col-md-6 pr-md-5 py-md-5">
                     <div class="row justify-content-start py-5">
-                        <div class="col-md-12 heading-section ftco-animate">
-                            <span class="subheading text-center">Welcome to Selvam Hospital</span>
-                            <h2 class="mb-4 text-center">About My Hospital</h2>
+                        <div class="col-md-12 heading-section ftco-animate fadeInUp ftco-animated">
+                            <span class="subheading text-center">Welcome to Chiropractic</span>
+                            <h2 class="mb-4 text-center">About Chiropractic</h2>
                             <p class="para">
                                 The hospital started as a small clinic and has grown steadily into a 200 bedded Multispecialty Hospital equipped with state of the art facilities in healthcare in the last decades.
                                 Selvam Hospital has grown to a multi-specialty hospital serving people of Manapparai, villages in and around Manapparai town.
                                 Patients put so much trust in our care that they travel from all around Trichy and its surroundings to visit us for their healthcare needs.
+                            </p>
                         </div>
-                        <div class="row ftco-counter pb-5" id="section-counter">
-                            <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
-                                <div class="block-18">
-                                    <div class="text">
-                                        <strong class="number" data-number="45">0</strong>
-                                    </div>
-                                    <div class="text">
-                                        <span>Years of <br>Experienced</span>
-                                    </div>
+                    </div>
+                    <div class="row ftco-counter pb-5" id="section-counter">
+                        <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
+                            <div class="block-18">
+                                <div class="text">
+                                    <strong class="number" data-number="20">20</strong>
+                                </div>
+                                <div class="text">
+                                    <span>Years of <br>Experienced</span>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
-                                <div class="block-18">
-                                    <div class="text">
-                                        <strong class="number" data-number="2342">0</strong>
-                                    </div>
-                                    <div class="text">
-                                        <span>Happy <br>Customers</span>
-                                    </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
+                            <div class="block-18">
+                                <div class="text">
+                                    <strong class="number" data-number="2342">2,342</strong>
+                                </div>
+                                <div class="text">
+                                    <span>Happy <br>Customers</span>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
-                                <div class="block-18">
-                                    <div class="text">
-                                        <strong class="number" data-number="30">0</strong>
-                                    </div>
-                                    <div class="text">
-                                        <span>Award <br>Winning</span>
-                                    </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
+                            <div class="block-18">
+                                <div class="text">
+                                    <strong class="number" data-number="10">10</strong>
+                                </div>
+                                <div class="text">
+                                    <span>Award <br>Winning</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-            </div>
+                </div>
         </div>
             </div>
 
@@ -760,7 +761,7 @@
                 <div class="col-md-6 col-lg">
                     <div class="ftco-footer-widget py-4 py-md-5">
                         <h2 class="logo"><a href="#">Selvam Hospital</a></h2>
-                        <p>This hospital provides specialised and general medical services with the high level of professional competance wit more..</p>
+                        <p>This hospital provides specialised and general medical services with the high level of professional competance with more..</p>
                         <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-4">
                             <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
                             <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
@@ -799,7 +800,7 @@
                         <div class="opening-hours">
                             <h4>Opening Days:</h4>
                             <p class="pl-3">
-                                <span>Monday – Sunday: 9am to 20 pm</span>
+                                <span>Monday – Sunday: 9am to 20pm</span>
                                 @*<span>Saturday : 9am to 17 pm</span>*@
                             </p>
                             <h4>Vacations:</h4>
