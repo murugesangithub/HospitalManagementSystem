@@ -1,116 +1,178 @@
-﻿@{
-    Layout = null;
+﻿@model HospitalManagementSystem.ViewModel.AppointmentViewModel
+@using HospitalManagementSystem.Common;
+@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    ViewBag.Title = "Index";
+
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Selvam Hospital</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    @*<script src="~/Scripts/Js.js"></script>*@
-    <link href="~/Content/homecss.css" rel="stylesheet" />
-    <script nonce="fbf3191d-c414-48b1-8234-314d72e7e297">(function (w, d) { !function (a, e, t, r) { a.zarazData = a.zarazData || {}, a.zarazData.executed = [], a.zaraz = { deferred: [] }, a.zaraz.q = [], a.zaraz._f = function (e) { return function () { var t = Array.prototype.slice.call(arguments); a.zaraz.q.push({ m: e, a: t }) } }; for (const e of ["track", "set", "ecommerce", "debug"]) a.zaraz[e] = a.zaraz._f(e); a.addEventListener("DOMContentLoaded", (() => { var t = e.getElementsByTagName(r)[0], z = e.createElement(r), n = e.getElementsByTagName("title")[0]; for (n && (a.zarazData.t = e.getElementsByTagName("title")[0].text), a.zarazData.x = Math.random(), a.zarazData.w = a.screen.width, a.zarazData.h = a.screen.height, a.zarazData.j = a.innerHeight, a.zarazData.e = a.innerWidth, a.zarazData.l = a.location.href, a.zarazData.r = e.referrer, a.zarazData.k = a.screen.colorDepth, a.zarazData.n = e.characterSet, a.zarazData.o = (new Date).getTimezoneOffset(), a.zarazData.q = []; a.zaraz.q.length;) { const e = a.zaraz.q.shift(); a.zarazData.q.push(e) } z.defer = !0; for (const e of [localStorage, sessionStorage]) Object.keys(e).filter((a => a.startsWith("_zaraz_"))).forEach((t => { try { a.zarazData["z_" + t.slice(7)] = JSON.parse(e.getItem(t)) } catch { a.zarazData["z_" + t.slice(7)] = e.getItem(t) } })); z.referrerPolicy = "origin", z.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(a.zarazData))), t.parentNode.insertBefore(z, t) })) }(w, d, 0, "script"); })(window, document);</script>
-</head>
-<body>
-    <div class="top py-1">
-        <div class="container">
-            <div class="row">
-                <div class="col d-flex align-items-center">
-                    <p class="mb-0"><a href="#"><span class="__cf_email__" data-cfemail="197a71706b76696b787a6d707a597c74787075377a7674">[email&#160;protected]</span></a> | <a href="#">Help Desk</a> | </p>
+@{ Html.RenderPartial("_HomeSliderPartial");}
+
+@{ Html.RenderPartial("_HomeAppointmentPartial");}
+
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center pb-5 mb-3">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <span class="subheading">We offer Services</span>
+                <h2>Our Benefits</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 services ftco-animate">
+                <div class="d-block d-flex">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span>
+                            <img class="flaticon-cardiology" src="~/Images/Home/icon.png" />
+                        </span>
+                    </div>
+                    <div class="media-body pl-3">
+                        <h3 class="heading">Cardiology</h3>
+                        <p>
+                            Cardiology OP service is available in the evenings. Being associated with Selvam Hospitals Chest Pain Clinic,
+                            patients are transferred to Selvam Hospital for tertiary care support during cardiac emergencies after stablisation.
+                        </p>
+                        @*<p><a href="#" class="btn-custom">Read more</a></p>*@
+                    </div>
                 </div>
-                <div class="col-4 d-flex justify-content-end">
-                    <div class="social-media">
-                        <p class="mb-0 d-flex">
-                            <a href="https://www.facebook.com/" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+                <div class="d-block d-flex">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span>
+                            <img src="~/Images/Home/icon4.png" />
+                        </span>
+                    </div>
+                    <div class="media-body pl-3">
+                        <h3 class="heading">Gastroenterology</h3>
+                        <p>
+                            Doctors at Selvam Care are highly educated and qualified to treat patients suffering from diseases like Deviated Nasal Septum, Throat Infection, Hearing Loss, Gallstones, Piles,
+                            Nose Infection, Mastoiditis, Sinus, Trouble Sleeping.
+                        </p>
+                        @*<p><a href="#" class="btn-custom">Read more</a></p>*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 services ftco-animate">
+                <div class="d-block d-flex">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span>
+                            <img src="~/Images/Home/icon2.png" />
+
+                        </span>
+                    </div>
+                    <div class="media-body pl-3">
+                        <h3 class="heading">Orthopedic & Traumatology</h3>
+                        <p>
+                            Our comprehensive orthopaedic services include trauma care, arthritis treatment, osteoporosis care and surgical services.
+                            Our Computer Assisted Navigation Surgery provides excellent results for patients with knee problems.
+                        </p>
+                        @*<p><a href="#" class="btn-custom">Read more</a></p>*@
+                    </div>
+                </div>
+                <div class="d-block d-flex">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span @*class="flaticon-examination"*@>
+                            <img src="~/Images/Home/icon5.png" />
+                        </span>
+                    </div>
+                    <div class="media-body pl-3">
+                        <h3 class="heading">
+                            Neuro - Neuro Surgery
+                        </h3>
+                        <p>
+                            Selvam Hospital provides comprehensive diagnostic and treatment services for the wide range of neurological diseases and disorders.
+                            We specialize in headaches, so you know you are getting neurologists with specific experience.@*Our neurologists will check for complex neurology diseases and conditions of the patient and provide treatment based on the observation.*@
+                        </p>
+                        @*<p><a href="#" class="btn-custom">Read more</a></p>*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 services ftco-animate">
+                <div class="d-block d-flex">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span @*class="flaticon-lymph-nodes"*@>
+                            <img src="~/Images/Home/icon3.png" />
+                        </span>
+                    </div>
+                    <div class="media-body pl-3">
+                        <h3 class="heading">Nephrology & Urology</h3>
+                        <p>
+                            Headed by a Sr. Consultant, our team offers comprehensive services to treat urinary tract diseases and male
+                            infertility. The aim is to provide relief and improve the quality of life of patients to enable them to live a fuller and more satisfying life.
+                        </p>
+                        @*<p><a href="#" class="btn-custom">Read more</a></p>*@
+                    </div>
+                </div>
+                <div class="d-block d-flex">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span @*class="flaticon-bone"*@>
+                            <img src="~/Images/Home/icon6.png" />
+                        </span>
+                    </div>
+                    <div class="media-body pl-3">
+                        <h3 class="heading">General Medicine</h3>
+                        <p>
+                            General Medicine or Internal Medicine is headed by Sr. Consultant.
+                            We are experienced in handling complex and emergency situations and offer timely service for patients with general fever, pains, injuries etc.
+                        </p>
+                        @*<p><a href="#" class="btn-custom">Read more</a></p>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+    <div class="container">
+        <div class="row d-flex no-gutters">
+            <div class="col-md-6 d-flex order-md-last">
+                <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center mb-4 mb-sm-0" style="background-image: url(/Images//Home/bg/admin_pswu.jpg) ">
+                    @*<a href="" class=" icon-video d-flex justify-content-center align-items-center">*@
+                    @*<span class="fa fa-play"></span>s
+                        </a>*@
+                </div>
+            </div>
+            <div class="col-md-6 pr-md-5 py-md-5">
+                <div class="row justify-content-start py-5">
+                    <div class="col-md-12 heading-section ftco-animate fadeInUp ftco-animated">
+                        <span class="subheading text-center">Welcome to Chiropractic</span>
+                        <h2 class="mb-4 text-center">About Chiropractic</h2>
+                        <p class="para">
+                            The hospital started as a small clinic and has grown steadily into a 200 bedded Multispecialty Hospital equipped with state of the art facilities in healthcare in the last decades.
+                            Selvam Hospital has grown to a multi-specialty hospital serving people of Manapparai, villages in and around Manapparai town.
+                            Patients put so much trust in our care that they travel from all around Trichy and its surroundings to visit us for their healthcare needs.
                         </p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="wrap">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-md-3 mb-md-0 mb-4 d-flex align-items-center">
-                    <a class="navbar-brand" href="index.html">Selvam Hospital</a>
-                </div>
-                <div class="col-md-7">
-                    <div class="row">
-                        <div class="col-md-8 mb-md-0 mb-3">
-                            <div class="top-wrap d-flex">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-location-arrow"></span></div>
-                                <div class="text"><span>Address</span><span>45, Anna Nagar, Vaiyyampatti, Manaparai-621306, TamilNadu</span></div>
+                <div class="row ftco-counter pb-5" id="section-counter">
+                    <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
+                        <div class="block-18">
+                            <div class="text">
+                                <strong class="number" data-number="20">20</strong>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div class="top-wrap d-flex">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-phone"></span></div>
-                                <div class="text"><span>Call us</span><span>(+01) 04322-272560</span></div>
+                            <div class="text">
+                                <span>Years of <br>Experienced</span>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="fa fa-bars"></span> Menu
-            </button>
-            <div class="order-lg-last">
-                <a href="#Appointment"  class="btn btn-primary">Make an appointment</a>
-            </div>
-            <div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    @*<li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>*@
-                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                    @*<li class="nav-item"><a href="department.html" class="nav-link">Departments</a></li>*@
-                    <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-                    @*<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>*@
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-  
-
-    <div class="hero-wrap">
-        <div class="home-slider owl-carousel">
-            <div class="slider-item" style="background-image: url(https://www.keckmedicine.org/wp-content/uploads/2022/02/covid-19-vaccine-graphic-img.jpg.webp) ">
-                <div class="overlay"></div>
-                <div class="container">
-                    <div class="row no-gutters slider-text align-items-center justify-content-end">
-                        <div class="col-md-6 ftco-animate">
-                            <div class="text w-100">
-                                <h1 class="mb-4">Welcome To Our Selvam Hospital Center</h1>
-                                <p>Our team of over doctors join me in giving you the best of modern healthcare to ensure you stay healthy, always.</p>
-                                <p><a href="#Appointment" class="btn btn-primary">Book an appointment</a></p>
+                    <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
+                        <div class="block-18">
+                            <div class="text">
+                                <strong class="number" data-number="2342">2,342</strong>
+                            </div>
+                            <div class="text">
+                                <span>Happy <br>Customers</span>
                             </div>
                         </div>
                     </div>
-                </div>
-
-            </div>
-
-            <div class="slider-item" style="background-image: url(https://superdr.in/home/images/blog/discharge-process.jpg) ">
-                <div class="overlay"></div>
-                <div class="container">
-                    <div class="row no-gutters slider-text align-items-center justify-content-end">
-                        <div class="col-md-6 ftco-animate">
-                            <div class="text w-100">
-                                <h1 class="mb-4">We Care For Your Health Every Moment</h1>
-                                <p>Get the most advanced emergency care anywhere in just minutes. Contact Selvam Hospital Now.</p>
-                                <p><a href="#Appointment" class="btn btn-primary">Book an appointment</a></p>
+                    <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
+                        <div class="block-18">
+                            <div class="text">
+                                <strong class="number" data-number="10">10</strong>
+                            </div>
+                            <div class="text">
+                                <span>Award <br>Winning</span>
                             </div>
                         </div>
                     </div>
@@ -118,472 +180,90 @@
             </div>
         </div>
     </div>
-    <section class="ftco-appointment ftco-section ftco-no-pt ftco-no-pb"  >
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row d-md-flex justify-content-center">
-                <div class="col-md-12">
-                    <div class="wrap-appointment d-md-flex">
-                        <div class="col-md-8 bg-primary p-5 heading-section heading-section-white" id="Appointment">
-                            <span class="subheading">Booking an Appointment</span>
-                            <h2 class="mb-4">Free Consultation</h2>
-                            <form action="#" class="appointment">
-                                <div class="row justify-content-center">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Your Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Phone number">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <div class="form-field">
-                                                <div class="select-wrap">
-                                                    <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                                                    <select name="" id="" class="form-control">
-                                                        <option value="">Select Services</option>
-                                                        <option value="">Cardiology</option>
-                                                        <option value="">Gastroenterology</option>
-                                                        <option value="">Orthopedic & Traumatology</option>
-                                                        <option value="">Neuro - Neuro Surgery</option>
-                                                        <option value="">Nephrology & Urology</option>
-                                                        <option value="">General Medicine</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <div class="form-field">
-                                                <div class="select-wrap">
-                                                    <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                                                    <select name="" id="" class="form-control">
-                                                        <option value="">Select Doctors</option>
-                                                        <option value="">John Doe</option>
-                                                        <option value="">William Smith</option>
-                                                        <option value="">Danny Green</option>
-                                                        <option value="">Jason Thompson</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <div class="input-wrap">
-                                                <div class="icon"><span class="fa fa-calendar"></span></div>
-                                                <input type="text" class="form-control appointment_date" placeholder="Date">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <div class="input-wrap">
-                                                <div class="icon"><span class="fa fa-clock-o"></span></div>
-                                                <input type="text" class="form-control appointment_time" placeholder="Time">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="submit" value="Send message" class="btn btn-secondary py-3 px-4">
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="col-md-4 bg-white text-center p-5">
-                            <div class="desc border-bottom pb-4">
-                                <h2>Business Hours</h2>
-                                <div class="opening-hours">
-                                    <h4>Opening Days:</h4>
-                                    <p class="pl-3">
-                                        <span><strong>Monday – Sunday:</strong> 9am to 20 pm</span>
-                                        @*<span><strong>Saturday :</strong> 9am to 17 pm</span>*@
-                                    </p>
-                                    <h4>Vacations:</h4>
-                                    <p class="pl-3">
-                                        <span>All Sunday Days</span>
-                                        <span>All Official Holidays</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="desc pt-4 ">
-                                <h3 class="heading">For Emergency Cases</h3>
-                                <span class="phone">(+01) 04322-272560</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+
+</section>
+<section class="ftco-section testimony-section bg-dark">
+    <div class="container">
+        <div class="row justify-content-center pb-5 mb-3">
+            <div class="col-md-7 heading-section heading-section-white text-center ftco-animate">
+                <span class="subheading">Testimonies</span>
+                <h2>Happy Clients &amp; Feedbacks</h2>
             </div>
         </div>
-    </section>
-    <section class="ftco-section">
-        <div class="container">
-            <div class="row justify-content-center pb-5 mb-3">
-                <div class="col-md-7 heading-section text-center ftco-animate">
-                    <span class="subheading">We offer Services</span>
-                    <h2>Our Benefits</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 services ftco-animate">
-                    <div class="d-block d-flex">
-                        <div class="icon d-flex justify-content-center align-items-center">
-                            <span >
-                                <img class="flaticon-cardiology" src="~/Images/icon.png" />
-                            </span>
-                        </div>
-                        <div class="media-body pl-3">
-                            <h3 class="heading">Cardiology</h3>
-                            <p>Cardiology OP service is available in the evenings. Being associated with Selvam Hospitals Chest Pain Clinic, 
-                            patients are transferred to Selvam Hospital for tertiary care support during cardiac emergencies after stablisation. </p>
-                            @*<p><a href="#" class="btn-custom">Read more</a></p>*@
-                        </div>
-                    </div>
-                    <div class="d-block d-flex">
-                        <div class="icon d-flex justify-content-center align-items-center">
-                            <span>
-                                <img src="~/Images/icon4.png" />                      
-                            </span>
-                        </div>
-                        <div class="media-body pl-3">
-                            <h3 class="heading">Gastroenterology</h3>
-                            <p>Doctors at Selvam Care are highly educated and qualified to treat patients suffering from diseases like Deviated Nasal Septum, Throat Infection, Hearing Loss, Gallstones, Piles, 
-                            Nose Infection, Mastoiditis, Sinus, Trouble Sleeping. </p>
-                            @*<p><a href="#" class="btn-custom">Read more</a></p>*@
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 services ftco-animate">
-                    <div class="d-block d-flex">
-                        <div class="icon d-flex justify-content-center align-items-center">
-                            <span >
-                                <img src="~/Images/icon2.png" />
-                               
-                            </span>
-                        </div>
-                        <div class="media-body pl-3">
-                            <h3 class="heading">Orthopedic & Traumatology</h3>
-                            <p>
-                                Our comprehensive orthopaedic services include trauma care, arthritis treatment, osteoporosis care and surgical services. 
-                                Our Computer Assisted Navigation Surgery provides excellent results for patients with knee problems.
-                            </p>
-                            @*<p><a href="#" class="btn-custom">Read more</a></p>*@
-                        </div>
-                    </div>
-                    <div class="d-block d-flex">
-                        <div class="icon d-flex justify-content-center align-items-center">
-                            <span @*class="flaticon-examination"*@>
-                                <img src="~/Images/icon5.png" />
-                            </span>
-                        </div>
-                        <div class="media-body pl-3">
-                            <h3 class="heading">
-                                Neuro - Neuro Surgery
-                            </h3>
-                            <p>
-                                Selvam Hospital provides comprehensive diagnostic and treatment services for the wide range of neurological diseases and disorders.
-                                We specialize in headaches, so you know you are getting neurologists with specific experience.@*Our neurologists will check for complex neurology diseases and conditions of the patient and provide treatment based on the observation.*@
-                            </p>
-                            @*<p><a href="#" class="btn-custom">Read more</a></p>*@
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 services ftco-animate">
-                    <div class="d-block d-flex">
-                        <div class="icon d-flex justify-content-center align-items-center">
-                            <span @*class="flaticon-lymph-nodes"*@>
-                                <img src="~/Images/icon3.png" />
-                            </span>
-                        </div>
-                        <div class="media-body pl-3">
-                            <h3 class="heading">Nephrology & Urology</h3>
-                            <p>
-                                Headed by a Sr. Consultant, our team offers comprehensive services to treat urinary tract diseases and male 
-                                infertility. The aim is to provide relief and improve the quality of life of patients to enable them to live a fuller and more satisfying life.
-                            </p>
-                            @*<p><a href="#" class="btn-custom">Read more</a></p>*@
-                        </div>
-                    </div>
-                    <div class="d-block d-flex">
-                        <div class="icon d-flex justify-content-center align-items-center">
-                            <span @*class="flaticon-bone"*@>
-                                <img src="~/Images/icon6.png" />
-                            </span>
-                        </div>
-                        <div class="media-body pl-3">
-                            <h3 class="heading">General Medicine</h3>
-                            <p>
-                                General Medicine or Internal Medicine is headed by Sr. Consultant. 
-                                We are experienced in handling complex and emergency situations and offer timely service for patients with general fever, pains, injuries etc.
-                            </p>
-                            @*<p><a href="#" class="btn-custom">Read more</a></p>*@
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    @*<section class="ftco-section ftco-no-pb ftco-no-pt">
-        <div class="container-fluid px-md-0">
-            <div class="row no-gutters justify-content-center pb-5 mb-3">
-                <div class="col-md-7 heading-section text-center ftco-animate">
-                    <span class="subheading">Team &amp; Staff</span>
-                    <h2>Our Experts Doctors</h2>
-                </div>
-            </div>
-            <div class="row no-gutters">
-                <div class="col-md-4 col-lg ftco-animate d-flex">
-                    <div class="staff bg-primary">
-                        <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image:url(images/xstaff-1.jpg.pagespeed.ic.e9rH06n9-0.webp)"></div>
-                        </div>
-                        <div class="text pt-3 px-3 pb-4 text-center">
-                            <h3>Lloyd Wilson</h3>
-                            <span class="position mb-2">Chief Medical Officer</span>
-                            <div class="faded">
-
-                                <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
-                                    <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-google"></span></a></li>
-                                    <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"></span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg ftco-animate d-flex">
-                    <div class="staff bg-primary">
-                        <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image:url(images/xstaff-2.jpg.pagespeed.ic.336NftRDi2.webp)"></div>
-                        </div>
-                        <div class="text pt-3 px-3 pb-4 text-center">
-                            <h3>Rachel Parker</h3>
-                            <span class="position mb-2">Chiropractor</span>
-                            <div class="faded">
-
-                                <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
-                                    <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-google"></span></a></li>
-                                    <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"></span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg ftco-animate d-flex">
-                    <div class="staff bg-primary">
-                        <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image:url(images/xstaff-3.jpg.pagespeed.ic.uXRWIVCMLJ.webp)"></div>
-                        </div>
-                        <div class="text pt-3 px-3 pb-4 text-center">
-                            <h3>Ian Smith</h3>
-                            <span class="position mb-2">Clinical Chiropractic Assistant</span>
-                            <div class="faded">
-
-                                <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
-                                    <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-google"></span></a></li>
-                                    <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"></span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg ftco-animate d-flex">
-                    <div class="staff bg-primary">
-                        <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image:url(images/xstaff-4.jpg.pagespeed.ic.2_UfwsTLbL.webp)"></div>
-                        </div>
-                        <div class="text pt-3 px-3 pb-4 text-center">
-                            <h3>Alicia Henderson</h3>
-                            <span class="position mb-2">Licensed Massage Therapist</span>
-                            <div class="faded">
-
-                                <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
-                                    <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-google"></span></a></li>
-                                    <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"></span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg ftco-animate d-flex">
-                    <div class="staff bg-primary">
-                        <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image:url(images/xstaff-5.jpg.pagespeed.ic.wEg6iHFzOg.webp)"></div>
-                        </div>
-                        <div class="text pt-3 px-3 pb-4 text-center">
-                            <h3>Lloyd Wilson</h3>
-                            <span class="position mb-2">Front Desk Coordinator</span>
-                            <div class="faded">
-
-                                <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
-                                    <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-google"></span></a></li>
-                                    <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"></span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>*@
-    <section class="ftco-section ftco-no-pt ftco-no-pb">
-        <div class="container">
-            <div class="row d-flex no-gutters">
-                <div class="col-md-6 d-flex order-md-last">
-                    <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center mb-4 mb-sm-0" style="background-image: url(https://www.metrohospitals.in/gallery/spotlight/admin_202012041844416083_jdl5pswu.jpg) ">
-                        @*<a href="" class=" icon-video d-flex justify-content-center align-items-center">*@
-                            @*<span class="fa fa-play"></span>
-                        </a>*@
-                    </div>
-                </div>
-                <div class="col-md-6 pr-md-5 py-md-5">
-                    <div class="row justify-content-start py-5">
-                        <div class="col-md-12 heading-section ftco-animate fadeInUp ftco-animated">
-                            <span class="subheading text-center">Welcome to Chiropractic</span>
-                            <h2 class="mb-4 text-center">About Chiropractic</h2>
-                            <p class="para">
-                                The hospital started as a small clinic and has grown steadily into a 200 bedded Multispecialty Hospital equipped with state of the art facilities in healthcare in the last decades.
-                                Selvam Hospital has grown to a multi-specialty hospital serving people of Manapparai, villages in and around Manapparai town.
-                                Patients put so much trust in our care that they travel from all around Trichy and its surroundings to visit us for their healthcare needs.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row ftco-counter pb-5" id="section-counter">
-                        <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
-                            <div class="block-18">
-                                <div class="text">
-                                    <strong class="number" data-number="20">20</strong>
-                                </div>
-                                <div class="text">
-                                    <span>Years of <br>Experienced</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
-                            <div class="block-18">
-                                <div class="text">
-                                    <strong class="number" data-number="2342">2,342</strong>
-                                </div>
-                                <div class="text">
-                                    <span>Happy <br>Customers</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
-                            <div class="block-18">
-                                <div class="text">
-                                    <strong class="number" data-number="10">10</strong>
-                                </div>
-                                <div class="text">
-                                    <span>Award <br>Winning</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </div>
-            </div>
-
-
-    </section>
-    <section class="ftco-section testimony-section bg-dark">
-        <div class="container">
-            <div class="row justify-content-center pb-5 mb-3">
-                <div class="col-md-7 heading-section heading-section-white text-center ftco-animate">
-                    <span class="subheading">Testimonies</span>
-                    <h2>Happy Clients &amp; Feedbacks</h2>
-                </div>
-            </div>
-            <div class="row ftco-animate">
-                <div class="col-md-12">
-                    <div class="carousel-testimony owl-carousel ftco-owl">
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                                <div class="text">
-                                    <p class="mb-4">Excellent services. We are very much satisfied with all the services.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(https://preview.colorlib.com/theme/chiropractic/images/xperson_1.jpg.pagespeed.ic.a2MnMHMs44.webp)"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Ravinder Rao</p>
-                                            <span class="position">Employee</span>
-                                        </div>
+        <div class="row ftco-animate">
+            <div class="col-md-12">
+                <div class="carousel-testimony owl-carousel ftco-owl">
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                            <div class="text">
+                                <p class="mb-4">Excellent services. We are very much satisfied with all the services.</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="user-img" style="background-image: url(/Images//Home/bg/xperson_1.png) "></div>
+                                    <div class="pl-3">
+                                        <p class="name">Ravinder Rao</p>
+                                        <span class="position">Employee</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                                <div class="text">
-                                    <p class="mb-4">I got fabulous experience in AINU as the doctors and staff are the best.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(https://preview.colorlib.com/theme/chiropractic/images/xperson_2.jpg.pagespeed.ic.Xrdu_nPZRp.webp)"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Prakash</p>
-                                            <span class="position">Engineer</span>
-                                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                            <div class="text">
+                                <p class="mb-4">I got fabulous experience in AINU as the doctors and staff are the best.</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="user-img" style="background-image: url(/Images//Home/bg/xperson_2.png)"></div>
+                                    <div class="pl-3">
+                                        <p class="name">Prakash</p>
+                                        <span class="position">Engineer</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                                <div class="text">
-                                    <p class="mb-4">Service and treatment is very good. Thank you for taking care of my father.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(https://preview.colorlib.com/theme/chiropractic/images/xperson_3.jpg.pagespeed.ic.Cln-jaM1jK.webp) "></div>
-                                        <div class="pl-3">
-                                            <p class="name"> Stephen</p>
-                                            <span class="position">Marketing Manager</span>
-                                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                            <div class="text">
+                                <p class="mb-4">Service and treatment is very good. Thank you for taking care of my father.</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="user-img" style="background-image: url(/Images//Home/bg/xperson_3.jpg) "></div>
+                                    <div class="pl-3">
+                                        <p class="name"> Stephen</p>
+                                        <span class="position">Marketing Manager</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                                <div class="text">
-                                    <p class="mb-4">Attention given by the doctors and staff is good.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0-8CYleGWDG2Vt9fKFSCnK7LPbp77RbUldw&usqp=CAU) "></div>
-                                        <div class="pl-3">
-                                            <p class="name">P.B.Sulebhavi</p>
-                                            <span class="position">Teacher</span>
-                                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                            <div class="text">
+                                <p class="mb-4">Attention given by the doctors and staff is good.</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="user-img" style="background-image: url(/Images//Home/bg/tbn.jpg) "></div>
+                                    <div class="pl-3">
+                                        <p class="name">P.B.Sulebhavi</p>
+                                        <span class="position">Teacher</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                                <div class="text">
-                                    <p class="mb-4">This hospital is very good and faithfulness. Wish the team a Grand Success.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-2-1.jpeg) "></div>
-                                        <div class="pl-3">
-                                            <p class="name">P.Swarajya Lakshmi</p>
-                                            <span class="position">Student</span>
-                                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                            <div class="text">
+                                <p class="mb-4">This hospital is very good and faithfulness. Wish the team a Grand Success.</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="user-img" style="background-image: url(/Images//Home/bg/This-is-not-a-person-2-1.jpeg) "></div>
+                                    <div class="pl-3">
+                                        <p class="name">P.Swarajya Lakshmi</p>
+                                        <span class="position">Student</span>
                                     </div>
                                 </div>
                             </div>
@@ -592,267 +272,110 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="ftco-section ftco-no-pt ftco-no-pb">
-        <div class="container-fluid px-md-0">
-            <div class="row no-gutters">
-                <div class="col-md-3 ftco-animate">
-                    <div class="work img d-flex align-items-center" style="background-image: url(https://www.conehealth.com/app/files/public/4ed819c5-3e8a-42a3-be89-47418dfa161b/Annual-Physical-800w.jpg) ">
-                        <a href="images/work-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                            <span class="fa fa-expand"></span>
-                        </a>
-                        <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                            <div class="text w-100 mb-3 mt-4">
-                                <h2><a href="work-single.html">Medical Test</a></h2>
-                            </div>
+    </div>
+</section>
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+    <div class="container-fluid px-md-0">
+        <div class="row no-gutters">
+            <div class="col-md-3 ftco-animate">
+                <div class="work img d-flex align-items-center" style="background-image: url(/Images/Home/bg/Annual-Physical-800w.jpg) ">
+                    <a href="~/images/work-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                        <span class="fa fa-expand"></span>
+                    </a>
+                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                        <div class="text w-100 mb-3 mt-4">
+                            <h2><a href="work-single.html">Medical Test</a></h2>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 ftco-animate">
-                    <div class="work img d-flex align-items-center" style="background-image: url(https://frontierhomemedical.com/wp-content/uploads/2020/12/AdobeStock_181413640.jpg)">
-                        <a href="images/work-2.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                            <span class="fa fa-expand"></span>
-                        </a>
-                        <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                            <div class="text w-100 mb-3 mt-4">
-                                <h2><a href="work-single.html">Doctor checking blood sugar level from patient</a></h2>
-                            </div>
+            </div>
+            <div class="col-md-3 ftco-animate">
+                <div class="work img d-flex align-items-center" style="background-image: url(/Images//Home/bg/AdobeStock_181413640.jpg)">
+                    <a href="images/work-2.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                        <span class="fa fa-expand"></span>
+                    </a>
+                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                        <div class="text w-100 mb-3 mt-4">
+                            <h2><a href="work-single.html">Doctor checking blood sugar level from patient</a></h2>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 ftco-animate">
-                    <div class="work img d-flex align-items-center" style="background-image: url(https://pikwizard.com/photos/64fdcd03619d709cf2eab8f6ba3d7d92-l.jpg)">
-                        <a href="images/work-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                            <span class="fa fa-expand"></span>
-                        </a>
-                        <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                            <div class="text w-100 mb-3 mt-4">
-                                <h2><a href="work-single.html">Doctor Checking child with stethoscope</a></h2>
-                            </div>
+            </div>
+            <div class="col-md-3 ftco-animate">
+                <div class="work img d-flex align-items-center" style="background-image: url(/Images//Home/bg/doctesting.jpg)">
+                    <a href="images/work-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                        <span class="fa fa-expand"></span>
+                    </a>
+                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                        <div class="text w-100 mb-3 mt-4">
+                            <h2><a href="work-single.html">Doctor Checking child with stethoscope</a></h2>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 ftco-animate">
-                    <div class="work img d-flex align-items-center" style="background-image: url(https://post.healthline.com/wp-content/uploads/2019/03/doctor_checking_knee-1200x628-facebook.jpg)">
-                        <a href="images/work-4.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                            <span class="fa fa-expand"></span>
-                        </a>
-                        <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                            <div class="text w-100 mb-3 mt-4">
-                                <h2><a href="work-single.html">Doctor Checking Knee pain</a></h2>
-                            </div>
+            </div>
+            <div class="col-md-3 ftco-animate">
+                <div class="work img d-flex align-items-center" style="background-image: url(/Images//Home/bg/doctor_checking_knee-1200x628-facebook.jpg) ">
+                    <a href="images/work-4.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                        <span class="fa fa-expand"></span>
+                    </a>
+                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                        <div class="text w-100 mb-3 mt-4">
+                            <h2><a href="work-single.html">Doctor Checking Knee pain</a></h2>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 ftco-animate">
-                    <div class="work img d-flex align-items-center" style="background-image: url(https://ohiofacs.org/wp-content/uploads/2016/03/slide1.jpg)">
-                        <a href="images/work-5.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                            <span class="fa fa-expand"></span>
-                        </a>
-                        <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                            <div class="text w-100 mb-3 mt-4">
-                                <h2><a href="work-single.html">Doctors Performing Surgery</a></h2>
-                            </div>
+            </div>
+            <div class="col-md-3 ftco-animate">
+                <div class="work img d-flex align-items-center" style="background-image: url(/Images//Home/bg/slide1.jpg)">
+                    <a href="images/work-5.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                        <span class="fa fa-expand"></span>
+                    </a>
+                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                        <div class="text w-100 mb-3 mt-4">
+                            <h2><a href="work-single.html">Doctors Performing Surgery</a></h2>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 ftco-animate">
-                    <div class="work img d-flex align-items-center" style="background-image: url(https://pikwizard.com/photos/2629421d0af2224ded6a0d38f72becaa-m.jpg)">
-                        <a href="images/work-6.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                            <span class="fa fa-expand"></span>
-                        </a>
-                        <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                            <div class="text w-100 mb-3 mt-4">
-                                <h2><a href="work-single.html">Doctor Checking for Patient Fever in Ward</a></h2>
-                            </div>
+            </div>
+            <div class="col-md-3 ftco-animate">
+                <div class="work img d-flex align-items-center" style="background-image: url(/Images//Home/bg/doctesting1.jpg)">
+                    <a href="images/work-6.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                        <span class="fa fa-expand"></span>
+                    </a>
+                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                        <div class="text w-100 mb-3 mt-4">
+                            <h2><a href="work-single.html">Doctor Checking for Patient Fever in Ward</a></h2>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 ftco-animate">
-                    <div class="work img d-flex align-items-center" style="background-image: url(https://d39l2hkdp2esp1.cloudfront.net/img/photo/167349/167349_00_2x.jpg?20190313084544)">
-                        <a href="images/work-7.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                            <span class="fa fa-expand"></span>
-                        </a>
-                        <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                            <div class="text w-100 mb-3 mt-4">
-                                <h2><a href="work-single.html">Doctor Checking for Throat Pain</a></h2>
-                            </div>
+            </div>
+            <div class="col-md-3 ftco-animate">
+                <div class="work img d-flex align-items-center" style="background-image: url(/Images//Home/bg/doctesting2.jpg)">
+                    <a href="images/work-7.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                        <span class="fa fa-expand"></span>
+                    </a>
+                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                        <div class="text w-100 mb-3 mt-4">
+                            <h2><a href="work-single.html">Doctor Checking for Throat Pain</a></h2>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 ftco-animate">
-                    <div class="work img d-flex align-items-center" style="background-image: url(https://files.ondemandhosting.info/imagecache/cropfit@w=447/blob/images/articles/4/0/40a1b27b-fe87-11e8-baed-42010a8001f9/doctor-checking-back-pain.jpg)">
-                        <a href="images/work-8.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                            <span class="fa fa-expand"></span>
-                        </a>
-                        <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                            <div class="text w-100 mb-3 mt-4">
-                                <h2><a href="work-single.html">Lower Back Pain</a></h2>
-                            </div>
+            </div>
+            <div class="col-md-3 ftco-animate">
+                <div class="work img d-flex align-items-center" style="background-image: url(/Images//Home/bg/doctor-checking-back-pain.jpg)">
+                    <a href="images/work-8.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                        <span class="fa fa-expand"></span>
+                    </a>
+                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                        <div class="text w-100 mb-3 mt-4">
+                            <h2><a href="work-single.html">Lower Back Pain</a></h2>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    @*<section class="ftco-section">
-        <div class="container">
-            <div class="row justify-content-center pb-5 mb-3">
-                <div class="col-md-7 heading-section text-center ftco-animate">
-                    <span class="subheading">News &amp; Blog</span>
-                    <h2>Latest news from our blog</h2>
-                </div>
-            </div>
-            <div class="row d-flex">
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry align-self-stretch">
-                        <a href="blog-single.html" class="block-20 rounded" style="background-image:url(images/ximage_1.jpg.pagespeed.ic.6vpQzasc6f.webp)">
-                        </a>
-                        <div class="text mt-3">
-                            <div class="posted mb-3 d-flex">
-                                <div class="img author" style="background-image:url(images/xperson_2.jpg.pagespeed.ic.Xrdu_nPZRp.webp)"></div>
-                                <div class="desc pl-3">
-                                    <span>Posted by John doe</span>
-                                    <span>24 February 2020</span>
-                                </div>
-                            </div>
-                            <h3 class="heading"><a href="#">What Every Athlete Needs To Know About Injury Recovery</a></h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry align-self-stretch">
-                        <a href="blog-single.html" class="block-20 rounded" style="background-image:url(images/ximage_2.jpg.pagespeed.ic.MIbNWaXDoY.webp)">
-                        </a>
-                        <div class="text mt-3">
-                            <div class="posted mb-3 d-flex">
-                                <div class="img author" style="background-image:url(images/xperson_3.jpg.pagespeed.ic.Cln-jaM1jK.webp)"></div>
-                                <div class="desc pl-3">
-                                    <span>Posted by John doe</span>
-                                    <span>24 February 2020</span>
-                                </div>
-                            </div>
-                            <h3 class="heading"><a href="#">What Every Athlete Needs To Know About Injury Recovery</a></h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry align-self-stretch">
-                        <a href="blog-single.html" class="block-20 rounded" style="background-image:url(images/ximage_3.jpg.pagespeed.ic.v8ROgCPS2k.webp)">
-                        </a>
-                        <div class="text mt-3">
-                            <div class="posted mb-3 d-flex">
-                                <div class="img author" style="background-image:url(images/xperson_1.jpg.pagespeed.ic.a2MnMHMs44.webp)"></div>
-                                <div class="desc pl-3">
-                                    <span>Posted by John doe</span>
-                                    <span>24 February 2020</span>
-                                </div>
-                            </div>
-                            <h3 class="heading"><a href="#">What Every Athlete Needs To Know About Injury Recovery</a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>*@
-    <footer class="footer ftco-section ftco-no-pt">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-6 col-lg">
-                    <div class="ftco-footer-widget py-4 py-md-5">
-                        <h2 class="logo"><a href="#">Selvam Hospital</a></h2>
-                        <p>This hospital provides specialised and general medical services with the high level of professional competance with more..</p>
-                        <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-4">
-                            <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
-                            <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
-                            <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg">
-                    <div class="ftco-footer-widget ml-md-5 py-5">
-                        <h2 class="ftco-heading-2">Services</h2>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="py-1 d-block"><span class="fa fa-check mr-3"></span>Cardiology</a></li>
-                            <li><a href="#" class="py-1 d-block"><span class="fa fa-check mr-3"></span>Orthopedic & Traumatology</a></li>
-                            <li><a href="#" class="py-1 d-block"><span class="fa fa-check mr-3"></span>Nephrology & Urology</a></li>
-                            <li><a href="#" class="py-1 d-block"><span class="fa fa-check mr-3"></span>Gastroenterology</a></li>
-                            <li><a href="#" class="py-1 d-block"><span class="fa fa-check mr-3"></span>Neuro - Neuro Surgery</a></li>
-                            <li><a href="#" class="py-1 d-block"><span class="fa fa-check mr-3"></span>General Medicine</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg">
-                    <div class="ftco-footer-widget py-4 py-md-5">
-                        <h2 class="ftco-heading-2">Contact information</h2>
-                        <div class="block-23 mb-3">
-                            <ul>
-                                <li><span class="icon fa fa-map-marker"></span><span class="text">45, Anna Nagar, Vaiyyampatti, Manaparai-621306, TamilNadu</span></li>
-                                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">(+01) 04322-272560</span></a></li>
-                                <li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text"><span class="__cf_email__" data-cfemail="9df4f3fbf2dde4f2e8eff9f2f0fcf4f3b3fef2f0">[email&#160;protected]</span></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg">
-                    <div class="ftco-footer-widget bg-primary p-4 py-5">
-                        <h2 class="ftco-heading-2">Business Hours</h2>
-                        <div class="opening-hours">
-                            <h4>Opening Days:</h4>
-                            <p class="pl-3">
-                                <span>Monday – Sunday: 9am to 20pm</span>
-                                @*<span>Saturday : 9am to 17 pm</span>*@
-                            </p>
-                            <h4>Vacations:</h4>
-                            <p class="pl-3">
-                                <span>All Sunday Days</span>
-                                <span>All Official Holidays</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <p>
-                        Copyright &copy;
-                        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Jifflessan</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
-    <script src="https://preview.colorlib.com/theme/chiropractic/js/jquery.min.js"></script>
-    <script src="https://preview.colorlib.com/theme/chiropractic/js/jquery-migrate-3.0.1.min.js+popper.min.js+bootstrap.min.js.pagespeed.jc.8yz2u8YNzg.js"></script>
-    <script>eval(mod_pagespeed_a8g5DFeIsh);</script>
-    <script>eval(mod_pagespeed_OA_D2wMlWX);</script>
-    <script>eval(mod_pagespeed_5TF0jYiMpZ);</script>
-    <script src="https://preview.colorlib.com/theme/chiropractic/js/jquery.easing.1.3.js+jquery.waypoints.min.js+jquery.stellar.min.js+jquery.animateNumber.min.js+bootstrap-datepicker.js.pagespeed.jc.PYdbiGY2bc.js"></script>
-    <script>eval(mod_pagespeed_ffUvfzFKyd);</script>
-    <script>eval(mod_pagespeed_pW_lkbLAdB);</script>
-    <script>eval(mod_pagespeed_130cfILqrs);</script>
-    <script>eval(mod_pagespeed_DOoVQJoEdj);</script>
-    <script>eval(mod_pagespeed_k92vdoC3Jo);</script>
-    <script src="https://preview.colorlib.com/theme/chiropractic/js/jquery.timepicker.min.js+owl.carousel.min.js+jquery.magnific-popup.min.js+scrollax.min.js+google-map.js.pagespeed.jc.WmOIcfBvXV.js"></script>
-    <script>eval(mod_pagespeed_ZPau3N6nWF);</script>
-    <script>eval(mod_pagespeed_BtpCSd$zDE);</script>
-    <script>eval(mod_pagespeed_C7AWh3oExT);</script>
-    <script>eval(mod_pagespeed_3TDpAwbBPv);</script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script>eval(mod_pagespeed_1gLtpFNa0K);</script>
-    <script src="https://preview.colorlib.com/theme/chiropractic/js/main.js"></script>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-23581568-13');
-    </script>
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"70ec9678a955b2b1","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>
-</body>
-</html>
+    </div>
+</section>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

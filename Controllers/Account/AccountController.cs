@@ -46,7 +46,7 @@ namespace HospitalManagementSystem.Controllers.Account
             if (result != null)
             {
                 HttpContext.Session[AppConstant.UserDetail] = result;
-                return Redirect("Home/Index");
+                return RedirectToAction("Index", "Dashboard");
 
 
             }
@@ -65,7 +65,7 @@ namespace HospitalManagementSystem.Controllers.Account
         public ActionResult LogOff()
         {
             HttpContext.Session[AppConstant.UserDetail] = null;
-            return RedirectToAction("Login", "Account");
+            return RedirectToAction("Index", "Home");
         }
         [AllowAnonymous]
         public ActionResult Unauthorized()

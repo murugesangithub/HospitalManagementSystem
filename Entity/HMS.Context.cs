@@ -46,7 +46,6 @@ namespace HospitalManagementSystem.Entity
         public virtual DbSet<Master_TimeSlot> Master_TimeSlot { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<UserDetail> UserDetails { get; set; }
-        public virtual DbSet<AppointmentDetail> AppointmentDetails { get; set; }
         public virtual DbSet<BillingDetail> BillingDetails { get; set; }
         public virtual DbSet<DoctorDetail> DoctorDetails { get; set; }
         public virtual DbSet<MedicineDetail> MedicineDetails { get; set; }
@@ -55,5 +54,6 @@ namespace HospitalManagementSystem.Entity
         public virtual DbSet<PatientTreatmentDetail> PatientTreatmentDetails { get; set; }
         public virtual DbSet<PurchaseMedicineDetail> PurchaseMedicineDetails { get; set; }
         public virtual DbSet<PatientDetail> PatientDetails { get; set; }
+        public virtual DbSet<AppointmentDetail> AppointmentDetails { get; set; }
     }
 }

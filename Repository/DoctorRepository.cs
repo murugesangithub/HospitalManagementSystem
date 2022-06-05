@@ -179,5 +179,18 @@ namespace HospitalManagementSystem.DataAccess.Repository
             return result.AsQueryable();
         }
 
+        public IQueryable<DoctorViewModel> GetDoctorListForDropDown()
+        {
+            var result = dbcontext.DoctorDetails.Where(x => x.IsActive).Select(s => new DoctorViewModel()
+            {
+                DoctorDetailId = s.DoctorDetailId,
+                FirstName = s.FirstName,
+                LastName = s.LastName,
+            
+            }).ToList();
+
+            result.ForEach(x => x.EncryptDoctorDetailId = Cryptography.EncryptStringToBytes_Aes(x.DoctorDetailId.ToString()));
+            return result.AsQueryable();
+        }
     }
 }

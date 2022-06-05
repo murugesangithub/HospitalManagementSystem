@@ -5179,7 +5179,7 @@ h1, h2, h3, h4,
       color: #fff; }
       .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover:before {
         visibility: visible;
-        background-color: #6c5ce7;
+        background-color: #01d28e;
         -webkit-transform: scaleX(1);
         -ms-transform: scaleX(1);
         transform: scaleX(1); }
@@ -6614,3 +6614,6 @@ textarea.form-control {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
 .para{font-size:18px;}
+.loginbtn {
+    background: #fdcd20;
+}

@@ -23,7 +23,7 @@ namespace HospitalManagementSystem.ViewModel
 
         [Required(ErrorMessage = "Select your Gender")]
         public List<System.Web.Mvc.SelectListItem> GenderList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
-        public int Gender { get; set; }
+        public int? Gender { get; set; }
         public string GenderDescription { get; set; }
 
         [Required(ErrorMessage = "Status is required")]
@@ -35,7 +35,7 @@ namespace HospitalManagementSystem.ViewModel
         [DataType(DataType.Text)]
         [Display(Name = "Age")]
         [RegularExpression(@"^\S[0-9]{0,3}$", ErrorMessage = "Age must be a number")]
-        public int Age { get; set; }
+        public int? Age { get; set; }
 
         [Required]
         [Display(Name = "Address")]
@@ -94,6 +94,10 @@ namespace HospitalManagementSystem.ViewModel
         public List<System.Web.Mvc.SelectListItem> DepartmentList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int Department { get; set; }
         public string DepartmentDesc { get; set; }
+
+        [Required(ErrorMessage = "Select your doctor")]
+        public List<System.Web.Mvc.SelectListItem> DoctorList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
+        public string DoctorListDesc { get; set; }
 
         public int TokenNumber { get; set; }
         public string EncryptTokenNumber { get; set; }
