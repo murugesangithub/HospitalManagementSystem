@@ -5238,14 +5238,16 @@ h1, h2, h3, h4,
       outline: none !important; }
 
 .navbar-brand {
-  color: #2d3e50;
-  font-weight: 700;
-  font-size: 22px;
-  line-height: 1;
-  margin-bottom: 0px;
-  text-transform: uppercase; }
-  .navbar-brand:hover, .navbar-brand:focus {
-    color: #000000; }
+    padding: 15px 0px !important;
+    color: #018799;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1;
+    margin-bottom: 0px;
+    
+}
+  /*.navbar-brand:hover, .navbar-brand:focus {
+    color: #000000; }*/
 
 .hero-wrap {
   width: 100%;

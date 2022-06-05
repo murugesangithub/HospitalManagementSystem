@@ -427,6 +427,8 @@
     <Content Include="Images\Home\icon4.png" />
     <Content Include="Images\Home\icon5.png" />
     <Content Include="Images\Home\icon6.png" />
+    <Content Include="Images\Home\slogo.jpg" />
+    <Content Include="Images\Home\slogo1.jpg" />
     <Content Include="Scripts\adminlte.min.js" />
     <Content Include="Scripts\Appointment\AddAppointment.js" />
     <Content Include="Scripts\Billing\Billing.js" />
