@@ -4917,7 +4917,7 @@ button.bg-dark:focus {
 }
 
 .mt-5 {
-  margin-top: 3rem !important; }
+  margin-top: 6rem !important; }
 
 .mr-5 {
   margin-right: 3rem !important; }
@@ -5952,7 +5952,9 @@ h1, h2, h3, h4,
     font-weight: 700;
     letter-spacing: 1px; }
     .work h2 a {
-      color: #fff; }
+        color: #fff;
+        text-decoration: none;
+    }
   .work .desc {
     z-index: 1; }
   .work .icon {
