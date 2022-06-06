@@ -31,8 +31,8 @@
           <Property Name="PatientName" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Department" Type="int" Nullable="false" />
           <Property Name="DoctorName" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="AdmitDate" Type="datetime" Nullable="false" />
-          <Property Name="DischargeDate" Type="datetime" Nullable="false" />
+          <Property Name="AdmitDate" Type="date" Nullable="false" />
+          <Property Name="DischargeDate" Type="date" Nullable="false" />
           <Property Name="Service" Type="int" Nullable="false" />
           <Property Name="CostOfTreatment" Type="int" Nullable="false" />
           <Property Name="DoctorCharges" Type="nvarchar" MaxLength="10" Nullable="false" />
@@ -225,9 +225,9 @@
           <Property Name="MedicineName" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Category" Type="int" Nullable="false" />
           <Property Name="CompanyName" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="PurchaseDate" Type="datetime" Nullable="false" />
+          <Property Name="PurchaseDate" Type="date" Nullable="false" />
           <Property Name="Price" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="ExpiredDate" Type="datetime" Nullable="false" />
+          <Property Name="ExpiredDate" Type="date" Nullable="false" />
           <Property Name="Stock" Type="nvarchar" MaxLength="5" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
@@ -237,11 +237,11 @@
           </Key>
           <Property Name="PatientAdmissionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DoctorName" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="AdmissionDate" Type="datetime" Nullable="false" />
+          <Property Name="AdmissionDate" Type="date" Nullable="false" />
           <Property Name="PlannedProcedure" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="ItemNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="PatientName" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="DateofBirth" Type="datetime" Nullable="false" />
+          <Property Name="DateofBirth" Type="date" Nullable="false" />
           <Property Name="GuardianName" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Gender" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="MaritalStatus" Type="nvarchar" MaxLength="10" Nullable="false" />
@@ -266,15 +266,15 @@
           <Property Name="GuardianName" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="MaritalStatus" Type="int" Nullable="false" />
           <Property Name="Age" Type="int" Nullable="false" />
-          <Property Name="DateofBirth" Type="datetime" Nullable="false" />
+          <Property Name="DateofBirth" Type="date" Nullable="false" />
           <Property Name="Problem" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="PhoneNumber" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="City" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PostalCode" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Country" Type="int" Nullable="false" />
-          <Property Name="State" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="PatientInquiryDetailForm">
@@ -285,7 +285,7 @@
           <Property Name="FirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="LastName" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Gender" Type="int" Nullable="false" />
-          <Property Name="DateofBirth" Type="datetime" Nullable="false" />
+          <Property Name="DateofBirth" Type="date" Nullable="false" />
           <Property Name="Age" Type="int" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="PhoneNumber" Type="int" Nullable="false" />
@@ -307,7 +307,7 @@
           <Property Name="Cancer" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Smoke" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Alchocol" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="MedicalConditions" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="MedicalConditions" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Allergy" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="LastDose" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="MedicalDocuments" Type="nvarchar" MaxLength="200" Nullable="false" />
@@ -336,7 +336,7 @@
           <Property Name="MedicineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SupplierName" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Code" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
           <Property Name="Category" Type="int" Nullable="false" />
           <Property Name="Medicine" Type="int" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
@@ -618,8 +618,8 @@
           <Property Name="PatientName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Department" Type="Int32" Nullable="false" />
           <Property Name="DoctorName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="AdmitDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="DischargeDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AdmitDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DischargeDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Service" Type="Int32" Nullable="false" />
           <Property Name="CostOfTreatment" Type="Int32" Nullable="false" />
           <Property Name="DoctorCharges" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
@@ -659,9 +659,9 @@
           <Property Name="MedicineName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Category" Type="Int32" Nullable="false" />
           <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="PurchaseDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PurchaseDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Price" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="ExpiredDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExpiredDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Stock" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
@@ -671,11 +671,11 @@
           </Key>
           <Property Name="PatientAdmissionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DoctorName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="AdmissionDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AdmissionDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="PlannedProcedure" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="ItemNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="PatientName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="DateofBirth" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateofBirth" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="GuardianName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Gender" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="MaritalStatus" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
@@ -697,7 +697,7 @@
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Gender" Type="Int32" Nullable="false" />
-          <Property Name="DateofBirth" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateofBirth" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Age" Type="Int32" Nullable="false" />
           <Property Name="Email" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
@@ -719,7 +719,7 @@
           <Property Name="Cancer" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Smoke" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Alchocol" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MedicalConditions" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="MedicalConditions" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Allergy" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="LastDose" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MedicalDocuments" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
@@ -748,7 +748,7 @@
           <Property Name="MedicineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Code" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Category" Type="Int32" Nullable="false" />
           <Property Name="Medicine" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
@@ -770,15 +770,15 @@
           <Property Name="GuardianName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="MaritalStatus" Type="Int32" Nullable="false" />
           <Property Name="Age" Type="Int32" Nullable="false" />
-          <Property Name="DateofBirth" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateofBirth" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Problem" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="City" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PostalCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Country" Type="Int32" Nullable="false" />
-          <Property Name="State" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="AppointmentDetail">
