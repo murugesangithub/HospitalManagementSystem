@@ -5,266 +5,174 @@
     ViewBag.Title = "Index";
 
 }
+@*<div class="top-container">*@
+    @{ Html.RenderPartial("_HomeSliderPartial");}
 
-@{ Html.RenderPartial("_HomeSliderPartial");}
-
-@{ Html.RenderPartial("_HomeAppointmentPartial");}
+    @{ Html.RenderPartial("_HomeAppointmentPartial");}
 
 
-<section class="ftco-section"  id="Service">
-    <div class="container">
-        <div class="row justify-content-center pb-5 mb-3">
-            <div class="col-md-7 heading-section text-center ftco-animate">
-                <span class="subheading">We offer Services</span>
-                <h2>Our Benefits</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 services ftco-animate">
-                <div class="d-block d-flex">
-                    <div class="icon d-flex justify-content-center align-items-center">
-                        <span>
-                            <img class="flaticon-cardiology" src="~/Images/Home/icon.png" />
-                        </span>
-                    </div>
-                    <div class="media-body pl-3">
-                        <h3 class="heading">Cardiology</h3>
-                        <p>
-                            Cardiology OP service is available in the evenings. Being associated with Selvam Hospitals Chest Pain Clinic,
-                            patients are transferred to Selvam Hospital for tertiary care support during cardiac emergencies after stablisation.
-                        </p>
-                        @*<p><a href="#" class="btn-custom">Read more</a></p>*@
-                    </div>
-                </div>
-                <div class="d-block d-flex">
-                    <div class="icon d-flex justify-content-center align-items-center">
-                        <span>
-                            <img src="~/Images/Home/icon4.png" />
-                        </span>
-                    </div>
-                    <div class="media-body pl-3">
-                        <h3 class="heading">Gastroenterology</h3>
-                        <p>
-                            Doctors at Selvam Care are highly educated and qualified to treat patients suffering from diseases like Deviated Nasal Septum, Throat Infection, Hearing Loss, Gallstones, Piles,
-                            Nose Infection, Mastoiditis, Sinus, Trouble Sleeping.
-                        </p>
-                        @*<p><a href="#" class="btn-custom">Read more</a></p>*@
-                    </div>
+    <section class="ftco-section" id="Service">
+        <div class="container">
+            <div class="row justify-content-center pb-5 mb-3">
+                <div class="col-md-7 heading-section text-center ftco-animate">
+                    <span class="subheading">We offer Services</span>
+                    <h2>Our Benefits</h2>
                 </div>
             </div>
-            <div class="col-md-4 services ftco-animate">
-                <div class="d-block d-flex">
-                    <div class="icon d-flex justify-content-center align-items-center">
-                        <span>
-                            <img src="~/Images/Home/icon2.png" />
-
-                        </span>
-                    </div>
-                    <div class="media-body pl-3">
-                        <h3 class="heading">Orthopedic & Traumatology</h3>
-                        <p>
-                            Our comprehensive orthopaedic services include trauma care, arthritis treatment, osteoporosis care and surgical services.
-                            Our Computer Assisted Navigation Surgery provides excellent results for patients with knee problems.
-                        </p>
-                        @*<p><a href="#" class="btn-custom">Read more</a></p>*@
-                    </div>
-                </div>
-                <div class="d-block d-flex">
-                    <div class="icon d-flex justify-content-center align-items-center">
-                        <span @*class="flaticon-examination"*@>
-                            <img src="~/Images/Home/icon5.png" />
-                        </span>
-                    </div>
-                    <div class="media-body pl-3">
-                        <h3 class="heading">
-                            Neuro - Neuro Surgery
-                        </h3>
-                        <p>
-                            Selvam Hospital provides comprehensive diagnostic and treatment services for the wide range of neurological diseases and disorders.
-                            We specialize in headaches, so you know you are getting neurologists with specific experience.@*Our neurologists will check for complex neurology diseases and conditions of the patient and provide treatment based on the observation.*@
-                        </p>
-                        @*<p><a href="#" class="btn-custom">Read more</a></p>*@
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 services ftco-animate">
-                <div class="d-block d-flex">
-                    <div class="icon d-flex justify-content-center align-items-center">
-                        <span @*class="flaticon-lymph-nodes"*@>
-                            <img src="~/Images/Home/icon3.png" />
-                        </span>
-                    </div>
-                    <div class="media-body pl-3">
-                        <h3 class="heading">Nephrology & Urology</h3>
-                        <p>
-                            Headed by a Sr. Consultant, our team offers comprehensive services to treat urinary tract diseases and male
-                            infertility. The aim is to provide relief and improve the quality of life of patients to enable them to live a fuller and more satisfying life.
-                        </p>
-                        @*<p><a href="#" class="btn-custom">Read more</a></p>*@
-                    </div>
-                </div>
-                <div class="d-block d-flex">
-                    <div class="icon d-flex justify-content-center align-items-center">
-                        <span @*class="flaticon-bone"*@>
-                            <img src="~/Images/Home/icon6.png" />
-                        </span>
-                    </div>
-                    <div class="media-body pl-3">
-                        <h3 class="heading">General Medicine</h3>
-                        <p>
-                            General Medicine or Internal Medicine is headed by Sr. Consultant.
-                            We are experienced in handling complex and emergency situations and offer timely service for patients with general fever, pains, injuries etc.
-                        </p>
-                        @*<p><a href="#" class="btn-custom">Read more</a></p>*@
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="ftco-section ftco-no-pt ftco-no-pb" id="About">
-    <div class="container">
-        <div class="row d-flex no-gutters">
-            <div class="col-md-6 d-flex order-md-last">
-                <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center mb-4 mb-sm-0" style="background-image: url(/Images//Home/bg/admin_pswu.jpg) ">
-                    @*<a href="" class=" icon-video d-flex justify-content-center align-items-center">*@
-                    @*<span class="fa fa-play"></span>s
-                        </a>*@
-                </div>
-            </div>
-            <div class="col-md-6 pr-md-5 py-md-5">
-                <div class="row justify-content-start py-5">
-                    <div class="col-md-12 heading-section ftco-animate fadeInUp ftco-animated">
-                        <span class="subheading text-center">Welcome to Selvam Hospital</span>
-                        <h2 class="mb-4 text-center">About My Hospital</h2>
-                        <p class="para">
-                            The hospital started as a small clinic and has grown steadily into a 200 bedded Multispecialty Hospital equipped with state of the art facilities in healthcare in the last decades.
-                            Selvam Hospital has grown to a multi-specialty hospital serving people of Manapparai, villages in and around Manapparai town.
-                            Patients put so much trust in our care that they travel from all around Trichy and its surroundings to visit us for their healthcare needs.
-                        </p>
-                    </div>
-                </div>
-                <div class="row ftco-counter pb-5" id="section-counter">
-                    <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
-                        <div class="block-18">
-                            <div class="text">
-                                <strong class="number" data-number="20">20</strong>
-                            </div>
-                            <div class="text">
-                                <span>Years of <br>Experienced</span>
-                            </div>
+            <div class="row">
+                <div class="col-md-4 services ftco-animate">
+                    <div class="d-block d-flex">
+                        <div class="icon d-flex justify-content-center align-items-center">
+                            <span>
+                                <img class="flaticon-cardiology" src="~/Images/Home/icon.png" />
+                            </span>
+                        </div>
+                        <div class="media-body pl-3">
+                            <h3 class="heading">Cardiology</h3>
+                            <p>
+                                Cardiology OP service is available in the evenings. Being associated with Selvam Hospitals Chest Pain Clinic,
+                                patients are transferred to Selvam Hospital for tertiary care support during cardiac emergencies after stablisation.
+                            </p>
+                            @*<p><a href="#" class="btn-custom">Read more</a></p>*@
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
-                        <div class="block-18">
-                            <div class="text">
-                                <strong class="number" data-number="2342">2,342</strong>
-                            </div>
-                            <div class="text">
-                                <span>Happy <br>Customers</span>
-                            </div>
+                    <div class="d-block d-flex">
+                        <div class="icon d-flex justify-content-center align-items-center">
+                            <span>
+                                <img src="~/Images/Home/icon4.png" />
+                            </span>
+                        </div>
+                        <div class="media-body pl-3">
+                            <h3 class="heading">Gastroenterology</h3>
+                            <p>
+                                Doctors at Selvam Care are highly educated and qualified to treat patients suffering from diseases like Deviated Nasal Septum, Throat Infection, Hearing Loss, Gallstones, Piles,
+                                Nose Infection, Mastoiditis, Sinus, Trouble Sleeping.
+                            </p>
+                            @*<p><a href="#" class="btn-custom">Read more</a></p>*@
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
-                        <div class="block-18">
-                            <div class="text">
-                                <strong class="number" data-number="10">10</strong>
-                            </div>
-                            <div class="text">
-                                <span>Award <br>Winning</span>
-                            </div>
+                </div>
+                <div class="col-md-4 services ftco-animate">
+                    <div class="d-block d-flex">
+                        <div class="icon d-flex justify-content-center align-items-center">
+                            <span>
+                                <img src="~/Images/Home/icon2.png" />
+
+                            </span>
+                        </div>
+                        <div class="media-body pl-3">
+                            <h3 class="heading">Orthopedic & Traumatology</h3>
+                            <p>
+                                Our comprehensive orthopaedic services include trauma care, arthritis treatment, osteoporosis care and surgical services.
+                                Our Computer Assisted Navigation Surgery provides excellent results for patients with knee problems.
+                            </p>
+                            @*<p><a href="#" class="btn-custom">Read more</a></p>*@
+                        </div>
+                    </div>
+                    <div class="d-block d-flex">
+                        <div class="icon d-flex justify-content-center align-items-center">
+                            <span @*class="flaticon-examination"*@>
+                                <img src="~/Images/Home/icon5.png" />
+                            </span>
+                        </div>
+                        <div class="media-body pl-3">
+                            <h3 class="heading">
+                                Neuro - Neuro Surgery
+                            </h3>
+                            <p>
+                                Selvam Hospital provides comprehensive diagnostic and treatment services for the wide range of neurological diseases and disorders.
+                                We specialize in headaches, so you know you are getting neurologists with specific experience.@*Our neurologists will check for complex neurology diseases and conditions of the patient and provide treatment based on the observation.*@
+                            </p>
+                            @*<p><a href="#" class="btn-custom">Read more</a></p>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 services ftco-animate">
+                    <div class="d-block d-flex">
+                        <div class="icon d-flex justify-content-center align-items-center">
+                            <span @*class="flaticon-lymph-nodes"*@>
+                                <img src="~/Images/Home/icon3.png" />
+                            </span>
+                        </div>
+                        <div class="media-body pl-3">
+                            <h3 class="heading">Nephrology & Urology</h3>
+                            <p>
+                                Headed by a Sr. Consultant, our team offers comprehensive services to treat urinary tract diseases and male
+                                infertility. The aim is to provide relief and improve the quality of life of patients to enable them to live a fuller and more satisfying life.
+                            </p>
+                            @*<p><a href="#" class="btn-custom">Read more</a></p>*@
+                        </div>
+                    </div>
+                    <div class="d-block d-flex">
+                        <div class="icon d-flex justify-content-center align-items-center">
+                            <span @*class="flaticon-bone"*@>
+                                <img src="~/Images/Home/icon6.png" />
+                            </span>
+                        </div>
+                        <div class="media-body pl-3">
+                            <h3 class="heading">General Medicine</h3>
+                            <p>
+                                General Medicine or Internal Medicine is headed by Sr. Consultant.
+                                We are experienced in handling complex and emergency situations and offer timely service for patients with general fever, pains, injuries etc.
+                            </p>
+                            @*<p><a href="#" class="btn-custom">Read more</a></p>*@
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-
-</section>
-<section class="ftco-section testimony-section bg-dark">
-    <div class="container">
-        <div class="row justify-content-center pb-5 mb-3">
-            <div class="col-md-7 heading-section heading-section-white text-center ftco-animate">
-                <span class="subheading">Testimonies</span>
-                <h2>Happy Clients &amp; Feedbacks</h2>
-            </div>
-        </div>
-        <div class="row ftco-animate">
-            <div class="col-md-12">
-                <div class="carousel-testimony owl-carousel ftco-owl">
-                    <div class="item">
-                        <div class="testimony-wrap py-4">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                            <div class="text">
-                                <p class="mb-4">Excellent services. We are very much satisfied with all the services.</p>
-                                <div class="d-flex align-items-center">
-                                    <div class="user-img" style="background-image: url(/Images//Home/bg/xperson_1.png) "></div>
-                                    <div class="pl-3">
-                                        <p class="name">Ravinder Rao</p>
-                                        <span class="position">Employee</span>
-                                    </div>
+    <section class="ftco-section ftco-no-pt ftco-no-pb" id="About">
+        <div class="container">
+            <div class="row d-flex no-gutters">
+                <div class="col-md-6 d-flex order-md-last">
+                    <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center mb-4 mb-sm-0" style="background-image: url(/Images//Home/bg/admin_pswu.jpg) ">
+                        @*<a href="" class=" icon-video d-flex justify-content-center align-items-center">*@
+                        @*<span class="fa fa-play"></span>s
+                            </a>*@
+                    </div>
+                </div>
+                <div class="col-md-6 pr-md-5 py-md-5">
+                    <div class="row justify-content-start py-5">
+                        <div class="col-md-12 heading-section ftco-animate fadeInUp ftco-animated">
+                            <span class="subheading text-center">Welcome to Selvam Hospital</span>
+                            <h2 class="mb-4 text-center">About My Hospital</h2>
+                            <p class="para">
+                                The hospital started as a small clinic and has grown steadily into a 200 bedded Multispecialty Hospital equipped with state of the art facilities in healthcare in the last decades.
+                                Selvam Hospital has grown to a multi-specialty hospital serving people of Manapparai, villages in and around Manapparai town.
+                                Patients put so much trust in our care that they travel from all around Trichy and its surroundings to visit us for their healthcare needs.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row ftco-counter pb-5" id="section-counter">
+                        <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
+                            <div class="block-18">
+                                <div class="text">
+                                    <strong class="number" data-number="20">20</strong>
+                                </div>
+                                <div class="text">
+                                    <span>Years of <br>Experienced</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap py-4">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                            <div class="text">
-                                <p class="mb-4">I got fabulous experience in AINU as the doctors and staff are the best.</p>
-                                <div class="d-flex align-items-center">
-                                    <div class="user-img" style="background-image: url(/Images//Home/bg/xperson_2.png)"></div>
-                                    <div class="pl-3">
-                                        <p class="name">Prakash</p>
-                                        <span class="position">Engineer</span>
-                                    </div>
+                        <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
+                            <div class="block-18">
+                                <div class="text">
+                                    <strong class="number" data-number="2342">2,342</strong>
+                                </div>
+                                <div class="text">
+                                    <span>Happy <br>Customers</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap py-4">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                            <div class="text">
-                                <p class="mb-4">Service and treatment is very good. Thank you for taking care of my father.</p>
-                                <div class="d-flex align-items-center">
-                                    <div class="user-img" style="background-image: url(/Images//Home/bg/xperson_3.jpg) "></div>
-                                    <div class="pl-3">
-                                        <p class="name"> Stephen</p>
-                                        <span class="position">Marketing Manager</span>
-                                    </div>
+                        <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
+                            <div class="block-18">
+                                <div class="text">
+                                    <strong class="number" data-number="10">10</strong>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap py-4">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                            <div class="text">
-                                <p class="mb-4">Attention given by the doctors and staff is good.</p>
-                                <div class="d-flex align-items-center">
-                                    <div class="user-img" style="background-image: url(/Images//Home/bg/tbn.jpg) "></div>
-                                    <div class="pl-3">
-                                        <p class="name">P.B.Sulebhavi</p>
-                                        <span class="position">Teacher</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap py-4">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                            <div class="text">
-                                <p class="mb-4">This hospital is very good and faithfulness. Wish the team a Grand Success.</p>
-                                <div class="d-flex align-items-center">
-                                    <div class="user-img" style="background-image: url(/Images//Home/bg/This-is-not-a-person-2-1.jpeg) "></div>
-                                    <div class="pl-3">
-                                        <p class="name">P.Swarajya Lakshmi</p>
-                                        <span class="position">Student</span>
-                                    </div>
+                                <div class="text">
+                                    <span>Award <br>Winning</span>
                                 </div>
                             </div>
                         </div>
@@ -272,110 +180,214 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<section class="ftco-section ftco-no-pt ftco-no-pb" id="Gallery">
-    <div class="container-fluid px-md-0">
-        <div class="row no-gutters">
-            <div class="col-md-3 ftco-animate fadeInUp ftco-animated">
-                <div class="work img d-flex align-items-center" style="background-image: url(/Images/Home/bg/Annual-Physical-800w.jpg) ">
-                    <a href="/images/work-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="fa fa-expand"></span>
-                    </a>
-                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                        <div class="text w-100 mb-3 mt-4">
-                            <h2><a href="work-single.html">Medical Test</a></h2>
-                        </div>
-                    </div>
+
+
+    </section>
+    <section class="ftco-section testimony-section bg-dark">
+        <div class="container">
+            <div class="row justify-content-center pb-5 mb-3">
+                <div class="col-md-7 heading-section heading-section-white text-center ftco-animate">
+                    <span class="subheading">Testimonies</span>
+                    <h2>Happy Clients &amp; Feedbacks</h2>
                 </div>
             </div>
-            <div class="col-md-3 ftco-animate fadeInUp ftco-animated">
-                <div class="work img d-flex align-items-center" style="background-image: url(/Images//Home/bg/AdobeStock_181413640.jpg)">
-                    <a href="images/work-2.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="fa fa-expand"></span>
-                    </a>
-                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                        <div class="text w-100 mb-3 mt-4">
-                            <h2><a href="work-single.html">Doctor checking blood sugar level</a></h2>
+            <div class="row ftco-animate">
+                <div class="col-md-12">
+                    <div class="carousel-testimony owl-carousel ftco-owl">
+                        <div class="item">
+                            <div class="testimony-wrap py-4">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                                <div class="text">
+                                    <p class="mb-4">Excellent services. We are very much satisfied with all the services.</p>
+                                    <div class="d-flex align-items-center">
+                                        <div class="user-img" style="background-image: url(/Images//Home/bg/xperson_1.png) "></div>
+                                        <div class="pl-3">
+                                            <p class="name">Ravinder Rao</p>
+                                            <span class="position">Employee</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 ftco-animate fadeInUp ftco-animated">
-                <div class="work img d-flex align-items-center" style="background-image: url(/Images//Home/bg/doctesting.jpg)">
-                    <a href="images/work-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="fa fa-expand"></span>
-                    </a>
-                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                        <div class="text w-100 mb-3 mt-4">
-                            <h2><a href="work-single.html">Doctor Checking child with stethoscope</a></h2>
+                        <div class="item">
+                            <div class="testimony-wrap py-4">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                                <div class="text">
+                                    <p class="mb-4">I got fabulous experience in AINU as the doctors and staff are the best.</p>
+                                    <div class="d-flex align-items-center">
+                                        <div class="user-img" style="background-image: url(/Images//Home/bg/xperson_2.png)"></div>
+                                        <div class="pl-3">
+                                            <p class="name">Prakash</p>
+                                            <span class="position">Engineer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 ftco-animate fadeInUp ftco-animated">
-                <div class="work img d-flex align-items-center" style="background-image: url(/Images//Home/bg/doctor_checking_knee-1200x628-facebook.jpg) ">
-                    <a href="images/work-4.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="fa fa-expand"></span>
-                    </a>
-                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                        <div class="text w-100 mb-3 mt-4">
-                            <h2><a href="work-single.html">Doctor Checking Knee pain</a></h2>
+                        <div class="item">
+                            <div class="testimony-wrap py-4">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                                <div class="text">
+                                    <p class="mb-4">Service and treatment is very good. Thank you for taking care of my father.</p>
+                                    <div class="d-flex align-items-center">
+                                        <div class="user-img" style="background-image: url(/Images//Home/bg/xperson_3.jpg) "></div>
+                                        <div class="pl-3">
+                                            <p class="name"> Stephen</p>
+                                            <span class="position">Marketing Manager</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 ftco-animate fadeInUp ftco-animated">
-                <div class="work img d-flex align-items-center" style="background-image: url(/Images//Home/bg/slide1.jpg)">
-                    <a href="images/work-5.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="fa fa-expand"></span>
-                    </a>
-                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                        <div class="text w-100 mb-3 mt-4">
-                            <h2><a href="work-single.html">Doctors Performing Surgery</a></h2>
+                        <div class="item">
+                            <div class="testimony-wrap py-4">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                                <div class="text">
+                                    <p class="mb-4">Attention given by the doctors and staff is good.</p>
+                                    <div class="d-flex align-items-center">
+                                        <div class="user-img" style="background-image: url(/Images//Home/bg/tbn.jpg) "></div>
+                                        <div class="pl-3">
+                                            <p class="name">P.B.Sulebhavi</p>
+                                            <span class="position">Teacher</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 ftco-animate fadeInUp ftco-animated">
-                <div class="work img d-flex align-items-center" style="background-image: url(/Images//Home/bg/doctesting1.jpg)">
-                    <a href="images/work-6.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="fa fa-expand"></span>
-                    </a>
-                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                        <div class="text w-100 mb-3 mt-4">
-                            <h2><a href="work-single.html">Doctor Checking for Patient Fever in Ward</a></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 ftco-animate fadeInUp ftco-animated">
-                <div class="work img d-flex align-items-center" style="background-image: url(/Images//Home/bg/doctesting2.jpg)">
-                    <a href="images/work-7.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="fa fa-expand"></span>
-                    </a>
-                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                        <div class="text w-100 mb-3 mt-4">
-                            <h2><a href="work-single.html">Doctor Checking for Throat Pain</a></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 ftco-animate fadeInUp ftco-animated">
-                <div class="work img d-flex align-items-center" style="background-image: url(/Images//Home/bg/doctor-checking-back-pain.jpg)">
-                    <a href="images/work-8.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="fa fa-expand"></span>
-                    </a>
-                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                        <div class="text w-100 mb-3 mt-4">
-                            <h2><a href="work-single.html">Lower Back Pain</a></h2>
+                        <div class="item">
+                            <div class="testimony-wrap py-4">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                                <div class="text">
+                                    <p class="mb-4">This hospital is very good and faithfulness. Wish the team a Grand Success.</p>
+                                    <div class="d-flex align-items-center">
+                                        <div class="user-img" style="background-image: url(/Images//Home/bg/This-is-not-a-person-2-1.jpeg) "></div>
+                                        <div class="pl-3">
+                                            <p class="name">P.Swarajya Lakshmi</p>
+                                            <span class="position">Student</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <section class="ftco-section ftco-no-pt ftco-no-pb" id="Gallery">
+        <div class="container-fluid px-md-0">
+            <div class=" no-gutters">
+                <div class="col-md-3 ftco-animate fadeInUp ftco-animated">
+
+                    <div class="work img d-flex align-items-center" style="background-image: url(/Images/Home/bg/Img1.jpg) ">
+                        <a href="/images/work-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                            <span class="fa fa-expand"></span>
+                        </a>
+                        <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                            <div class="text w-100 mb-3 mt-4">
+                                <h2><a href="work-single.html">Medical Test</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 ftco-animate fadeInUp ftco-animated">
+
+                    <div class="work img d-flex align-items-center" style="background-image: url(/Images/Home/bg/img2.jpg)">
+                        <a href="images/work-2.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                            <span class="fa fa-expand"></span>
+                        </a>
+                        <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                            <div class="text w-100 mb-3 mt-4">
+                                <h2><a href="work-single.html">Doctor checking blood sugar level</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 ftco-animate fadeInUp ftco-animated">
+
+                    <div class="work img d-flex align-items-center" style="background-image: url(/Images/Home/bg/img3.jpg)">
+                        <a href="images/work-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                            <span class="fa fa-expand"></span>
+                        </a>
+                        <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                            <div class="text w-100 mb-3 mt-4">
+                                <h2><a href="work-single.html">Doctor Checking child with stethoscope</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 ftco-animate fadeInUp ftco-animated">
+
+
+
+                    <div class="work img d-flex align-items-center" style="background-image: url(/Images/Home/bg/imge4.jpg) ">
+                        <a href="images/work-4.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                            <span class="fa fa-expand"></span>
+                        </a>
+                        <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                            <div class="text w-100 mb-3 mt-4">
+                                <h2><a href="work-single.html">Doctor Checking Knee pain</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 ftco-animate fadeInUp ftco-animated">
+
+                    <div class="work img d-flex align-items-center" style="background-image: url(/Images/Home/bg/img5.jpg)">
+                        <a href="images/work-5.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                            <span class="fa fa-expand"></span>
+                        </a>
+                        <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                            <div class="text w-100 mb-3 mt-4">
+                                <h2><a href="work-single.html">Doctors Performing Surgery</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 ftco-animate fadeInUp ftco-animated">
+
+                    <div class="work img d-flex align-items-center" style="background-image: url(/Images/Home/bg/img6.jpg)">
+                        <a href="images/work-6.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                            <span class="fa fa-expand"></span>
+                        </a>
+                        <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                            <div class="text w-100 mb-3 mt-4">
+                                <h2><a href="work-single.html">Doctor Checking for Patient Fever in Ward</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 ftco-animate fadeInUp ftco-animated">
+
+                    <div class="work img d-flex align-items-center" style="background-image: url(/Images/Home/bg/img7.jpg)">
+                        <a href="images/work-7.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                            <span class="fa fa-expand"></span>
+                        </a>
+                        <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                            <div class="text w-100 mb-3 mt-4">
+                                <h2><a href="work-single.html">Doctor Checking for Throat Pain</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 ftco-animate fadeInUp ftco-animated">
+
+
+                    <div class="work img d-flex align-items-center" style="background-image: url(/Images/Home/bg/imge8.jpg) ">
+                        <a href="images/work-8.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                            <span class="fa fa-expand"></span>
+                        </a>
+                        <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                            <div class="text w-100 mb-3 mt-4">
+                                <h2><a href="work-single.html">Lower Back Pain</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@*</div>*@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

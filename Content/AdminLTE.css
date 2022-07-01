@@ -1195,6 +1195,7 @@ a:focus {
   margin-right: 10px;
   margin-top: -2px;
 }
+
 @media (max-width: 767px) {
   .navbar-nav > .user-menu .user-image {
     float: none;
@@ -5492,7 +5493,7 @@ fieldset[disabled] .btn-yahoo.focus {
   width: 100% !important;
 }
 hr {
-  border-top: 1px solid #555555;
+    border-top: 1px solid #f9fafc;
 }
 #red .slider-selection {
   background: #f56954;

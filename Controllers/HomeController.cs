@@ -12,6 +12,7 @@ namespace HospitalManagementSystem.Controllers
     public class HomeController : Controller
     {
         // GET: common/Home
+      
         public ActionResult Index()
         {
             var ViewModel = new AppointmentViewModel();

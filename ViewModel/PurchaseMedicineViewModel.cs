@@ -28,12 +28,12 @@ namespace HospitalManagementSystem.ViewModel
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime Date { get; set; } = DateTime.Now;
 
-        [Required(ErrorMessage = "Select your Catogory")]
+        [Required]
         public List<System.Web.Mvc.SelectListItem> CategoryList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int Category { get; set; }
         public string CategoryDesc { get; set; }
 
-        [Required(ErrorMessage = "Select your Medicine")]
+        [Required]
         public List<System.Web.Mvc.SelectListItem> MedicineList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int Medicine { get; set; }
         public string MedicineDesc { get; set; }
@@ -57,13 +57,13 @@ namespace HospitalManagementSystem.ViewModel
         [Display(Name = "Notes ")]
         public string Notes { get; set; }
 
-        [Required(ErrorMessage = "Select your Payment Method")]
+        [Required]
         [Display(Name = "Payment Type ")]
         public List<System.Web.Mvc.SelectListItem> PaymentList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int Payment { get; set; }
         public string PaymentMethod { get; set; }
 
-        [Required(ErrorMessage = "Select your Payment Status")]
+        [Required]
         [Display(Name = "Payment Status Method ")]
         public List<System.Web.Mvc.SelectListItem> PaymentStatusList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int PaymentStatus { get; set; }

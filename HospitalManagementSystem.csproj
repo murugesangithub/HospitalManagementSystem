@@ -300,6 +300,7 @@
     <Compile Include="Repository\AccountRepostitory.cs" />
     <Compile Include="Repository\BaseRepository.cs" />
     <Compile Include="Repository\ReportRepository.cs" />
+    <Compile Include="ViewModel\PatientViewModel.cs" />
     <Compile Include="ViewModel\PatientTreatmentViewModel.cs" />
     <Compile Include="ViewModel\BillingViewModel.cs" />
     <Compile Include="ViewModel\PatientAdmissionViewModel.cs" />
@@ -311,7 +312,6 @@
     <Compile Include="ViewModel\ErrorLogViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MedicineViewModel.cs" />
-    <Compile Include="ViewModel\PatientViewModel.cs" />
     <Compile Include="ViewModel\ResetPasswordViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -342,6 +342,7 @@
     <Content Include="Content\home.css" />
     <Content Include="Content\ionicons.min.css" />
     <Content Include="Content\jquery-jvectormap.css" />
+    <Content Include="Content\popup.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -401,11 +402,10 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\avatar.png" />
+    <Content Include="Images\close.jpg" />
     <Content Include="Images\default_profile.jpg" />
     <Content Include="Images\Home\avatar.png" />
     <Content Include="Images\Home\bg\admin_pswu.jpg" />
-    <Content Include="Images\Home\bg\AdobeStock_181413640.jpg" />
-    <Content Include="Images\Home\bg\Annual-Physical-800w.jpg" />
     <Content Include="Images\Home\bg\covid-19-vaccine-graphic-img.jpg" />
     <Content Include="Images\Home\bg\discharge-process.jpg" />
     <Content Include="Images\Home\bg\doctesting.jpg" />
@@ -414,12 +414,15 @@
     <Content Include="Images\Home\bg\doctor-checking-back-pain.jpg" />
     <Content Include="Images\Home\bg\doctor_checking_knee-1200x628-facebook.jpg" />
     <Content Include="Images\Home\bg\Hms1.jpg" />
+    <Content Include="Images\Home\bg\imge4.jpg" />
+    <Content Include="Images\Home\bg\imge8.jpg" />
     <Content Include="Images\Home\bg\slide1.jpg" />
     <Content Include="Images\Home\bg\tbn.jpg" />
     <Content Include="Images\Home\bg\This-is-not-a-person-2-1.jpeg" />
     <Content Include="Images\Home\bg\xperson_1.png" />
     <Content Include="Images\Home\bg\xperson_2.png" />
     <Content Include="Images\Home\bg\xperson_3.jpg" />
+    <Content Include="Images\Home\default_img.jpg" />
     <Content Include="Images\Home\default_profile.jpg" />
     <Content Include="Images\Home\Hms3.jpg" />
     <Content Include="Images\Home\icon.png" />
@@ -430,6 +433,15 @@
     <Content Include="Images\Home\icon6.png" />
     <Content Include="Images\Home\slogo.jpg" />
     <Content Include="Images\Home\slogo1.jpg" />
+    <Content Include="Images\Home\bg\Img1.jpg" />
+    <Content Include="Images\Home\bg\img2.jpg" />
+    <Content Include="Images\Home\bg\img3.jpg" />
+    <Content Include="Images\Home\bg\img4.jpg" />
+    <Content Include="Images\Home\bg\img5.jpg" />
+    <Content Include="Images\Home\bg\img6.jpg" />
+    <Content Include="Images\Home\bg\img7.jpg" />
+    <Content Include="Images\Home\bg\img8.jpg" />
+    <Content Include="Images\popupimg2.jpg" />
     <Content Include="Scripts\adminlte.min.js" />
     <Content Include="Scripts\Appointment\AddAppointment.js" />
     <Content Include="Scripts\Billing\Billing.js" />
@@ -472,6 +484,7 @@
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.esm.js.map" />
     <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Content\grid.less" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\Common\Common.js" />
@@ -491,6 +504,7 @@
     <Content Include="Scripts\PatientInquiry\PatientInquiry.js" />
     <Content Include="Scripts\PatientTreatment\PatientTreatment.js" />
     <Content Include="Scripts\Patient\Patient.js" />
+    <Content Include="Scripts\popup.js" />
     <Content Include="Scripts\Purchase\PurchaseMedicine.js" />
     <Content Include="Scripts\Resize\ResizeSensor.js" />
     <Content Include="Scripts\fastclick.js" />
@@ -578,6 +592,7 @@
     <Content Include="Views\Shared\_HomeLayout.cshtml" />
     <Content Include="Views\Shared\_HomeSliderPartial.cshtml" />
     <Content Include="Views\Home\Index - Copy.cshtml" />
+    <Content Include="Views\User\Profile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

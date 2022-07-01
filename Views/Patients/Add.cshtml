@@ -61,7 +61,7 @@
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.DateofBirth, htmlAttributes: new { @class = "col-sm-3 control-label" })
                                     <div class="col-md-9">
-                                        @Html.EditorFor(model => model.DateofBirth, new { placeholder = "Date of Birth", @maxlength = "20", htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.DateofBirth, new { placeholder = "Date of Birth", @maxlength = "15", htmlAttributes = new { @class = "form-control" } })
                                         @Html.ValidationMessageFor(model => model.DateofBirth, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -135,8 +135,8 @@
                                             <div class="col-md-6">
                                                 @Html.TextBoxFor(m => m.City, new { placeholder = "city", @maxlength = "20", @class = "form-control" })
                                                 @Html.ValidationMessageFor(m => m.City, "", new { @class = "text-danger" })<br />
-                                                @Html.TextBoxFor(m => m.PostalCode, new { placeholder = "ZIP/Postal Code", @maxlength = "10", @class = "form-control" })
-                                                @Html.ValidationMessageFor(m => m.PostalCode, "", new { @class = "text-danger" })<br />
+                                                @Html.TextBoxFor(m => m.PostalCode, new { placeholder = "ZIP/PostalCode", @maxlength = "10", @class = "form-control" })
+                                                @Html.ValidationMessageFor(m => m.PostalCode, "", new { @class = "text-danger" })<br /><br />
                                             </div>
                                             <div class="col-md-6">
                                                 @Html.TextBoxFor(m => m.State, new { placeholder = "State/Province", @maxlength = "20", @class = "form-control" })
@@ -180,9 +180,9 @@
             changeMonth: true,
             changeYear: true,
             yearRange: "-60:+0",
-             onSelect: function (dateString, txtDate) {
-                alert("Selected Date: " + dateString + "\nTextBox ID: " + txtDate.id);
-            }
+            //onSelect: function (dateString, txtDate) {
+            //    alert("Selected Date: " + dateString + "\nTextBox ID: " + txtDate.id);
+            //}
         });
 
     });

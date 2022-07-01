@@ -102,6 +102,7 @@
                                         Female
                                         @Html.RadioButtonFor(model => model.Gender, "Other")
                                         Other
+                                        <br/>
                                         @Html.ValidationMessageFor(m => m.Gender, "", new { @class = "text-danger " })
 
                                     </div>
@@ -125,6 +126,7 @@
                                         Separated
                                         @Html.RadioButtonFor(model => model.MaritalStatus, "Other")
                                         Other
+                                        <br />
                                         @Html.ValidationMessageFor(m => m.MaritalStatus, "", new { @class = "text-danger " })
                                     </div>
                                 </div>
@@ -136,6 +138,7 @@
                                         Yes
                                         @Html.RadioButtonFor(model => model.Patient, "No")
                                         No
+                                        <br />
                                         @Html.ValidationMessageFor(m => m.Patient, "", new { @class = "text-danger " })
                                     </div>
                                 </div>
@@ -153,6 +156,7 @@
                                         SMS
                                         @Html.RadioButtonFor(model => model.Contact, "Other")
                                         Other
+                                        <br />
                                         @Html.ValidationMessageFor(m => m.Contact, "", new { @class = "text-danger " })
                                     </div>
                                 </div>

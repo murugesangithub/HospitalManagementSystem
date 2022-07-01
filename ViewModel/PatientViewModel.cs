@@ -1,5 +1,4 @@
-﻿
-using HospitalManagementSystem.Filter;
+﻿using HospitalManagementSystem.Filter;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,12 +6,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Xunit;
-
 namespace HospitalManagementSystem.ViewModel
 {
     public class PatientViewModel
     {
-
         [Required]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
@@ -61,22 +58,22 @@ namespace HospitalManagementSystem.ViewModel
         public string PhoneNumber { get; set; }
 
 
-        [Required(ErrorMessage = "Select your Gender")]
+        [Required]
         public List<System.Web.Mvc.SelectListItem> GenderList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int Gender { get; set; }
         public string GenderDescription { get; set; }
 
         [Required]
-        [Display(Name = "Date of Birth ")]
+        [Display(Name = "Date of Birth")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime DateofBirth { get; set; } = DateTime.Now;
 
-        [Required(ErrorMessage = "Select your MaritalStatus")]
+        [Required]
         public List<System.Web.Mvc.SelectListItem> MaritalStatusList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int MaritalStatus { get; set; }
         public string MaritalStatusDescription { get; set; }
 
-        [Required(ErrorMessage = "Select your Country")]
+        [Required]
         [Display(Name = "Country")]
         public List<System.Web.Mvc.SelectListItem> CountryList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int Country { get; set; }
@@ -86,6 +83,7 @@ namespace HospitalManagementSystem.ViewModel
 
         public int PatientDetailId { get; set; }
         public string EncryptPatientDetailId { get; set; }
-    }
 
+
+    }
 }

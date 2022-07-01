@@ -33,8 +33,8 @@
         <EntityTypeShape EntityType="HMSModel.PatientInquiryDetailForm" Width="1.5" PointX="13.75" PointY="12.75" />
         <EntityTypeShape EntityType="HMSModel.PatientTreatmentDetail" Width="1.5" PointX="15.75" PointY="0.75" />
         <EntityTypeShape EntityType="HMSModel.PurchaseMedicineDetail" Width="1.5" PointX="0.75" PointY="15.75" />
-        <EntityTypeShape EntityType="HMSModel.PatientDetail" Width="1.5" PointX="16.375" PointY="12.75" />
         <EntityTypeShape EntityType="HMSModel.AppointmentDetail" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HMSModel.PatientDetail" Width="1.5" PointX="16.375" PointY="12.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

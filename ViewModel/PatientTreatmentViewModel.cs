@@ -11,47 +11,48 @@ namespace HospitalManagementSystem.ViewModel
     public class PatientTreatmentViewModel
     {
 
-        [Required(ErrorMessage = "Patient Name is required")]
+        [Required]
         [Display(Name = "Patient Name")]
         [DataType(DataType.Text)]
         public string PatientName { get; set; }
 
-        [Required(ErrorMessage = "Select your Medicine Name")]
+        [Required/*(ErrorMessage = "Select your Medicine Name")*/]
+        [Display(Name = "Medicine Name")]
         public List<System.Web.Mvc.SelectListItem> MedicineList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int MedicineName { get; set; }
         public string MedicineNameDescription { get; set; }
 
 
-        [Required(ErrorMessage = "No of Days is required")]
+        [Required]
         [Display(Name = "No of Days")]
         [DataType(DataType.Text)]
         public string Noofdays { get; set; }
 
-        [Required(ErrorMessage = "Quantity is required")]
+        [Required]
         [Display(Name = "Quantity")]
         [DataType(DataType.Text)]
         public string Quantity { get; set; }
 
-        [Required(ErrorMessage = "Dosage Description is required")]
+        [Required]
         [Display(Name = "Dosage Desc")]
         [DataType(DataType.Text)]
         public string DosageDesc { get; set; }
 
-        [Required(ErrorMessage = "Remarks is required")]
+        [Required]
         [Display(Name = "Remarks")]
         [DataType(DataType.Text)]
         public string Remarks { get; set; }
 
-        [Required(ErrorMessage = "Select your Room Number")]
+        [Required]
         public List<System.Web.Mvc.SelectListItem> RoomNumberList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int RoomNumber { get; set; }
         public string RoomNumberDescription { get; set; }
 
-        [Required(ErrorMessage = "Room Price is required")]
+        [Required]
         [Display(Name = "Room Price")]
         public string RoomPrice { get; set; }
 
-        [Required(ErrorMessage = "Select your RoomType")]
+        [Required]
         public List<System.Web.Mvc.SelectListItem>RoomTypeList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int RoomType { get; set; }
         public string RoomTypeDescription { get; set; }

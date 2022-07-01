@@ -11,22 +11,22 @@ namespace HospitalManagementSystem.ViewModel
     public class AppointmentViewModel
     {
 
-        [Required(ErrorMessage = "First Name is required")]
+        [Required]
         [Display(Name = "First Name")]
         [DataType(DataType.Text)]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "Last Name is required")]
+        [Required]
         [Display(Name = "Last Name")]
         [DataType(DataType.Text)]
         public string LastName { get; set; }
 
-        [Required(ErrorMessage = "Select your Gender")]
+        [Required]
         public List<System.Web.Mvc.SelectListItem> GenderList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int? Gender { get; set; }
         public string GenderDescription { get; set; }
 
-        [Required(ErrorMessage = "Status is required")]
+        [Required]
         [Display(Name = "Status")]
         [DataType(DataType.Text)]
         public string Status { get; set; }
@@ -62,7 +62,7 @@ namespace HospitalManagementSystem.ViewModel
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime DateofAppointment { get; set; } = DateTime.Now;
 
-        [Required(ErrorMessage = "Consulting Doctor is required")]
+        [Required]
         [Display(Name = "Consulting Doctor ")]
         [DataType(DataType.Text)]
         public string ConsultingDoctor { get; set; }
@@ -84,18 +84,18 @@ namespace HospitalManagementSystem.ViewModel
         [DataType(DataType.Text)]
         public string TokenNumber { get; set; }*/
 
-        [Required(ErrorMessage = "Select your Time Slot")]
+        [Required]
         public List<System.Web.Mvc.SelectListItem> TimeSlotListMorning { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public List<System.Web.Mvc.SelectListItem> TimeSlotListEvening { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int TimeSlot { get; set; }
         public string TimeSlotDesc { get; set; }
 
-        [Required(ErrorMessage = "Select your Department")]
+        [Required]
         public List<System.Web.Mvc.SelectListItem> DepartmentList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public int Department { get; set; }
         public string DepartmentDesc { get; set; }
 
-        [Required(ErrorMessage = "Select your doctor")]
+        [Required]
         public List<System.Web.Mvc.SelectListItem> DoctorList { get; set; } = new List<System.Web.Mvc.SelectListItem>();
         public string DoctorListDesc { get; set; }
 

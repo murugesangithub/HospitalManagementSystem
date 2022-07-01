@@ -32,6 +32,7 @@ $(document).ready(function () {
             //{ label: 'Marital Status', name: 'MaritalStatusDescription', width: 200, },
             //{ label: 'Gender', name: 'Gender', width: 200, hidden: true, },
             //{ label: 'Gender', name: 'GenderDescription', width: 200, },
+            { label: 'DateofBirth', name: 'DateofBirth', width: 200, },
             { label: 'Age', name: 'Age', width: 200, },
             { label: 'Guardian Name', name: 'GuardianName', width: 200, },
             //{ label: 'DoB', name: 'DateofBirth', width: 200, },
