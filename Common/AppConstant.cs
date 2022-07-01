@@ -20,7 +20,7 @@
         public const string undefined = "undefined";
         public const string Response = "Response";
         public const string Success = "Success";
-
+        public const string Warning = "Warning";
         public const string ExcelDateFormat = "dd-mm-yyyy";
 
     }

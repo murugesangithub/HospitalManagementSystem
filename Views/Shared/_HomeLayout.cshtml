@@ -77,5 +77,16 @@
             </script>
         }
     }
+    @if (TempData[AppConstant.Warning] != null)
+    {
+        var response = TempData[AppConstant.Warning].ToString();
+        if (response != "")
+        {
+            <script>
+                Notify_Validation("You are already booked an appointment");
+
+            </script>
+        }
+    }
 </body>
 </html>
