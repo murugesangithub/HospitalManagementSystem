@@ -268,31 +268,33 @@
     </ul>
 </div>
 <div class="popup">
+   
     <div class="popup-content" id="popup">
         <i class="fa fa-window-close icon-close fa-2x" aria-hidden="true" onclick="closePopup()"></i>
+        <h3>Profile Details</h3>
         @*<img src="/Images/close.jpg" alt="close" class="close">*@
-    <div>
-        <img src=@profileimage class="user-img rounded-circle mt-5 image popup-img" alt="User Image">
-        <hr />
-        @*<h3>Profile Details</h3>*@
-        <p><i class="fa fa-user" aria-hidden="true"></i><span class="txt">Name:</span><span class="popup-text">@Model.FirstName @Model.LastName</span></p>
-        <hr />
-        <p><i class="fa fa-envelope" aria-hidden="true"></i><span class="txt">E-mail:</span><span class="popup-text">@Model.Email</span></p>
-        <hr />
-        <p><i class="fa fa-users" aria-hidden="true"></i><span class="txt">Role:</span><span class="popup-text">@Model.RoleDesc </span></p>
-        <hr />
-        <p><i class="fa fa-user-circle" aria-hidden="true"></i><span class="txt">Designation:</span><span class="popup-text">@Model.DesignationDesc </span></p>
-        <hr />
-        <p><i class="fa fa-phone" aria-hidden="true"></i><span class="txt">Phone</span><span class="popup-text">@Model.MobileNumber</span></p>
-        <hr />
-        <p><i class="fa fa-address-card-o" aria-hidden="true"></i><span class="txt">Address:</span><span class="popup-text">@Model.Address</span></p>
+        <div class="row">
+            <div class="col-md-4">
+                <img src=@profileimage class="user-img rounded-circle mt-5 image popup-img" alt="User Image">
+            </div>
+            <div class="col-md-6">
+                <i class="fa fa-user" aria-hidden="true"></i><span class="txt">Name:</span><span class="popup-text">@Model.FirstName @Model.LastName</span>
+                <hr />
+                <i class="fa fa-envelope" aria-hidden="true"></i><span class="txt">E-mail:</span><span class="popup-text">@Model.Email</span>
+                <hr />
+                <i class="fa fa-users" aria-hidden="true"></i><span class="txt">Role:</span><span class="popup-text">@Model.RoleDesc </span>
+                <hr />
 
 
-
-
-
-    </div>
+                <i class="fa fa-user-circle" aria-hidden="true"></i><span class="txt">Designation:</span><span class="popup-text">@Model.DesignationDesc </span>
+                <hr />
+                <i class="fa fa-phone" aria-hidden="true"></i><span class="txt">Phone</span><span class="popup-text">@Model.MobileNumber</span>
+                <hr />
+                <i class="fa fa-address-card-o" aria-hidden="true"></i><span class="txt">Address:</span><span class="popup-text">@Model.Address</span>
+            </div>
+        </div>
     </div>
 </div>
+
 
 
