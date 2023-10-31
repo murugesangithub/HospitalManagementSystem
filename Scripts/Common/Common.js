@@ -85,7 +85,7 @@ $(document).ajaxComplete(function () {
 });
 
 function loadingshow() {
-    $('body').waitMe({
+    $('.wide').waitMe({
         effect: 'win8_linear',
         text: 'Please wait...',
         bg: 'rgba(255,255,255,0.7)',
@@ -93,7 +93,7 @@ function loadingshow() {
     });
 }
 function loadinghide() {
-    $('body').waitMe('hide');
+    $('.wide').waitMe('hide');
 }
 
 function DateValidationSearch() {
