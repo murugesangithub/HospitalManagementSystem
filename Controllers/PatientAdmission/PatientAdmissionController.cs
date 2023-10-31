@@ -83,5 +83,6 @@ namespace HospitalManagementSystem.Controllers
 
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+         
     }
 }

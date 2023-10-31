@@ -19,6 +19,11 @@ namespace HospitalManagementSystem.Controllers.User
            
             return View();
         }
+        public ActionResult Profile()
+        {
+
+            return View();
+        }
 
         public ActionResult GetUserList(JQGridSort jQGridSort)
         {

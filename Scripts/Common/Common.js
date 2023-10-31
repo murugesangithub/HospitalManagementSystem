@@ -151,6 +151,5 @@ function Notify_Validation(msg) {
             align: 'right',
 
         }
-
     });
 }

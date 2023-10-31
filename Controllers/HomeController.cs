@@ -12,6 +12,7 @@ namespace HospitalManagementSystem.Controllers
     public class HomeController : Controller
     {
         // GET: common/Home
+      
         public ActionResult Index()
         {
             var ViewModel = new AppointmentViewModel();
@@ -30,15 +31,26 @@ namespace HospitalManagementSystem.Controllers
         public ActionResult AddAppointment(AppointmentViewModel model)
         {
             var appointmentRepository = new AppointmentRepository();
-            if (model.TokenNumber == default(int))
+            var isappointmentExist = appointmentRepository.IsAppointmentExists(model.PhoneNumber, model.DateofAppointment);
+
+
+            if (isappointmentExist == false)
+
             {
-                appointmentRepository.AppointmentDetailInsertion(model);
-                TempData[AppConstant.Response] = AppConstant.Success;
+                if (model.TokenNumber == default(int))
+                {
+                    appointmentRepository.AppointmentDetailInsertion(model);
+                    TempData[AppConstant.Response] = AppConstant.Success;
+                }
+                else
+                {
+                    appointmentRepository.AppointmentDetailUpdation(model);
+                    TempData[AppConstant.Response] = AppConstant.Success;
+                }
             }
             else
             {
-                appointmentRepository.AppointmentDetailUpdation(model);
-                TempData[AppConstant.Response] = AppConstant.Success;
+                TempData[AppConstant.Warning] = "You are already booked an appointment";
             }
             return RedirectToAction("Index");
         }

@@ -10,7 +10,7 @@ namespace HospitalManagementSystem.ViewModel
 {
     public class PatientAdmissionViewModel
     {
-        [Required(ErrorMessage = "Doctor Name is required")]
+        [Required]
         [Display(Name = "Doctor Name")]
         [DataType(DataType.Text)]
         public string DoctorName { get; set; }
@@ -20,17 +20,17 @@ namespace HospitalManagementSystem.ViewModel
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime AdmissionDate { get; set;}= DateTime.Now;
 
-        [Required(ErrorMessage = "Planned Procedure is required")]
+        [Required]
         [Display(Name = "Planned Procedure")]
         [DataType(DataType.Text)]
         public string PlannedProcedure { get; set; }
 
-        [Required(ErrorMessage = "Item Number is required")]
+        [Required]
         [Display(Name = "Item Number(S)")]
         [DataType(DataType.Text)]
         public string ItemNumber { get; set; }
 
-        [Required(ErrorMessage = "Patient Name is required")]
+        [Required]
         [Display(Name = "Patient Name")]
         [DataType(DataType.Text)]
         public string PatientName { get; set; }

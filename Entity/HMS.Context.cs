@@ -53,7 +53,7 @@ namespace HospitalManagementSystem.Entity
         public virtual DbSet<PatientInquiryDetailForm> PatientInquiryDetailForms { get; set; }
         public virtual DbSet<PatientTreatmentDetail> PatientTreatmentDetails { get; set; }
         public virtual DbSet<PurchaseMedicineDetail> PurchaseMedicineDetails { get; set; }
-        public virtual DbSet<PatientDetail> PatientDetails { get; set; }
         public virtual DbSet<AppointmentDetail> AppointmentDetails { get; set; }
+        public virtual DbSet<PatientDetail> PatientDetails { get; set; }
     }
 }

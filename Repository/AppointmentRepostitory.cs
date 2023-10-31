@@ -174,5 +174,10 @@ namespace HospitalManagementSystem.DataAccess.Repository
             var result = dbcontext.AppointmentDetails.Where(x => x.IsActive && x.DateofAppointment == appointmentDate).Select(s => s.TimeSlot).ToList();
             return result;
         }
+        public bool IsAppointmentExists(string Phonenumber,DateTime appointmentDate)
+        {
+            return dbcontext.AppointmentDetails.Any(x => x.PhoneNumber == Phonenumber && x.IsActive && x.DateofAppointment==appointmentDate);
+            
+        }
     }
 }
